@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nepal Police School Header</title>
+  <title>Nepal Police School Dharan</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -33,17 +33,27 @@
     .brand-section {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
     }
 
     .brand-logos {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .brand-logos img {
+    /* Primary circular school crest */
+    .brand-logos img.school-logo {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffcb08;
+      background-color: #ffffff;
+    }
+
+    .brand-logos img.police-crest {
       height: 48px;
       width: auto;
       object-fit: contain;
@@ -55,13 +65,13 @@
     }
 
     .brand-text h1 {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: 0.3px;
     }
 
     .brand-text p {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: #cbd5e1;
     }
 
@@ -90,7 +100,7 @@
 
     .nav-link:hover,
     .nav-link.active {
-      color: #ffcc00;
+      color: #ffcb08;
     }
 
     .nav-link i {
@@ -220,10 +230,9 @@
       }
     }
 
-    /* Responsive adjustment */
     @media (max-width: 900px) {
       .nav-links {
-        display: none; /* Hide standard nav for small viewports */
+        display: none;
       }
     }
   </style>
@@ -233,12 +242,12 @@
   <header class="header-navbar">
     <a href="#" class="brand-section">
       <div class="brand-logos">
-    <!--    <img src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">  -->
-     <!--   <img src="https://www.nps.edu.np/images/fulllogo2.png" alt="NPS Logo"> -->
+        <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
+        <img class="school-logo" src="school logo.jpg" alt="Nepal Police School Dharan Logo">
       </div>
       <div class="brand-text">
         <h1>Nepal Police School</h1>
-        <p>Dharan, Nepal</p>
+        <p>Dharan, Sunsari</p>
       </div>
     </a>
 
@@ -253,12 +262,12 @@
         </ul>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Nepal Police School <i class="fa-solid fa-chevron-down"></i></a>
+        <a href="#" class="nav-link">School Wings <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Junior Wings (4-6)</a></li>
-          <li><a href="#">Senior Wings (7-10)</a></li>
-          <li><a href="#">Science Wing (+2)</a></li>
-          <li><a href="#">Management Wing (+2)</a></li>
+          <li><a href="#">Primary Wing</a></li>
+          <li><a href="#">Secondary Wing</a></li>
+          <li><a href="#">Science (+2)</a></li>
+          <li><a href="#">Management (+2)</a></li>
         </ul>
       </li>
       <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
@@ -267,14 +276,14 @@
         <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
           <li><a href="#">ECA / CCA</a></li>
-          <li><a href="#">Events & News</a></li>
+          <li><a href="#">Events & Sports</a></li>
         </ul>
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link">Publication <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Deepika</a></li>
-          <li><a href="#">NPS Mirror</a></li>
+          <li><a href="#">Magazine</a></li>
+          <li><a href="#">Annual Reports</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -301,9 +310,9 @@
     <div class="notice-badge">Latest Notices</div>
     <div class="notice-marquee-wrapper">
       <div class="notice-marquee">
-        <a href="#" class="notice-item">विद्यार्थीहरुको लत्ता–कपडा आपूर्ति सम्बन्धी दरभाउपत्र आवहानको सूचना २०८३/०४/०८</a>
-        <a href="#" class="notice-item">सिलबन्दी दरभाउपत्र आह्वानको सूचना २०८३।०४।०८ गते</a>
-        <a href="#" class="notice-item">स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि सिलबन्दी दरभाउपत्र/टेन्डर आव्हान ।</a>
+        <a href="#" class="notice-item">नेपाल पुलिस स्कुल धरान: शैक्षिक सत्र २०८३ का लागि नयाँ भर्ना खुल्यो ।</a>
+        <a href="#" class="notice-item">स्टेशनरी तथा खेलकुद सामग्री आपूर्तिका लागि सिलबन्दी दरभाउपत्र आह्वानको सूचना ।</a>
+        <a href="#" class="notice-item">विद्यार्थीहरुको पोशाक आपूर्ति सम्बन्धी दरभाउपत्र आह्वानको सूचना २०८३ ।</a>
       </div>
     </div>
   </section>
