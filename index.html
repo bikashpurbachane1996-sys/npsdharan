@@ -319,7 +319,6 @@
       gap: 20px;
     }
 
-    /* Card base + Animated popup styling */
     .popup-card {
       border-radius: 20px;
       overflow: hidden;
@@ -340,7 +339,6 @@
       box-shadow: 0 20px 30px -10px rgba(39, 55, 115, 0.2);
     }
 
-    /* Sequential popup delays */
     .card-1 { animation-delay: 0.1s; }
     .card-2 { animation-delay: 0.25s; }
     .card-3 { animation-delay: 0.4s; }
@@ -353,7 +351,6 @@
       }
     }
 
-    /* Image cards */
     .popup-card.image-card img {
       width: 100%;
       height: 100%;
@@ -367,7 +364,6 @@
       transform: scale(1.08);
     }
 
-    /* Text info cards */
     .popup-card.text-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -379,12 +375,39 @@
       font-weight: 500;
     }
 
+    /* 6. Full-Width Edge-to-Edge Video Banner */
+    .video-full-section {
+      width: 100%;
+      background-color: #000000;
+      position: relative;
+      line-height: 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 50%; /* Cinematic aspect ratio */
+      height: 0;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .splide__slide { height: 50vh; min-height: 350px; }
       .slide-caption { font-size: 0.9rem; left: 15px; right: 15px; bottom: 15px; }
       .welcome-container { grid-template-columns: 1fr; gap: 40px; margin: 50px auto; }
       .welcome-text h2 { font-size: 2rem; }
+      .video-container { padding-bottom: 56.25%; } /* 16:9 on mobile */
     }
   </style>
 </head>
@@ -525,6 +548,17 @@
       <div class="popup-card image-card card-4">
         <img src="school.jpg" alt="Student Assembly">
       </div>
+    </div>
+  </section>
+
+  <section class="video-full-section">
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube-nocookie.com/embed/atKzkrqYEv8?autoplay=1&mute=1&loop=1&playlist=atKzkrqYEv8&controls=1&rel=0" 
+        title="Nepal Police School Video" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
     </div>
   </section>
 
