@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepal Police School | Sanga, Kavre</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#1a2a6c',
+              navy: '#273c75',
+              red: '#b71540',
+              gold: '#f1c40f',
+              accent: '#30336b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-ticker {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 25s linear infinite;
+    }
+    .animate-ticker:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-brand-blue shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-1 border-2 border-brand-gold">
+          <i class="fa-solid fa-shield-halved text-brand-blue text-2xl"></i>
+        </div>
+        <div class="text-white">
+          <h1 class="text-lg font-bold uppercase tracking-wider leading-tight">Nepal Police School</h1>
+          <p class="text-xs text-gray-200">Sanga, Kavre</p>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-white">
+        <a href="#" class="text-brand-gold hover:text-white transition">Home</a>
+        <div class="relative group cursor-pointer">
+          <span class="hover:text-brand-gold">Foundation <i class="fa-solid fa-angle-down text-xs"></i></span>
+        </div>
+        <div class="relative group cursor-pointer">
+          <span class="hover:text-brand-gold">Nepal Police School <i class="fa-solid fa-angle-down text-xs"></i></span>
+        </div>
+        <a href="#" class="hover:text-brand-gold transition">Admission</a>
+        <a href="#" class="hover:text-brand-gold transition">Notice</a>
+        <a href="#" class="hover:text-brand-gold transition">Activities</a>
+        <a href="#" class="hover:text-brand-gold transition">Publication</a>
+        <a href="#" class="hover:text-brand-gold transition">Contact Us</a>
+      </nav>
+
+      <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div class="flex h-1.5 w-full">
+      <div class="flex-1 bg-red-600"></div>
+      <div class="flex-1 bg-white"></div>
+      <div class="flex-1 bg-blue-900"></div>
+      <div class="flex-1 bg-yellow-400"></div>
+    </div>
+
+    <div id="mobileMenu" class="hidden lg:hidden bg-brand-navy px-4 py-4 space-y-3 text-white">
+      <a href="#" class="block py-1">Home</a>
+      <a href="#" class="block py-1">Admission</a>
+      <a href="#" class="block py-1">Notice</a>
+      <a href="#" class="block py-1">Activities</a>
+      <a href="#" class="block py-1">Publication</a>
+      <a href="#" class="block py-1">Contact Us</a>
+    </div>
+  </header>
+
+  <section class="bg-white border-b flex items-stretch shadow-sm overflow-hidden text-sm">
+    <div class="bg-red-800 text-white font-semibold px-4 py-2 flex items-center shrink-0 z-10">
+      Latest Notices
+    </div>
+    <div class="overflow-hidden relative w-full flex items-center py-2">
+      <div class="animate-ticker text-gray-700 font-medium">
+        विद्यार्थीहरूको लत्ता-कपडा आपूर्ति सम्बन्धी दरभाउपत्र आह्वानको सूचना २०८३/०४/०८ &nbsp;&nbsp;|&nbsp;&nbsp; 
+        स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि शिलबन्दी दरभाउपत्र/टेन्डर आह्वान &nbsp;&nbsp;|&nbsp;&nbsp; 
+        Teaching Assistant Application Open for Session 2083
+      </div>
+    </div>
+  </section>
+
+  <section class="relative w-full h-[450px] md:h-[550px] bg-gray-900 overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1600&q=80" 
+        alt="School Assembly" 
+        class="w-full h-full object-cover opacity-60"
+      />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-8 md:p-16">
+      <div class="max-w-4xl">
+        <span class="inline-block bg-brand-red text-white text-xs uppercase px-3 py-1 font-semibold rounded mb-3">
+          Integrity & Leadership
+        </span>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white leading-tight">
+          Nurturing Tomorrow's Disciplined Leaders
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+          Welcome to <br /><span class="text-brand-navy">Nepal Police School</span>
+        </h2>
+        <p class="mt-5 text-gray-600 leading-relaxed text-justify">
+          A prestigious educational institution dedicated to providing quality education with a focus on discipline, integrity, and holistic development. With a strong emphasis on character building and academic excellence, Nepal Police School cultivates responsible citizens and future leaders through its rigorous curriculum and nurturing environment.
+        </p>
+        <div class="mt-6">
+          <a href="#" class="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-blue text-white px-6 py-3 rounded shadow transition">
+            More About Us <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl shadow-md p-4 border border-gray-100 flex flex-col items-center text-center">
+          <img 
+            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80" 
+            alt="School Facility" 
+            class="rounded-xl h-36 w-full object-cover mb-3"
+          />
+          <p class="text-xs text-gray-600 font-medium">State-of-the-art campus infrastructure fostering comprehensive learning.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md p-4 border border-gray-100 flex flex-col items-center text-center">
+          <img 
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80" 
+            alt="Library" 
+            class="rounded-xl h-36 w-full object-cover mb-3"
+          />
+          <p class="text-xs text-gray-600 font-medium">Enriching library fostering a quiet, conducive atmosphere for students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-8">News and Events</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Vacancy Notice</span>
+            <span class="text-xs text-gray-500">August 06, 2026</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Teaching Assistants (Part-time Role)</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            We are inviting enthusiastic and motivated individuals to join our school as Teaching Assistants. This offers practical exposure in teaching and student care within residential life.
+          </p>
+          <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-inside mb-4">
+            <li>Guide students with homework and study routines</li>
+            <li>Lodging and fooding provided on-campus</li>
+            <li>Off-hours coverage: 6:00–7:00 AM, 8:00–10:00 PM</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-white p-4 rounded-xl shadow-sm border flex gap-4 items-center">
+            <div class="w-16 h-16 bg-blue-50 rounded-lg flex flex-col items-center justify-center shrink-0">
+              <span class="text-xs font-semibold text-gray-500 uppercase">July</span>
+              <span class="text-lg font-bold text-brand-navy">30</span>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">July 30, 2026</p>
+              <h4 class="text-sm font-semibold text-gray-800 line-clamp-2">स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि शिलबन्दी दरभाउपत्र।</h4>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl shadow-sm border flex gap-4 items-center">
+            <div class="w-16 h-16 bg-blue-50 rounded-lg flex flex-col items-center justify-center shrink-0">
+              <span class="text-xs font-semibold text-gray-500 uppercase">July</span>
+              <span class="text-lg font-bold text-brand-navy">28</span>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">July 28, 2026</p>
+              <h4 class="text-sm font-semibold text-gray-800 line-clamp-2">स्वागत तथा फेरी भेटौँला कार्यक्रम सम्पन्न।</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-10">Message from Management</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl shadow-sm border overflow-hidden">
+        <div class="h-28 bg-brand-navy flex items-center justify-center relative mb-14">
+          <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden absolute top-14 bg-gray-200">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Chairperson" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-gray-900 text-lg">AIGP Dambar Bahadur BK</h3>
+          <p class="text-xs font-semibold text-brand-red uppercase tracking-wider mt-1">Chairperson</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-sm border overflow-hidden">
+        <div class="h-28 bg-brand-navy flex items-center justify-center relative mb-14">
+          <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden absolute top-14 bg-gray-200">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Principal" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-gray-900 text-lg">Mohan Paudel</h3>
+          <p class="text-xs font-semibold text-brand-red uppercase tracking-wider mt-1">Principal</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-sm border overflow-hidden">
+        <div class="h-28 bg-brand-navy flex items-center justify-center relative mb-14">
+          <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden absolute top-14 bg-gray-200">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Commandant" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-gray-900 text-lg">Dy.S.P. Dipti Karki</h3>
+          <p class="text-xs font-semibold text-brand-red uppercase tracking-wider mt-1">Commandant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative bg-brand-navy py-16 text-center text-white overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide">
+        Trusted by 60,000 Students and Parents
+      </h2>
+      <p class="mt-3 text-base md:text-lg text-gray-300 italic font-light">
+        "Intelligence plus character that is the goal of true education."
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-10">Photo Gallery</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img class="h-48 w-full object-cover rounded-lg shadow-sm hover:scale-[1.02] transition" src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=500&q=80" alt="Gallery Image" />
+      <img class="h-48 w-full object-cover rounded-lg shadow-sm hover:scale-[1.02] transition" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" alt="Gallery Image" />
+      <img class="h-48 w-full object-cover rounded-lg shadow-sm hover:scale-[1.02] transition" src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=500&q=80" alt="Gallery Image" />
+      <img class="h-48 w-full object-cover rounded-lg shadow-sm hover:scale-[1.02] transition" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=500&q=80" alt="Gallery Image" />
+    </div>
+  </section>
+
+  <button id="scrollTopBtn" class="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-red-600 text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Toggle Mobile Navigation
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Scroll to Top behavior
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        scrollTopBtn.classList.add('opacity-100');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        scrollTopBtn.classList.remove('opacity-100');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
