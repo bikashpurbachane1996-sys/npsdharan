@@ -1,302 +1,899 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nepal Police School | Dharan-13, Sunsari</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              blue: '#1a2a6c',
-              navy: '#273c75',
-              red: '#b71540',
-              gold: '#f1c40f',
-              accent: '#30336b'
-            }
-          }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="best school in Nepal, best school in Sanga, school, education, primary school, secondary school, high school, academic excellence, student development, curriculum, extracurricular activities, admissions, teachers, learning, school facilities, child education, online learning, school programs, student success">
+    <meta name="description" content="Nepal Police School offers a comprehensive education program designed to foster academic excellence and holistic development with a focus on discipline, integrity, and student success.">
+
+    <title>Nepal Police School | Best Learning Place | Sanga Nepal</title>
+    <link rel="icon" href="https://www.nps.edu.np/images/policelogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.nps.edu.np/images/policelogo.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --brand-blue: #2d3583;
+            --brand-red: #ed1c24;
+            --brand-gold: #ffcb08;
+            --brand-dark: #1a2d59;
         }
-      }
-    }
-  </script>
-  <style>
-    @keyframes marquee {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .animate-ticker {
-      display: inline-block;
-      white-space: nowrap;
-      animation: marquee 25s linear infinite;
-    }
-    .animate-ticker:hover {
-      animation-play-state: paused;
-    }
-  </style>
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Top Navbar & Police Stripes */
+        header.navbar {
+            background: var(--brand-blue);
+            min-height: 75px;
+            z-index: 1030;
+        }
+
+        .main_menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main_menu li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 14px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .main_menu li a:hover {
+            color: var(--brand-gold);
+        }
+
+        .police-stripe-bar {
+            width: 100%;
+            height: 4px;
+            display: flex;
+            position: sticky;
+            top: 75px;
+            z-index: 1029;
+        }
+
+        /* Notice Ticker */
+        .notice-container {
+            display: flex;
+            align-items: stretch;
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .notice-label {
+            background-color: var(--brand-red);
+            color: #fff;
+            font-weight: 700;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .notice-marquee {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .notice-content {
+            display: inline-block;
+            animation: ticker 35s linear infinite;
+        }
+
+        .notice-content:hover {
+            animation-play-state: paused;
+        }
+
+        .notice-link {
+            color: #4b5563;
+            text-decoration: none;
+            margin-right: 35px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .notice-link:hover {
+            color: var(--brand-red);
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Hero Carousel (Splide) */
+        .hero {
+            position: relative;
+            background: #000;
+        }
+
+        .hero .splide__slide {
+            position: relative;
+            height: 520px;
+        }
+
+        .hero .splide__slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        #herocaption {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            border-left: 5px solid var(--brand-red);
+            z-index: 3;
+        }
+
+        .my-slider-progress {
+            background: rgba(255, 255, 255, 0.3);
+            height: 4px;
+            width: 100%;
+        }
+
+        .my-carousel-progress-bar {
+            background: var(--brand-gold);
+            height: 100%;
+            width: 0;
+            transition: width 400ms ease;
+        }
+
+        /* Section Headings */
+        .styled-heading {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .styled-heading::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--brand-red);
+        }
+
+        .text-center.styled-heading::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Buttons */
+        .btn-custom {
+            background-color: var(--brand-blue);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 6px;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--brand-dark);
+            color: var(--brand-gold);
+        }
+
+        /* Welcome Glimpse Cards */
+        .glimpse-card {
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            min-height: 180px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .glimpse-card.child2, .glimpse-card.child3 {
+            background-color: var(--brand-blue);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* News & Events */
+        .news-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .featured-news {
+            position: relative;
+            flex: 1 1 58%;
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 380px;
+        }
+
+        .featured-news img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-news-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            color: #fff;
+        }
+
+        .featured-news-overlay span {
+            color: var(--brand-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .featured-news-overlay h3 {
+            font-size: 1.4rem;
+            margin-top: 6px;
+            color: #fff;
+        }
+
+        .news-list {
+            flex: 1 1 38%;
+            max-height: 420px;
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .news-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 16px;
+            border-bottom: 1px solid #edf2f7;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .news-item:hover {
+            background: #f8fafc;
+        }
+
+        .news-item img {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .news-item h6 {
+            color: #1f2937;
+            font-size: 0.95rem;
+            margin: 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .news-item span {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* Profile Cards (Management) */
+        .profile-card {
+            position: relative;
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px 16px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-card .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 110px;
+            background: var(--brand-blue);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .profile-card img {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            position: relative;
+            z-index: 2;
+            margin-top: 25px;
+        }
+
+        .profile-card h5 {
+            margin-top: 16px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #1e293b;
+        }
+
+        .profile-card p {
+            color: var(--brand-red);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        /* Swiper Carousel for Activities */
+        .swiper {
+            width: 100%;
+            padding: 30px 0 50px;
+        }
+
+        .swiper-slide {
+            height: 380px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .swiper-slide h3 {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Video Section */
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Testimonials */
+        .testimonial-content {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: relative;
+            min-height: 220px;
+        }
+
+        .testimonial-content .name-tab {
+            background: var(--brand-blue);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 0 12px 12px 0;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-content .author-img-wrapper {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--brand-blue);
+        }
+
+        .testimonial-content .author-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-content .testimonial-text {
+            margin-top: 55px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #4b5563;
+            font-style: italic;
+            border-left: 3px solid var(--brand-blue);
+            padding-left: 12px;
+        }
+
+        /* Photo Gallery */
+        .gallery_container img {
+            border-radius: 8px;
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery_container img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        .second-footer {
+            background: var(--brand-blue);
+            color: #fff;
+        }
+
+        .second-footer a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .second-footer a:hover {
+            color: var(--brand-gold);
+        }
+
+        .second-footer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .second-footer ul li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            color: #fff !important;
+            margin-right: 8px;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #fff;
+            color: var(--brand-blue) !important;
+        }
+
+        /* Back to top */
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: none;
+            z-index: 1050;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            background: var(--brand-red);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 991.98px) {
+            .featured-news, .news-list {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-  <header class="sticky top-0 z-50 bg-brand-blue shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-      <div class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-1 border-2 border-brand-gold">
-          <i class="fa-solid fa-shield-halved text-brand-blue text-2xl"></i>
-        </div>
-        <div class="text-white">
-          <h1 class="text-lg font-bold uppercase tracking-wider leading-tight">Nepal Police School</h1>
-          <p class="text-xs text-gray-200">Sanga, Kavre</p>
-        </div>
-      </div>
+<body>
 
-      <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-white">
-        <a href="#" class="text-brand-gold hover:text-white transition">Home</a>
-        <div class="relative group cursor-pointer">
-          <span class="hover:text-brand-gold">Foundation <i class="fa-solid fa-angle-down text-xs"></i></span>
-        </div>
-        <div class="relative group cursor-pointer">
-          <span class="hover:text-brand-gold">Nepal Police School <i class="fa-solid fa-angle-down text-xs"></i></span>
-        </div>
-        <a href="#" class="hover:text-brand-gold transition">Admission</a>
-        <a href="#" class="hover:text-brand-gold transition">Notice</a>
-        <a href="#" class="hover:text-brand-gold transition">Activities</a>
-        <a href="#" class="hover:text-brand-gold transition">Publication</a>
-        <a href="#" class="hover:text-brand-gold transition">Contact Us</a>
-      </nav>
+    <button type="button" class="btn" id="btn-back-to-top" aria-label="Back to top">
+        <i class="ri-arrow-up-fill"></i>
+    </button>
 
-      <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl focus:outline-none">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
+    <header class="navbar navbar-expand-lg px-4 py-2 sticky-top">
+        <div class="container-fluid">
+            <a href="https://www.nps.edu.np" class="navbar-brand">
+                <img src="https://www.nps.edu.np/images/fulllogo2.png" alt="Nepal Police School" style="width: 210px; object-fit: contain;">
+            </a>
 
-    <div class="flex h-1.5 w-full">
-      <div class="flex-1 bg-red-600"></div>
-      <div class="flex-1 bg-white"></div>
-      <div class="flex-1 bg-blue-900"></div>
-      <div class="flex-1 bg-yellow-400"></div>
-    </div>
+            <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileOffcanvas">
+                <i class="fa-solid fa-bars fs-3"></i>
+            </button>
 
-    <div id="mobileMenu" class="hidden lg:hidden bg-brand-navy px-4 py-4 space-y-3 text-white">
-      <a href="#" class="block py-1">Home</a>
-      <a href="#" class="block py-1">Admission</a>
-      <a href="#" class="block py-1">Notice</a>
-      <a href="#" class="block py-1">Activities</a>
-      <a href="#" class="block py-1">Publication</a>
-      <a href="#" class="block py-1">Contact Us</a>
-    </div>
-  </header>
-
-  <section class="bg-white border-b flex items-stretch shadow-sm overflow-hidden text-sm">
-    <div class="bg-red-800 text-white font-semibold px-4 py-2 flex items-center shrink-0 z-10">
-      Latest Notices
-    </div>
-    <div class="overflow-hidden relative w-full flex items-center py-2">
-      <div class="animate-ticker text-gray-700 font-medium">
-        विद्यार्थीहरूको लत्ता-कपडा आपूर्ति सम्बन्धी दरभाउपत्र आह्वानको सूचना २०८३/०४/०८ &nbsp;&nbsp;|&nbsp;&nbsp; 
-        स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि शिलबन्दी दरभाउपत्र/टेन्डर आह्वान &nbsp;&nbsp;|&nbsp;&nbsp; 
-        Teaching Assistant Application Open for Session 2083
-      </div>
-    </div>
-  </section>
-
-  <section class="relative w-full h-[450px] md:h-[550px] bg-gray-900 overflow-hidden">
-    <div class="absolute inset-0">
-      <img 
-        src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1600&q=80" 
-        alt="School Assembly" 
-        class="w-full h-full object-cover opacity-60"
-      />
-    </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-8 md:p-16">
-      <div class="max-w-4xl">
-        <span class="inline-block bg-brand-red text-white text-xs uppercase px-3 py-1 font-semibold rounded mb-3">
-          Integrity & Leadership
-        </span>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-white leading-tight">
-          Nurturing Tomorrow's Disciplined Leaders
-        </h2>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-          Welcome to <br /><span class="text-brand-navy">Nepal Police School</span>
-        </h2>
-        <p class="mt-5 text-gray-600 leading-relaxed text-justify">
-          A prestigious educational institution dedicated to providing quality education with a focus on discipline, integrity, and holistic development. With a strong emphasis on character building and academic excellence, Nepal Police School cultivates responsible citizens and future leaders through its rigorous curriculum and nurturing environment.
-        </p>
-        <div class="mt-6">
-          <a href="#" class="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-blue text-white px-6 py-3 rounded shadow transition">
-            More About Us <i class="fa-solid fa-chevron-right text-xs"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-        <div class="bg-white rounded-2xl shadow-md p-4 border border-gray-100 flex flex-col items-center text-center">
-          <img 
-            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80" 
-            alt="School Facility" 
-            class="rounded-xl h-36 w-full object-cover mb-3"
-          />
-          <p class="text-xs text-gray-600 font-medium">State-of-the-art campus infrastructure fostering comprehensive learning.</p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-md p-4 border border-gray-100 flex flex-col items-center text-center">
-          <img 
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80" 
-            alt="Library" 
-            class="rounded-xl h-36 w-full object-cover mb-3"
-          />
-          <p class="text-xs text-gray-600 font-medium">Enriching library fostering a quiet, conducive atmosphere for students.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-12 bg-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-gray-900 mb-8">News and Events</h2>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Vacancy Notice</span>
-            <span class="text-xs text-gray-500">August 06, 2026</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Teaching Assistants (Part-time Role)</h3>
-          <p class="text-sm text-gray-600 leading-relaxed mb-4">
-            We are inviting enthusiastic and motivated individuals to join our school as Teaching Assistants. This offers practical exposure in teaching and student care within residential life.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-inside mb-4">
-            <li>Guide students with homework and study routines</li>
-            <li>Lodging and fooding provided on-campus</li>
-            <li>Off-hours coverage: 6:00–7:00 AM, 8:00–10:00 PM</li>
-          </ul>
-        </div>
-
-        <div class="space-y-4">
-          <div class="bg-white p-4 rounded-xl shadow-sm border flex gap-4 items-center">
-            <div class="w-16 h-16 bg-blue-50 rounded-lg flex flex-col items-center justify-center shrink-0">
-              <span class="text-xs font-semibold text-gray-500 uppercase">July</span>
-              <span class="text-lg font-bold text-brand-navy">30</span>
+            <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+                <ul class="main_menu">
+                    <li><a href="https://www.nps.edu.np">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Foundation</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/about-us">About Us</a></li>
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/our-history">History</a></li>
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/milestones">Milestones</a></li>
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/facilities">Facilities</a></li>
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/school-management-committee">SMC Committee</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Academics</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/stream-junior-wings-grade-4-6">Junior Wings (4-6)</a></li>
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/stream-senior-wing-grade-7-10">Senior Wings (7-10)</a></li>
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/stream-science-wing-grade-11-&-12">Science Wing (+2)</a></li>
+                            <li><a class="dropdown-item" href="https://www.nps.edu.np/stream-management-wing-grade-11-&12">Management Wing (+2)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.nps.edu.np/admission">Admission</a></li>
+                    <li><a href="https://www.nps.edu.np/notices">Notice</a></li>
+                    <li><a href="https://www.nps.edu.np/eca-cca">Activities</a></li>
+                    <li><a href="https://www.nps.edu.np/gallery">Gallery</a></li>
+                    <li><a href="https://www.nps.edu.np/contact-us">Contact Us</a></li>
+                </ul>
             </div>
-            <div>
-              <p class="text-xs text-gray-400">July 30, 2026</p>
-              <h4 class="text-sm font-semibold text-gray-800 line-clamp-2">स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि शिलबन्दी दरभाउपत्र।</h4>
+        </div>
+    </header>
+
+    <div class="police-stripe-bar">
+        <div style="background-color: #fff; flex: 1;"></div>
+        <div style="background-color: var(--brand-red); flex: 2;"></div>
+        <div style="background-color: #fff; flex: 1;"></div>
+        <div style="background-color: var(--brand-blue); flex: 3;"></div>
+        <div style="background-color: var(--brand-gold); flex: 2;"></div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileOffcanvas">
+        <div class="offcanvas-header text-white" style="background: var(--brand-blue);">
+            <h5 class="offcanvas-title">Nepal Police School</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="accordion accordion-flush" id="offcanvasAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <a href="https://www.nps.edu.np" class="accordion-button no-arrow py-3 text-dark text-decoration-none">Home</a>
+                    </h2>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFoundation">
+                            Foundation
+                        </button>
+                    </h2>
+                    <div id="collapseFoundation" class="accordion-collapse collapse" data-bs-parent="#offcanvasAccordion">
+                        <div class="accordion-body px-3 py-2">
+                            <ul class="list-unstyled">
+                                <li class="py-1"><a href="https://www.nps.edu.np/about-us" class="text-decoration-none text-muted">About Us</a></li>
+                                <li class="py-1"><a href="https://www.nps.edu.np/our-history" class="text-decoration-none text-muted">History</a></li>
+                                <li class="py-1"><a href="https://www.nps.edu.np/facilities" class="text-decoration-none text-muted">Facilities</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <a href="https://www.nps.edu.np/admission" class="accordion-button no-arrow py-3 text-dark text-decoration-none">Admission</a>
+                    </h2>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <a href="https://www.nps.edu.np/notices" class="accordion-button no-arrow py-3 text-dark text-decoration-none">Notices</a>
+                    </h2>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <a href="https://www.nps.edu.np/contact-us" class="accordion-button no-arrow py-3 text-dark text-decoration-none">Contact Us</a>
+                    </h2>
+                </div>
             </div>
-          </div>
+        </div>
+    </div>
 
-          <div class="bg-white p-4 rounded-xl shadow-sm border flex gap-4 items-center">
-            <div class="w-16 h-16 bg-blue-50 rounded-lg flex flex-col items-center justify-center shrink-0">
-              <span class="text-xs font-semibold text-gray-500 uppercase">July</span>
-              <span class="text-lg font-bold text-brand-navy">28</span>
+    <div class="notice-container">
+        <div class="notice-label">Latest Notices</div>
+        <div class="notice-marquee">
+            <div class="notice-content">
+                <a href="https://www.nps.edu.np/details-vacancy-announcement-2083-04-21" class="notice-link">vacancy announcement 2083-04-21</a>
+                <a href="https://www.nps.edu.np" class="notice-link">स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि सिलबन्दी दरभाउपत्र/टेन्डर आव्हान ।</a>
+                <a href="https://www.nps.edu.np" class="notice-link">विद्यार्थीहरुको लत्ता–कपडा आपूर्ति सम्बन्धी दरभाउपत्र आवहानको सूचना २०८३/०४/०८</a>
             </div>
-            <div>
-              <p class="text-xs text-gray-400">July 28, 2026</p>
-              <h4 class="text-sm font-semibold text-gray-800 line-clamp-2">स्वागत तथा फेरी भेटौँला कार्यक्रम सम्पन्न।</h4>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="https://www.nps.edu.np/public/uploads/697acefbb2e1c.jpg" alt="School Programs">
+                        <span id="herocaption">निवर्तमान समादेशक प्र.उ. श्री कुमार बिक्रम थापाज्यूबाट समादेशक प्र.ना.उ. दिप्ती कार्कीज्यूलाई विद्यालयको झण्डा हस्तान्तरण गरिदै ।</span>
+                    </li>
+                    <li class="splide__slide">
+                        <img src="https://www.nps.edu.np/public/uploads/694548c562474.jpg" alt="Football Trophy">
+                        <span id="herocaption">३१ औं अन्तर माध्यामिक विद्यालय आइजीपी फुटबल रनिङ ट्रफी प्रतियोगिता २०८२ उद्‍घाटन पश्चात प्रमुख अतिथिज्यूबाट रेफ्रिलाई बल हस्तान्तरण गरि खेल सुरु गरिदै ।</span>
+                    </li>
+                    <li class="splide__slide">
+                        <img src="https://www.nps.edu.np/public/uploads/694548a781477.jpg" alt="Prize Distribution">
+                        <span id="herocaption">३१ औं अन्तर माध्यामिक विद्यालय आइजीपी रनिङ ट्रफी फुटबल प्रतियोगिता २०८२ मा विजयी टिम नेपाल पुलिस स्कुल साँगा (रातो) टिमका खेलाडीलाई ट्रफी प्रदान गर्दै ।</span>
+                    </li>
+                </ul>
             </div>
-          </div>
+            <div class="my-slider-progress">
+                <div class="my-carousel-progress-bar"></div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-extrabold text-gray-900 mb-10">Message from Management</h2>
+    <section class="container my-5 py-4">
+        <div class="row align-items-center g-5" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-lg-6">
+                <h1 class="styled-heading mb-4">Welcome to <br>Nepal Police School</h1>
+                <p class="text-secondary leading-relaxed" style="text-align: justify; line-height: 1.8;">
+                    A prestigious educational institution dedicated to providing quality education with a focus on discipline, integrity, and holistic development. With a strong emphasis on character building and academic excellence, Nepal Police School cultivates responsible citizens and future leaders through its rigorous curriculum and nurturing environment.
+                </p>
+                <div class="mt-4">
+                    <a href="https://www.nps.edu.np/about-us" class="btn-custom text-decoration-none">
+                        More About Us <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-2xl shadow-sm border overflow-hidden">
-        <div class="h-28 bg-brand-navy flex items-center justify-center relative mb-14">
-          <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden absolute top-14 bg-gray-200">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Chairperson" class="w-full h-full object-cover" />
-          </div>
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="glimpse-card" style="background-image:url('https://www.nps.edu.np/public/uploads/6757f9516cb1e.jpg')"></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="glimpse-card child2">
+                            Unleash your potential in our enriching library, fostering a conducive learning atmosphere for students.
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="glimpse-card child3">
+                            Comprehensive sports, athletic programs, and disciplined residential education.
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="glimpse-card" style="background-image:url('https://www.nps.edu.np/public/uploads/6757f9519423b.jpg')"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="p-6">
-          <h3 class="font-bold text-gray-900 text-lg">AIGP Dambar Bahadur BK</h3>
-          <p class="text-xs font-semibold text-brand-red uppercase tracking-wider mt-1">Chairperson</p>
+    </section>
+
+    <section class="container my-5">
+        <div class="video-responsive shadow rounded-4 overflow-hidden" data-aos="fade-up">
+            <iframe src="https://www.youtube-nocookie.com/embed/atKzkrqYEv8?autoplay=0&mute=1&rel=0&controls=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
         </div>
-      </div>
+    </section>
 
-      <div class="bg-white rounded-2xl shadow-sm border overflow-hidden">
-        <div class="h-28 bg-brand-navy flex items-center justify-center relative mb-14">
-          <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden absolute top-14 bg-gray-200">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Principal" class="w-full h-full object-cover" />
-          </div>
+    <section class="py-5" style="background: #f8fafc;">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="styled-heading mb-4">News and Events</h1>
+            <div class="news-sections">
+                <div class="featured-news shadow-sm">
+                    <img src="https://www.nps.edu.np/public/uploads/6a745ef535cc0.jpg" alt="Featured News">
+                    <div class="featured-news-overlay">
+                        <span>August 06, 2026</span>
+                        <a href="https://www.nps.edu.np/details-vacancy-announcement-2083-04-21" class="text-decoration-none">
+                            <h3>Vacancy Announcement 2083-04-21</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="news-list p-2">
+                    <a href="https://www.nps.edu.np" class="news-item">
+                        <img src="https://www.nps.edu.np/images/Signature%20Block.jpg" alt="News Item">
+                        <div>
+                            <span>July 30, 2026</span>
+                            <h6>स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि सिलबन्दी दरभाउपत्र/टेन्डर आव्हान ।</h6>
+                        </div>
+                    </a>
+                    <a href="https://www.nps.edu.np" class="news-item">
+                        <img src="https://www.nps.edu.np/public/uploads/6a683e5abce4f.jpg" alt="News Item">
+                        <div>
+                            <span>July 28, 2026</span>
+                            <h6>स्वागत तथा फेरी भेटौंला कार्यक्रम</h6>
+                        </div>
+                    </a>
+                    <a href="https://www.nps.edu.np" class="news-item">
+                        <img src="https://www.nps.edu.np/images/Signature%20Block.jpg" alt="News Item">
+                        <div>
+                            <span>July 24, 2026</span>
+                            <h6>विद्यार्थीहरुको लत्ता–कपडा आपूर्ति सम्बन्धी दरभाउपत्र आवहानको सूचना</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="p-6">
-          <h3 class="font-bold text-gray-900 text-lg">Mohan Paudel</h3>
-          <p class="text-xs font-semibold text-brand-red uppercase tracking-wider mt-1">Principal</p>
+    </section>
+
+    <section class="container my-5 py-4 text-center">
+        <h1 class="styled-heading text-center mb-5" data-aos="fade-up">Message from Management</h1>
+        <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-md-4">
+                <a href="https://www.nps.edu.np/message-Chairperson" class="text-decoration-none">
+                    <div class="profile-card text-center">
+                        <div class="card-bg"></div>
+                        <img src="https://www.nps.edu.np/public/uploads/6a681deaee9f4.jpg" alt="AIGP Dambar Bahadur BK">
+                        <h5>AIGP Dambar Bahadur BK</h5>
+                        <p>Chairperson</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="https://www.nps.edu.np/message-Principal" class="text-decoration-none">
+                    <div class="profile-card text-center">
+                        <div class="card-bg"></div>
+                        <img src="https://www.nps.edu.np/public/uploads/66dd4032e38c9.jpg" alt="Mohan Paudel">
+                        <h5>Mohan Paudel</h5>
+                        <p>Principal</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="https://www.nps.edu.np/message-Commandant" class="text-decoration-none">
+                    <div class="profile-card text-center">
+                        <div class="card-bg"></div>
+                        <img src="https://www.nps.edu.np/public/uploads/697acd89aac94.png" alt="Dy.S.P. Dipti Karki">
+                        <h5>Dy.S.P. Dipti Karki</h5>
+                        <p>Commandant</p>
+                    </div>
+                </a>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="bg-white rounded-2xl shadow-sm border overflow-hidden">
-        <div class="h-28 bg-brand-navy flex items-center justify-center relative mb-14">
-          <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden absolute top-14 bg-gray-200">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Commandant" class="w-full h-full object-cover" />
-          </div>
+    <section class="container-fluid d-flex align-items-center justify-content-center text-center" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://www.nps.edu.np/public/uploads/6757fda05afe5.jpg') fixed center/cover; height: 50vh;">
+        <div data-aos="fade-up">
+            <h2 class="text-white text-uppercase fw-bold tracking-wide">Trusted by 60,000 Students and Parents</h2>
+            <h5 class="text-white fw-light italic mt-2">“Intelligence plus character that is the goal of true education.”</h5>
         </div>
-        <div class="p-6">
-          <h3 class="font-bold text-gray-900 text-lg">Dy.S.P. Dipti Karki</h3>
-          <p class="text-xs font-semibold text-brand-red uppercase tracking-wider mt-1">Commandant</p>
+    </section>
+
+    <section class="container my-5 py-4">
+        <div class="row align-items-center" data-aos="fade-up">
+            <div class="col-lg-4">
+                <h1 class="styled-heading mb-3">ECA & CCA Programs</h1>
+                <p class="text-secondary leading-relaxed">
+                    Our school offers a vibrant array of extracurricular activities, ranging from competitive sports teams to creative arts clubs, providing students with opportunities to explore their passions outside the classroom.
+                </p>
+                <a href="https://www.nps.edu.np/eca-cca" class="btn-custom text-decoration-none mt-2">More About Programs</a>
+            </div>
+            <div class="col-lg-8">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image: url('https://www.nps.edu.np/public/uploads/67c6d5f61fcf3.jpg');">
+                            <h3>School Sports</h3>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url('https://www.nps.edu.np/public/uploads/66d82f87c36a7.jpg');">
+                            <h3>Football Competition</h3>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url('https://www.nps.edu.np/public/uploads/66d82e6f0b99b.jpg');">
+                            <h3>Community Services</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="relative bg-brand-navy py-16 text-center text-white overflow-hidden">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide">
-        Trusted by 60,000 Students and Parents
-      </h2>
-      <p class="mt-3 text-base md:text-lg text-gray-300 italic font-light">
-        "Intelligence plus character that is the goal of true education."
-      </p>
-    </div>
-  </section>
+    <section class="py-5" style="background: #f1f5f9;">
+        <div class="container" data-aos="fade-up">
+            <h1 class="styled-heading text-center mb-5">What Our Alumni Say</h1>
+            <div class="owl-carousel owl-theme">
+                <div class="item p-2">
+                    <div class="testimonial-content">
+                        <div class="name-tab">Anjana Thakuri</div>
+                        <div class="author-img-wrapper">
+                            <img src="https://www.nps.edu.np/public/uploads/67ecd4625148d.jpg" class="author-img" alt="Anjana Thakuri">
+                        </div>
+                        <div class="testimonial-text">
+                            "Greetings from former classmates at Nepal Police School, Sanga Kavre! The discipline and academic rigor here laid the foundation for my professional life."
+                        </div>
+                    </div>
+                </div>
+                <div class="item p-2">
+                    <div class="testimonial-content">
+                        <div class="name-tab">Ranjan Thapa</div>
+                        <div class="author-img-wrapper">
+                            <img src="https://www.nps.edu.np/public/uploads/67ecd9aa2d3c3.jpg" class="author-img" alt="Ranjan Thapa">
+                        </div>
+                        <div class="testimonial-text">
+                            "As alumni, we look back with immense pride and gratitude for the holistic foundation this institution offered us."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-10">Photo Gallery</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <img class="h-48 w-full object-cover rounded-lg shadow-sm hover:scale-[1.02] transition" src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=500&q=80" alt="Gallery Image" />
-      <img class="h-48 w-full object-cover rounded-lg shadow-sm hover:scale-[1.02] transition" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" alt="Gallery Image" />
-      <img class="h-48 w-full object-cover rounded-lg shadow-sm hover:scale-[1.02] transition" src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=500&q=80" alt="Gallery Image" />
-      <img class="h-48 w-full object-cover rounded-lg shadow-sm hover:scale-[1.02] transition" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=500&q=80" alt="Gallery Image" />
-    </div>
-  </section>
-
-  <button id="scrollTopBtn" class="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-red-600 text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
-  <script>
-    // Toggle Mobile Navigation
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Scroll to Top behavior
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-        scrollTopBtn.classList.add('opacity-100');
-      } else {
-        scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
-        scrollTopBtn.classList.remove('opacity-100');
-      }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-</body>
-</html>
+    <section class="container my-5 py-4">
+        <div class="row align-items-center g-4 p-4 rounded-4 bg-light">
+            <div class="col
