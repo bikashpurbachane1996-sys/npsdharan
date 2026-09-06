@@ -6,7 +6,6 @@
   <title>Nepal Police School Dharan</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
   <style>
@@ -19,6 +18,7 @@
 
     body {
       background-color: #f8fafc;
+      overflow-x: hidden;
     }
 
     /* 1. Main Navigation Bar */
@@ -262,10 +262,129 @@
       transition: width 400ms ease;
     }
 
+    /* 5. Welcome Section & Animated Popup Cards */
+    .welcome-container {
+      max-width: 1240px;
+      margin: 80px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .welcome-text h2 {
+      font-size: 2.5rem;
+      color: #1e293b;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .welcome-text p {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 32px;
+    }
+
+    .btn-more-about {
+      background-color: #273773;
+      color: #ffffff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(39, 55, 115, 0.2);
+    }
+
+    .btn-more-about:hover {
+      background-color: #1a2550;
+      color: #ffcb08;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 12px -2px rgba(39, 55, 115, 0.3);
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    /* Card base + Animated popup styling */
+    .popup-card {
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      transform: scale(0.85) translateY(30px);
+      animation: popupEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+
+    .popup-card:hover {
+      transform: scale(1.03) translateY(-6px) !important;
+      box-shadow: 0 20px 30px -10px rgba(39, 55, 115, 0.2);
+    }
+
+    /* Sequential popup delays */
+    .card-1 { animation-delay: 0.1s; }
+    .card-2 { animation-delay: 0.25s; }
+    .card-3 { animation-delay: 0.4s; }
+    .card-4 { animation-delay: 0.55s; }
+
+    @keyframes popupEntrance {
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    /* Image cards */
+    .popup-card.image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      transition: transform 0.5s ease;
+    }
+
+    .popup-card.image-card:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Text info cards */
+    .popup-card.text-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 24px;
+      text-align: center;
+      color: #334155;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .splide__slide { height: 50vh; min-height: 350px; }
       .slide-caption { font-size: 0.9rem; left: 15px; right: 15px; bottom: 15px; }
+      .welcome-container { grid-template-columns: 1fr; gap: 40px; margin: 50px auto; }
+      .welcome-text h2 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -356,7 +475,7 @@
           <li class="splide__slide">
             <img src="krishnajanmasthami.jpeg" alt="School Ceremony">
             <div class="slide-caption">
-"श्रीकृष्ण जन्माष्टमीको पावन अवसरमा यहाँ तथा यहाँको सम्पूर्ण परिवारमा सुख, शान्ति, सुस्वास्थ्य र समृद्धिको हार्दिक मङ्गलमय शुभकामना। जय श्रीकृष्ण! 🙏🌸"
+              "श्रीकृष्ण जन्माष्टमीको पावन अवसरमा यहाँ तथा यहाँको सम्पूर्ण परिवारमा सुख, शान्ति, सुस्वास्थ्य र समृद्धिको हार्दिक मङ्गलमय शुभकामना। जय श्रीकृष्ण! 🙏🌸"
             </div>
           </li>
           <li class="splide__slide">
@@ -375,6 +494,36 @@
       </div>
       <div class="slider-progress">
         <div class="slider-progress-bar" id="progress-bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="welcome-container">
+    <div class="welcome-text">
+      <h2>Welcome to Nepal Police School</h2>
+      <p>
+        Prestigious educational institution dedicated to providing quality education with a focus on discipline, integrity, and holistic development. With a strong emphasis on character building and academic excellence, Nepal Police School cultivates responsible citizens and future leaders through its rigorous curriculum and nurturing environment.
+      </p>
+      <a href="#" class="btn-more-about">
+        More About Us <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+
+    <div class="welcome-grid">
+      <div class="popup-card image-card card-1">
+        <img src="https://www.nps.edu.np/public/uploads/6757f9516cb1e.jpg" alt="Campus Building">
+      </div>
+
+      <div class="popup-card text-card card-2">
+        <p>Unleash your potential in our enriching library, fostering a conducive learning atmosphere for students.</p>
+      </div>
+
+      <div class="popup-card text-card card-3">
+        <p>Unleash your potential in our enriching library, fostering a conducive learning atmosphere for students.</p>
+      </div>
+
+      <div class="popup-card image-card card-4">
+        <img src="https://www.nps.edu.np/public/uploads/6757f9519423b.jpg" alt="Student Assembly">
       </div>
     </div>
   </section>
