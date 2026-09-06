@@ -6,6 +6,8 @@
   <title>Nepal Police School Dharan</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
   <style>
     * {
@@ -21,7 +23,7 @@
 
     /* 1. Main Navigation Bar */
     .header-navbar {
-      background-color: #273773; /* Deep Nepal Police Navy */
+      background-color: #273773;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -29,7 +31,6 @@
       min-height: 75px;
     }
 
-    /* Brand Logo & Titles */
     .brand-section {
       display: flex;
       align-items: center;
@@ -43,7 +44,6 @@
       gap: 10px;
     }
 
-    /* Primary circular school crest */
     .brand-logos img.school-logo {
       height: 54px;
       width: 54px;
@@ -75,7 +75,6 @@
       color: #cbd5e1;
     }
 
-    /* Navigation Links */
     .nav-links {
       display: flex;
       align-items: center;
@@ -107,7 +106,6 @@
       font-size: 0.7rem;
     }
 
-    /* Dropdown Menus */
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -146,27 +144,12 @@
       flex-direction: column;
     }
 
-    .stripe-red {
-      height: 3px;
-      background-color: #ed1c24;
-    }
+    .stripe-red { height: 3px; background-color: #ed1c24; }
+    .stripe-white { height: 2px; background-color: #ffffff; }
+    .stripe-blue { height: 3px; background-color: #273773; }
+    .stripe-yellow { height: 3px; background-color: #ffcb08; }
 
-    .stripe-white {
-      height: 2px;
-      background-color: #ffffff;
-    }
-
-    .stripe-blue {
-      height: 3px;
-      background-color: #273773;
-    }
-
-    .stripe-yellow {
-      height: 3px;
-      background-color: #ffcb08;
-    }
-
-    /* 3. Notice Bar Container */
+    /* 3. Notice Bar */
     .notice-bar {
       display: flex;
       align-items: stretch;
@@ -179,7 +162,7 @@
     }
 
     .notice-badge {
-      background-color: #8c1d18; /* Burgundy Red */
+      background-color: #8c1d18;
       color: #ffffff;
       font-size: 0.95rem;
       font-weight: 700;
@@ -222,18 +205,67 @@
     }
 
     @keyframes scroll-left {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* 4. Full-Width Hero Slider */
+    .hero-slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .splide__slide {
+      position: relative;
+      height: 75vh;
+      min-height: 480px;
+    }
+
+    .splide__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      right: 30px;
+      max-width: 900px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      padding: 18px 24px;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      border-left: 5px solid #ed1c24;
+      backdrop-filter: blur(4px);
+    }
+
+    .slider-progress {
+      background: rgba(255, 255, 255, 0.3);
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .slider-progress-bar {
+      background: #ffcb08;
+      height: 100%;
+      width: 0;
+      transition: width 400ms ease;
     }
 
     @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
+      .nav-links { display: none; }
+      .splide__slide { height: 50vh; min-height: 350px; }
+      .slide-caption { font-size: 0.9rem; left: 15px; right: 15px; bottom: 15px; }
     }
   </style>
 </head>
@@ -243,7 +275,7 @@
     <a href="#" class="brand-section">
       <div class="brand-logos">
         <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
-        <img class="school-logo" src="school-logo.jpg" alt="Nepal Police School Dharan Logo">
+        <img class="school-logo" src="school logo.jpg" alt="Nepal Police School Dharan Logo">
       </div>
       <div class="brand-text">
         <h1>Nepal Police School</h1>
@@ -316,6 +348,58 @@
       </div>
     </div>
   </section>
+
+  <section class="hero-slider-container">
+    <div class="splide" id="hero-splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="https://www.nps.edu.np/public/uploads/697acefbb2e1c.jpg" alt="School Ceremony">
+            <div class="slide-caption">
+              निवर्तमान समादेशक प्र.उ. श्री कुमार बिक्रम थापाज्यूबाट समादेशक प्र.ना.उ. दिप्ती कार्कीज्यूलाई विद्यालयको झण्डा हस्तान्तरण गरिदै ।
+            </div>
+          </li>
+          <li class="splide__slide">
+            <img src="https://www.nps.edu.np/public/uploads/694548c562474.jpg" alt="Tournament Opening">
+            <div class="slide-caption">
+              ३१ औं अन्तर माध्यामिक विद्यालय आइजीपी फुटबल रनिङ ट्रफी प्रतियोगिता २०८२ उद्‍घाटन समारोह ।
+            </div>
+          </li>
+          <li class="splide__slide">
+            <img src="https://www.nps.edu.np/public/uploads/694548a781477.jpg" alt="Prize Distribution">
+            <div class="slide-caption">
+              प्रतियोगितामा विजयी खेलाडीहरूलाई ट्रफी, नगद पुरस्कार तथा प्रमाणपत्र प्रदान गर्दै प्रमुख अतिथिज्यू ।
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="slider-progress">
+        <div class="slider-progress-bar" id="progress-bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    const splide = new Splide('#hero-splide', {
+      type: 'loop',
+      perPage: 1,
+      autoplay: true,
+      interval: 4500,
+      pauseOnHover: true,
+      arrows: false,
+      pagination: false
+    });
+
+    const progressBar = document.getElementById('progress-bar');
+    splide.on('mounted move', function () {
+      const end = splide.Components.Controller.getEnd() + 1;
+      const rate = Math.min((splide.index + 1) / end, 1);
+      progressBar.style.width = String(100 * rate) + '%';
+    });
+
+    splide.mount();
+  </script>
 
 </body>
 </html>
