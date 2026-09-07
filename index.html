@@ -375,7 +375,7 @@
       font-weight: 500;
     }
 
-    /* 6. Full-Width Edge-to-Edge Video Banner */
+    /* 6. Full-Width Video Banner */
     .video-full-section {
       width: 100%;
       background-color: #000000;
@@ -386,7 +386,7 @@
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 50%; /* Cinematic aspect ratio */
+      padding-bottom: 50%;
       height: 0;
       overflow: hidden;
       background: #000000;
@@ -401,18 +401,146 @@
       border: 0;
     }
 
+    /* 7. News and Events Section */
+    .news-events-section {
+      max-width: 1240px;
+      margin: 80px auto;
+      padding: 0 24px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 35px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    /* Featured Notice Card */
+    .featured-notice-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2e8f0;
+      background-color: #ffffff;
+      display: flex;
+      min-height: 400px;
+    }
+
+    .featured-notice-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .featured-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      padding: 12px 20px;
+      border-radius: 8px;
+      border-left: 4px solid #ed1c24;
+      color: #ffffff;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .featured-overlay:hover {
+      transform: translateY(-2px);
+    }
+
+    .featured-overlay span {
+      font-size: 0.8rem;
+      color: #ffcb08;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .featured-overlay h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    /* Side Event Cards List */
+    .events-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .event-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #ffffff;
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(39, 55, 115, 0.12);
+    }
+
+    .event-card img {
+      width: 85px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .event-info span {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .event-info h4 {
+      font-size: 0.95rem;
+      color: #1e293b;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: color 0.2s ease;
+    }
+
+    .event-card:hover .event-info h4 {
+      color: #273773;
+    }
+
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .splide__slide { height: 50vh; min-height: 350px; }
       .slide-caption { font-size: 0.9rem; left: 15px; right: 15px; bottom: 15px; }
       .welcome-container { grid-template-columns: 1fr; gap: 40px; margin: 50px auto; }
       .welcome-text h2 { font-size: 2rem; }
-      .video-container { padding-bottom: 56.25%; } /* 16:9 on mobile */
+      .video-container { padding-bottom: 56.25%; }
+      .news-grid { grid-template-columns: 1fr; }
+      .featured-notice-card { min-height: 300px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Header Navigation -->
   <header class="header-navbar">
     <a href="#" class="brand-section">
       <div class="brand-logos">
@@ -471,6 +599,7 @@
     </ul>
   </header>
 
+  <!-- Police Color Stripes Ribbon -->
   <div class="police-stripes">
     <div class="stripe-white"></div>
     <div class="stripe-blue"></div>
@@ -480,6 +609,7 @@
     <div class="stripe-red"></div>
   </div>
 
+  <!-- Latest Notices Section -->
   <section class="notice-bar">
     <div class="notice-badge">Latest Notices</div>
     <div class="notice-marquee-wrapper">
@@ -491,6 +621,7 @@
     </div>
   </section>
 
+  <!-- Hero Slider -->
   <section class="hero-slider-container">
     <div class="splide" id="hero-splide">
       <div class="splide__track">
@@ -521,6 +652,7 @@
     </div>
   </section>
 
+  <!-- Welcome Section -->
   <section class="welcome-container">
     <div class="welcome-text">
       <h2>Welcome to Nepal Police School</h2>
@@ -536,29 +668,69 @@
       <div class="popup-card image-card card-1">
         <img src="dig.jpg" alt="Campus Building">
       </div>
-
       <div class="popup-card text-card card-2">
         <p>Unleash your potential in our enriching library, fostering a conducive learning atmosphere for students.</p>
       </div>
-
       <div class="popup-card text-card card-3">
         <p>Unleash your potential in our enriching library, fostering a conducive learning atmosphere for students.</p>
       </div>
-
       <div class="popup-card image-card card-4">
         <img src="school.jpg" alt="Student Assembly">
       </div>
     </div>
   </section>
 
+  <!-- Full-Width Video Section -->
   <section class="video-full-section">
     <div class="video-container">
       <iframe 
-        src="https://www.youtube.com/watch?v=VGwk3ZYcCfo" 
+        src="https://www.youtube.com/embed/VGwk3ZYcCfo?autoplay=1&mute=1&loop=1&playlist=VGwk3ZYcCfo&controls=1" 
         title="Nepal Police School Video" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
       </iframe>
+    </div>
+  </section>
+
+  <!-- 7. News and Events Section -->
+  <section class="news-events-section">
+    <h2 class="section-title">News and Events</h2>
+    <div class="news-grid">
+      <!-- Left Featured Card -->
+      <div class="featured-notice-card">
+        <img src="https://www.nps.edu.np/public/uploads/6a745ef535cc0.jpg" alt="Teaching Assistant Vacancy">
+        <a href="#" class="featured-overlay">
+          <span>August 06, 2026</span>
+          <h3>vacancy announcement 2083-04-21</h3>
+        </a>
+      </div>
+
+      <!-- Right Event List -->
+      <div class="events-list">
+        <a href="#" class="event-card">
+          <img src="https://www.nps.edu.np/images/Signature%20Block.jpg" alt="Notice Thumbnail">
+          <div class="event-info">
+            <span>July 30, 2026</span>
+            <h4>स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि सिलबन्दी दरभाउपत्र/टेन्डर आव्हान ।</h4>
+          </div>
+        </a>
+
+        <a href="#" class="event-card">
+          <img src="https://www.nps.edu.np/public/uploads/6a683e5abce4f.jpg" alt="Event Thumbnail">
+          <div class="event-info">
+            <span>July 28, 2026</span>
+            <h4>स्वागत तथा फेरी भेटौँला कार्यक्रम</h4>
+          </div>
+        </a>
+
+        <a href="#" class="event-card">
+          <img src="https://www.nps.edu.np/images/Signature%20Block.jpg" alt="Notice Thumbnail">
+          <div class="event-info">
+            <span>July 24, 2026</span>
+            <h4>विद्यार्थीहरुको लत्ता–कपडा आपूर्ति सम्बन्धी दरभाउपत्र आवहानको सूचना २०८३/०४/०८</h4>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
