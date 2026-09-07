@@ -422,7 +422,6 @@
       align-items: start;
     }
 
-    /* Featured Notice Card */
     .featured-notice-card {
       position: relative;
       border-radius: 16px;
@@ -473,7 +472,6 @@
       letter-spacing: 0.2px;
     }
 
-    /* Side Event Cards List */
     .events-list {
       display: flex;
       flex-direction: column;
@@ -526,6 +524,81 @@
       color: #273773;
     }
 
+    /* 8. Message from Management Section */
+    .management-section {
+      max-width: 1240px;
+      margin: 80px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .management-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .mgmt-card {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+
+    .mgmt-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(39, 55, 115, 0.15);
+    }
+
+    .mgmt-header {
+      background-color: #273773;
+      height: 130px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mgmt-avatar-wrapper {
+      position: absolute;
+      bottom: -60px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .mgmt-avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mgmt-body {
+      padding: 75px 20px 30px;
+    }
+
+    .mgmt-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+
+    .mgmt-body p {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #6366f1;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .splide__slide { height: 50vh; min-height: 350px; }
@@ -535,6 +608,7 @@
       .video-container { padding-bottom: 56.25%; }
       .news-grid { grid-template-columns: 1fr; }
       .featured-notice-card { min-height: 300px; }
+      .management-grid { grid-template-columns: 1fr; gap: 24px; }
     }
   </style>
 </head>
@@ -692,11 +766,10 @@
     </div>
   </section>
 
-  <!-- 7. News and Events Section -->
+  <!-- News and Events Section -->
   <section class="news-events-section">
     <h2 class="section-title">News and Events</h2>
     <div class="news-grid">
-      <!-- Left Featured Card -->
       <div class="featured-notice-card">
         <img src="https://www.nps.edu.np/public/uploads/6a745ef535cc0.jpg" alt="Teaching Assistant Vacancy">
         <a href="#" class="featured-overlay">
@@ -705,7 +778,6 @@
         </a>
       </div>
 
-      <!-- Right Event List -->
       <div class="events-list">
         <a href="#" class="event-card">
           <img src="https://www.nps.edu.np/images/Signature%20Block.jpg" alt="Notice Thumbnail">
@@ -731,6 +803,53 @@
           </div>
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- 8. Message from Management Section -->
+  <section class="management-section">
+    <h2 class="section-title">Message from Management</h2>
+    <div class="management-grid">
+      
+      <!-- Chairperson -->
+      <div class="mgmt-card">
+        <div class="mgmt-header">
+          <div class="mgmt-avatar-wrapper">
+            <img src="chairman.jpg" alt="SSP Gyanendra Prasad Fuyal" onerror="this.src='https://www.nps.edu.np/public/uploads/6a681deaee9f4.jpg'">
+          </div>
+        </div>
+        <div class="mgmt-body">
+          <h3>SSP Gyanendra Prasad Fuyal</h3>
+          <p>CHAIRPERSON</p>
+        </div>
+      </div>
+
+      <!-- Principal -->
+      <div class="mgmt-card">
+        <div class="mgmt-header">
+          <div class="mgmt-avatar-wrapper">
+            <img src="principal.jpg" alt="Monika Subba (Rai)" onerror="this.src='https://www.nps.edu.np/public/uploads/66dd4032e38c9.jpg'">
+          </div>
+        </div>
+        <div class="mgmt-body">
+          <h3>Monika Subba (Rai)</h3>
+          <p>PRINCIPAL</p>
+        </div>
+      </div>
+
+      <!-- Commandant -->
+      <div class="mgmt-card">
+        <div class="mgmt-header">
+          <div class="mgmt-avatar-wrapper">
+            <img src="commandant.jpg" alt="Inspector Anita Mahat" onerror="this.src='https://www.nps.edu.np/public/uploads/697acd89aac94.png'">
+          </div>
+        </div>
+        <div class="mgmt-body">
+          <h3>Inspector Anita Mahat</h3>
+          <p>COMMANDANT</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
