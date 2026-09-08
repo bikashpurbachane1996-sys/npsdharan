@@ -7,7 +7,7 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-  <!-- Swiper.js CSS for 3D Coverflow -->
+  <!-- Swiper.js CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
   <style>
@@ -707,7 +707,6 @@
       display: block;
     }
 
-    /* Text label on slide (appears only on the active centered card) */
     .slide-label {
       position: absolute;
       bottom: 24px;
@@ -738,7 +737,6 @@
       opacity: 1;
     }
 
-    /* Swiper custom dots */
     .coverflow-swiper .swiper-pagination-bullet {
       background: #94a3b8;
       opacity: 0.6;
@@ -749,6 +747,116 @@
       opacity: 1;
       width: 22px;
       border-radius: 4px;
+    }
+
+    /* 11. Alumni Testimonials Continuous Slider Section */
+    .alumni-section {
+      width: 100%;
+      background: #ffffff;
+      padding: 90px 0;
+      overflow: hidden;
+    }
+
+    .alumni-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .alumni-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 50px;
+    }
+
+    .swiper.alumni-swiper {
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    /* Smooth linear marquee motion */
+    .alumni-swiper .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+
+    .alumni-swiper .swiper-slide {
+      width: 360px;
+      flex-shrink: 0;
+    }
+
+    .alumni-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px 24px 30px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      position: relative;
+      text-align: left;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .alumni-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px rgba(39, 55, 115, 0.12);
+    }
+
+    .alumni-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .alumni-badge {
+      background-color: #273773;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 0 16px 16px 0;
+      margin-left: -24px;
+      display: inline-block;
+    }
+
+    .alumni-badge h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .alumni-badge span {
+      font-size: 0.75rem;
+      color: #cbd5e1;
+      display: block;
+    }
+
+    .alumni-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #e2e8f0;
+      overflow: hidden;
+      background-color: #f1f5f9;
+      flex-shrink: 0;
+    }
+
+    .alumni-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .alumni-text {
+      border-left: 3px solid #273773;
+      padding-left: 14px;
+      color: #475569;
+      font-size: 0.92rem;
+      line-height: 1.6;
     }
 
     @media (max-width: 900px) {
@@ -766,6 +874,9 @@
       .parallax-content p { font-size: 1rem; }
       .eca-cca-section { grid-template-columns: 1fr; margin: 50px auto; gap: 35px; }
       .coverflow-swiper .swiper-slide { width: 260px; height: 360px; }
+      .alumni-section { padding: 60px 0; }
+      .alumni-title { font-size: 2rem; margin-bottom: 35px; }
+      .alumni-swiper .swiper-slide { width: 300px; }
     }
   </style>
 </head>
@@ -1018,7 +1129,7 @@
     </div>
   </section>
 
-  <!-- 10. ECA & CCA Programs Section -->
+  <!-- ECA & CCA Programs Section -->
   <section class="eca-cca-section">
     <div class="eca-cca-text">
       <h2>ECA &amp;<br>CCA Programs</h2>
@@ -1051,15 +1162,98 @@
             <div class="slide-label">Sports &amp; Physical Activities</div>
           </div>
         </div>
-        <!-- Pagination dots -->
         <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Alumni Testimonials Continuous Slider Section -->
+  <section class="alumni-section">
+    <div class="alumni-container">
+      <h2 class="alumni-title">What Our Alumni Say</h2>
+
+      <div class="swiper alumni-swiper">
+        <div class="swiper-wrapper">
+          
+          <!-- Card 1 -->
+          <div class="swiper-slide">
+            <div class="alumni-card">
+              <div class="alumni-card-top">
+                <div class="alumni-badge">
+                  <h4>Ranjan Thapa</h4>
+                  <span>---</span>
+                </div>
+                <div class="alumni-avatar">
+                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Ranjan" alt="Ranjan Thapa" onerror="this.src='https://www.nps.edu.np/public/uploads/67ecd9aa2d3c3.jpg'">
+                </div>
+              </div>
+              <div class="alumni-text">
+                Dear Nepal Police School, As alumni, we come together today with immense pride and gratitude in our hearts for the foundation...
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="swiper-slide">
+            <div class="alumni-card">
+              <div class="alumni-card-top">
+                <div class="alumni-badge">
+                  <h4>Anjana Thakuri</h4>
+                  <span>.</span>
+                </div>
+                <div class="alumni-avatar">
+                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Anjana" alt="Anjana Thakuri" onerror="this.src='https://www.nps.edu.np/public/uploads/67ecd4625148d.jpg'">
+                </div>
+              </div>
+              <div class="alumni-text">
+                Dear Fellow Alumni, Greetings from your former classmates at Nepal Police School! Time may have passed, but the values stay with us forever...
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="swiper-slide">
+            <div class="alumni-card">
+              <div class="alumni-card-top">
+                <div class="alumni-badge">
+                  <h4>Bikash Rai</h4>
+                  <span>Alumni Batch 2075</span>
+                </div>
+                <div class="alumni-avatar">
+                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Bikash" alt="Bikash Rai">
+                </div>
+              </div>
+              <div class="alumni-text">
+                The strict discipline, sports focus, and character building at Nepal Police School shaped our personality and path toward leadership.
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="swiper-slide">
+            <div class="alumni-card">
+              <div class="alumni-card-top">
+                <div class="alumni-badge">
+                  <h4>Pooja Shrestha</h4>
+                  <span>Alumni Batch 2077</span>
+                </div>
+                <div class="alumni-avatar">
+                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Pooja" alt="Pooja Shrestha">
+                </div>
+              </div>
+              <div class="alumni-text">
+                Living in the hostel with peers and dedicated teachers gave us unforgettable memories and lifelong friendships that we cherish today.
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Core Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <!-- Swiper.js Script -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <script>
@@ -1115,6 +1309,20 @@
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+      },
+    });
+
+    // 11. Alumni Testimonials Continuous Linear Infinite Slider
+    const alumniSwiper = new Swiper('.alumni-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      loop: true,
+      freeMode: true,
+      speed: 6000, /* Speed of the continuous crawl */
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true, /* Pauses when mouse is hovered */
       },
     });
   </script>
