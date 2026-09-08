@@ -76,13 +76,21 @@
     }
 
     .brand-text h1 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: 0.3px;
     }
 
+    .brand-text .school-slogan {
+      font-size: 0.72rem;
+      color: #ffcb08;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      margin-top: 2px;
+    }
+
     .brand-text p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #cbd5e1;
     }
 
@@ -181,7 +189,7 @@
       }
     }
 
-    /* Mega Menus */
+    /* Mega Menu */
     .has-mega-menu {
       position: static !important;
     }
@@ -318,15 +326,16 @@
     .stripe-yellow { height: 3px; background-color: #ffcb08; }
 
     /* ========================================================
-       ABOUT US PAGE DESIGN STYLING
+       ABOUT US HERO & ANIMATIONS
        ======================================================== */
     .about-hero {
-      background: linear-gradient(135deg, #1e293b 0%, #273773 100%);
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(39, 55, 115, 0.92) 100%), url('school.jpg');
+      background-position: center;
+      background-size: cover;
       color: #ffffff;
       padding: 90px 24px 110px;
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
 
     .about-hero h1 {
@@ -334,32 +343,32 @@
       font-weight: 800;
       margin-bottom: 16px;
       letter-spacing: -0.5px;
-      animation: fadeInDown 0.8s ease-out;
+      animation: heroSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .about-hero p {
       font-size: 1.15rem;
       color: #cbd5e1;
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto;
-      line-height: 1.6;
-      animation: fadeInUp 0.8s ease-out;
+      line-height: 1.7;
+      animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
+    @keyframes heroSlideDown {
+      from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Main Overview Section */
+    /* Institutional Overview Section */
     .about-overview-container {
       max-width: 1240px;
-      margin: -60px auto 90px;
+      margin: -50px auto 90px;
       padding: 0 24px;
       position: relative;
       z-index: 5;
@@ -368,7 +377,7 @@
     .overview-card-grid {
       background: #ffffff;
       border-radius: 24px;
-      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.08);
       border: 1px solid #e2e8f0;
       display: grid;
       grid-template-columns: 1.1fr 1fr;
@@ -390,15 +399,16 @@
       color: #475569;
       line-height: 1.8;
       text-align: justify;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .overview-image-stack {
       position: relative;
-      height: 400px;
+      height: 380px;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      border: 4px solid #ffffff;
     }
 
     .overview-image-stack img {
@@ -413,7 +423,7 @@
       transform: scale(1.05);
     }
 
-    /* Mission, Vision & Motto (DDD) Section */
+    /* Pillars: Mission, Vision, Goals */
     .pillars-section {
       max-width: 1240px;
       margin: 0 auto 100px;
@@ -502,25 +512,25 @@
       text-align: justify;
     }
 
-    /* DDD Highlight Banner */
+    /* Core Motto: DDD Section */
     .ddd-banner {
       background: linear-gradient(135deg, #273773 0%, #172047 100%);
       color: #ffffff;
-      padding: 80px 24px;
+      padding: 85px 24px;
       text-align: center;
-      margin-bottom: 100px;
+      margin-bottom: 90px;
       position: relative;
     }
 
     .ddd-banner h2 {
       font-size: 2.5rem;
       font-weight: 800;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       color: #ffcb08;
     }
 
     .ddd-banner p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       max-width: 800px;
       margin: 0 auto;
       line-height: 1.8;
@@ -536,21 +546,31 @@
     }
 
     .ddd-badge-box {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 16px 28px;
-      border-radius: 12px;
-      font-size: 1.1rem;
+      padding: 20px 36px;
+      border-radius: 16px;
+      font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: 0.5px;
+      transition: all 0.3s ease;
     }
 
-    /* Footer Styles */
-    .site-footer {
-      background-color: #273773;
-      color: #ffffff;
-      padding-top: 60px;
+    .ddd-badge-box:hover {
+      background: #ed1c24;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(237, 28, 36, 0.3);
+    }
+
+    /* Standardized Footer with Solid Background */
+    footer.site-footer {
+      display: block !important;
+      background-color: #273773 !important;
+      color: #ffffff !important;
+      padding-top: 60px !important;
+      position: relative;
+      width: 100%;
     }
 
     .footer-container {
@@ -567,6 +587,7 @@
       font-weight: 700;
       margin-bottom: 24px;
       color: #ffffff;
+      letter-spacing: 0.3px;
     }
 
     .footer-contact-list {
@@ -594,6 +615,11 @@
     .footer-contact-list a {
       color: #f1f5f9;
       text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-list a:hover {
+      color: #ffcb08;
     }
 
     .footer-social-links {
@@ -699,15 +725,8 @@
 
     /* Mobile Responsiveness */
     @media (max-width: 900px) {
-      .header-navbar {
-        padding: 0 16px;
-        height: 70px;
-      }
-
-      .mobile-nav-toggle {
-        display: block;
-      }
-
+      .header-navbar { padding: 0 16px; height: 70px; }
+      .mobile-nav-toggle { display: block; }
       .nav-links {
         display: flex;
         flex-direction: column;
@@ -727,63 +746,17 @@
         transform: translateY(-10px);
         transition: all 0.3s ease;
       }
-
-      .nav-links.active-mobile {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-
-      .nav-item {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .nav-link {
-        width: 100%;
-        justify-content: space-between;
-        padding: 14px 10px;
-      }
-
-      .dropdown-menu,
-      .mega-menu {
-        position: static !important;
-        width: 100% !important;
-        box-shadow: none !important;
-        background: #162044 !important;
-        border-radius: 8px !important;
-        border-top: none !important;
-        padding: 8px 12px !important;
-        display: none;
-      }
-
-      .dropdown-menu.mobile-open,
-      .mega-menu.mobile-open {
-        display: block !important;
-      }
-
-      .mega-menu-grid-who,
-      .mega-menu-grid-nps {
-        grid-template-columns: 1fr !important;
-      }
-
-      .mega-img-frame,
-      .mega-divider {
-        display: none !important;
-      }
-
-      .mega-links-col a,
-      .mega-column a,
-      .dropdown-menu li a {
-        color: #cbd5e1 !important;
-      }
+      .nav-links.active-mobile { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .nav-item { width: 100%; display: flex; flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; }
+      .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; background: #162044 !important; border-radius: 8px !important; display: none; padding: 8px 12px !important; }
+      .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
+      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; }
+      .mega-img-frame, .mega-divider { display: none !important; }
 
       .about-hero h1 { font-size: 2.2rem; }
       .overview-card-grid { grid-template-columns: 1fr; padding: 25px; gap: 30px; }
-      .overview-image-stack { height: 280px; }
+      .overview-image-stack { height: 260px; }
       .pillars-grid { grid-template-columns: 1fr; }
       .footer-container { grid-template-columns: 1fr; }
     }
@@ -801,6 +774,7 @@
         </div>
         <div class="brand-text">
           <h1>NEPAL POLICE SCHOOL</h1>
+          <div class="school-slogan"><i>Better Schooling for Ideal Citizens</i></div>
           <p><i>Dharan-13, Sunsari Nepal</i></p>
         </div>
       </a>
@@ -826,7 +800,7 @@
 
               <div class="mega-links-col">
                 <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
@@ -930,91 +904,90 @@
     </div>
   </div>
 
-  <!-- Hero Header Section -->
+  <!-- Hero Section -->
   <section class="about-hero">
     <h1>About Nepal Police School Dharan</h1>
-    <p>Shaping young minds with intellectual rigor, moral integrity, and unmatched discipline under the glorious tradition of the Nepal Police.</p>
+    <p>Nurturing future leaders through educational excellence, physical discipline, and patriotic service to the nation.</p>
   </section>
 
-  <!-- Main Overview Card Section -->
+  <!-- Institutional Overview Section -->
   <main class="about-overview-container">
     <div class="overview-card-grid">
       <div class="overview-text">
-        <h2>A Legacy of Excellence in Education and Character</h2>
+        <h2>Fostering Leadership &amp; Moral Character</h2>
         <p>
-          Established with a vision to provide exceptional learning environments, Nepal Police School Dharan stands as a premier educational institution in eastern Nepal. We blend rigorous academic programs with holistic development, ensuring that every student grows into a competent, responsible, and ethical citizen.
+          Nepal Police School Dharan is dedicated to delivering holistic, forward-looking education under the aegis of the Nepal Police Educational Trust. Our comprehensive pedagogical approach seamlessly combines rigorous modern academic learning with character building and discipline.
         </p>
         <p>
-          Our campus fosters a nurturing atmosphere where students excel not only in examinations but also in leadership, athletics, community stewardship, and cultural appreciation.
+          We provide an inclusive and structured learning environment that prepares students to meet global academic standards while cultivating profound ethical values and societal responsibility.
         </p>
       </div>
 
       <div class="overview-image-stack">
-        <img src="school.jpg" alt="Nepal Police School Campus" onerror="this.src='https://www.nps.edu.np/public/uploads/6757fda05afe5.jpg'">
+        <img src="school.jpg" alt="Campus Assembly" onerror="this.src='https://www.nps.edu.np/public/uploads/6757fda05afe5.jpg'">
       </div>
     </div>
   </main>
 
-  <!-- Mission, Vision & Objectives Cards -->
+  <!-- Mission, Vision & Goals Cards -->
   <section class="pillars-section">
     <div class="section-header-title">
-      <h2>Our Core Foundation</h2>
-      <p>The guiding principles that steer our academic and moral framework.</p>
+      <h2>Foundational Pillars</h2>
+      <p>Guiding principles that direct our institution toward continuous excellence.</p>
     </div>
 
     <div class="pillars-grid">
-      
-      <!-- Mission Card -->
+      <!-- Mission -->
       <div class="pillar-card">
         <div class="pillar-icon">
           <i class="fa-solid fa-bullseye"></i>
         </div>
         <h3>Our Mission</h3>
         <p>
-          To impart world-class quality education complemented by strong moral values, fostering critical thinking, physical resilience, and leadership qualities in every student to face future global challenges.
+          To empower students with superior academic competence, creative intellect, and leadership capabilities while inculcating an unwavering sense of moral rectitude and social accountability.
         </p>
       </div>
 
-      <!-- Vision Card -->
+      <!-- Vision -->
       <div class="pillar-card">
         <div class="pillar-icon">
           <i class="fa-solid fa-eye"></i>
         </div>
         <h3>Our Vision</h3>
         <p>
-          To be a leading center of educational excellence that produces self-disciplined, innovative, and patriotic leaders dedicated to serving society with honor and distinction.
+          To be an exceptional center of learning and character development, recognized nationally for producing disciplined, visionary, and patriotic citizens equipped to thrive in an evolving world.
         </p>
       </div>
 
-      <!-- Objectives Card -->
+      <!-- Goals -->
       <div class="pillar-card">
         <div class="pillar-icon">
-          <i class="fa-solid fa-clipboard-check"></i>
+          <i class="fa-solid fa-trophy"></i>
         </div>
-        <h3>Core Objectives</h3>
+        <h3>Our Goals</h3>
         <p>
-          To maintain superior academic standards, provide robust extracurricular platforms, cultivate a culture of mutual respect, and instill a profound sense of national duty and social accountability.
+          To maintain high academic standards, promote sports and ECA/CCA participation, ensure state-of-the-art infrastructure, and nurture the holistic growth of every child under our care.
         </p>
       </div>
-
     </div>
   </section>
 
-  <!-- Special DDD Banner Section -->
+  <!-- Core Motto: DDD Banner -->
   <section class="ddd-banner">
     <h2>Our Core Motto: DDD</h2>
-    <p>Everything we do at Nepal Police School Dharan is anchored firmly upon our foundational philosophy:</p>
+    <p>At Nepal Police School Dharan, our institutional discipline and conduct are guided by the three sacred pillars:</p>
     <div class="ddd-highlights">
-      <div class="ddd-badge-box">Discipline</div>
-      <div class="ddd-badge-box">Dignity</div>
-      <div class="ddd-badge-box">Decorum</div>
+      <div class="ddd-badge-box"><i class="fa-solid fa-shield-halved" style="margin-right: 8px;"></i> Discipline</div>
+      <div class="ddd-badge-box"><i class="fa-solid fa-medal" style="margin-right: 8px;"></i> Dignity</div>
+      <div class="ddd-badge-box"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> Decorum</div>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <site-footer class="site-footer">
+  <!-- Standard Semantic Footer Section -->
+  <footer class="site-footer">
     <div class="footer-container">
       
+      <!-- Contact Column -->
       <div class="footer-col">
         <h3>Contact</h3>
         <ul class="footer-contact-list">
@@ -1046,22 +1019,24 @@
         </div>
       </div>
 
+      <!-- Navigation Column -->
       <div class="footer-col">
         <h3>Navigate</h3>
         <ul class="footer-nav-grid">
           <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
           <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Community</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> News</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
           <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
 
+      <!-- Location Column -->
       <div class="footer-col">
         <h3>Location</h3>
         <div class="footer-map-wrapper">
@@ -1076,6 +1051,7 @@
 
     </div>
 
+    <!-- Copyright Bar -->
     <div class="footer-bottom">
       © Copyright 2026, Nepal Police School | All Rights Reserved | Designed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
     </div>
@@ -1104,8 +1080,8 @@
       });
     });
 
-    // Mega Menu Hover Stabilizers for Desktop
-    function setupMegaMenu(triggerId, menuId) {
+    // Desktop Mega Menu Hover Stabilizers
+    function setupDesktopMegaMenu(triggerId, menuId) {
       const trigger = document.getElementById(triggerId);
       const menu = document.getElementById(menuId);
       let timeout;
@@ -1143,10 +1119,10 @@
       });
     }
 
-    setupMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
-    setupMegaMenu('menuNPS', 'dropdownNPS');
+    setupDesktopMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
+    setupDesktopMegaMenu('menuNPS', 'dropdownNPS');
 
-    // Mobile Navigation & Drawer Toggles
+    // Mobile Hamburger Toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinksMenu = document.getElementById('navLinksMenu');
     const mobileIcon = mobileToggle.querySelector('i');
