@@ -23,6 +23,15 @@
       overflow-x: hidden;
     }
 
+    /* Sticky Navigation Wrapper (Pins Navbar + Stripes to Top) */
+    .header-wrapper {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
     /* 1. Main Navigation Bar */
     .header-navbar {
       background-color: #273773;
@@ -32,7 +41,6 @@
       padding: 0 30px;
       height: 75px;
       position: relative;
-      z-index: 1000;
     }
 
     .brand-section {
@@ -245,7 +253,6 @@
       margin: auto 0;
     }
 
-    /* Fixed vertical stack structure */
     .mega-links-col,
     .mega-column {
       display: flex;
@@ -264,7 +271,6 @@
       padding-left: 6px;
     }
 
-    /* Full-width block items: strictly one item per line */
     .mega-links-col a,
     .mega-column a {
       color: #1e293b;
@@ -274,7 +280,7 @@
       padding: 10px 14px;
       border-radius: 8px;
       transition: all 0.22s ease;
-      display: flex; /* Forces each link onto its own separate vertical row */
+      display: flex;
       align-items: center;
       width: 100%;
       gap: 10px;
@@ -283,8 +289,8 @@
 
     .mega-links-col a:hover,
     .mega-column a:hover {
-      background-color: #273773; /* Solid Navy Blue */
-      color: #ffffff;            /* White Text */
+      background-color: #273773;
+      color: #ffffff;
       transform: translateX(6px);
       box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
     }
@@ -1390,145 +1396,148 @@
 </head>
 <body>
 
-  <!-- Top Header Navigation -->
-  <header class="header-navbar">
-    <a href="#" class="brand-section">
-      <div class="brand-logos">
-        <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
-        <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
-      </div>
-      <div class="brand-text">
-        <h1>NEPAL POLICE SCHOOL</h1>
-        <p><i>Dharan-13, Sunsari Nepal</i></p>
-      </div>
-    </a>
-
-    <ul class="nav-links">
-      <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-      
-      <!-- 1. "Who We Are" Mega Menu -->
-      <li class="nav-item has-mega-menu" id="menuWhoWeAre">
-        <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
-        <div class="mega-menu" id="dropdownWhoWeAre">
-          <div class="mega-menu-grid-who">
-            
-            <div class="mega-img-frame">
-              <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
-            </div>
-
-            <div class="mega-divider"></div>
-
-            <!-- Column 1: School Heritage Links (Strict Vertical List) -->
-            <div class="mega-links-col">
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
-            </div>
-
-            <div class="mega-divider"></div>
-
-            <!-- Column 2: Leadership Messages (Strict Vertical List) -->
-            <div class="mega-links-col">
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
-            </div>
-
-            <div class="mega-img-frame">
-              <img src="building.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
-            </div>
-
-          </div>
+  <!-- Sticky Header Wrapper -->
+  <div class="header-wrapper">
+    <!-- Top Header Navigation -->
+    <header class="header-navbar">
+      <a href="#" class="brand-section">
+        <div class="brand-logos">
+          <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
+          <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
         </div>
-      </li>
-
-      <!-- 2. "NPS" Mega Menu -->
-      <li class="nav-item has-mega-menu" id="menuNPS">
-        <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
-        <div class="mega-menu" id="dropdownNPS">
-          <div class="mega-menu-grid-nps">
-            
-            <div class="mega-img-frame">
-              <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
-            </div>
-
-            <div class="mega-divider"></div>
-
-            <!-- Column 1: Departments -->
-            <div class="mega-column">
-              <div class="mega-col-title">Departments</div>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
-            </div>
-
-            <div class="mega-divider"></div>
-
-            <!-- Column 2: School Premises / Wings -->
-            <div class="mega-column">
-              <div class="mega-col-title">School premises</div>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Junior Wings (Grade 4-6)</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Senior Wing (Grade 7-10)</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Wing (Grade 11 &amp; 12)</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Management Wing (Grade 11 &amp; 12)</a>
-            </div>
-
-            <div class="mega-divider"></div>
-
-            <!-- Column 3: Message from Core Team -->
-            <div class="mega-column">
-              <div class="mega-col-title">Message From Core Team</div>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
-              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
-            </div>
-
-          </div>
+        <div class="brand-text">
+          <h1>NEPAL POLICE SCHOOL</h1>
+          <p><i>Dharan-13, Sunsari Nepal</i></p>
         </div>
-      </li>
+      </a>
 
-      <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">ECA / CCA</a></li>
-          <li><a href="#">Events &amp; Sports</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Publication <i class="fa-solid fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Magazine</a></li>
-          <li><a href="#">Annual Reports</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Vacancy</a></li>
-        </ul>
-      </li>
-      <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
-    </ul>
-  </header>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+        
+        <!-- 1. "Who We Are" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuWhoWeAre">
+          <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownWhoWeAre">
+            <div class="mega-menu-grid-who">
+              
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
 
-  <!-- Police Color Stripes Ribbon -->
-  <div class="police-stripes">
-    <div class="stripe-white"></div>
-    <div class="stripe-red"></div>
-    <div class="stripe-white"></div>
-    <div class="stripe-blue"></div>
-    <div class="stripe-white"></div>
-    <div class="stripe-yellow"></div>
+              <div class="mega-divider"></div>
+
+              <!-- Column 1: School Heritage Links (Strict Vertical List) -->
+              <div class="mega-links-col">
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 2: Leadership Messages (Strict Vertical List) -->
+              <div class="mega-links-col">
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+              <div class="mega-img-frame">
+                <img src="building.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <!-- 2. "NPS" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuNPS">
+          <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownNPS">
+            <div class="mega-menu-grid-nps">
+              
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 1: Departments -->
+              <div class="mega-column">
+                <div class="mega-col-title">Departments</div>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 2: School Premises / Wings -->
+              <div class="mega-column">
+                <div class="mega-col-title">School premises</div>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Junior Wings (Grade 4-6)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Senior Wing (Grade 7-10)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Wing (Grade 11 &amp; 12)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Management Wing (Grade 11 &amp; 12)</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 3: Message from Core Team -->
+              <div class="mega-column">
+                <div class="mega-col-title">Message From Core Team</div>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">ECA / CCA</a></li>
+            <li><a href="#">Events &amp; Sports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Publication <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Magazine</a></li>
+            <li><a href="#">Annual Reports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Vacancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+
+    <!-- Police Color Stripes Ribbon -->
+    <div class="police-stripes">
+      <div class="stripe-white"></div>
+      <div class="stripe-red"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-blue"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-yellow"></div>
+    </div>
   </div>
 
   <!-- Latest Notices Section -->
