@@ -121,7 +121,7 @@
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: 75px; /* Locked to bottom of navbar */
+      top: 75px;
       left: 0;
       background: #ffffff;
       min-width: 220px;
@@ -132,7 +132,6 @@
       z-index: 1001;
     }
 
-    /* Invisible hover buffer */
     .dropdown-menu::before {
       content: "";
       position: absolute;
@@ -165,7 +164,7 @@
     }
 
     /* ========================================================
-       MEGA MENU FOR "WHO WE ARE" (STABLE & NEVER DISAPPEARS)
+       MEGA MENUS ("WHO WE ARE" & "NPS")
        ======================================================== */
     .has-mega-menu {
       position: static !important;
@@ -174,7 +173,7 @@
     .mega-menu {
       display: none;
       position: absolute;
-      top: 75px; /* Starts exactly flush with navbar edge */
+      top: 75px;
       left: 0;
       right: 0;
       width: 100%;
@@ -201,11 +200,22 @@
       display: block;
     }
 
-    .mega-menu-grid {
+    /* Grid for "Who We Are" */
+    .mega-menu-grid-who {
       max-width: 1320px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 320px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    /* Grid for "NPS" (Image + 3 Columns) */
+    .mega-menu-grid-nps {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.3fr 1px 1.2fr 1px 1.2fr;
       gap: 20px;
       align-items: stretch;
     }
@@ -215,7 +225,7 @@
       overflow: hidden;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
       border: 3px solid #ffffff;
-      height: 230px;
+      height: 250px;
       background: #ffffff;
     }
 
@@ -238,30 +248,39 @@
       margin: auto 0;
     }
 
-    .mega-links-col {
+    .mega-column {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 8px;
+      gap: 6px;
       padding: 0 10px;
     }
 
+    .mega-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ed1c24; /* Red header text */
+      margin-bottom: 8px;
+      padding-left: 6px;
+    }
+
     /* Submenu Interactive Buttons with Blue Background & White Text */
-    .mega-links-col a {
+    .mega-links-col a,
+    .mega-column a {
       color: #1e293b;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 600;
-      padding: 9px 14px;
-      border-radius: 8px;
-      transition: all 0.25s ease;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.22s ease;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       cursor: pointer;
     }
 
-    .mega-links-col a:hover {
+    .mega-links-col a:hover,
+    .mega-column a:hover {
       background-color: #273773; /* Solid Navy Blue */
       color: #ffffff;            /* White Foreground Text */
       transform: translateX(6px);
@@ -1325,8 +1344,9 @@
       transform: translateY(-4px);
     }
 
-    @media (max-width: 1024px) {
-      .mega-menu-grid {
+    @media (max-width: 1100px) {
+      .mega-menu-grid-who,
+      .mega-menu-grid-nps {
         grid-template-columns: 1fr 1fr;
         gap: 20px;
       }
@@ -1384,21 +1404,18 @@
     <ul class="nav-links">
       <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
       
-      <!-- "Who We Are" with Fixed Hover-Bridge & Blue Hover State -->
-      <li class="nav-item has-mega-menu">
+      <!-- 1. "Who We Are" Mega Menu -->
+      <li class="nav-item has-mega-menu" id="menuWhoWeAre">
         <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
-        <div class="mega-menu">
-          <div class="mega-menu-grid">
+        <div class="mega-menu" id="dropdownWhoWeAre">
+          <div class="mega-menu-grid-who">
             
-            <!-- Left Photo Banner -->
             <div class="mega-img-frame">
               <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
             </div>
 
-            <!-- Vertical Divider -->
             <div class="mega-divider"></div>
 
-            <!-- Column 1: School Heritage Links -->
             <div class="mega-links-col">
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
@@ -1407,41 +1424,80 @@
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
             </div>
 
-            <!-- Vertical Divider -->
             <div class="mega-divider"></div>
 
-            <!-- Column 2: Leadership Messages -->
             <div class="mega-links-col">
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
             </div>
 
-            <!-- Right Photo Banner -->
             <div class="mega-img-frame">
-              <img src="school.jpg" alt="School Banner" onerror="this.src="building.JPG">
+              <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
             </div>
 
           </div>
         </div>
       </li>
 
-      <li class="nav-item">
+      <!-- 2. "NPS" Mega Menu (Matching Screenshot) -->
+      <li class="nav-item has-mega-menu" id="menuNPS">
         <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Primary Wing</a></li>
-          <li><a href="#">Secondary Wing</a></li>
-          <li><a href="#">Science (+2)</a></li>
-          <li><a href="#">Management (+2)</a></li>
-        </ul>
+        <div class="mega-menu" id="dropdownNPS">
+          <div class="mega-menu-grid-nps">
+            
+            <!-- Left School Building Image -->
+            <div class="mega-img-frame">
+              <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+            </div>
+
+            <div class="mega-divider"></div>
+
+            <!-- Column 1: Departments -->
+            <div class="mega-column">
+              <div class="mega-col-title">Departments</div>
+              <a href="#">English Department</a>
+              <a href="#">Science Department</a>
+              <a href="#">Nepali Department</a>
+              <a href="#">Social Studies Department</a>
+              <a href="#">Computer and Technology Department</a>
+              <a href="#">Mathematics Department</a>
+              <a href="#">Integrated Department</a>
+              <a href="#">Administration Department</a>
+            </div>
+
+            <div class="mega-divider"></div>
+
+            <!-- Column 2: School Premises / Wings -->
+            <div class="mega-column">
+              <div class="mega-col-title">School premises</div>
+              <a href="#">Junior Wings (Grade 4-6)</a>
+              <a href="#">Senior Wing (Grade 7-10)</a>
+              <a href="#">Science Wing (Grade 11 &amp; 12)</a>
+              <a href="#">Management Wing (Grade 11 &amp; 12)</a>
+            </div>
+
+            <div class="mega-divider"></div>
+
+            <!-- Column 3: Message from Core Team -->
+            <div class="mega-column">
+              <div class="mega-col-title">Message From Core Team</div>
+              <a href="#">Message From Chairperson</a>
+              <a href="#">Message From Principal</a>
+              <a href="#">Message From Commandant</a>
+            </div>
+
+          </div>
+        </div>
       </li>
+
       <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
       <li class="nav-item">
         <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
           <li><a href="#">ECA / CCA</a></li>
-          <li><a href="#">Events & Sports</a></li>
+          <li><a href="#">Events &amp; Sports</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -1935,7 +1991,7 @@
 
     <!-- Copyright Bar -->
     <div class="footer-bottom">
-      © Copyright 2026, Nepal Police School | All Rights Reserved | Developed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
+      © Copyright 2026, Nepal Police School | All Rights Reserved | Crafted by : <strong>Himalayan Logic Pvt.Ltd.</strong>
     </div>
   </footer>
 
@@ -2073,33 +2129,40 @@
     });
 
     // ========================================================
-    // MEGA MENU HOVER STABILIZER (Prevents accidental closure)
+    // MEGA MENUS HOVER STABILIZERS (Who We Are & NPS)
     // ========================================================
-    const megaParent = document.querySelector('.has-mega-menu');
-    const megaMenu = document.querySelector('.mega-menu');
-    let megaTimeout;
+    function setupMegaMenu(triggerId, menuId) {
+      const trigger = document.getElementById(triggerId);
+      const menu = document.getElementById(menuId);
+      let timeout;
 
-    megaParent.addEventListener('mouseenter', () => {
-      clearTimeout(megaTimeout);
-      megaMenu.style.display = 'block';
-    });
+      if (!trigger || !menu) return;
 
-    megaParent.addEventListener('mouseleave', () => {
-      megaTimeout = setTimeout(() => {
-        megaMenu.style.display = 'none';
-      }, 200); // 200ms grace window
-    });
+      trigger.addEventListener('mouseenter', () => {
+        clearTimeout(timeout);
+        menu.style.display = 'block';
+      });
 
-    megaMenu.addEventListener('mouseenter', () => {
-      clearTimeout(megaTimeout);
-      megaMenu.style.display = 'block';
-    });
+      trigger.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+          menu.style.display = 'none';
+        }, 220); // 220ms grace buffer
+      });
 
-    megaMenu.addEventListener('mouseleave', () => {
-      megaTimeout = setTimeout(() => {
-        megaMenu.style.display = 'none';
-      }, 200);
-    });
+      menu.addEventListener('mouseenter', () => {
+        clearTimeout(timeout);
+        menu.style.display = 'block';
+      });
+
+      menu.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+          menu.style.display = 'none';
+        }, 220);
+      });
+    }
+
+    setupMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
+    setupMegaMenu('menuNPS', 'dropdownNPS');
   </script>
 
 </body>
