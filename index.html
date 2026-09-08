@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Nepal Police School Dharan</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -27,11 +27,11 @@
     .header-navbar {
       background-color: #273773;
       display: flex;
-      align-items: center;
+      align-items: stretch; /* Stretches nav items to full navbar height */
       justify-content: space-between;
-      padding: 10px 30px;
+      padding: 0 30px;
       min-height: 75px;
-      position: relative; /* Anchor for mega menu */
+      position: relative;
       z-index: 1000;
     }
 
@@ -40,6 +40,7 @@
       align-items: center;
       gap: 14px;
       text-decoration: none;
+      padding: 10px 0;
     }
 
     .brand-logos {
@@ -58,7 +59,7 @@
     }
 
     .brand-logos img.police-crest {
-      height: 48px;
+      height: 60px;
       width: auto;
       object-fit: contain;
     }
@@ -81,13 +82,16 @@
 
     .nav-links {
       display: flex;
-      align-items: center;
+      align-items: stretch;
       list-style: none;
       gap: 22px;
+      height: 100%;
     }
 
     .nav-item {
       position: relative;
+      display: flex;
+      align-items: center;
     }
 
     .nav-link {
@@ -98,8 +102,9 @@
       transition: color 0.2s ease;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 10px 0;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
     }
 
     .nav-link:hover,
@@ -111,32 +116,47 @@
       font-size: 0.7rem;
     }
 
-    /* Standard Dropdown Menus for other links */
+    /* Standard Dropdown Menus */
     .dropdown-menu {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
       background: #ffffff;
-      min-width: 200px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      border-radius: 4px;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
       list-style: none;
-      padding: 8px 0;
+      padding: 8px;
       z-index: 100;
     }
 
-    .dropdown-menu li a {
-      color: #333333;
-      padding: 8px 16px;
-      display: block;
-      text-decoration: none;
-      font-size: 0.88rem;
+    /* Invisible hover-bridge preventing disappearing */
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 0;
+      right: 0;
+      height: 12px;
     }
 
+    .dropdown-menu li a {
+      color: #334155;
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    /* Blue background + white text on hover */
     .dropdown-menu li a:hover {
-      background-color: #f1f5f9;
-      color: #ed1c24;
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(4px);
     }
 
     .nav-item:hover .dropdown-menu {
@@ -145,7 +165,7 @@
 
     /* MEGA MENU FOR "WHO WE ARE" */
     .has-mega-menu {
-      position: static !important; /* Spans full navbar width */
+      position: static !important;
     }
 
     .mega-menu {
@@ -155,16 +175,27 @@
       left: 0;
       right: 0;
       width: 100%;
-      background: #e9eef7; /* Soft light-blue background matching the screenshot */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      border-top: 2px solid #273773;
+      background: #f1f5f9; /* Clean soft light gray-blue */
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+      border-top: 2px solid #ffcb08; /* Yellow separator line */
       padding: 24px 30px;
       z-index: 9999;
     }
 
+    /* Invisible hover-bridge connecting navbar directly to mega menu */
+    .mega-menu::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 0;
+      right: 0;
+      height: 15px;
+      background: transparent;
+    }
+
     .has-mega-menu:hover .mega-menu {
       display: block;
-      animation: megaFadeDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: megaFadeDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     @keyframes megaFadeDown {
@@ -182,15 +213,15 @@
       max-width: 1320px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 340px;
+      grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 320px;
       gap: 20px;
       align-items: stretch;
     }
 
     .mega-img-frame {
-      border-radius: 6px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
       border: 3px solid #ffffff;
       height: 230px;
       background: #ffffff;
@@ -201,6 +232,11 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .mega-img-frame:hover img {
+      transform: scale(1.05);
     }
 
     .mega-divider {
@@ -214,22 +250,30 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 16px;
+      gap: 8px;
       padding: 0 10px;
     }
 
+    /* Clickable submenus with Blue Background & White Text on Hover */
     .mega-links-col a {
       color: #1e293b;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 600;
-      transition: all 0.2s ease;
-      display: inline-block;
+      padding: 9px 14px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
     }
 
     .mega-links-col a:hover {
-      color: #ed1c24;
-      transform: translateX(4px);
+      background-color: #273773; /* Solid Blue */
+      color: #ffffff;            /* White Text */
+      transform: translateX(6px); /* Smooth slight shift */
+      box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
     }
 
     /* 2. Police Stripe Ribbon */
@@ -1255,7 +1299,7 @@
 
     .footer-bottom strong {
       color: #ffffff;
-    }
+    } 
 
     .btn-scroll-top {
       position: fixed;
@@ -1348,7 +1392,7 @@
     <ul class="nav-links">
       <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
       
-      <!-- "Who We Are" with Full-Width Multi-Column Mega Menu -->
+      <!-- "Who We Are" with Fixed Hover-Bridge & Blue Hover State -->
       <li class="nav-item has-mega-menu">
         <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
         <div class="mega-menu">
@@ -1356,19 +1400,19 @@
             
             <!-- Left Photo Banner -->
             <div class="mega-img-frame">
-              <img src="team.jpg" alt="School Batch Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
             </div>
 
             <!-- Vertical Divider -->
             <div class="mega-divider"></div>
 
-            <!-- Column 1: School Heritage & Org Links -->
+            <!-- Column 1: School Heritage Links -->
             <div class="mega-links-col">
-              <a href="#">About Us</a>
-              <a href="#">History</a>
-              <a href="#">Milestones</a>
-              <a href="#">Facilities</a>
-              <a href="#">School Management Committee</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
             </div>
 
             <!-- Vertical Divider -->
@@ -1376,14 +1420,14 @@
 
             <!-- Column 2: Leadership Messages -->
             <div class="mega-links-col">
-              <a href="#">Message From Chairperson</a>
-              <a href="#">Message From Principal</a>
-              <a href="#">Message From Commandant</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
             </div>
 
             <!-- Right Photo Banner -->
             <div class="mega-img-frame">
-              <img src="team.jpg" alt="School Batch Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
             </div>
 
           </div>
