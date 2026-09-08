@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nepal Police School Dharan</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -31,6 +31,8 @@
       justify-content: space-between;
       padding: 10px 30px;
       min-height: 75px;
+      position: relative; /* Anchor for mega menu */
+      z-index: 1000;
     }
 
     .brand-section {
@@ -56,7 +58,7 @@
     }
 
     .brand-logos img.police-crest {
-      height: 60px;
+      height: 48px;
       width: auto;
       object-fit: contain;
     }
@@ -97,6 +99,7 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
+      padding: 10px 0;
     }
 
     .nav-link:hover,
@@ -108,6 +111,7 @@
       font-size: 0.7rem;
     }
 
+    /* Standard Dropdown Menus for other links */
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -137,6 +141,95 @@
 
     .nav-item:hover .dropdown-menu {
       display: block;
+    }
+
+    /* MEGA MENU FOR "WHO WE ARE" */
+    .has-mega-menu {
+      position: static !important; /* Spans full navbar width */
+    }
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #e9eef7; /* Soft light-blue background matching the screenshot */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border-top: 2px solid #273773;
+      padding: 24px 30px;
+      z-index: 9999;
+    }
+
+    .has-mega-menu:hover .mega-menu {
+      display: block;
+      animation: megaFadeDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes megaFadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .mega-menu-grid {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 340px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-img-frame {
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      border: 3px solid #ffffff;
+      height: 230px;
+      background: #ffffff;
+    }
+
+    .mega-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mega-divider {
+      background-color: #cbd5e1;
+      width: 1px;
+      height: 90%;
+      margin: auto 0;
+    }
+
+    .mega-links-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      padding: 0 10px;
+    }
+
+    .mega-links-col a {
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+
+    .mega-links-col a:hover {
+      color: #ed1c24;
+      transform: translateX(4px);
     }
 
     /* 2. Police Stripe Ribbon */
@@ -1058,7 +1151,6 @@
       letter-spacing: 0.3px;
     }
 
-    /* Contact Details */
     .footer-contact-list {
       list-style: none;
       display: flex;
@@ -1116,7 +1208,6 @@
       transform: translateY(-3px);
     }
 
-    /* Navigation Links Grid */
     .footer-nav-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1139,7 +1230,6 @@
       transform: translateX(4px);
     }
 
-    /* Location Map */
     .footer-map-wrapper {
       border-radius: 12px;
       overflow: hidden;
@@ -1155,7 +1245,6 @@
       display: block;
     }
 
-    /* Bottom Copyright Bar */
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.15);
       padding: 20px 24px;
@@ -1166,9 +1255,8 @@
 
     .footer-bottom strong {
       color: #ffffff;
-    } 
+    }
 
-    /* Floating Back-to-Top Button */
     .btn-scroll-top {
       position: fixed;
       bottom: 25px;
@@ -1199,6 +1287,14 @@
     .btn-scroll-top:hover {
       background-color: #b71540;
       transform: translateY(-4px);
+    }
+
+    @media (max-width: 1024px) {
+      .mega-menu-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .mega-divider, .mega-img-frame { display: none; }
     }
 
     @media (max-width: 900px) {
@@ -1245,27 +1341,55 @@
       </div>
       <div class="brand-text">
         <h1>NEPAL POLICE SCHOOL</h1>
-        <p><I>Dharan-13, Sunsari Nepal</I></p>
+        <p><i>Dharan-13, Sunsari Nepal</i></p>
       </div>
     </a>
 
     <ul class="nav-links">
       <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-      <li class="nav-item">
+      
+      <!-- "Who We Are" with Full-Width Multi-Column Mega Menu -->
+      <li class="nav-item has-mega-menu">
         <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Milestones</a></li>
-          <li><a href="#">Facilities</a></li>
-          <li><a href="#">School Management Commitee</a></li>
-          <li><a href="#"> Message From Chairperson</a></li>
-          <li> <a href="#">Message From Principal</a></li>
-          <li><a href="#">Message From Commandant</a></li>
-          
-          
-        </ul>
+        <div class="mega-menu">
+          <div class="mega-menu-grid">
+            
+            <!-- Left Photo Banner -->
+            <div class="mega-img-frame">
+              <img src="team.jpg" alt="School Batch Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="mega-divider"></div>
+
+            <!-- Column 1: School Heritage & Org Links -->
+            <div class="mega-links-col">
+              <a href="#">About Us</a>
+              <a href="#">History</a>
+              <a href="#">Milestones</a>
+              <a href="#">Facilities</a>
+              <a href="#">School Management Committee</a>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="mega-divider"></div>
+
+            <!-- Column 2: Leadership Messages -->
+            <div class="mega-links-col">
+              <a href="#">Message From Chairperson</a>
+              <a href="#">Message From Principal</a>
+              <a href="#">Message From Commandant</a>
+            </div>
+
+            <!-- Right Photo Banner -->
+            <div class="mega-img-frame">
+              <img src="team.jpg" alt="School Batch Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+            </div>
+
+          </div>
+        </div>
       </li>
+
       <li class="nav-item">
         <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
@@ -1400,7 +1524,7 @@
     <h2 class="section-title">News and Events</h2>
     <div class="news-grid">
       <div class="featured-notice-card">
-        <img src="admission.jpg" alt="Teaching Assistant Vacancy">
+        <img src="admission.jpg" alt="Teaching Assistant Vacancy" onerror="this.src='https://www.nps.edu.np/public/uploads/6a745ef535cc0.jpg'">
         <a href="#" class="featured-overlay">
           <span>August 06, 2026</span>
           <h3>vacancy announcement 2083-04-21</h3>
@@ -1762,7 +1886,6 @@
       <div class="footer-col">
         <h3>Location</h3>
         <div class="footer-map-wrapper">
-          <!-- Google Map Embed for Nepal Police School Dharan -->
           <iframe 
             src="https://maps.google.com/maps?q=Nepal%20Police%20School%20Dharan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
             loading="lazy" 
