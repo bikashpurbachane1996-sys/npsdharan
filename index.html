@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>History - Nepal Police School Dharan</title>
+  <title>Nepal Police School Dharan</title>  
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
   <style>
     * {
@@ -18,7 +21,6 @@
     body {
       background-color: #f8fafc;
       overflow-x: hidden;
-      color: #334155;
     }
 
     /* Sticky Navigation Wrapper */
@@ -81,6 +83,7 @@
       letter-spacing: 0.3px;
     }
 
+    /* Slogan Styling added below location */
     .brand-text .school-slogan {
       font-size: 0.72rem;
       color: #ffcb08;
@@ -94,6 +97,7 @@
       color: #cbd5e1;
     }
 
+    /* Hamburger Toggle Button */
     .mobile-nav-toggle {
       display: none;
       background: none;
@@ -102,6 +106,12 @@
       font-size: 1.6rem;
       cursor: pointer;
       padding: 8px;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: #ffcb08;
     }
 
     .nav-links {
@@ -141,7 +151,7 @@
       font-size: 0.7rem;
     }
 
-    /* Standard Dropdown Menus */
+    /* Standard Dropdown Menus (Desktop) */
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -189,7 +199,9 @@
       }
     }
 
-    /* Mega Menu */
+    /* ========================================================
+       MEGA MENUS ("WHO WE ARE" & "NPS")
+       ======================================================== */
     .has-mega-menu {
       position: static !important;
     }
@@ -313,7 +325,7 @@
       box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
     }
 
-    /* Police Stripes */
+    /* 2. Police Stripe Ribbon */
     .police-stripes {
       width: 100%;
       display: flex;
@@ -325,108 +337,865 @@
     .stripe-blue { height: 3px; background-color: #273773; }
     .stripe-yellow { height: 3px; background-color: #ffcb08; }
 
-    /* ========================================================
-       HISTORY PAGE DESIGN STYLING
-       ======================================================== */
-    .history-hero {
-      background: linear-gradient(135deg, #1e293b 0%, #273773 100%);
-      color: #ffffff;
-      padding: 80px 24px 100px;
-      text-align: center;
-    }
-
-    .history-hero h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
-    }
-
-    .history-hero p {
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      max-width: 650px;
-      margin: 0 auto;
-    }
-
-    /* Main History Content Container */
-    .history-container {
-      max-width: 1200px;
-      margin: -50px auto 100px;
-      padding: 0 24px;
-      position: relative;
-      z-index: 5;
-    }
-
-    .history-main-card {
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    /* 3. Notice Bar */
+    .notice-bar {
+      display: flex;
+      align-items: stretch;
+      background-color: #ffffff;
       border: 1px solid #e2e8f0;
-      padding: 50px;
+      margin: 16px 24px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     }
 
-    .history-title-row {
+    .notice-badge {
+      background-color: #8c1d18;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 10px 22px;
       display: flex;
       align-items: center;
-      gap: 30px;
-      margin-bottom: 30px;
-      border-bottom: 3px solid #ffcb08;
-      padding-bottom: 20px;
-    }
-
-    .founder-badge-img {
-      width: 140px;
-      height: 160px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-      border: 3px solid #273773;
+      white-space: nowrap;
       flex-shrink: 0;
     }
 
-    .history-title-row h2 {
+    .notice-marquee-wrapper {
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .notice-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 25s linear infinite;
+    }
+
+    .notice-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .notice-item {
+      display: inline-block;
+      margin-right: 40px;
+      color: #334155;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .notice-item:hover {
+      color: #ed1c24;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* 4. Full-Width Hero Slider */
+    .hero-slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .splide__slide {
+      position: relative;
+      height: 75vh;
+      min-height: 480px;
+    }
+
+    .splide__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      right: 30px;
+      max-width: 900px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      padding: 18px 24px;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      border-left: 5px solid #ed1c24;
+      backdrop-filter: blur(4px);
+    }
+
+    .slider-progress {
+      background: rgba(255, 255, 255, 0.3);
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .slider-progress-bar {
+      background: #ffcb08;
+      height: 100%;
+      width: 0;
+      transition: width 400ms ease;
+    }
+
+    /* 5. Welcome Section & Animated Popup Cards */
+    .welcome-container {
+      max-width: 1240px;
+      margin: 80px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .welcome-text h2 {
+      font-size: 2.5rem;
+      color: #1e293b;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .welcome-text p {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 32px;
+    }
+
+    .btn-more-about {
+      background-color: #273773;
+      color: #ffffff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(39, 55, 115, 0.2);
+    }
+
+    .btn-more-about:hover {
+      background-color: #1a2550;
+      color: #ffcb08;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 12px -2px rgba(39, 55, 115, 0.3);
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .popup-card {
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      transform: scale(0.85) translateY(30px);
+      animation: popupEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+
+    .popup-card:hover {
+      transform: scale(1.03) translateY(-6px) !important;
+      box-shadow: 0 20px 30px -10px rgba(39, 55, 115, 0.2);
+    }
+
+    .card-1 { animation-delay: 0.1s; }
+    .card-2 { animation-delay: 0.25s; }
+    .card-3 { animation-delay: 0.4s; }
+    .card-4 { animation-delay: 0.55s; }
+
+    @keyframes popupEntrance {
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .popup-card.image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      transition: transform 0.5s ease;
+    }
+
+    .popup-card.image-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .popup-card.text-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 24px;
+      text-align: center;
+      color: #334155;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* 6. Full-Width Video Banner */
+    .video-full-section {
+      width: 100%;
+      background-color: #000000;
+      position: relative;
+      line-height: 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 50%;
+      height: 0;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* 7. News and Events Section */
+    .news-events-section {
+      max-width: 1240px;
+      margin: 80px auto;
+      padding: 0 24px;
+    }
+
+    .section-title {
       font-size: 2.2rem;
       font-weight: 800;
       color: #1e293b;
+      margin-bottom: 35px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .featured-notice-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2e8f0;
+      background-color: #ffffff;
+      display: flex;
+      min-height: 400px;
+    }
+
+    .featured-notice-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .featured-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      padding: 12px 20px;
+      border-radius: 8px;
+      border-left: 4px solid #ed1c24;
+      color: #ffffff;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .featured-overlay:hover {
+      transform: translateY(-2px);
+    }
+
+    .featured-overlay span {
+      font-size: 0.8rem;
+      color: #ffcb08;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .featured-overlay h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .events-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .event-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #ffffff;
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(39, 55, 115, 0.12);
+    }
+
+    .event-card img {
+      width: 85px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .event-info span {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .event-info h4 {
+      font-size: 0.95rem;
+      color: #1e293b;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: color 0.2s ease;
+    }
+
+    .event-card:hover .event-info h4 {
+      color: #273773;
+    }
+
+    /* 8. Message from Management Section */
+    .management-section {
+      max-width: 1240px;
+      margin: 80px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .management-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .mgmt-card {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+
+    .mgmt-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(39, 55, 115, 0.15);
+    }
+
+    .mgmt-header {
+      background-color: #273773;
+      height: 130px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mgmt-avatar-wrapper {
+      position: absolute;
+      bottom: -60px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .mgmt-avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mgmt-body {
+      padding: 75px 20px 30px;
+    }
+
+    .mgmt-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+
+    .mgmt-body p {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #6366f1;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    /* 9. Parallax Banner Section */
+    .parallax-quote-section {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      min-height: 440px;
+      background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://www.nps.edu.np/public/uploads/6757fda05afe5.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .parallax-content {
+      max-width: 960px;
+      color: #ffffff;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .parallax-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .parallax-content h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .parallax-content p {
+      font-size: 1.25rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #e2e8f0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 10. ECA & CCA Programs Section */
+    .eca-cca-section {
+      max-width: 1240px;
+      margin: 90px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 50px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .eca-cca-text h2 {
+      font-size: 2.5rem;
+      color: #1e293b;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .eca-cca-text p {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 30px;
+    }
+
+    .swiper-container-wrapper {
+      width: 100%;
+      overflow: hidden;
+      padding: 30px 0;
+    }
+
+    .swiper.coverflow-swiper {
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+
+    .coverflow-swiper .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 320px;
+      height: 440px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .coverflow-swiper .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-label {
+      position: absolute;
+      bottom: 24px;
+      left: 20px;
+      right: 20px;
+      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      z-index: 2;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .coverflow-swiper .swiper-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .coverflow-swiper .swiper-slide-active .slide-label,
+    .coverflow-swiper .swiper-slide-active::after {
+      opacity: 1;
+    }
+
+    .coverflow-swiper .swiper-pagination-bullet {
+      background: #94a3b8;
+      opacity: 0.6;
+    }
+
+    .coverflow-swiper .swiper-pagination-bullet-active {
+      background: #273773;
+      opacity: 1;
+      width: 22px;
+      border-radius: 4px;
+    }
+
+    /* 11. Alumni Testimonials Continuous Slider Section */
+    .alumni-section {
+      width: 100%;
+      background: #ffffff;
+      padding: 90px 0;
+      overflow: hidden;
+    }
+
+    .alumni-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .alumni-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 50px;
+    }
+
+    .swiper.alumni-swiper {
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .alumni-swiper .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+
+    .alumni-swiper .swiper-slide {
+      width: 360px;
+      flex-shrink: 0;
+    }
+
+    .alumni-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px 24px 30px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      position: relative;
+      text-align: left;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .alumni-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px rgba(39, 55, 115, 0.12);
+    }
+
+    .alumni-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .alumni-badge {
+      background-color: #273773;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 0 16px 16px 0;
+      margin-left: -24px;
+      display: inline-block;
+    }
+
+    .alumni-badge h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0;
       line-height: 1.2;
     }
 
-    .history-title-row span {
+    .alumni-badge span {
+      font-size: 0.75rem;
+      color: #cbd5e1;
       display: block;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #64748b;
-      margin-top: 6px;
     }
 
-    .history-body-text {
-      font-size: 1.05rem;
+    .alumni-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #e2e8f0;
+      overflow: hidden;
+      background-color: #f1f5f9;
+      flex-shrink: 0;
+    }
+
+    .alumni-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .alumni-text {
+      border-left: 3px solid #273773;
+      padding-left: 14px;
       color: #475569;
-      line-height: 1.9;
-      text-align: justify;
-      margin-bottom: 40px;
+      font-size: 0.92rem;
+      line-height: 1.6;
     }
 
-    /* Historical Archive Photo Grid */
-    .history-archive-grid {
+    /* 12. Bright School App & Payment Section */
+    .app-section {
+      max-width: 1240px;
+      margin: 80px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .app-info-left h2 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .app-info-left p {
+      font-size: 1.05rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .app-feature-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .app-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      color: #273773;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid #dbeafe;
+    }
+
+    .app-video-card {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+
+    .app-video-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+      background-color: #000000;
+    }
+
+    /* 13. Static Background Stats Counter Section */
+    .stats-counter-section {
+      width: 100%;
+      min-height: 380px;
+      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('school.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .stats-grid {
+      max-width: 1240px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .stat-item {
+      text-align: left;
+      position: relative;
+    }
+
+    .stat-number-wrapper {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .stat-count {
+      font-size: 3.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      text-transform: uppercase;
+      line-height: 1.3;
+      max-width: 140px;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-line {
+      width: 80px;
+      height: 3px;
+      background-color: #00b4d8;
+      margin-top: 14px;
+      border-radius: 2px;
+    }
+
+    /* 14. Photo Gallery Section */
+    .gallery-section {
+      max-width: 1240px;
+      margin: 90px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .gallery-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 45px;
+    }
+
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
-      margin-top: 30px;
     }
 
-    .archive-photo-card {
+    .gallery-card {
+      position: relative;
       border-radius: 12px;
       overflow: hidden;
-      height: 200px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e2e8f0;
-      position: relative;
-      background: #ffffff;
+      height: 220px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
     }
 
-    .archive-photo-card img {
+    .gallery-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -434,15 +1203,28 @@
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .archive-photo-card:hover img {
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(39, 55, 115, 0);
+      transition: background 0.35s ease;
+    }
+
+    .gallery-card:hover img {
       transform: scale(1.08);
     }
 
-    /* Footer */
+    .gallery-card:hover::after {
+      background: rgba(39, 55, 115, 0.25);
+    }
+
+    /* 15. Footer Section */
     .site-footer {
       background-color: #273773;
       color: #ffffff;
       padding-top: 60px;
+      position: relative;
     }
 
     .footer-container {
@@ -459,6 +1241,7 @@
       font-weight: 700;
       margin-bottom: 24px;
       color: #ffffff;
+      letter-spacing: 0.3px;
     }
 
     .footer-contact-list {
@@ -486,6 +1269,11 @@
     .footer-contact-list a {
       color: #f1f5f9;
       text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-list a:hover {
+      color: #ffcb08;
     }
 
     .footer-social-links {
@@ -589,10 +1377,57 @@
       transform: translateY(0);
     }
 
-    /* Mobile Responsiveness */
+    .btn-scroll-top:hover {
+      background-color: #b71540;
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 1100px) {
+      .mega-menu-grid-who,
+      .mega-menu-grid-nps {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .mega-divider, .mega-img-frame { display: none; }
+    }
+
     @media (max-width: 900px) {
-      .header-navbar { padding: 0 16px; height: 70px; }
-      .mobile-nav-toggle { display: block; }
+      .header-navbar {
+        padding: 0 16px;
+        height: 70px;
+      }
+
+      .brand-section {
+        gap: 10px;
+      }
+
+      .brand-logos img.school-logo {
+        height: 44px;
+        width: 44px;
+      }
+
+      .brand-logos img.police-crest {
+        height: 48px;
+      }
+
+      .brand-text h1 {
+        font-size: 0.95rem;
+      }
+
+      .brand-text .school-slogan {
+        font-size: 0.65rem;
+      }
+
+      .brand-text p {
+        font-size: 0.68rem;
+      }
+
+      /* Enable Hamburger Icon */
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      /* Slide-down Mobile Navigation Drawer */
       .nav-links {
         display: flex;
         flex-direction: column;
@@ -602,32 +1437,136 @@
         right: 0;
         background: #1c2754;
         width: 100%;
+        height: auto;
         max-height: calc(100vh - 70px);
         overflow-y: auto;
         padding: 12px 18px 24px;
         gap: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
+
+        /* Default closed */
         opacity: 0;
         pointer-events: none;
         transform: translateY(-10px);
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      .nav-links.active-mobile { opacity: 1; pointer-events: auto; transform: translateY(0); }
-      .nav-item { width: 100%; display: flex; flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; }
-      .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; background: #162044 !important; border-radius: 8px !important; display: none; padding: 8px 12px !important; }
-      .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
-      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; }
-      .mega-img-frame, .mega-divider { display: none !important; }
 
-      .history-main-card { padding: 25px; }
-      .history-title-row { flex-direction: column; text-align: center; gap: 16px; }
-      .history-archive-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-container { grid-template-columns: 1fr; }
+      .nav-links.active-mobile {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-item {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-link {
+        width: 100%;
+        justify-content: space-between;
+        padding: 14px 10px;
+        font-size: 1rem;
+      }
+
+      /* Mobile Accordions for Dropdowns and Mega Menus */
+      .dropdown-menu,
+      .mega-menu {
+        position: static !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        background: #162044 !important;
+        border-radius: 8px !important;
+        border-top: none !important;
+        padding: 8px 12px !important;
+        display: none;
+      }
+
+      .dropdown-menu.mobile-open,
+      .mega-menu.mobile-open {
+        display: block !important;
+      }
+
+      .dropdown-menu::before,
+      .mega-menu::before {
+        display: none !important;
+      }
+
+      .dropdown-menu li a {
+        color: #cbd5e1 !important;
+        padding: 10px 14px !important;
+      }
+
+      .dropdown-menu li a:hover {
+        background-color: #273773 !important;
+        color: #ffcb08 !important;
+      }
+
+      .mega-menu-grid-who,
+      .mega-menu-grid-nps {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+
+      .mega-links-col,
+      .mega-column {
+        padding: 0 !important;
+        gap: 4px !important;
+      }
+
+      .mega-links-col a,
+      .mega-column a {
+        color: #cbd5e1 !important;
+        padding: 9px 12px !important;
+        font-size: 0.9rem !important;
+      }
+
+      .mega-links-col a:hover,
+      .mega-column a:hover {
+        background-color: #273773 !important;
+        color: #ffcb08 !important;
+        transform: translateX(4px) !important;
+      }
+
+      .mega-col-title {
+        color: #ffcb08 !important;
+        margin-top: 10px;
+      }
+
+      /* Layout adjustments for rest of page */
+      .splide__slide { height: 50vh; min-height: 350px; }
+      .slide-caption { font-size: 0.9rem; left: 15px; right: 15px; bottom: 15px; }
+      .welcome-container { grid-template-columns: 1fr; gap: 40px; margin: 50px auto; }
+      .welcome-text h2 { font-size: 2rem; }
+      .video-container { padding-bottom: 56.25%; }
+      .news-grid { grid-template-columns: 1fr; }
+      .featured-notice-card { min-height: 300px; }
+      .management-grid { grid-template-columns: 1fr; gap: 24px; }
+      .parallax-quote-section { height: 50vh; }
+      .parallax-content h2 { font-size: 1.6rem; }
+      .parallax-content p { font-size: 1rem; }
+      .eca-cca-section { grid-template-columns: 1fr; margin: 50px auto; gap: 35px; }
+      .coverflow-swiper .swiper-slide { width: 260px; height: 360px; }
+      .alumni-section { padding: 60px 0; }
+      .alumni-title { font-size: 2rem; margin-bottom: 35px; }
+      .alumni-swiper .swiper-slide { width: 300px; }
+      .app-section { grid-template-columns: 1fr; margin: 50px auto; gap: 30px; }
+      .app-info-left h2 { font-size: 1.8rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 35px 20px; }
+      .stat-count { font-size: 2.8rem; }
+      .stat-label { font-size: 0.85rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-container { grid-template-columns: 1fr; gap: 35px; }
     }
 
     @media (max-width: 500px) {
-      .history-archive-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; gap: 28px; }
+      .gallery-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -635,6 +1574,7 @@
 
   <!-- Sticky Header Wrapper -->
   <div class="header-wrapper">
+    <!-- Top Header Navigation -->
     <header class="header-navbar">
       <a href="index.html" class="brand-section">
         <div class="brand-logos">
@@ -654,22 +1594,24 @@
       </button>
 
       <ul class="nav-links" id="navLinksMenu">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
         
-        <!-- "Who We Are" Mega Menu -->
+        <!-- 1. "Who We Are" Mega Menu -->
         <li class="nav-item has-mega-menu" id="menuWhoWeAre">
-          <a href="#" class="nav-link active">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
+          <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
           <div class="mega-menu" id="dropdownWhoWeAre">
             <div class="mega-menu-grid-who">
+              
               <div class="mega-img-frame">
                 <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
               </div>
 
               <div class="mega-divider"></div>
 
+              <!-- Column 1: School Heritage Links -->
               <div class="mega-links-col">
-                <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
-                <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="aboutus.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
@@ -677,6 +1619,7 @@
 
               <div class="mega-divider"></div>
 
+              <!-- Column 2: Leadership Messages -->
               <div class="mega-links-col">
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
@@ -686,28 +1629,31 @@
               <div class="mega-img-frame">
                 <img src="building.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
               </div>
+
             </div>
           </div>
         </li>
 
-        <!-- "NPS" Mega Menu -->
+        <!-- 2. "NPS" Mega Menu -->
         <li class="nav-item has-mega-menu" id="menuNPS">
           <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
           <div class="mega-menu" id="dropdownNPS">
             <div class="mega-menu-grid-nps">
+              
               <div class="mega-img-frame">
                 <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
               </div>
 
               <div class="mega-divider"></div>
 
+              <!-- Column 1: Departments -->
               <div class="mega-column">
                 <div class="mega-col-title">Departments</div>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Tech Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
@@ -715,22 +1661,26 @@
 
               <div class="mega-divider"></div>
 
+              <!-- Column 2: School Premises / Wings -->
               <div class="mega-column">
                 <div class="mega-col-title">School premises</div>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Junior Wings (Grade 4-6)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Senior Wing (Grade 7-10)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Wing (Grade 11 &amp; 12)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Management Wing (Grade 11 &amp; 12)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> ECD/PPC PlayGroup</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
               </div>
 
               <div class="mega-divider"></div>
 
+              <!-- Column 3: Message from Core Team -->
               <div class="mega-column">
                 <div class="mega-col-title">Message From Core Team</div>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
               </div>
+
             </div>
           </div>
         </li>
@@ -762,7 +1712,7 @@
       </ul>
     </header>
 
-    <!-- Police Stripe Ribbon -->
+    <!-- Police Color Stripes Ribbon -->
     <div class="police-stripes">
       <div class="stripe-white"></div>
       <div class="stripe-red"></div>
@@ -773,62 +1723,404 @@
     </div>
   </div>
 
-  <!-- Hero Header Section -->
-  <section class="history-hero">
-    <h1>Our Glorious History &amp; Heritage</h1>
-    <p>Tracing the remarkable journey of Nepal Police School from its inception to becoming a pillar of academic and disciplinary excellence.</p>
+  <!-- Latest Notices Section -->
+  <section class="notice-bar">
+    <div class="notice-badge">Latest Notices</div>
+    <div class="notice-marquee-wrapper">
+      <div class="notice-marquee">
+        <a href="#" class="notice-item">नेपाल पुलिस स्कुल धरान: शैक्षिक सत्र २०८३ का लागि नयाँ भर्ना खुल्यो ।</a>
+        <a href="#" class="notice-item">स्टेशनरी तथा खेलकुद सामग्री आपूर्तिका लागि सिलबन्दी दरभाउपत्र आह्वानको सूचना ।</a>
+        <a href="#" class="notice-item">विद्यार्थीहरुको पोशाक आपूर्ति सम्बन्धी दरभाउपत्र आह्वानको सूचना २०८३ ।</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Main History Content Container -->
-  <main class="history-container">
-    <div class="history-main-card">
+  <!-- Hero Slider -->
+  <section class="hero-slider-container">
+    <div class="splide" id="hero-splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="krishnajanmasthami.jpeg" alt="School Ceremony">
+            <div class="slide-caption">
+              "श्रीकृष्ण जन्माष्टमीको पावन अवसरमा यहाँ तथा यहाँको सम्पूर्ण परिवारमा सुख, शान्ति, सुस्वास्थ्य र समृद्धिको हार्दिक मङ्गलमय शुभकामना। जय श्रीकृष्ण! 🙏🌸"
+            </div>
+          </li>
+          <li class="splide__slide">
+            <img src="counselling.jpg" alt="Tournament Opening">
+            <div class="slide-caption">
+              ३१ औं अन्तर माध्यामिक विद्यालय आइजीपी फुटबल रनिङ ट्रफी प्रतियोगिता २०८२ उद्‍घाटन समारोह ।
+            </div>
+          </li>
+          <li class="splide__slide">
+            <img src="team.jpg" alt="Prize Distribution">
+            <div class="slide-caption">
+              प्रतियोगितामा विजयी खेलाडीहरूलाई ट्रफी, नगद पुरस्कार तथा प्रमाणपत्र प्रदान गर्दै प्रमुख अतिथिज्यू ।
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="slider-progress">
+        <div class="slider-progress-bar" id="progress-bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="welcome-container">
+    <div class="welcome-text">
+      <h2>Welcome to Nepal Police School</h2>
+      <p>
+        Prestigious educational institution dedicated to providing quality education with a focus on discipline, integrity, and holistic development. With a strong emphasis on character building and academic excellence, Nepal Police School cultivates responsible citizens and future leaders through its rigorous curriculum and nurturing environment.
+      </p>
+      <a href="about.html" class="btn-more-about">
+        More About Us <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+
+    <div class="welcome-grid">
+      <div class="popup-card image-card card-1">
+        <img src="dig.jpg" alt="Campus Building">
+      </div>
+      <div class="popup-card text-card card-2">
+        <p>Unleash your potential in our enriching library, fostering a conducive learning atmosphere for students.</p>
+      </div>
+      <div class="popup-card text-card card-3">
+        <p>Unleash your potential in our enriching library, fostering a conducive learning atmosphere for students.</p>
+      </div>
+      <div class="popup-card image-card card-4">
+        <img src="school.jpg" alt="Student Assembly">
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-Width Video Section -->
+  <section class="video-full-section">
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/VGwk3ZYcCfo?autoplay=1&mute=1&loop=1&playlist=VGwk3ZYcCfo&controls=1" 
+        title="Nepal Police School Video" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- News and Events Section -->
+  <section class="news-events-section">
+    <h2 class="section-title">News and Events</h2>
+    <div class="news-grid">
+      <div class="featured-notice-card">
+        <img src="admission.jpg" alt="Teaching Assistant Vacancy" onerror="this.src='https://www.nps.edu.np/public/uploads/6a745ef535cc0.jpg'">
+        <a href="#" class="featured-overlay">
+          <span>August 06, 2026</span>
+          <h3>vacancy announcement 2083-04-21</h3>
+        </a>
+      </div>
+
+      <div class="events-list">
+        <a href="#" class="event-card">
+          <img src="https://www.nps.edu.np/images/Signature%20Block.jpg" alt="Notice Thumbnail">
+          <div class="event-info">
+            <span>July 30, 2026</span>
+            <h4>स्टेशनरी तथा सरसफाई सम्बन्धी सामग्री आपूर्तिका लागि सिलबन्दी दरभाउपत्र/टेन्डर आव्हान ।</h4>
+          </div>
+        </a>
+
+        <a href="#" class="event-card">
+          <img src="https://www.nps.edu.np/public/uploads/6a683e5abce4f.jpg" alt="Event Thumbnail">
+          <div class="event-info">
+            <span>July 28, 2026</span>
+            <h4>स्वागत तथा फेरी भेटौँला कार्यक्रम</h4>
+          </div>
+        </a>
+
+        <a href="#" class="event-card">
+          <img src="https://www.nps.edu.np/images/Signature%20Block.jpg" alt="Notice Thumbnail">
+          <div class="event-info">
+            <span>July 24, 2026</span>
+            <h4>विद्यार्थीहरुको लत्ता–कपडा आपूर्ति सम्बन्धी दरभाउपत्र आवहानको सूचना २०८३/०४/०८</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Message from Management Section -->
+  <section class="management-section">
+    <h2 class="section-title">Message from Management</h2>
+    <div class="management-grid">
       
-      <!-- Founder / Overview Header Row -->
-      <div class="history-title-row">
-        <img src="dipendra.jpg" alt="IGP D. B. Lama" class="founder-badge-img" onerror="this.src='https://www.nps.edu.np/public/uploads/6a681deaee9f4.jpg'">
-        <div>
-          <h2>Quick Overview of School History</h2>
-          <span>Founded in 2040 BS by the then IGP Late D. B. Lama</span>
+      <!-- Chairperson -->
+      <div class="mgmt-card">
+        <div class="mgmt-header">
+          <div class="mgmt-avatar-wrapper">
+            <img src="chairman.jpg" alt="SSP Gyanendra Prasad Fuyal" onerror="this.src='https://www.nps.edu.np/public/uploads/6a681deaee9f4.jpg'">
+          </div>
+        </div>
+        <div class="mgmt-body">
+          <h3>SSP Gyanendra Prasad Fuyal</h3>
+          <p>CHAIRPERSON</p>
         </div>
       </div>
 
-      <!-- Historical Narrative Text -->
-      <div class="history-body-text">
-        <p>
-          Nepal Police School is a not-for-profit educational institution run by the Nepal Police organization under the patronage of the Nepal Police Educational Trust. Popularly acronymed as NPS and affectionately known as N'cops/D'cops, the school was established in 2040 BS by the then IGP Late D. B. Lama. 
-        </p>
-        <p style="margin-top: 16px;">
-          The primary objective was to impart quality education to the children of police personnel who, on the course of their duty of serving the nation, remain away from their families. Later, the school doors were opened to the general public as well. With its long glorious history, the institution has established itself as a premier educational landmark in the nation.
-        </p>
-        <p style="margin-top: 16px;">
-          Surrounded by lush greenery and serene environments, the school provides an inspiring learning atmosphere far from the hustle, bustle, and pollution of urban city life, fostering wholesome growth and character development for every student.
-        </p>
+      <!-- Principal -->
+      <div class="mgmt-card">
+        <div class="mgmt-header">
+          <div class="mgmt-avatar-wrapper">
+            <img src="principal.jpg" alt="Monika Subba (Rai)" onerror="this.src='https://www.nps.edu.np/public/uploads/66dd4032e38c9.jpg'">
+          </div>
+        </div>
+        <div class="mgmt-body">
+          <h3>Monika Subba (Rai)</h3>
+          <p>PRINCIPAL</p>
+        </div>
       </div>
 
-      <!-- Historical Archive Image Showcase (Using dipendra, dipendra1, etc.) -->
-      <h3 style="font-size: 1.4rem; font-weight: 700; color: #1e293b; margin-bottom: 15px;">Archival Gallery</h3>
-      <div class="history-archive-grid">
-        <div class="archive-photo-card">
-          <img src="dipendra.jpg" alt="Historical Event 1" onerror="this.src='https://www.nps.edu.np/public/uploads/69302de3e4a93.jpg'">
+      <!-- Commandant -->
+      <div class="mgmt-card">
+        <div class="mgmt-header">
+          <div class="mgmt-avatar-wrapper">
+            <img src="commandant.jpg" alt="Inspector Anita Mahat" onerror="this.src='https://www.nps.edu.np/public/uploads/697acd89aac94.png'">
+          </div>
         </div>
-        <div class="archive-photo-card">
-          <img src="dipendra1.jpg" alt="Historical Event 2" onerror="this.src='https://www.nps.edu.np/public/uploads/69302de434f86.jpg'">
-        </div>
-        <div class="archive-photo-card">
-          <img src="dipendra2.jpg" alt="Historical Event 3" onerror="this.src='https://www.nps.edu.np/public/uploads/69302de2bc9a8.jpg'">
-        </div>
-        <div class="archive-photo-card">
-          <img src="dipendra3.jpg" alt="Historical Event 4" onerror="this.src='https://www.nps.edu.np/public/uploads/69302de310067.jpg'">
+        <div class="mgmt-body">
+          <h3>Inspector Anita Mahat</h3>
+          <p>COMMANDANT</p>
         </div>
       </div>
 
     </div>
-  </main>
+  </section>
 
-  <!-- Footer Section -->
+  <!-- Parallax Quote Banner Section -->
+  <section class="parallax-quote-section" id="parallaxSection">
+    <div class="parallax-content" id="parallaxContent">
+      <h2>TRUSTED BY 60,000 STUDENTS AND PARENTS</h2>
+      <p>“Intelligence plus character that is the goal of true education.”</p>
+    </div>
+  </section>
+
+  <!-- ECA & CCA Programs Section -->
+  <section class="eca-cca-section">
+    <div class="eca-cca-text">
+      <h2>ECA &amp;<br>CCA Programs</h2>
+      <p>
+        Our school offers a vibrant array of extracurricular activities, ranging from competitive sports teams to creative arts clubs, providing students with opportunities to explore their passions and talents outside the classroom.
+      </p>
+      <a href="#" class="btn-more-about">
+        More About Program <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+
+    <!-- 3D Coverflow Slider -->
+    <div class="swiper-container-wrapper">
+      <div class="swiper coverflow-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="image4.jpg" alt="School Sports">
+            <div class="slide-label">School Sports</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="image1.jpg" alt="Football Competition">
+            <div class="slide-label">Football Competition</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="image2.jpg" alt="Community Services">
+            <div class="slide-label">Community Services</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="image3.jpg" alt="Sports & Physical Activities">
+            <div class="slide-label">Sports &amp; Physical Activities</div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alumni Testimonials Continuous Slider Section -->
+  <section class="alumni-section">
+    <div class="alumni-container">
+      <h2 class="alumni-title">What Our Alumni Say</h2>
+
+      <div class="swiper alumni-swiper">
+        <div class="swiper-wrapper">
+          
+          <!-- Card 1 -->
+          <div class="swiper-slide">
+            <div class="alumni-card">
+              <div class="alumni-card-top">
+                <div class="alumni-badge">
+                  <h4>Ranjan Thapa</h4>
+                  <span>---</span>
+                </div>
+                <div class="alumni-avatar">
+                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Ranjan" alt="Ranjan Thapa" onerror="this.src='https://www.nps.edu.np/public/uploads/67ecd9aa2d3c3.jpg'">
+                </div>
+              </div>
+              <div class="alumni-text">
+                Dear Nepal Police School, As alumni, we come together today with immense pride and gratitude in our hearts for the foundation...
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="swiper-slide">
+            <div class="alumni-card">
+              <div class="alumni-card-top">
+                <div class="alumni-badge">
+                  <h4>Anjana Thakuri</h4>
+                  <span>.</span>
+                </div>
+                <div class="alumni-avatar">
+                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Anjana" alt="Anjana Thakuri" onerror="this.src='https://www.nps.edu.np/public/uploads/67ecd4625148d.jpg'">
+                </div>
+              </div>
+              <div class="alumni-text">
+                Dear Fellow Alumni, Greetings from your former classmates at Nepal Police School! Time may have passed, but the values stay with us forever...
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="swiper-slide">
+            <div class="alumni-card">
+              <div class="alumni-card-top">
+                <div class="alumni-badge">
+                  <h4>Bikash Rai</h4>
+                  <span>Alumni Batch 2075</span>
+                </div>
+                <div class="alumni-avatar">
+                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Bikash" alt="Bikash Rai">
+                </div>
+              </div>
+              <div class="alumni-text">
+                The strict discipline, sports focus, and character building at Nepal Police School shaped our personality and path toward leadership.
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="swiper-slide">
+            <div class="alumni-card">
+              <div class="alumni-card-top">
+                <div class="alumni-badge">
+                  <h4>Pooja Shrestha</h4>
+                  <span>Alumni Batch 2077</span>
+                </div>
+                <div class="alumni-avatar">
+                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Pooja" alt="Pooja Shrestha">
+                </div>
+              </div>
+              <div class="alumni-text">
+                Living in the hostel with peers and dedicated teachers gave us unforgettable memories and lifelong friendships that we cherish today.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bright School App & Payment Section -->
+  <section class="app-section">
+    <div class="app-info-left">
+      <h2>Nepal Police School Dharan को App बाट<br>School Fee Payment यसरी गर्नुहोस ।</h2>
+      <p>
+        Learn the step-by-step process to pay your school fees easily and securely from the app. Manage student records, online fee payments, results, exam routines, and real-time school notices all in one place.
+      </p>
+
+      <div class="app-feature-badges">
+        <span class="app-badge-item"><i class="fa-solid fa-wallet"></i> Fee Payment</span>
+        <span class="app-badge-item"><i class="fa-solid fa-graduation-cap"></i> Result & Exams</span>
+        <span class="app-badge-item"><i class="fa-solid fa-bullhorn"></i> Instant Notices</span>
+        <span class="app-badge-item"><i class="fa-solid fa-user-check"></i> Attendance</span>
+      </div>
+    </div>
+
+    <div class="app-video-card">
+      <video controls poster="thumbnail.jpg">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- 13. Static Background Stats Counter Section -->
+  <section class="stats-counter-section" id="statsSection">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number-wrapper">
+          <span class="stat-count" data-target="65">0</span>
+          <span class="stat-label">PROFESSIONAL TEACHERS</span>
+        </div>
+        <div class="stat-line"></div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number-wrapper">
+          <span class="stat-count" data-target="387">0</span>
+          <span class="stat-label">ACTIVITIES</span>
+        </div>
+        <div class="stat-line"></div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number-wrapper">
+          <span class="stat-count" data-target="40">0</span>
+          <span class="stat-label">POLICE STAFF</span>
+        </div>
+        <div class="stat-line"></div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number-wrapper">
+          <span class="stat-count" data-target="1532">0</span>
+          <span class="stat-label">REGISTERED STUDENTS</span>
+        </div>
+        <div class="stat-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Photo Gallery Section -->
+  <section class="gallery-section">
+    <h2 class="gallery-title">Photo Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de3e4a93.jpg" alt="Trophy Handover Event">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de434f86.jpg" alt="Cultural Dance Festival">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de2bc9a8.jpg" alt="Sports Ground Assembly">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de310067.jpg" alt="Spectator Stadium">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de358804.jpg" alt="Student March Drill">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de1df157.jpg" alt="Students in Traditional Attire">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de23330f.jpg" alt="Annual Sports Ceremony">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de278cb5.jpg" alt="Speech and Award Ceremony">
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Footer Section -->
   <site-footer class="site-footer">
     <div class="footer-container">
       
+      <!-- Contact Column -->
       <div class="footer-col">
         <h3>Contact</h3>
         <ul class="footer-contact-list">
@@ -860,22 +2152,24 @@
         </div>
       </div>
 
+      <!-- Navigation Column -->
       <div class="footer-col">
         <h3>Navigate</h3>
         <ul class="footer-nav-grid">
           <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
           <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
-          <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Community</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> News</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
           <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
 
+      <!-- Location Column -->
       <div class="footer-col">
         <h3>Location</h3>
         <div class="footer-map-wrapper">
@@ -890,6 +2184,7 @@
 
     </div>
 
+    <!-- Copyright Bar -->
     <div class="footer-bottom">
       © Copyright 2026, Nepal Police School | All Rights Reserved | Designed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
     </div>
@@ -900,11 +2195,121 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
+  <!-- Core Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
   <script>
+    // Hero Slider (Splide)
+    const splide = new Splide('#hero-splide', {
+      type: 'loop',
+      perPage: 1,
+      autoplay: true,
+      interval: 2000,
+      pauseOnHover: true,
+      arrows: false,
+      pagination: false
+    });
+
+    const progressBar = document.getElementById('progress-bar');
+    splide.on('mounted move', function () {
+      const end = splide.Components.Controller.getEnd() + 1;
+      const rate = Math.min((splide.index + 1) / end, 1);
+      progressBar.style.width = String(100 * rate) + '%';
+    });
+
+    splide.mount();
+
+    // Parallax Scroll Animation Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('parallaxContent').classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(document.getElementById('parallaxSection'));
+
+    // ECA & CCA 3D Coverflow Swiper Slider
+    const coverflowSwiper = new Swiper('.coverflow-swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 140,
+        modifier: 2.5,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Alumni Testimonials Continuous Linear Infinite Slider
+    const alumniSwiper = new Swiper('.alumni-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      loop: true,
+      freeMode: true,
+      speed: 6000,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+    });
+
+    // Animated Counter on Scroll
+    let animated = false;
+    const statsSection = document.getElementById('statsSection');
+    const counters = document.querySelectorAll('.stat-count');
+
+    function runCounter() {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000;
+        const stepTime = 20;
+        const totalSteps = duration / stepTime;
+        const increment = target / totalSteps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.innerText = target;
+            clearInterval(timer);
+          } else {
+            counter.innerText = Math.ceil(current);
+          }
+        }, stepTime);
+      });
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          runCounter();
+          animated = true;
+        }
+      });
+    }, { threshold: 0.4 });
+
+    statsObserver.observe(statsSection);
+
     // Back to Top functionality
     const btnScrollTop = document.getElementById('btnScrollTop');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 400) {
         btnScrollTop.classList.add('visible');
       } else {
         btnScrollTop.classList.remove('visible');
@@ -918,8 +2323,10 @@
       });
     });
 
-    // Mega Menu Hover Stabilizers for Desktop
-    function setupMegaMenu(triggerId, menuId) {
+    // ========================================================
+    // DESKTOP MEGA MENUS HOVER STABILIZERS
+    // ========================================================
+    function setupDesktopMegaMenu(triggerId, menuId) {
       const trigger = document.getElementById(triggerId);
       const menu = document.getElementById(menuId);
       let timeout;
@@ -957,10 +2364,12 @@
       });
     }
 
-    setupMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
-    setupMegaMenu('menuNPS', 'dropdownNPS');
+    setupDesktopMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
+    setupDesktopMegaMenu('menuNPS', 'dropdownNPS');
 
-    // Mobile Navigation & Drawer Toggles
+    // ========================================================
+    // MOBILE HAMBURGER MENU & ACCORDION SYSTEM
+    // ========================================================
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinksMenu = document.getElementById('navLinksMenu');
     const mobileIcon = mobileToggle.querySelector('i');
@@ -976,7 +2385,7 @@
       }
     });
 
-    // Mobile Accordion Logic
+    // Accordion toggle on mobile for all items with a dropdown or mega-menu
     const navItemsWithSub = document.querySelectorAll('.nav-item');
     navItemsWithSub.forEach(item => {
       const triggerLink = item.querySelector('.nav-link');
@@ -987,8 +2396,10 @@
       if (targetMenu) {
         triggerLink.addEventListener('click', (e) => {
           if (window.innerWidth <= 900) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent navigating when tapping top label on mobile
             targetMenu.classList.toggle('mobile-open');
+
+            // Rotate caret icon on mobile
             const caret = triggerLink.querySelector('i');
             if (caret) {
               caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
@@ -1002,3 +2413,4 @@
 
 </body>
 </html>
+
