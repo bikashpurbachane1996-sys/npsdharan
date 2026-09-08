@@ -184,7 +184,6 @@
       z-index: 9999;
     }
 
-    /* Seamless bridge spanning across police stripes */
     .mega-menu::before {
       content: "";
       position: absolute;
@@ -200,7 +199,6 @@
       display: block;
     }
 
-    /* Grid for "Who We Are" */
     .mega-menu-grid-who {
       max-width: 1320px;
       margin: 0 auto;
@@ -210,7 +208,6 @@
       align-items: stretch;
     }
 
-    /* Grid for "NPS" (Image + 3 Columns) */
     .mega-menu-grid-nps {
       max-width: 1320px;
       margin: 0 auto;
@@ -248,41 +245,46 @@
       margin: auto 0;
     }
 
+    /* Fixed vertical stack structure */
+    .mega-links-col,
     .mega-column {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      justify-content: center;
+      gap: 8px;
       padding: 0 10px;
+      width: 100%;
     }
 
     .mega-col-title {
       font-size: 1.05rem;
       font-weight: 700;
-      color: #ed1c24; /* Red header text */
+      color: #ed1c24;
       margin-bottom: 8px;
       padding-left: 6px;
     }
 
-    /* Submenu Interactive Buttons with Blue Background & White Text */
+    /* Full-width block items: strictly one item per line */
     .mega-links-col a,
     .mega-column a {
       color: #1e293b;
       text-decoration: none;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      padding: 8px 12px;
-      border-radius: 6px;
+      padding: 10px 14px;
+      border-radius: 8px;
       transition: all 0.22s ease;
-      display: inline-flex;
+      display: flex; /* Forces each link onto its own separate vertical row */
       align-items: center;
-      gap: 8px;
+      width: 100%;
+      gap: 10px;
       cursor: pointer;
     }
 
     .mega-links-col a:hover,
     .mega-column a:hover {
       background-color: #273773; /* Solid Navy Blue */
-      color: #ffffff;            /* White Foreground Text */
+      color: #ffffff;            /* White Text */
       transform: translateX(6px);
       box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
     }
@@ -1416,6 +1418,7 @@
 
             <div class="mega-divider"></div>
 
+            <!-- Column 1: School Heritage Links (Strict Vertical List) -->
             <div class="mega-links-col">
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
@@ -1426,6 +1429,7 @@
 
             <div class="mega-divider"></div>
 
+            <!-- Column 2: Leadership Messages (Strict Vertical List) -->
             <div class="mega-links-col">
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
               <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
@@ -1440,13 +1444,12 @@
         </div>
       </li>
 
-      <!-- 2. "NPS" Mega Menu (Matching Screenshot) -->
+      <!-- 2. "NPS" Mega Menu -->
       <li class="nav-item has-mega-menu" id="menuNPS">
         <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
         <div class="mega-menu" id="dropdownNPS">
           <div class="mega-menu-grid-nps">
             
-            <!-- Left School Building Image -->
             <div class="mega-img-frame">
               <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
             </div>
@@ -1456,14 +1459,14 @@
             <!-- Column 1: Departments -->
             <div class="mega-column">
               <div class="mega-col-title">Departments</div>
-              <a href="#">English Department</a>
-              <a href="#">Science Department</a>
-              <a href="#">Nepali Department</a>
-              <a href="#">Social Studies Department</a>
-              <a href="#">Computer and Technology Department</a>
-              <a href="#">Mathematics Department</a>
-              <a href="#">Integrated Department</a>
-              <a href="#">Administration Department</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
             </div>
 
             <div class="mega-divider"></div>
@@ -1471,10 +1474,10 @@
             <!-- Column 2: School Premises / Wings -->
             <div class="mega-column">
               <div class="mega-col-title">School premises</div>
-              <a href="#">Junior Wings (Grade 4-6)</a>
-              <a href="#">Senior Wing (Grade 7-10)</a>
-              <a href="#">Science Wing (Grade 11 &amp; 12)</a>
-              <a href="#">Management Wing (Grade 11 &amp; 12)</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Junior Wings (Grade 4-6)</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Senior Wing (Grade 7-10)</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Wing (Grade 11 &amp; 12)</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Management Wing (Grade 11 &amp; 12)</a>
             </div>
 
             <div class="mega-divider"></div>
@@ -1482,9 +1485,9 @@
             <!-- Column 3: Message from Core Team -->
             <div class="mega-column">
               <div class="mega-col-title">Message From Core Team</div>
-              <a href="#">Message From Chairperson</a>
-              <a href="#">Message From Principal</a>
-              <a href="#">Message From Commandant</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+              <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
             </div>
 
           </div>
@@ -2146,7 +2149,7 @@
       trigger.addEventListener('mouseleave', () => {
         timeout = setTimeout(() => {
           menu.style.display = 'none';
-        }, 220); // 220ms grace buffer
+        }, 220);
       });
 
       menu.addEventListener('mouseenter', () => {
@@ -2167,4 +2170,3 @@
 
 </body>
 </html>
-
