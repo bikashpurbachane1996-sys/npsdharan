@@ -78,13 +78,22 @@
     }
 
     .brand-text h1 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: 0.3px;
     }
 
+    /* Slogan Styling matching the screenshot */
+    .brand-text .school-slogan {
+      font-size: 0.76rem;
+      color: #ffcb08;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin: 2px 0;
+    }
+
     .brand-text p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #cbd5e1;
     }
 
@@ -1210,12 +1219,14 @@
       background: rgba(39, 55, 115, 0.25);
     }
 
-    /* 15. Footer Section */
-    .site-footer {
-      background-color: #273773;
-      color: #ffffff;
-      padding-top: 60px;
+    /* 15. Guaranteed Solid Footer Section */
+    footer.site-footer {
+      display: block !important;
+      background-color: #273773 !important;
+      color: #ffffff !important;
+      padding-top: 60px !important;
       position: relative;
+      width: 100%;
     }
 
     .footer-container {
@@ -1231,7 +1242,7 @@
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 24px;
-      color: #ffffff;
+      color: #ffffff !important;
       letter-spacing: 0.3px;
     }
 
@@ -1247,24 +1258,24 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 0.92rem;
-      color: #f1f5f9;
+      color: #f1f5f9 !important;
       line-height: 1.5;
     }
 
     .footer-contact-list li i {
       margin-top: 3px;
-      color: #ffcb08;
+      color: #ffcb08 !important;
       font-size: 0.95rem;
     }
 
     .footer-contact-list a {
-      color: #f1f5f9;
+      color: #f1f5f9 !important;
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
     .footer-contact-list a:hover {
-      color: #ffcb08;
+      color: #ffcb08 !important;
     }
 
     .footer-social-links {
@@ -1281,14 +1292,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
+      color: #ffffff !important;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .footer-social-btn:hover {
-      background-color: #ffffff;
-      color: #273773;
+      background-color: #ffffff !important;
+      color: #273773 !important;
       transform: translateY(-3px);
     }
 
@@ -1300,7 +1311,7 @@
     }
 
     .footer-nav-grid li a {
-      color: #f1f5f9;
+      color: #f1f5f9 !important;
       text-decoration: none;
       font-size: 0.92rem;
       display: inline-flex;
@@ -1310,7 +1321,7 @@
     }
 
     .footer-nav-grid li a:hover {
-      color: #ffcb08;
+      color: #ffcb08 !important;
       transform: translateX(4px);
     }
 
@@ -1334,11 +1345,11 @@
       padding: 20px 24px;
       text-align: center;
       font-size: 0.9rem;
-      color: #cbd5e1;
+      color: #cbd5e1 !important;
     }
 
     .footer-bottom strong {
-      color: #ffffff;
+      color: #ffffff !important;
     } 
 
     .btn-scroll-top {
@@ -1373,9 +1384,7 @@
       transform: translateY(-4px);
     }
 
-    /* ========================================================
-       MOBILE & RESPONSIVE DRAWER STYLING (iPhone 13 / Handsets)
-       ======================================================== */
+    /* Mobile Responsiveness */
     @media (max-width: 1100px) {
       .mega-menu-grid-who,
       .mega-menu-grid-nps {
@@ -1405,11 +1414,15 @@
       }
 
       .brand-text h1 {
-        font-size: 0.98rem;
+        font-size: 0.95rem;
+      }
+
+      .brand-text .school-slogan {
+        font-size: 0.65rem;
       }
 
       .brand-text p {
-        font-size: 0.72rem;
+        font-size: 0.68rem;
       }
 
       /* Enable Hamburger Icon */
@@ -1435,7 +1448,6 @@
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
 
-        /* Default closed */
         opacity: 0;
         pointer-events: none;
         transform: translateY(-10px);
@@ -1566,13 +1578,14 @@
   <div class="header-wrapper">
     <!-- Top Header Navigation -->
     <header class="header-navbar">
-      <a href="#" class="brand-section">
+      <a href="index.html" class="brand-section">
         <div class="brand-logos">
           <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
           <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
         </div>
         <div class="brand-text">
           <h1>NEPAL POLICE SCHOOL</h1>
+          <div class="school-slogan"><i>Better Schooling for Ideal Citizens</i></div>
           <p><i>Dharan-13, Sunsari Nepal</i></p>
         </div>
       </a>
@@ -1583,7 +1596,7 @@
       </button>
 
       <ul class="nav-links" id="navLinksMenu">
-        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
         
         <!-- 1. "Who We Are" Mega Menu -->
         <li class="nav-item has-mega-menu" id="menuWhoWeAre">
@@ -1653,10 +1666,11 @@
               <!-- Column 2: School Premises / Wings -->
               <div class="mega-column">
                 <div class="mega-col-title">School premises</div>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Junior Wings (Grade 4-6)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Senior Wing (Grade 7-10)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Wing (Grade 11 &amp; 12)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Management Wing (Grade 11 &amp; 12)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> ECD/PPC PlayGroup</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
               </div>
 
               <div class="mega-divider"></div>
@@ -1762,7 +1776,7 @@
       <p>
         Prestigious educational institution dedicated to providing quality education with a focus on discipline, integrity, and holistic development. With a strong emphasis on character building and academic excellence, Nepal Police School cultivates responsible citizens and future leaders through its rigorous curriculum and nurturing environment.
       </p>
-      <a href="#" class="btn-more-about">
+      <a href="about.html" class="btn-more-about">
         More About Us <i class="fa-solid fa-chevron-right"></i>
       </a>
     </div>
@@ -2105,7 +2119,7 @@
     </div>
   </section>
 
-  <!-- 15. Footer Section -->
+  <!-- 15. Standard Semantic Footer Section -->
   <footer class="site-footer">
     <div class="footer-container">
       
@@ -2145,16 +2159,16 @@
       <div class="footer-col">
         <h3>Navigate</h3>
         <ul class="footer-nav-grid">
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Community</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> News</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> School</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Events</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
 
@@ -2385,7 +2399,7 @@
       if (targetMenu) {
         triggerLink.addEventListener('click', (e) => {
           if (window.innerWidth <= 900) {
-            e.preventDefault(); // Prevent navigating when tapping top label on mobile
+            e.preventDefault();
             targetMenu.classList.toggle('mobile-open');
 
             // Rotate caret icon on mobile
