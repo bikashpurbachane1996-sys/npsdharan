@@ -7,6 +7,8 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <!-- Swiper.js CSS for 3D Coverflow -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
   <style>
     * {
@@ -647,6 +649,108 @@
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
 
+    /* 10. ECA & CCA Programs Section */
+    .eca-cca-section {
+      max-width: 1240px;
+      margin: 90px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 50px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .eca-cca-text h2 {
+      font-size: 2.5rem;
+      color: #1e293b;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .eca-cca-text p {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 30px;
+    }
+
+    .swiper-container-wrapper {
+      width: 100%;
+      overflow: hidden;
+      padding: 30px 0;
+    }
+
+    .swiper.coverflow-swiper {
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+
+    .coverflow-swiper .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 320px;
+      height: 440px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .coverflow-swiper .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text label on slide (appears only on the active centered card) */
+    .slide-label {
+      position: absolute;
+      bottom: 24px;
+      left: 20px;
+      right: 20px;
+      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      z-index: 2;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .coverflow-swiper .swiper-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .coverflow-swiper .swiper-slide-active .slide-label,
+    .coverflow-swiper .swiper-slide-active::after {
+      opacity: 1;
+    }
+
+    /* Swiper custom dots */
+    .coverflow-swiper .swiper-pagination-bullet {
+      background: #94a3b8;
+      opacity: 0.6;
+    }
+
+    .coverflow-swiper .swiper-pagination-bullet-active {
+      background: #273773;
+      opacity: 1;
+      width: 22px;
+      border-radius: 4px;
+    }
+
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .splide__slide { height: 50vh; min-height: 350px; }
@@ -660,6 +764,8 @@
       .parallax-quote-section { height: 50vh; }
       .parallax-content h2 { font-size: 1.6rem; }
       .parallax-content p { font-size: 1rem; }
+      .eca-cca-section { grid-template-columns: 1fr; margin: 50px auto; gap: 35px; }
+      .coverflow-swiper .swiper-slide { width: 260px; height: 360px; }
     }
   </style>
 </head>
@@ -904,7 +1010,7 @@
     </div>
   </section>
 
-  <!-- 9. Parallax Quote Banner Section -->
+  <!-- Parallax Quote Banner Section -->
   <section class="parallax-quote-section" id="parallaxSection">
     <div class="parallax-content" id="parallaxContent">
       <h2>TRUSTED BY 60,000 STUDENTS AND PARENTS</h2>
@@ -912,8 +1018,52 @@
     </div>
   </section>
 
+  <!-- 10. ECA & CCA Programs Section -->
+  <section class="eca-cca-section">
+    <div class="eca-cca-text">
+      <h2>ECA &amp;<br>CCA Programs</h2>
+      <p>
+        Our school offers a vibrant array of extracurricular activities, ranging from competitive sports teams to creative arts clubs, providing students with opportunities to explore their passions and talents outside the classroom.
+      </p>
+      <a href="#" class="btn-more-about">
+        More About Program <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+
+    <!-- 3D Coverflow Slider -->
+    <div class="swiper-container-wrapper">
+      <div class="swiper coverflow-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://www.nps.edu.np/public/uploads/67c6d5f61fcf3.jpg" alt="School Sports">
+            <div class="slide-label">School Sports</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://www.nps.edu.np/public/uploads/66d82f87c36a7.jpg" alt="Football Competition">
+            <div class="slide-label">Football Competition</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://www.nps.edu.np/public/uploads/66d82e6f0b99b.jpg" alt="Community Services">
+            <div class="slide-label">Community Services</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://www.nps.edu.np/public/uploads/66d81a99f1980.jpg" alt="Sports & Physical Activities">
+            <div class="slide-label">Sports &amp; Physical Activities</div>
+          </div>
+        </div>
+        <!-- Pagination dots -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <!-- Swiper.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
   <script>
+    // Hero Slider (Splide)
     const splide = new Splide('#hero-splide', {
       type: 'loop',
       perPage: 1,
@@ -933,7 +1083,7 @@
 
     splide.mount();
 
-    // Intersection Observer to trigger the text animation when scrolling into view
+    // Parallax Scroll Animation Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -943,6 +1093,30 @@
     }, { threshold: 0.3 });
 
     observer.observe(document.getElementById('parallaxSection'));
+
+    // ECA & CCA 3D Coverflow Swiper Slider
+    const coverflowSwiper = new Swiper('.coverflow-swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 140,
+        modifier: 2.5,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
   </script>
 
 </body>
