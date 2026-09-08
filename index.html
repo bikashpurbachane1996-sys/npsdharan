@@ -599,6 +599,54 @@
       letter-spacing: 0.6px;
     }
 
+    /* 9. Parallax Banner Section */
+    .parallax-quote-section {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      min-height: 440px;
+      background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://www.nps.edu.np/public/uploads/6757fda05afe5.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .parallax-content {
+      max-width: 960px;
+      color: #ffffff;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .parallax-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .parallax-content h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .parallax-content p {
+      font-size: 1.25rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #e2e8f0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .splide__slide { height: 50vh; min-height: 350px; }
@@ -609,6 +657,9 @@
       .news-grid { grid-template-columns: 1fr; }
       .featured-notice-card { min-height: 300px; }
       .management-grid { grid-template-columns: 1fr; gap: 24px; }
+      .parallax-quote-section { height: 50vh; }
+      .parallax-content h2 { font-size: 1.6rem; }
+      .parallax-content p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -806,7 +857,7 @@
     </div>
   </section>
 
-  <!-- 8. Message from Management Section -->
+  <!-- Message from Management Section -->
   <section class="management-section">
     <h2 class="section-title">Message from Management</h2>
     <div class="management-grid">
@@ -853,6 +904,14 @@
     </div>
   </section>
 
+  <!-- 9. Parallax Quote Banner Section -->
+  <section class="parallax-quote-section" id="parallaxSection">
+    <div class="parallax-content" id="parallaxContent">
+      <h2>TRUSTED BY 60,000 STUDENTS AND PARENTS</h2>
+      <p>“Intelligence plus character that is the goal of true education.”</p>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
     const splide = new Splide('#hero-splide', {
@@ -873,6 +932,17 @@
     });
 
     splide.mount();
+
+    // Intersection Observer to trigger the text animation when scrolling into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('parallaxContent').classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(document.getElementById('parallaxSection'));
   </script>
 
 </body>
