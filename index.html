@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Nepal Police School Dharan</title>  
+  <title>Nepal Police School Dharan</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
@@ -78,22 +78,13 @@
     }
 
     .brand-text h1 {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: 0.3px;
     }
 
-    /* Slogan Styling added below location */
-    .brand-text .school-slogan {
-      font-size: 0.72rem;
-      color: #ffcb08;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      margin-top: 2px;
-    }
-
     .brand-text p {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: #cbd5e1;
     }
 
@@ -1382,6 +1373,9 @@
       transform: translateY(-4px);
     }
 
+    /* ========================================================
+       MOBILE & RESPONSIVE DRAWER STYLING (iPhone 13 / Handsets)
+       ======================================================== */
     @media (max-width: 1100px) {
       .mega-menu-grid-who,
       .mega-menu-grid-nps {
@@ -1411,15 +1405,11 @@
       }
 
       .brand-text h1 {
-        font-size: 0.95rem;
-      }
-
-      .brand-text .school-slogan {
-        font-size: 0.65rem;
+        font-size: 0.98rem;
       }
 
       .brand-text p {
-        font-size: 0.68rem;
+        font-size: 0.72rem;
       }
 
       /* Enable Hamburger Icon */
@@ -1576,14 +1566,13 @@
   <div class="header-wrapper">
     <!-- Top Header Navigation -->
     <header class="header-navbar">
-      <a href="index.html" class="brand-section">
+      <a href="#" class="brand-section">
         <div class="brand-logos">
           <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
           <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
         </div>
         <div class="brand-text">
           <h1>NEPAL POLICE SCHOOL</h1>
-          <div class="school-slogan"><i>Better Schooling for Ideal Citizens</i></div>
           <p><i>Dharan-13, Sunsari Nepal</i></p>
         </div>
       </a>
@@ -1594,7 +1583,7 @@
       </button>
 
       <ul class="nav-links" id="navLinksMenu">
-        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
         
         <!-- 1. "Who We Are" Mega Menu -->
         <li class="nav-item has-mega-menu" id="menuWhoWeAre">
@@ -1610,8 +1599,8 @@
 
               <!-- Column 1: School Heritage Links -->
               <div class="mega-links-col">
-                <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
-                <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
@@ -1664,11 +1653,10 @@
               <!-- Column 2: School Premises / Wings -->
               <div class="mega-column">
                 <div class="mega-col-title">School premises</div>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> ECD/PPC PlayGroup</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Junior Wings (Grade 4-6)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Senior Wing (Grade 7-10)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Wing (Grade 11 &amp; 12)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Management Wing (Grade 11 &amp; 12)</a>
               </div>
 
               <div class="mega-divider"></div>
@@ -1687,6 +1675,7 @@
 
         <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
+        
         <li class="nav-item">
           <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
@@ -1708,7 +1697,7 @@
             <li><a href="#">Vacancy</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
       </ul>
     </header>
 
@@ -1773,7 +1762,7 @@
       <p>
         Prestigious educational institution dedicated to providing quality education with a focus on discipline, integrity, and holistic development. With a strong emphasis on character building and academic excellence, Nepal Police School cultivates responsible citizens and future leaders through its rigorous curriculum and nurturing environment.
       </p>
-      <a href="about.html" class="btn-more-about">
+      <a href="#" class="btn-more-about">
         More About Us <i class="fa-solid fa-chevron-right"></i>
       </a>
     </div>
@@ -2156,16 +2145,16 @@
       <div class="footer-col">
         <h3>Navigate</h3>
         <ul class="footer-nav-grid">
-          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
-          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Home</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Community</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> News</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> School</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
-          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Events</a></li>
         </ul>
       </div>
 
@@ -2196,7 +2185,7 @@
   </button>
 
   <!-- Core Scripts -->
-  <script src="https://cdn.jsdelivr.5npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <script>
