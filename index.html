@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Nepal Police School Dharan</title> 
+  <title>Nepal Police School Dharan</title>  
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
@@ -78,13 +78,22 @@
     }
 
     .brand-text h1 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: 0.3px;
     }
 
+    /* Slogan Styling added below location */
+    .brand-text .school-slogan {
+      font-size: 0.72rem;
+      color: #ffcb08;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      margin-top: 2px;
+    }
+
     .brand-text p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #cbd5e1;
     }
 
@@ -1373,9 +1382,6 @@
       transform: translateY(-4px);
     }
 
-    /* ========================================================
-       MOBILE & RESPONSIVE DRAWER STYLING (iPhone 13 / Handsets)
-       ======================================================== */
     @media (max-width: 1100px) {
       .mega-menu-grid-who,
       .mega-menu-grid-nps {
@@ -1405,11 +1411,15 @@
       }
 
       .brand-text h1 {
-        font-size: 0.98rem;
+        font-size: 0.95rem;
+      }
+
+      .brand-text .school-slogan {
+        font-size: 0.65rem;
       }
 
       .brand-text p {
-        font-size: 0.72rem;
+        font-size: 0.68rem;
       }
 
       /* Enable Hamburger Icon */
@@ -1566,13 +1576,14 @@
   <div class="header-wrapper">
     <!-- Top Header Navigation -->
     <header class="header-navbar">
-      <a href="#" class="brand-section">
+      <a href="index.html" class="brand-section">
         <div class="brand-logos">
           <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
           <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
         </div>
         <div class="brand-text">
           <h1>NEPAL POLICE SCHOOL</h1>
+          <div class="school-slogan">Better Schooling for Ideal Citizens</div>
           <p><i>Dharan-13, Sunsari Nepal</i></p>
         </div>
       </a>
@@ -1583,7 +1594,7 @@
       </button>
 
       <ul class="nav-links" id="navLinksMenu">
-        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
         
         <!-- 1. "Who We Are" Mega Menu -->
         <li class="nav-item has-mega-menu" id="menuWhoWeAre">
@@ -1599,7 +1610,7 @@
 
               <!-- Column 1: School Heritage Links -->
               <div class="mega-links-col">
-                <a href="aboutus.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
@@ -1676,7 +1687,6 @@
 
         <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
-        
         <li class="nav-item">
           <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
@@ -1694,10 +1704,8 @@
         <li class="nav-item">
           <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Community</a></li>
             <li><a href="#">Gallery</a></li>
             <li><a href="#">Vacancy</a></li>
-            <li><a href="#">Feedback</a></li>
           </ul>
         </li>
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
@@ -1765,7 +1773,7 @@
       <p>
         Prestigious educational institution dedicated to providing quality education with a focus on discipline, integrity, and holistic development. With a strong emphasis on character building and academic excellence, Nepal Police School cultivates responsible citizens and future leaders through its rigorous curriculum and nurturing environment.
       </p>
-      <a href="#" class="btn-more-about">
+      <a href="about.html" class="btn-more-about">
         More About Us <i class="fa-solid fa-chevron-right"></i>
       </a>
     </div>
@@ -2109,7 +2117,7 @@
   </section>
 
   <!-- 15. Footer Section -->
-  <footer class="site-footer">
+  <site-footer class="site-footer">
     <div class="footer-container">
       
       <!-- Contact Column -->
@@ -2148,16 +2156,16 @@
       <div class="footer-col">
         <h3>Navigate</h3>
         <ul class="footer-nav-grid">
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Community</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> News</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> School</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Events</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
 
@@ -2180,7 +2188,7 @@
     <div class="footer-bottom">
       © Copyright 2026, Nepal Police School | All Rights Reserved | Designed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
     </div>
-  </footer>
+  </site-footer>
 
   <!-- Floating Back to Top Button -->
   <button class="btn-scroll-top" id="btnScrollTop" aria-label="Scroll to top">
