@@ -971,13 +971,234 @@
       letter-spacing: 0.5px;
     }
 
-    /* Cyan underline accent */
     .stat-line {
       width: 80px;
       height: 3px;
       background-color: #00b4d8;
       margin-top: 14px;
       border-radius: 2px;
+    }
+
+    /* 14. Photo Gallery Section */
+    .gallery-section {
+      max-width: 1240px;
+      margin: 90px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .gallery-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 45px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 220px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(39, 55, 115, 0);
+      transition: background 0.35s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-card:hover::after {
+      background: rgba(39, 55, 115, 0.25);
+    }
+
+    /* 15. Footer Section */
+    .site-footer {
+      background-color: #273773;
+      color: #ffffff;
+      padding-top: 60px;
+      position: relative;
+    }
+
+    .footer-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
+      display: grid;
+      grid-template-columns: 1.3fr 1.5fr 1.2fr;
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+
+    /* Contact Details */
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #f1f5f9;
+      line-height: 1.5;
+    }
+
+    .footer-contact-list li i {
+      margin-top: 3px;
+      color: #ffcb08;
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-list a {
+      color: #f1f5f9;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-list a:hover {
+      color: #ffcb08;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .footer-social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social-btn:hover {
+      background-color: #ffffff;
+      color: #273773;
+      transform: translateY(-3px);
+    }
+
+    /* Navigation Links Grid */
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      list-style: none;
+    }
+
+    .footer-nav-grid li a {
+      color: #f1f5f9;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .footer-nav-grid li a:hover {
+      color: #ffcb08;
+      transform: translateX(4px);
+    }
+
+    /* Location Map */
+    .footer-map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      height: 190px;
+    }
+
+    .footer-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Bottom Copyright Bar */
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    .footer-bottom strong {
+      color: #ffffff;
+    }
+
+    /* Floating Back-to-Top Button */
+    .btn-scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #ed1c24;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(237, 28, 36, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .btn-scroll-top:hover {
+      background-color: #b71540;
+      transform: translateY(-4px);
     }
 
     @media (max-width: 900px) {
@@ -1003,10 +1224,13 @@
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 35px 20px; }
       .stat-count { font-size: 2.8rem; }
       .stat-label { font-size: 0.85rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-container { grid-template-columns: 1fr; gap: 35px; }
     }
 
     @media (max-width: 500px) {
       .stats-grid { grid-template-columns: 1fr; gap: 28px; }
+      .gallery-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1409,8 +1633,6 @@
   <!-- 13. Static Background Stats Counter Section -->
   <section class="stats-counter-section" id="statsSection">
     <div class="stats-grid">
-      
-      <!-- Stat 1 -->
       <div class="stat-item">
         <div class="stat-number-wrapper">
           <span class="stat-count" data-target="65">0</span>
@@ -1419,7 +1641,6 @@
         <div class="stat-line"></div>
       </div>
 
-      <!-- Stat 2 -->
       <div class="stat-item">
         <div class="stat-number-wrapper">
           <span class="stat-count" data-target="387">0</span>
@@ -1428,7 +1649,6 @@
         <div class="stat-line"></div>
       </div>
 
-      <!-- Stat 3 -->
       <div class="stat-item">
         <div class="stat-number-wrapper">
           <span class="stat-count" data-target="40">0</span>
@@ -1437,7 +1657,6 @@
         <div class="stat-line"></div>
       </div>
 
-      <!-- Stat 4 -->
       <div class="stat-item">
         <div class="stat-number-wrapper">
           <span class="stat-count" data-target="1532">0</span>
@@ -1445,9 +1664,119 @@
         </div>
         <div class="stat-line"></div>
       </div>
-
     </div>
   </section>
+
+  <!-- 14. Photo Gallery Section -->
+  <section class="gallery-section">
+    <h2 class="gallery-title">Photo Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de3e4a93.jpg" alt="Trophy Handover Event">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de434f86.jpg" alt="Cultural Dance Festival">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de2bc9a8.jpg" alt="Sports Ground Assembly">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de310067.jpg" alt="Spectator Stadium">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de358804.jpg" alt="Student March Drill">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de1df157.jpg" alt="Students in Traditional Attire">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de23330f.jpg" alt="Annual Sports Ceremony">
+      </div>
+      <div class="gallery-card">
+        <img src="https://www.nps.edu.np/public/uploads/69302de278cb5.jpg" alt="Speech and Award Ceremony">
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Dharan-17, Sunsari, Nepal</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>025-520101 , +977 9852012345 (सोधपुछ)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>025-520102 (शैक्षिक प्रशासन)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>025-520103 , +977 9852098765 (शुल्क सम्बन्धी)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@npsdharan.edu.np">info@npsdharan.edu.np</a>
+          </li>
+        </ul>
+
+        <div class="footer-social-links">
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="footer-col">
+        <h3>Navigate</h3>
+        <ul class="footer-nav-grid">
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Community</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> News</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> School</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> History</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
+          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Events</a></li>
+        </ul>
+      </div>
+
+      <!-- Location Column -->
+      <div class="footer-col">
+        <h3>Location</h3>
+        <div class="footer-map-wrapper">
+          <!-- Google Map Embed for Nepal Police School Dharan -->
+          <iframe 
+            src="https://maps.google.com/maps?q=Nepal%20Police%20School%20Dharan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="Nepal Police School Dharan Location">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      © Copyright 2026, Nepal Police School | All Rights Reserved | Crafted by : <strong>Himalayan Logic Pvt.Ltd.</strong>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="btn-scroll-top" id="btnScrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- Core Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
@@ -1523,7 +1852,7 @@
       },
     });
 
-    // 13. Animated Counter on Scroll
+    // Animated Counter on Scroll
     let animated = false;
     const statsSection = document.getElementById('statsSection');
     const counters = document.querySelectorAll('.stat-count');
@@ -1531,7 +1860,7 @@
     function runCounter() {
       counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
-        const duration = 2000; // 2 seconds
+        const duration = 2000;
         const stepTime = 20;
         const totalSteps = duration / stepTime;
         const increment = target / totalSteps;
@@ -1559,6 +1888,23 @@
     }, { threshold: 0.4 });
 
     statsObserver.observe(statsSection);
+
+    // Back to Top functionality
+    const btnScrollTop = document.getElementById('btnScrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        btnScrollTop.classList.add('visible');
+      } else {
+        btnScrollTop.classList.remove('visible');
+      }
+    });
+
+    btnScrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   </script>
 
 </body>
