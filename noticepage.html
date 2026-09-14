@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Admission Notice &amp; Guidelines - Nepal Police School Dharan</title>  
+  <title>School Notices - Nepal Police School Dharan</title>  
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -16,7 +16,7 @@
     }
 
     body {
-      background-color: #f8fafc;
+      background-color: #f1f5f9;
       overflow-x: hidden;
       color: #334155;
     }
@@ -333,27 +333,28 @@
     .stripe-yellow { height: 3px; background-color: #ffcb08; }
 
     /* ========================================================
-       ADMISSION PAGE HERO & CONTENT STYLING
+       NOTICES PAGE HERO (Scenic Campus Header Banner)
        ======================================================== */
-    .admission-hero {
-      background: linear-gradient(135deg, #16244f 0%, #273773 100%);
+    .notices-hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(39, 55, 115, 0.85)), url('school.jpg') center/cover no-repeat;
       color: #ffffff;
-      padding: 85px 24px 130px;
+      padding: 95px 24px 120px;
       text-align: center;
+      position: relative;
     }
 
-    .admission-hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 14px;
+    .notices-hero h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
       letter-spacing: -0.5px;
       animation: heroFadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .admission-hero p {
+    .notices-hero p {
       font-size: 1.15rem;
       color: #cbd5e1;
-      max-width: 720px;
+      max-width: 700px;
       margin: 0 auto;
       line-height: 1.6;
       animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -370,186 +371,247 @@
     }
 
     /* Main Container */
-    .admission-container {
-      max-width: 1200px;
-      margin: -65px auto 100px;
+    .notices-container {
+      max-width: 1260px;
+      margin: -60px auto 100px;
       padding: 0 24px;
       position: relative;
       z-index: 5;
       display: flex;
       flex-direction: column;
-      gap: 35px;
+      gap: 45px;
     }
 
-    .admission-card {
+    /* Search and Filter Panel */
+    .notices-control-panel {
       background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      padding: 24px 30px;
       border: 1px solid #e2e8f0;
-      padding: 45px 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    .welcome-notice-heading {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #1e293b;
-      margin-bottom: 18px;
+    .notices-search-box {
+      position: relative;
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
     }
 
-    .admission-card p {
-      font-size: 1.02rem;
-      color: #475569;
-      line-height: 1.8;
-      text-align: justify;
-      margin-bottom: 20px;
-    }
-
-    /* Call To Action Portal Button */
-    .portal-cta-box {
-      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-      border: 2px dashed #3b82f6;
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    .portal-cta-box p {
-      margin-bottom: 12px;
-      font-weight: 600;
-      color: #1e293b;
-      text-align: center;
-    }
-
-    .btn-apply-portal {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background-color: #ed1c24;
-      color: #ffffff;
-      padding: 14px 32px;
+    .notices-search-box input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
       border-radius: 30px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(237, 28, 36, 0.35);
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      outline: none;
+      background: #f8fafc;
       transition: all 0.3s ease;
     }
 
-    .btn-apply-portal:hover {
-      background-color: #b71540;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(237, 28, 36, 0.45);
-      color: #ffffff;
+    .notices-search-box input:focus {
+      border-color: #273773;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(39, 55, 115, 0.15);
     }
 
-    /* Section Headings inside Cards */
-    .card-section-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #1e293b;
-      margin: 30px 0 16px;
+    .notices-search-box i {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 1.1rem;
+    }
+
+    .notice-category-tabs {
       display: flex;
-      align-items: center;
+      justify-content: center;
       gap: 10px;
-      border-bottom: 2px solid #f1f5f9;
-      padding-bottom: 10px;
+      flex-wrap: wrap;
     }
 
-    .card-section-title i {
-      color: #273773;
-      font-size: 1.2rem;
-    }
-
-    /* Lists */
-    .styled-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .styled-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.98rem;
-      color: #334155;
-      line-height: 1.6;
-    }
-
-    .styled-list li i {
-      color: #10b981;
-      font-size: 1rem;
-      margin-top: 4px;
-      flex-shrink: 0;
-    }
-
-    .styled-list.doc-list li i {
-      color: #273773;
-    }
-
-    /* Important Dates / Schedule Grid */
-    .schedule-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 20px;
-    }
-
-    .schedule-item {
-      background: #f8fafc;
+    .cat-btn {
+      background: #f1f5f9;
+      color: #475569;
       border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 16px 20px;
-    }
-
-    .schedule-item strong {
-      display: block;
+      padding: 9px 20px;
+      border-radius: 25px;
       font-size: 0.88rem;
       font-weight: 700;
-      color: #ed1c24;
-      text-transform: uppercase;
-      margin-bottom: 4px;
+      cursor: pointer;
+      transition: all 0.25s ease;
     }
 
-    .schedule-item span {
-      font-size: 0.98rem;
-      color: #1e293b;
-      font-weight: 600;
-    }
-
-    /* Contact Inquiry Box */
-    .inquiry-contact-box {
-      background: #1e293b;
+    .cat-btn:hover,
+    .cat-btn.active {
+      background: #273773;
       color: #ffffff;
-      border-radius: 16px;
-      padding: 30px;
-      margin-top: 30px;
+      border-color: #273773;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(39, 55, 115, 0.2);
     }
 
-    .inquiry-contact-box h3 {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: #ffcb08;
-      margin-bottom: 16px;
-    }
-
-    .inquiry-contacts-grid {
+    /* Notice Cards Grid */
+    .notices-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
     }
 
-    .inquiry-contacts-grid div {
-      font-size: 0.92rem;
-      color: #e2e8f0;
-      line-height: 1.6;
+    .notice-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
     }
 
-    .inquiry-contacts-grid strong {
+    .notice-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(39, 55, 115, 0.12);
+      border-color: #cbd5e1;
+    }
+
+    .notice-thumb-wrapper {
+      position: relative;
+      height: 230px;
+      background: #0f172a;
+      overflow: hidden;
+    }
+
+    .notice-thumb-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .notice-card:hover .notice-thumb-wrapper img {
+      transform: scale(1.05);
+    }
+
+    /* Floating Date Badge (Inspired by screenshots) */
+    .notice-date-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: #273773;
       color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .notice-date-badge i {
+      color: #ffcb08;
+    }
+
+    .notice-content-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .notice-category-tag {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #ed1c24;
+      margin-bottom: 8px;
+    }
+
+    .notice-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .notice-footer-row {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .notice-view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff6ff;
+      color: #273773;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: 1px solid #bfdbfe;
+    }
+
+    .notice-view-btn:hover {
+      background: #273773;
+      color: #ffffff;
+      border-color: #273773;
+    }
+
+    .notice-file-type {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748b;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Pagination Component (Inspired by Screenshot 5) */
+    .notices-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .page-btn {
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .page-btn:hover,
+    .page-btn.active {
+      background: #273773;
+      color: #ffffff;
+      border-color: #273773;
     }
 
     /* Guaranteed Solid Footer Section */
@@ -712,7 +774,11 @@
       transform: translateY(0);
     }
 
-    /* Mobile Responsiveness */
+    /* Responsive Styles */
+    @media (max-width: 1100px) {
+      .notices-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 900px) {
       .header-navbar { padding: 0 16px; height: 70px; }
       .brand-section { gap: 10px; }
@@ -754,9 +820,8 @@
       .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; gap: 14px !important; }
       .mega-links-col a, .mega-column a { color: #cbd5e1 !important; padding: 9px 12px !important; font-size: 0.9rem !important; }
 
-      .admission-hero h1 { font-size: 2.1rem; }
-      .admission-card { padding: 30px 20px; }
-      .schedule-grid, .inquiry-contacts-grid { grid-template-columns: 1fr; }
+      .notices-hero h1 { font-size: 2.2rem; }
+      .notices-grid { grid-template-columns: 1fr; }
       .footer-container { grid-template-columns: 1fr; }
     }
   </style>
@@ -875,8 +940,8 @@
           </div>
         </li>
 
-        <li class="nav-item"><a href="admission.html" class="nav-link active">Admission</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
+        <li class="nav-item"><a href="admission.html" class="nav-link">Admission</a></li>
+        <li class="nav-item"><a href="notice.html" class="nav-link active">Notice</a></li>
         
         <li class="nav-item">
           <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
@@ -914,98 +979,142 @@
     </div>
   </div>
 
-  <!-- Hero Header Section -->
-  <section class="admission-hero">
-    <h1>Admission Notice 2083</h1>
-    <p>Join Nepal Police School Dharan for academic excellence under the National Examinations Board (+2 Management Stream).</p>
+  <!-- Scenic Campus Banner Hero -->
+  <section class="notices-hero">
+    <h1>School Notices</h1>
+    <p>Stay updated with official announcements, academic schedules, admissions, tenders, and institutional circulars.</p>
   </section>
 
-  <!-- Main Content Container -->
-  <main class="admission-container">
-    <div class="admission-card">
-      
-      <h2 class="welcome-notice-heading">आदरणीय अभिभावकज्यू तथा विद्यार्थीहरूमा सादर नमस्कार !</h2>
-      <p>
-        नेपाल प्रहरीको कल्याणकारी कार्यक्रम अन्तर्गत सञ्चालित नेपाल पुलिस स्कुल धरान, सुनसरीमा शैक्षिक सत्र २०८३ का लागि राष्ट्रिय परीक्षा बोर्ड अन्तर्गत <strong>कक्षा ११ को व्यवस्थापन (Management) संकायमा</strong> नयाँ भर्ना खुलेको जानकारी गराइन्छ। प्रहरी कर्मचारीको सन्ततिलाई ६०% र सर्वसाधारण नागरिकको सन्ततिलाई ४०% सिट अनुपात सुरक्षित गरिएको छ।
-      </p>
+  <!-- Main Notices Container -->
+  <main class="notices-container">
 
-      <!-- Portal Link Box -->
-      <div class="portal-cta-box">
-        <p>अनलाइन आवेदन फारम भर्नका लागि तलको आधिकारिक पोर्टलमा क्लिक गर्नुहोस्:</p>
-        <a href="https://nepal-police-dharan.brightschool.com.np/admission/nps" target="_blank" class="btn-apply-portal">
-          <i class="fa-solid fa-pen-to-square"></i> Apply Online Now (आधिकारिक पोर्टल)
-        </a>
+    <!-- Search & Category Filter Control Panel -->
+    <section class="notices-control-panel">
+      <div class="notices-search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="noticeSearchInput" placeholder="Search notices by title or keywords..." onkeyup="searchNotices()">
       </div>
 
-      <p>
-        सर्वप्रथम तल दिएको सूचना अध्ययन गरी <strong>Accept and Continue</strong> मा Click गरी आवेदन फारम भर्न सक्नु हुनेछ। फारम भर्दा सबै विवरण उपयुक्त तरिकाले भरी Submit गरेपछि विद्यार्थीका लागि identity number <strong>“Application ID”</strong> प्राप्त हुनेछ। सो नम्बर टिपेर तुरुन्त Pay गर्नका लागि <strong>Pay Now</strong> option मा Click गरी QR Payment वा Bank Deposit गर्न सकिनेछ।
-      </p>
-      
-      <p>
-        <strong>Bank Deposit option प्रयोग गर्दा:</strong> Bank Deposit गर्नका लागि विद्यालयको दिएको खातामा रु. २५०/- जम्मा गरेको भौचरको फोटो Upload गर्नुपर्नेछ। अथवा QR scan गरी मोबाइलबाट गरिएको भुक्तानीको Screenshot पनि राख्न सकिनेछ।<br>
-        <em>नोट: QR scan बाट भुक्तानी गर्दा remarks मा विद्यार्थीको नाम र भर्ना हुन चाहेको कक्षा अनिवार्य रूपमा उल्लेख गर्नुपर्नेछ।</em>
-      </p>
+      <div class="notice-category-tabs">
+        <button class="cat-btn active" onclick="filterCategory('all', this)">All Notices</button>
+        <button class="cat-btn" onclick="filterCategory('vacancy', this)">Vacancies</button>
+        <button class="cat-btn" onclick="filterCategory('tender', this)">Tenders &amp; Procurement</button>
+        <button class="cat-btn" onclick="filterCategory('admission', this)">Admissions &amp; Exams</button>
+        <button class="cat-btn" onclick="filterCategory('academic', this)">Academics</button>
+      </div>
+    </section>
 
-      <!-- Scholarship Facilities -->
-      <h3 class="card-section-title"><i class="fa-solid fa-award"></i> छात्रवृत्ति सुविधा (Scholarship Facilities)</h3>
-      <ul class="styled-list">
-        <li><i class="fa-solid fa-circle-check"></i> यस विद्यालयबाट SEE पास भएका विद्यार्थीहरूलाई भर्ना शुल्कमा <strong>१००% (शत प्रतिशत) छुट</strong>।</li>
-        <li><i class="fa-solid fa-circle-check"></i> अन्य विद्यालयबाट SEE पास भएका विद्यार्थीहरूलाई भर्ना शुल्कमा <strong>४०% छुट</strong>।</li>
-        <li><i class="fa-solid fa-circle-check"></i> प्रवेश परीक्षामा प्रथम हुने विद्यार्थीलाई भर्ना शुल्कमा <strong>१००% (शत प्रतिशत) छुट</strong>।</li>
-        <li><i class="fa-solid fa-circle-check"></i> SEE मा <strong>GPA ३.६० - ४.००</strong> ल्याई उत्तीर्ण भएका विद्यार्थीहरूलाई मासिक शुल्कमा <strong>१०% छुट</strong>।</li>
-      </ul>
+    <!-- Notice Cards Grid -->
+    <section class="notices-grid" id="noticesGrid">
 
-      <!-- Required Documents -->
-      <h3 class="card-section-title"><i class="fa-solid fa-folder-open"></i> फारम भर्नका लागि आवश्यक कागजातहरू (Required Documents)</h3>
-      <ul class="styled-list doc-list">
-        <li><i class="fa-solid fa-file-arrow-up"></i> विद्यार्थीको पासपोर्ट साइजको फोटो (डिजिटल प्रति) १ प्रति</li>
-        <li><i class="fa-solid fa-file-arrow-up"></i> जन्म दर्ता प्रमाणपत्र</li>
-        <li><i class="fa-solid fa-file-arrow-up"></i> SEE परीक्षाको लब्धाङ्कपत्र (Grade Sheet) को प्रतिलिपि</li>
-        <li><i class="fa-solid fa-file-arrow-up"></i> बहालवाला प्रहरी कर्मचारीको हकमा कार्यरत कार्यालयबाट दर्जा खुलेको सिफारिस पत्र</li>
-        <li><i class="fa-solid fa-file-arrow-up"></i> अवकाश प्राप्त तथा अमर प्रहरी कर्मचारीको सन्ततिको हकमा पेन्सन पट्टा प्रतिलिपि</li>
-        <li><i class="fa-solid fa-file-arrow-up"></i> रित नपुगी Online दर्ता भएको आवेदन फारम मान्य हुने छैन</li>
-      </ul>
-      <p style="font-size: 0.9rem; color: #64748b; margin-top: 6px;">
-        Online दर्तामा आवश्यक कागजात Upload गर्न समस्या आएमा <strong>nepalpoliceschooldharan45@gmail.com</strong> मा मेल वा <strong>९८०७३९१८७०</strong> मा सम्पर्क गर्नुहुन अनुरोध छ।
-      </p>
-
-      <!-- Important Dates & Schedule -->
-      <h3 class="card-section-title"><i class="fa-solid fa-calendar-days"></i> महत्त्वपूर्ण मिति तथा समय तालिका (Important Dates)</h3>
-      <div class="schedule-grid">
-        <div class="schedule-item">
-          <strong>Online दर्ता अवधि</strong>
-          <span>२०८३ वैशाख ३० गतेदेखि जेठ १० गते १६:०० बजेसम</span>
+      <!-- Notice 1: Vacancy Announcement -->
+      <div class="notice-card" data-category="vacancy">
+        <div class="notice-thumb-wrapper">
+          <div class="notice-date-badge"><i class="fa-solid fa-calendar-days"></i> Aug 06, 2026</div>
+          <img src="school.jpg" alt="Vacancy Announcement" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80'">
         </div>
-        <div class="schedule-item">
-          <strong>प्रवेश परीक्षा (Entrance Exam)</strong>
-          <span>२०८३ जेठ १२ गते दिउँसो १३:३० बजे</span>
-        </div>
-        <div class="schedule-item">
-          <strong>प्रवेश परीक्षा हुने स्थान</strong>
-          <span>नेपाल पुलिस स्कुल धरान-१३, सुनसरी</span>
-        </div>
-        <div class="schedule-item">
-          <strong>नतिजा प्रकाशन</strong>
-          <span>२०८३ जेठ १३ गते (Facebook: Nepal Police School Dharan)</span>
-        </div>
-        <div class="schedule-item" style="grid-column: span 2;">
-          <strong>अन्तर्वार्ता र भर्ना (Interview &amp; Admission)</strong>
-          <span>२०८३ जेठ १४ र १५ गते (१०:०० देखि १६:०० बजेसम्म)</span>
+        <div class="notice-content-body">
+          <span class="notice-category-tag">Vacancy Announcement</span>
+          <h3 class="notice-title">Vacancy Announcement 2083-04-21 — Teaching Assistants (Male/Female)</h3>
+          <div class="notice-footer-row">
+            <span class="notice-file-type"><i class="fa-regular fa-file-pdf" style="color: #ed1c24;"></i> PDF Notice</span>
+            <a href="admission.html" class="notice-view-btn"><i class="fa-solid fa-eye"></i> View Notice</a>
+          </div>
         </div>
       </div>
 
-      <!-- Inquiry Box -->
-      <div class="inquiry-contact-box">
-        <h3><i class="fa-solid fa-headset"></i> थप जानकारीका लागि सम्पर्क (Inquiry Contacts)</h3>
-        <div class="inquiry-contacts-grid">
-          <div><strong>सम्पर्क नम्बरहरू:</strong><br>९८५२०५६३७५, ९८५२०९०१६२, ९८५२०३०९६८</div>
-          <div><strong>शुल्क सम्बन्धमा:</strong> ९८४२४८३८८२</div>
-          <div><strong>फारम सम्बन्धमा:</strong> ९८०७३९१८७०</div>
-          <div><strong>इमेल ठेगाना:</strong> principalnpsdharan@gmail.com</div>
+      <!-- Notice 2: Stationery & Sanitation Tender -->
+      <div class="notice-card" data-category="tender">
+        <div class="notice-thumb-wrapper">
+          <div class="notice-date-badge"><i class="fa-solid fa-calendar-days"></i> Jul 30, 2026</div>
+          <img src="building.jpg" alt="Tender Notice" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="notice-content-body">
+          <span class="notice-category-tag">Procurement / Tender</span>
+          <h3 class="notice-title">स्टेसनरी तथा सरसफाइ सम्बन्धी सामग्री आपूर्तिको लागि सिलबन्दी दरभाउपत्र/टेन्डर आह्वान ।</h3>
+          <div class="notice-footer-row">
+            <span class="notice-file-type"><i class="fa-regular fa-file-pdf" style="color: #ed1c24;"></i> PDF Notice</span>
+            <a href="#" class="notice-view-btn"><i class="fa-solid fa-eye"></i> View Notice</a>
+          </div>
         </div>
       </div>
 
+      <!-- Notice 3: Student Uniform Tender -->
+      <div class="notice-card" data-category="tender">
+        <div class="notice-thumb-wrapper">
+          <div class="notice-date-badge"><i class="fa-solid fa-calendar-days"></i> Jul 24, 2026</div>
+          <img src="school.jpg" alt="Uniform Tender" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="notice-content-body">
+          <span class="notice-category-tag">Procurement / Tender</span>
+          <h3 class="notice-title">विद्यार्थीहरूको लत्ता-कपडा आपूर्ति सम्बन्धी दरभाउपत्र आह्वानको सूचना २०८३/०४/०८</h3>
+          <div class="notice-footer-row">
+            <span class="notice-file-type"><i class="fa-regular fa-file-pdf" style="color: #ed1c24;"></i> PDF Notice</span>
+            <a href="#" class="notice-view-btn"><i class="fa-solid fa-eye"></i> View Notice</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notice 4: Book List Grade 11 & 12 -->
+      <div class="notice-card" data-category="academic">
+        <div class="notice-thumb-wrapper">
+          <div class="notice-date-badge"><i class="fa-solid fa-calendar-days"></i> Jun 15, 2026</div>
+          <img src="building.jpg" alt="Book List" onerror="this.src='https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="notice-content-body">
+          <span class="notice-category-tag">Academic Circular</span>
+          <h3 class="notice-title">Book List for the Academic Year 2083 (Grade 11 &amp; 12)</h3>
+          <div class="notice-footer-row">
+            <span class="notice-file-type"><i class="fa-regular fa-file-pdf" style="color: #ed1c24;"></i> PDF Notice</span>
+            <a href="#" class="notice-view-btn"><i class="fa-solid fa-eye"></i> View Notice</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notice 5: Entrance Exam Results -->
+      <div class="notice-card" data-category="admission">
+        <div class="notice-thumb-wrapper">
+          <div class="notice-date-badge"><i class="fa-solid fa-calendar-days"></i> May 27, 2026</div>
+          <img src="school.jpg" alt="Exam Results" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="notice-content-body">
+          <span class="notice-category-tag">Exam Results</span>
+          <h3 class="notice-title">शैक्षिक सत्र २०८२/८३ को लागि कक्षा ११ मा नयाँ विद्यार्थी भर्नाको निम्ति लिइएको लिखित प्रवेश परीक्षाको नतिजा प्रकाशन सम्बन्धी सूचना !!!</h3>
+          <div class="notice-footer-row">
+            <span class="notice-file-type"><i class="fa-regular fa-file-pdf" style="color: #ed1c24;"></i> PDF Notice</span>
+            <a href="admission.html" class="notice-view-btn"><i class="fa-solid fa-eye"></i> View Notice</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notice 6: Class 11 Admission Open -->
+      <div class="notice-card" data-category="admission">
+        <div class="notice-thumb-wrapper">
+          <div class="notice-date-badge"><i class="fa-solid fa-calendar-days"></i> May 12, 2026</div>
+          <img src="building.jpg" alt="Admission Open" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="notice-content-body">
+          <span class="notice-category-tag">Admission Notice</span>
+          <h3 class="notice-title">कक्षा ११ मा नयाँ विद्यार्थी भर्ना आवेदन खुलेको सूचना !!!</h3>
+          <div class="notice-footer-row">
+            <span class="notice-file-type"><i class="fa-regular fa-file-pdf" style="color: #ed1c24;"></i> PDF Notice</span>
+            <a href="admission.html" class="notice-view-btn"><i class="fa-solid fa-eye"></i> View Notice</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Pagination Component (Inspired by Screenshot 5) -->
+    <div class="notices-pagination">
+      <a href="#" class="page-btn">First</a>
+      <a href="#" class="page-btn">Previous</a>
+      <a href="#" class="page-btn active">1</a>
+      <a href="#" class="page-btn">2</a>
+      <a href="#" class="page-btn">Next</a>
+      <a href="#" class="page-btn">Last</a>
     </div>
+
   </main>
 
   <!-- Guaranteed Solid Footer Section -->
@@ -1055,6 +1164,7 @@
           <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
           <li><a href="management.html"><i class="fa-solid fa-angle-right"></i> Committee</a></li>
           <li><a href="admission.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
+          <li><a href="notice.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
           <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
@@ -1086,6 +1196,37 @@
   </button>
 
   <script>
+    // Live Search Functionality for Notices
+    function searchNotices() {
+      const query = document.getElementById('noticeSearchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.notice-card');
+
+      cards.forEach(card => {
+        const title = card.querySelector('.notice-title').innerText.toLowerCase();
+        const tag = card.querySelector('.notice-category-tag').innerText.toLowerCase();
+        if (title.includes(query) || tag.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Category Filter Functionality
+    function filterCategory(category, btn) {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.notice-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
     // Back to Top functionality
     const btnScrollTop = document.getElementById('btnScrollTop');
     window.addEventListener('scroll', () => {
