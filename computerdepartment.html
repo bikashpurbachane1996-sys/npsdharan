@@ -428,7 +428,7 @@
       gap: 65px;
     }
 
-    /* Cyber Spotlight Card: Mock Code Terminal & Lab Info */
+    /* Cyber Spotlight Card: Dual Interactive Terminal & Operations Deck */
     .terminal-spotlight-card {
       background: #111827;
       border-radius: 28px;
@@ -442,7 +442,7 @@
 
     .terminal-window {
       background: #030712;
-      padding: 24px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -508,6 +508,52 @@
       margin-bottom: 24px;
     }
 
+    /* Live Operational Metrics Grid (Replaces missing group photo) */
+    .metrics-dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .metric-box {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .metric-box:hover {
+      border-color: #06b6d4;
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .metric-box i {
+      font-size: 1.7rem;
+      color: #22d3ee;
+    }
+
+    .metric-box strong {
+      display: block;
+      font-size: 1.25rem;
+      color: #ffffff;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .metric-box span {
+      font-size: 0.76rem;
+      color: #94a3b8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
     .tech-stack-pills {
       display: flex;
       flex-wrap: wrap;
@@ -523,6 +569,72 @@
       font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.5px;
+    }
+
+    /* Department Innovation Centers Row */
+    .lab-features-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .lab-feature-card {
+      background: #111827;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      padding: 30px 26px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .lab-feature-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #06b6d4, #4f46e5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lab-feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(6, 182, 212, 0.4);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    }
+
+    .lab-feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .lab-feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      color: #22d3ee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .lab-feature-card h3 {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .lab-feature-card p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.7;
     }
 
     /* Filter Tabs */
@@ -897,6 +1009,7 @@
     /* Responsive Styles */
     @media (max-width: 1100px) {
       .tech-faculty-grid { grid-template-columns: repeat(3, 1fr); }
+      .lab-features-row { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 900px) {
@@ -944,6 +1057,7 @@
       .terminal-spotlight-card { grid-template-columns: 1fr; }
       .terminal-window { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
       .terminal-info-side { padding: 30px 20px; }
+      .metrics-dashboard-grid { grid-template-columns: 1fr; }
       .tech-faculty-grid { grid-template-columns: 1fr; }
       .footer-container { grid-template-columns: 1fr; }
     }
@@ -1032,7 +1146,7 @@
                 <a href="nepali-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
                 <a href="social-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
                 <a href="computer-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="math-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
               </div>
@@ -1114,7 +1228,7 @@
   <!-- Main Department Content Container -->
   <main class="tech-container">
 
-    <!-- Mock IDE / Terminal & Cyber Lab Spotlight Card -->
+    <!-- High-Tech Operations Deck (Replaces missing group photo seamlessly) -->
     <section class="terminal-spotlight-card">
       <div class="terminal-window">
         <div class="terminal-header-bar">
@@ -1138,12 +1252,46 @@
           <p><span class="code-func">print</span>(<span class="code-var">nps_batch</span>.<span class="code-func">build_future</span>())</p>
         </div>
       </div>
+
       <div class="terminal-info-side">
         <span class="sub-tag">&lt;/&gt; Algorithmic Mastery</span>
-        <h2>Hi-Tech Laboratories &amp; Coding Culture</h2>
+        <h2>Hi-Tech Cyber Operations Center</h2>
         <p>
-          From foundational digital literacy in primary grades to advanced object-oriented programming, network architectures, and cyber safety workshops, our curriculum prepares students to lead in an AI-driven world. We emphasize hands-on problem-solving, robotics, and ethical computing.
+          Our department operates an empirical technology lab equipped for practical programming, networking, hardware tinkering, and cyber vigilance.
         </p>
+
+        <!-- Live Metrics Dashboard -->
+        <div class="metrics-dashboard-grid">
+          <div class="metric-box">
+            <i class="fa-solid fa-desktop"></i>
+            <div>
+              <strong>60+</strong>
+              <span>Workstations</span>
+            </div>
+          </div>
+          <div class="metric-box">
+            <i class="fa-solid fa-network-wired"></i>
+            <div>
+              <strong>1 Gbps</strong>
+              <span>Fiber Backbone</span>
+            </div>
+          </div>
+          <div class="metric-box">
+            <i class="fa-solid fa-microchip"></i>
+            <div>
+              <strong>IoT &amp; AI</strong>
+              <span>Robotics Bench</span>
+            </div>
+          </div>
+          <div class="metric-box">
+            <i class="fa-solid fa-user-shield"></i>
+            <div>
+              <strong>100%</strong>
+              <span>Cyber Safe Lab</span>
+            </div>
+          </div>
+        </div>
+
         <div class="tech-stack-pills">
           <span class="tech-pill"><i class="fa-brands fa-python"></i> Python</span>
           <span class="tech-pill"><i class="fa-solid fa-code"></i> C / C++</span>
@@ -1151,6 +1299,33 @@
           <span class="tech-pill"><i class="fa-brands fa-html5"></i> Full-Stack Web</span>
           <span class="tech-pill"><i class="fa-solid fa-robot"></i> Robotics &amp; AI</span>
         </div>
+      </div>
+    </section>
+
+    <!-- Lab Feature Highlights Cards -->
+    <section class="lab-features-row">
+      <div class="lab-feature-card">
+        <div class="lab-feature-icon">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <h3>Programming &amp; AI Sandbox</h3>
+        <p>State-of-the-art programming terminal environments supporting Python, C++, modular algorithms, and data structures from early grades to +2 level.</p>
+      </div>
+
+      <div class="lab-feature-card">
+        <div class="lab-feature-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3>Cybersecurity &amp; Network Defense</h3>
+        <p>Practical network routing protocols, firewall understanding, packet tracing, and real-world ethical cyber safety training endorsed by police heritage.</p>
+      </div>
+
+      <div class="lab-feature-card">
+        <div class="lab-feature-icon">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <h3>Robotics &amp; Physical Computing</h3>
+        <p>Arduino, Raspberry Pi, sensor kits, and automated IoT systems where students turn abstract logic into physical robotics and smart solutions.</p>
       </div>
     </section>
 
@@ -1175,7 +1350,7 @@
       <!-- 1. HOD: Computer Science & AI -->
       <div class="tech-card" data-domain="coding">
         <div class="tech-avatar-frame">
-          <img src="computerdepartmentpic.jpg" alt="Er. Bikash Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BikashTech'">
+          <img src="comp_teacher1.jpg" alt="Er. Bikash Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BikashTech'">
         </div>
         <span class="domain-tag tag-ai">AI &amp; Algorithms (HOD)</span>
         <div class="tech-name">Er. Bikash Rai</div>
@@ -1532,10 +1707,9 @@
       if (targetMenu) {
         triggerLink.addEventListener('click', (e) => {
           if (window.innerWidth <= 900) {
-            e.preventDefault(); // Prevent navigating when tapping top label on mobile
+            e.preventDefault();
             targetMenu.classList.toggle('mobile-open');
 
-            // Rotate caret icon on mobile
             const caret = triggerLink.querySelector('i');
             if (caret) {
               caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
