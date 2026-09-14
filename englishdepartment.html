@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Department of English - Nepal Police School Dharan</title>  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      overflow-x: hidden;
+      color: #334155;
+    }
+
+    /* Sticky Navigation Wrapper */
+    .header-wrapper {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 1. Main Navigation Bar */
+    .header-navbar {
+      background-color: #273773;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      height: 75px;
+      position: relative;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    .brand-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logos img.school-logo {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffcb08;
+      background-color: #ffffff;
+    }
+
+    .brand-logos img.police-crest {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-text .school-slogan {
+      font-size: 0.72rem;
+      color: #ffcb08;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      margin-top: 2px;
+    }
+
+    .brand-text p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+
+    /* Hamburger Toggle Button */
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: #ffcb08;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 22px;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffcb08;
+    }
+
+    .nav-link i {
+      font-size: 0.7rem;
+    }
+
+    /* Standard Dropdown Menus (Desktop) */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      list-style: none;
+      padding: 8px;
+      z-index: 1001;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 0;
+      right: 0;
+      height: 15px;
+      background: transparent;
+    }
+
+    .dropdown-menu li a {
+      color: #334155;
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    @media (min-width: 901px) {
+      .nav-item:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    /* Mega Menus */
+    .has-mega-menu {
+      position: static !important;
+    }
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #f1f5f9;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      border-top: 2px solid #ffcb08;
+      padding: 24px 30px;
+      z-index: 9999;
+    }
+
+    .mega-menu::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: transparent;
+    }
+
+    @media (min-width: 901px) {
+      .has-mega-menu:hover .mega-menu,
+      .mega-menu:hover {
+        display: block;
+      }
+    }
+
+    .mega-menu-grid-who {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 320px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-menu-grid-nps {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.3fr 1px 1.2fr 1px 1.2fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-img-frame {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      border: 3px solid #ffffff;
+      height: 250px;
+      background: #ffffff;
+    }
+
+    .mega-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .mega-img-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .mega-divider {
+      background-color: #cbd5e1;
+      width: 1px;
+      height: 90%;
+      margin: auto 0;
+    }
+
+    .mega-links-col,
+    .mega-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    .mega-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ed1c24;
+      margin-bottom: 8px;
+      padding-left: 6px;
+    }
+
+    .mega-links-col a,
+    .mega-column a {
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .mega-links-col a:hover,
+    .mega-column a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(6px);
+      box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
+    }
+
+    /* Police Stripes */
+    .police-stripes {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stripe-red { height: 3px; background-color: #ed1c24; }
+    .stripe-white { height: 2px; background-color: #ffffff; }
+    .stripe-blue { height: 3px; background-color: #273773; }
+    .stripe-yellow { height: 3px; background-color: #ffcb08; }
+
+    /* ========================================================
+       DEPARTMENT HERO & BANNER STYLING
+       ======================================================== */
+    .dept-hero {
+      background: linear-gradient(135deg, #16244f 0%, #273773 100%);
+      color: #ffffff;
+      padding: 85px 24px 140px;
+      text-align: center;
+      position: relative;
+    }
+
+    .dept-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 203, 8, 0.15);
+      border: 1px solid #ffcb08;
+      color: #ffcb08;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .dept-hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+      animation: heroFadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .dept-hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.7;
+      animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes heroFadeDown {
+      from { opacity: 0; transform: translateY(-24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Main Container */
+    .dept-container {
+      max-width: 1240px;
+      margin: -80px auto 100px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 65px;
+    }
+
+    /* Group Photo Spotlight Card */
+    .group-photo-card {
+      background: #ffffff;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      align-items: stretch;
+      animation: groupPop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes groupPop {
+      from { opacity: 0; transform: scale(0.95) translateY(30px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .group-photo-wrapper {
+      position: relative;
+      min-height: 400px;
+      background: #0f172a;
+      overflow: hidden;
+    }
+
+    .group-photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .group-photo-card:hover .group-photo-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .group-caption-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(6px);
+      padding: 12px 20px;
+      border-radius: 12px;
+      border-left: 4px solid #ffcb08;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .group-info-content {
+      padding: 45px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .group-info-content span.sub-title {
+      color: #ed1c24;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .group-info-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .group-info-content p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 24px;
+    }
+
+    .group-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .highlight-item i {
+      color: #273773;
+      font-size: 1.1rem;
+    }
+
+    /* Section Divider Header */
+    .section-header-title {
+      text-align: center;
+      position: relative;
+    }
+
+    .section-header-title h2 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #1e293b;
+      letter-spacing: -0.3px;
+    }
+
+    .section-header-title p {
+      font-size: 1.05rem;
+      color: #64748b;
+      margin-top: 8px;
+    }
+
+    .section-header-title .header-line {
+      width: 70px;
+      height: 4px;
+      background: #ffcb08;
+      margin: 14px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Individual Faculty Grid */
+    .teachers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .teacher-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 20px 28px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      opacity: 0;
+      transform: scale(0.92) translateY(30px);
+      transition: all 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .teacher-card.in-view {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    .teacher-card:hover {
+      transform: translateY(-8px) scale(1.02) !important;
+      box-shadow: 0 20px 38px rgba(39, 55, 115, 0.12);
+      border-color: #cbd5e1;
+    }
+
+    /* Portrait Image Wrapper */
+    .teacher-avatar-frame {
+      width: 165px;
+      height: 165px;
+      border-radius: 50%;
+      padding: 5px;
+      background: #ffffff;
+      border: 3px solid #ffcb08;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      margin-bottom: 20px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.35s ease;
+    }
+
+    .teacher-card:hover .teacher-avatar-frame {
+      border-color: #ed1c24;
+      box-shadow: 0 12px 28px rgba(237, 28, 36, 0.25);
+    }
+
+    .teacher-avatar-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .teacher-card:hover .teacher-avatar-frame img {
+      transform: scale(1.08);
+    }
+
+    .teacher-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .teacher-role {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #273773;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .teacher-qual {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .teacher-bio {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .teacher-socials {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .teacher-social-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #273773;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .teacher-social-btn:hover {
+      background: #273773;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Guaranteed Solid Footer Section */
+    footer.site-footer {
+      display: block !important;
+      background-color: #273773 !important;
+      color: #ffffff !important;
+      padding-top: 60px !important;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
+      display: grid;
+      grid-template-columns: 1.3fr 1.5fr 1.2fr;
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #ffffff !important;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #f1f5f9 !important;
+      line-height: 1.5;
+    }
+
+    .footer-contact-list li i {
+      margin-top: 3px;
+      color: #ffcb08 !important;
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-list a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-list a:hover {
+      color: #ffcb08 !important;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .footer-social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff !important;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social-btn:hover {
+      background-color: #ffffff !important;
+      color: #273773 !important;
+      transform: translateY(-3px);
+    }
+
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      list-style: none;
+    }
+
+    .footer-nav-grid li a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .footer-nav-grid li a:hover {
+      color: #ffcb08 !important;
+      transform: translateX(4px);
+    }
+
+    .footer-map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      height: 190px;
+    }
+
+    .footer-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #cbd5e1 !important;
+    }
+
+    .footer-bottom strong {
+      color: #ffffff !important;
+    } 
+
+    .btn-scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #ed1c24;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(237, 28, 36, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1100px) {
+      .teachers-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .header-navbar { padding: 0 16px; height: 70px; }
+      .brand-section { gap: 10px; }
+      .brand-logos img.school-logo { height: 44px; width: 44px; }
+      .brand-logos img.police-crest { height: 48px; }
+      .brand-text h1 { font-size: 0.95rem; }
+      .brand-text .school-slogan { font-size: 0.65rem; }
+      .brand-text p { font-size: 0.68rem; }
+
+      .mobile-nav-toggle { display: block; }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1c2754;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        padding: 12px 18px 24px;
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-links.active-mobile { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .nav-item { width: 100%; height: auto; display: flex; flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; font-size: 1rem; }
+      .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; box-shadow: none !important; background: #162044 !important; border-radius: 8px !important; border-top: none !important; padding: 8px 12px !important; display: none; }
+      .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
+      .dropdown-menu::before, .mega-menu::before { display: none !important; }
+      .dropdown-menu li a { color: #cbd5e1 !important; padding: 10px 14px !important; }
+      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .mega-links-col a, .mega-column a { color: #cbd5e1 !important; padding: 9px 12px !important; font-size: 0.9rem !important; }
+
+      .dept-hero h1 { font-size: 2.2rem; }
+      .group-photo-card { grid-template-columns: 1fr; }
+      .group-photo-wrapper { min-height: 260px; }
+      .group-info-content { padding: 30px 24px; }
+      .teachers-grid { grid-template-columns: 1fr; }
+      .teacher-avatar-frame { width: 140px; height: 140px; }
+      .footer-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header Wrapper -->
+  <div class="header-wrapper">
+    <header class="header-navbar">
+      <a href="index.html" class="brand-section">
+        <div class="brand-logos">
+          <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
+          <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
+        </div>
+        <div class="brand-text">
+          <h1>NEPAL POLICE SCHOOL</h1>
+          <div class="school-slogan"><i>Better Schooling for Ideal Citizens</i></div>
+          <p><i>Dharan-13, Sunsari Nepal</i></p>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinksMenu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        
+        <!-- 1. "Who We Are" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuWhoWeAre">
+          <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownWhoWeAre">
+            <div class="mega-menu-grid-who">
+              
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 1: School Heritage Links -->
+              <div class="mega-links-col">
+                <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="milestone.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
+                <a href="facility.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
+                <a href="management.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 2: Leadership Messages -->
+              <div class="mega-links-col">
+                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="commandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+              <div class="mega-img-frame">
+                <img src="building.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <!-- 2. "NPS" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuNPS">
+          <a href="#" class="nav-link active">NPS <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownNPS">
+            <div class="mega-menu-grid-nps">
+              
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 1: Departments -->
+              <div class="mega-column">
+                <div class="mega-col-title">Departments</div>
+                <a href="english-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 2: School Premises / Wings -->
+              <div class="mega-column">
+                <div class="mega-col-title">School premises</div>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> ECD/PPC PlayGroup</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 3: Message from Core Team -->
+              <div class="mega-column">
+                <div class="mega-col-title">Message From Core Team</div>
+                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="commandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
+        
+        <li class="nav-item">
+          <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">ECA / CCA</a></li>
+            <li><a href="#">Events &amp; Sports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Publication <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Magazine</a></li>
+            <li><a href="#">Annual Reports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Vacancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+
+    <!-- Police Color Stripes Ribbon -->
+    <div class="police-stripes">
+      <div class="stripe-white"></div>
+      <div class="stripe-red"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-blue"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-yellow"></div>
+    </div>
+  </div>
+
+  <!-- Hero Header Section -->
+  <section class="dept-hero">
+    <div class="dept-badge-pill">
+      <i class="fa-solid fa-feather-pointed"></i> Faculty of Languages &amp; Literature
+    </div>
+    <h1>Department of English</h1>
+    <p>Empowering young minds through linguistic excellence, literary depth, persuasive oratory, and global communicative proficiency.</p>
+  </section>
+
+  <!-- Department Content Wrapper -->
+  <main class="dept-container">
+
+    <!-- Top Spotlight: Faculty Group Photo Card -->
+    <section class="group-photo-card">
+      <div class="group-photo-wrapper">
+        <img src="english_group.jpg" alt="English Department Faculty Group" onerror="this.src='https://www.nps.edu.np/public/uploads/6757fda05afe5.jpg'">
+        <div class="group-caption-overlay">
+          <i class="fa-solid fa-users" style="margin-right: 8px; color: #ffcb08;"></i> Faculty Members — Department of English, NPS Dharan
+        </div>
+      </div>
+      <div class="group-info-content">
+        <span class="sub-title">Nurturing Expression</span>
+        <h2>Inspiring Articulacy &amp; Literary Passion</h2>
+        <p>
+          The English Department at Nepal Police School Dharan is committed to fostering critical reading, imaginative writing, public speaking, and communicative fluency. Through interactive debates, drama, Model United Nations, and rigorous syllabus instruction, our faculty equips students to excel in higher studies and global professional arenas.
+        </p>
+        <div class="group-highlights">
+          <div class="highlight-item">
+            <i class="fa-solid fa-book-bookmark"></i>
+            <span>Comprehensive Literary &amp; Communicative Curriculum</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-microphone-lines"></i>
+            <span>Oratory, Debate, &amp; Model UN Mentorship</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-award"></i>
+            <span>Proven Track Record in Board Examinations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Individual Faculty Members Section -->
+    <section>
+      <div class="section-header-title">
+        <h2>Meet Our English Faculty</h2>
+        <p>Experienced, passionate, and dedicated mentors guiding students from foundational to secondary levels.</p>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="teachers-grid" style="margin-top: 45px;">
+
+        <!-- Faculty 1: Head of Department -->
+        <div class="teacher-card">
+          <div class="teacher-avatar-frame">
+            <img src="teacher_english1.jpg" alt="Department Head" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=EnglishHOD'">
+          </div>
+          <div class="teacher-name">Ramesh Adhikari</div>
+          <div class="teacher-role">Head of Department (HOD)</div>
+          <span class="teacher-qual">M.A. English, M.Ed.</span>
+          <p class="teacher-bio">Specialist in modern British literature and language pedagogy with over 15 years of secondary teaching excellence.</p>
+          <div class="teacher-socials">
+            <a href="mailto:ramesh.eng@npsdharan.edu.np" class="teacher-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" class="teacher-social-btn" title="Profile"><i class="fa-solid fa-graduation-cap"></i></a>
+          </div>
+        </div>
+
+        <!-- Faculty 2: Senior Secondary Faculty -->
+        <div class="teacher-card">
+          <div class="teacher-avatar-frame">
+            <img src="teacher_english2.jpg" alt="Senior Faculty" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=EnglishSenior'">
+          </div>
+          <div class="teacher-name">Pabitra Rai</div>
+          <div class="teacher-role">Senior Secondary Faculty (+2)</div>
+          <span class="teacher-qual">M.A. English Literature</span>
+          <p class="teacher-bio">Expert in academic writing, critical analysis, and rhetoric. Dedicated Model UN mentor and literary club advisor.</p>
+          <div class="teacher-socials">
+            <a href="mailto:pabitra.eng@npsdharan.edu.np" class="teacher-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" class="teacher-social-btn" title="Profile"><i class="fa-solid fa-graduation-cap"></i></a>
+          </div>
+        </div>
+
+        <!-- Faculty 3: Secondary Level -->
+        <div class="teacher-card">
+          <div class="teacher-avatar-frame">
+            <img src="teacher_english3.jpg" alt="Secondary Faculty" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=EnglishSec'">
+          </div>
+          <div class="teacher-name">Deepak Sharma</div>
+          <div class="teacher-role">Secondary Level Faculty</div>
+          <span class="teacher-qual">B.A. English, B.Ed.</span>
+          <p class="teacher-bio">Fosters grammar mastery, communicative fluency, and creative essay writing across Grades 9 and 10.</p>
+          <div class="teacher-socials">
+            <a href="mailto:deepak.eng@npsdharan.edu.np" class="teacher-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" class="teacher-social-btn" title="Profile"><i class="fa-solid fa-graduation-cap"></i></a>
+          </div>
+        </div>
+
+        <!-- Faculty 4: Lower Secondary Level -->
+        <div class="teacher-card">
+          <div class="teacher-avatar-frame">
+            <img src="teacher_english4.jpg" alt="L.Sec Faculty" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=EnglishLsec'">
+          </div>
+          <div class="teacher-name">Sushma Shrestha</div>
+          <div class="teacher-role">Lower Secondary Faculty</div>
+          <span class="teacher-qual">B.A. English, Major English</span>
+          <p class="teacher-bio">Specializes in reading comprehension, phonetics, spelling bees, and public elocution for middle-school learners.</p>
+          <div class="teacher-socials">
+            <a href="mailto:sushma.eng@npsdharan.edu.np" class="teacher-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" class="teacher-social-btn" title="Profile"><i class="fa-solid fa-graduation-cap"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Guaranteed Solid Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Dharan-17, Sunsari, Nepal</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>025-520101 , +977 9852012345 (सोधपुछ)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>025-520102 (शैक्षिक प्रशासन)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>025-520103 , +977 9852098765 (शुल्क सम्बन्धी)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@npsdharan.edu.np">info@npsdharan.edu.np</a>
+          </li>
+        </ul>
+
+        <div class="footer-social-links">
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="footer-col">
+        <h3>Navigate</h3>
+        <ul class="footer-nav-grid">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+          <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
+          <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
+          <li><a href="management.html"><i class="fa-solid fa-angle-right"></i> Committee</a></li>
+          <li><a href="chairperson.html"><i class="fa-solid fa-angle-right"></i> Chairperson</a></li>
+          <li><a href="principal.html"><i class="fa-solid fa-angle-right"></i> Principal</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Location Column -->
+      <div class="footer-col">
+        <h3>Location</h3>
+        <div class="footer-map-wrapper">
+          <iframe 
+            src="https://maps.google.com/maps?q=Nepal%20Police%20School%20Dharan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="Nepal Police School Dharan Location">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      © Copyright 2026, Nepal Police School | All Rights Reserved | Designed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="btn-scroll-top" id="btnScrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Scroll Animation Observer for Individual Teacher Cards
+    const teacherCards = document.querySelectorAll('.teacher-card');
+
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    teacherCards.forEach(card => cardObserver.observe(card));
+
+    // Back to Top functionality
+    const btnScrollTop = document.getElementById('btnScrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btnScrollTop.classList.add('visible');
+      } else {
+        btnScrollTop.classList.remove('visible');
+      }
+    });
+
+    btnScrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Desktop Mega Menu Hover Stabilizers
+    function setupDesktopMegaMenu(triggerId, menuId) {
+      const trigger = document.getElementById(triggerId);
+      const menu = document.getElementById(menuId);
+      let timeout;
+
+      if (!trigger || !menu) return;
+
+      trigger.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      trigger.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+
+      menu.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      menu.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+    }
+
+    setupDesktopMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
+    setupDesktopMegaMenu('menuNPS', 'dropdownNPS');
+
+    // Mobile Hamburger Menu & Drawer Toggles
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinksMenu = document.getElementById('navLinksMenu');
+    const mobileIcon = mobileToggle.querySelector('i');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = navLinksMenu.classList.toggle('active-mobile');
+      if (isOpen) {
+        mobileIcon.classList.remove('fa-bars');
+        mobileIcon.classList.add('fa-xmark');
+      } else {
+        mobileIcon.classList.remove('fa-xmark');
+        mobileIcon.classList.add('fa-bars');
+      }
+    });
+
+    // Mobile Accordion Logic
+    const navItemsWithSub = document.querySelectorAll('.nav-item');
+    navItemsWithSub.forEach(item => {
+      const triggerLink = item.querySelector('.nav-link');
+      const subDropdown = item.querySelector('.dropdown-menu');
+      const subMega = item.querySelector('.mega-menu');
+      const targetMenu = subDropdown || subMega;
+
+      if (targetMenu) {
+        triggerLink.addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            targetMenu.classList.toggle('mobile-open');
+            const caret = triggerLink.querySelector('i');
+            if (caret) {
+              caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
+              caret.style.transition = 'transform 0.2s ease';
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
