@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Integrated Department (All Faculty) - Nepal Police School Dharan</title>  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      overflow-x: hidden;
+      color: #334155;
+    }
+
+    /* Sticky Navigation Wrapper */
+    .header-wrapper {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 1. Main Navigation Bar */
+    .header-navbar {
+      background-color: #273773;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      height: 75px;
+      position: relative;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    .brand-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logos img.school-logo {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffcb08;
+      background-color: #ffffff;
+    }
+
+    .brand-logos img.police-crest {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-text .school-slogan {
+      font-size: 0.72rem;
+      color: #ffcb08;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      margin-top: 2px;
+    }
+
+    .brand-text p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+
+    /* Hamburger Toggle Button */
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: #ffcb08;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 22px;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffcb08;
+    }
+
+    .nav-link i {
+      font-size: 0.7rem;
+    }
+
+    /* Standard Dropdown Menus (Desktop) */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      list-style: none;
+      padding: 8px;
+      z-index: 1001;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 0;
+      right: 0;
+      height: 15px;
+      background: transparent;
+    }
+
+    .dropdown-menu li a {
+      color: #334155;
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    @media (min-width: 901px) {
+      .nav-item:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    /* Mega Menus */
+    .has-mega-menu {
+      position: static !important;
+    }
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #f1f5f9;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      border-top: 2px solid #ffcb08;
+      padding: 24px 30px;
+      z-index: 9999;
+    }
+
+    .mega-menu::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: transparent;
+    }
+
+    @media (min-width: 901px) {
+      .has-mega-menu:hover .mega-menu,
+      .mega-menu:hover {
+        display: block;
+      }
+    }
+
+    .mega-menu-grid-who {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 320px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-menu-grid-nps {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.3fr 1px 1.2fr 1px 1.2fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-img-frame {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      border: 3px solid #ffffff;
+      height: 250px;
+      background: #ffffff;
+    }
+
+    .mega-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .mega-img-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .mega-divider {
+      background-color: #cbd5e1;
+      width: 1px;
+      height: 90%;
+      margin: auto 0;
+    }
+
+    .mega-links-col,
+    .mega-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    .mega-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ed1c24;
+      margin-bottom: 8px;
+      padding-left: 6px;
+    }
+
+    .mega-links-col a,
+    .mega-column a {
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .mega-links-col a:hover,
+    .mega-column a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(6px);
+      box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
+    }
+
+    /* Police Stripes */
+    .police-stripes {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stripe-red { height: 3px; background-color: #ed1c24; }
+    .stripe-white { height: 2px; background-color: #ffffff; }
+    .stripe-blue { height: 3px; background-color: #273773; }
+    .stripe-yellow { height: 3px; background-color: #ffcb08; }
+
+    /* ========================================================
+       INTEGRATED DEPARTMENT HERO
+       ======================================================== */
+    .integrated-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #273773 100%);
+      color: #ffffff;
+      padding: 90px 24px 145px;
+      text-align: center;
+      position: relative;
+    }
+
+    .integrated-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 203, 8, 0.15);
+      border: 1px solid #ffcb08;
+      color: #ffcb08;
+      padding: 6px 22px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .integrated-hero h1 {
+      font-size: 3.3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      animation: heroFadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .integrated-hero p {
+      font-size: 1.18rem;
+      color: #cbd5e1;
+      max-width: 820px;
+      margin: 0 auto;
+      line-height: 1.75;
+      animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes heroFadeDown {
+      from { opacity: 0; transform: translateY(-24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Main Container */
+    .integrated-container {
+      max-width: 1260px;
+      margin: -80px auto 110px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 65px;
+    }
+
+    /* Combined Faculty Spotlight Card (Large Group Photo) */
+    .faculty-spotlight-card {
+      background: #ffffff;
+      border-radius: 28px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      align-items: stretch;
+    }
+
+    .faculty-group-img {
+      position: relative;
+      min-height: 420px;
+      background: #0f172a;
+      overflow: hidden;
+    }
+
+    .faculty-group-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .faculty-spotlight-card:hover .faculty-group-img img {
+      transform: scale(1.04);
+    }
+
+    .group-photo-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(6px);
+      padding: 12px 20px;
+      border-radius: 12px;
+      border-left: 4px solid #ffcb08;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .faculty-group-content {
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .faculty-group-content span.sub {
+      color: #ed1c24;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .faculty-group-content h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .faculty-group-content p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 24px;
+    }
+
+    /* Live Faculty Count Metrics */
+    .faculty-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .metric-card strong {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #273773;
+    }
+
+    .metric-card span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    /* Search & Filter Controls */
+    .search-filter-panel {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .search-bar-wrapper {
+      position: relative;
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .search-bar-wrapper input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.3s ease;
+      background: #f8fafc;
+    }
+
+    .search-bar-wrapper input:focus {
+      border-color: #273773;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(39, 55, 115, 0.15);
+    }
+
+    .search-bar-wrapper i {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 1.1rem;
+    }
+
+    .hierarchy-nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+      padding: 9px 20px;
+      border-radius: 25px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: #273773;
+      color: #ffffff;
+      border-color: #273773;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(39, 55, 115, 0.25);
+    }
+
+    /* Section Tier Block */
+    .hierarchy-tier-section {
+      background: #ffffff;
+      border-radius: 26px;
+      padding: 42px 36px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .tier-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tier-title-group h3 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tier-title-group h3 i {
+      color: #ed1c24;
+      font-size: 1.3rem;
+    }
+
+    .tier-title-group p {
+      font-size: 0.92rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .tier-counter-pill {
+      background: #eff6ff;
+      color: #273773;
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid #bfdbfe;
+    }
+
+    /* Grid of Cards */
+    .faculty-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+    }
+
+    .executive-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Unified Faculty Profile Card */
+    .faculty-member-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 30px 18px 24px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faculty-member-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 16px 36px rgba(39, 55, 115, 0.12);
+      border-color: #cbd5e1;
+    }
+
+    .executive-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-color: #ffcb08;
+    }
+
+    .executive-card:hover {
+      border-color: #ed1c24;
+    }
+
+    .faculty-avatar-frame {
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      padding: 4px;
+      background: #ffffff;
+      border: 3px solid #273773;
+      box-shadow: 0 8px 22px rgba(39, 55, 115, 0.14);
+      margin-bottom: 18px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.35s ease;
+    }
+
+    .executive-card .faculty-avatar-frame {
+      width: 155px;
+      height: 155px;
+      border-color: #ffcb08;
+      box-shadow: 0 10px 25px rgba(255, 203, 8, 0.25);
+    }
+
+    .faculty-member-card:hover .faculty-avatar-frame {
+      border-color: #ed1c24;
+      box-shadow: 0 12px 28px rgba(237, 28, 36, 0.22);
+    }
+
+    .faculty-avatar-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .faculty-member-card:hover .faculty-avatar-frame img {
+      transform: scale(1.08);
+    }
+
+    .dept-indicator-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 4px 12px;
+      border-radius: 16px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .tag-dir { background: #fee2e2; color: #991b1b; }
+    .tag-coord { background: #fef3c7; color: #b45309; }
+    .tag-hod { background: #e0e7ff; color: #3730a3; }
+    .tag-plus2 { background: #ecfdf5; color: #047857; }
+    .tag-sec { background: #f0fdfa; color: #0f766e; }
+    .tag-lsec { background: #eff6ff; color: #1d4ed8; }
+    .tag-pri { background: #fae8ff; color: #86198f; }
+
+    .faculty-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .faculty-designation {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #273773;
+      margin-bottom: 6px;
+    }
+
+    .faculty-qualification {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .faculty-specialty {
+      font-size: 0.84rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .faculty-contact-pill {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      color: #64748b;
+      background: #f8fafc;
+      padding: 4px 12px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .faculty-contact-pill:hover {
+      background: #273773;
+      color: #ffffff;
+      border-color: #273773;
+    }
+
+    /* Guaranteed Solid Footer Section */
+    footer.site-footer {
+      display: block !important;
+      background-color: #273773 !important;
+      color: #ffffff !important;
+      padding-top: 60px !important;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
+      display: grid;
+      grid-template-columns: 1.3fr 1.5fr 1.2fr;
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #ffffff !important;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #f1f5f9 !important;
+      line-height: 1.5;
+    }
+
+    .footer-contact-list li i {
+      margin-top: 3px;
+      color: #ffcb08 !important;
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-list a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-list a:hover {
+      color: #ffcb08 !important;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .footer-social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff !important;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social-btn:hover {
+      background-color: #ffffff !important;
+      color: #273773 !important;
+      transform: translateY(-3px);
+    }
+
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      list-style: none;
+    }
+
+    .footer-nav-grid li a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .footer-nav-grid li a:hover {
+      color: #ffcb08 !important;
+      transform: translateX(4px);
+    }
+
+    .footer-map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      height: 190px;
+    }
+
+    .footer-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #cbd5e1 !important;
+    }
+
+    .footer-bottom strong {
+      color: #ffffff !important;
+    } 
+
+    .btn-scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #ed1c24;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(237, 28, 36, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1150px) {
+      .faculty-cards-grid,
+      .executive-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .header-navbar { padding: 0 16px; height: 70px; }
+      .brand-section { gap: 10px; }
+      .brand-logos img.school-logo { height: 44px; width: 44px; }
+      .brand-logos img.police-crest { height: 48px; }
+      .brand-text h1 { font-size: 0.95rem; }
+      .brand-text .school-slogan { font-size: 0.65rem; }
+      .brand-text p { font-size: 0.68rem; }
+
+      .mobile-nav-toggle { display: block; }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1c2754;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        padding: 12px 18px 24px;
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-links.active-mobile { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .nav-item { width: 100%; height: auto; display: flex; flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; font-size: 1rem; }
+      .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; box-shadow: none !important; background: #162044 !important; border-radius: 8px !important; border-top: none !important; padding: 8px 12px !important; display: none; }
+      .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
+      .dropdown-menu::before, .mega-menu::before { display: none !important; }
+      .dropdown-menu li a { color: #cbd5e1 !important; padding: 10px 14px !important; }
+      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .mega-links-col a, .mega-column a { color: #cbd5e1 !important; padding: 9px 12px !important; font-size: 0.9rem !important; }
+
+      .integrated-hero h1 { font-size: 2.2rem; }
+      .faculty-spotlight-card { grid-template-columns: 1fr; }
+      .faculty-group-img { min-height: 250px; }
+      .faculty-group-content { padding: 30px 20px; }
+      .faculty-cards-grid, .executive-grid { grid-template-columns: 1fr; }
+      .hierarchy-tier-section { padding: 26px 18px; }
+      .footer-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header Wrapper -->
+  <div class="header-wrapper">
+    <header class="header-navbar">
+      <a href="index.html" class="brand-section">
+        <div class="brand-logos">
+          <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
+          <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
+        </div>
+        <div class="brand-text">
+          <h1>NEPAL POLICE SCHOOL</h1>
+          <div class="school-slogan"><i>Better Schooling for Ideal Citizens</i></div>
+          <p><i>Dharan-13, Sunsari Nepal</i></p>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinksMenu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        
+        <!-- 1. "Who We Are" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuWhoWeAre">
+          <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownWhoWeAre">
+            <div class="mega-menu-grid-who">
+              
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 1: School Heritage Links -->
+              <div class="mega-links-col">
+                <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="milestone.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
+                <a href="facility.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
+                <a href="management.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 2: Leadership Messages -->
+              <div class="mega-links-col">
+                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="commandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+              <div class="mega-img-frame">
+                <img src="building.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <!-- 2. "NPS" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuNPS">
+          <a href="#" class="nav-link active">NPS <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownNPS">
+            <div class="mega-menu-grid-nps">
+              
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 1: Departments -->
+              <div class="mega-column">
+                <div class="mega-col-title">Departments</div>
+                <a href="english-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+                <a href="science-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+                <a href="nepali-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+                <a href="social-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+                <a href="computer-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
+                <a href="math-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="integrated-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 2: School Premises / Wings -->
+              <div class="mega-column">
+                <div class="mega-col-title">School premises</div>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> ECD/PPC PlayGroup</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 3: Message from Core Team -->
+              <div class="mega-column">
+                <div class="mega-col-title">Message From Core Team</div>
+                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="commandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
+        
+        <li class="nav-item">
+          <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">ECA / CCA</a></li>
+            <li><a href="#">Events &amp; Sports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Publication <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Magazine</a></li>
+            <li><a href="#">Annual Reports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Vacancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+
+    <!-- Police Color Stripes Ribbon -->
+    <div class="police-stripes">
+      <div class="stripe-white"></div>
+      <div class="stripe-red"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-blue"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-yellow"></div>
+    </div>
+  </div>
+
+  <!-- Integrated Hero Header -->
+  <section class="integrated-hero">
+    <div class="integrated-badge">
+      <i class="fa-solid fa-users-viewfinder"></i> Full Faculty Directory • 65 Professional Educators
+    </div>
+    <h1>Integrated Academic Department</h1>
+    <p>The collective strength, scholarly wisdom, and disciplinary leadership driving educational excellence across all wings of Nepal Police School Dharan.</p>
+  </section>
+
+  <!-- Main Container -->
+  <main class="integrated-container">
+
+    <!-- Top Spotlight: Faculty Group Photograph & Statistics -->
+    <section class="faculty-spotlight-card">
+      <div class="faculty-group-img">
+        <img src="teachers_group.jpg" alt="All Faculty Group Photo" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80'">
+        <div class="group-photo-badge">
+          <i class="fa-solid fa-chalkboard-user" style="margin-right: 8px; color: #ffcb08;"></i> Complete Academic Faculty — Nepal Police School Dharan
+        </div>
+      </div>
+      <div class="faculty-group-content">
+        <span class="sub">Unified Academic Excellence</span>
+        <h2>A Unified Community of 65 Dedicated Mentors</h2>
+        <p>
+          Our integrated faculty brings together passionate subject matter experts, researchers, and pastoral guides. From basic phonetic literacy in early child development to sophisticated calculus, quantum physics, algorithmic coding, and literary critique in +2 grades, our 65 professional teachers uphold our core motto: <strong>DDD — Discipline, Dignity, and Decorum</strong>.
+        </p>
+        <div class="faculty-metrics-grid">
+          <div class="metric-card">
+            <strong>65</strong>
+            <span>Faculty Members</span>
+          </div>
+          <div class="metric-card">
+            <strong>100%</strong>
+            <span>Trained Educators</span>
+          </div>
+          <div class="metric-card">
+            <strong>6</strong>
+            <span>Core Departments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Search and Hierarchy Quick-Navigation Panel -->
+    <section class="search-filter-panel">
+      <div class="search-bar-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="facultySearchInput" placeholder="Search teacher by name, designation, or subject..." onkeyup="searchFaculty()">
+      </div>
+
+      <div class="hierarchy-nav-tabs">
+        <button class="tab-btn active" onclick="filterTier('all', this)"><i class="fa-solid fa-list-ul"></i> All Members (65)</button>
+        <button class="tab-btn" onclick="filterTier('executive', this)"><i class="fa-solid fa-crown"></i> Executive Directorate</button>
+        <button class="tab-btn" onclick="filterTier('coordinators', this)"><i class="fa-solid fa-compass"></i> Level Coordinators</button>
+        <button class="tab-btn" onclick="filterTier('hods', this)"><i class="fa-solid fa-award"></i> Heads of Departments</button>
+        <button class="tab-btn" onclick="filterTier('plus2', this)"><i class="fa-solid fa-graduation-cap"></i> +2 Senior Faculty</button>
+        <button class="tab-btn" onclick="filterTier('secondary', this)"><i class="fa-solid fa-book-open"></i> Secondary (9-10)</button>
+        <button class="tab-btn" onclick="filterTier('lower-sec', this)"><i class="fa-solid fa-chalkboard-user"></i> Lower Sec (6-8)</button>
+        <button class="tab-btn" onclick="filterTier('primary', this)"><i class="fa-solid fa-shapes"></i> Primary &amp; ECD</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 1: EXECUTIVE DIRECTORATE & LEADERSHIP
+         ========================================== -->
+    <section class="hierarchy-tier-section" id="tier-executive" data-tier="executive">
+      <div class="tier-header-row">
+        <div class="tier-title-group">
+          <h3><i class="fa-solid fa-crown"></i> Executive Directorate &amp; Top Management</h3>
+          <p>Apex leadership overseeing institutional governance, security, academic curriculum, and residential pastoral life.</p>
+        </div>
+        <span class="tier-counter-pill">4 Leaders</span>
+      </div>
+
+      <div class="faculty-cards-grid executive-grid">
+        <!-- Principal -->
+        <div class="faculty-member-card executive-card">
+          <div class="faculty-avatar-frame">
+            <img src="principal.jpg" alt="Monika Subba (Rai)" onerror="this.src='https://www.nps.edu.np/public/uploads/66dd4032e38c9.jpg'">
+          </div>
+          <span class="dept-indicator-tag tag-dir">Executive Head</span>
+          <div class="faculty-name">Monika Subba (Rai)</div>
+          <div class="faculty-designation">School Principal</div>
+          <div class="faculty-qualification">M.Ed. Educational Leadership</div>
+          <p class="faculty-specialty">Academic administration, curriculum vision, and pedagogical innovation.</p>
+          <a href="mailto:principal@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Commandant -->
+        <div class="faculty-member-card executive-card">
+          <div class="faculty-avatar-frame">
+            <img src="commandant.jpg" alt="Inspector Anita Mahat" onerror="this.src='https://www.nps.edu.np/public/uploads/697acd89aac94.png'">
+          </div>
+          <span class="dept-indicator-tag tag-dir">Administration &amp; Security</span>
+          <div class="faculty-name">Insp. Anita Mahat</div>
+          <div class="faculty-designation">School Commandant</div>
+          <div class="faculty-qualification">Nepal Police Command</div>
+          <p class="faculty-specialty">Campus security, ceremonial drill, discipline maintenance, and student welfare.</p>
+          <a href="mailto:commandant@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Academic VP -->
+        <div class="faculty-member-card executive-card">
+          <div class="faculty-avatar-frame">
+            <img src="nirodha.jpg" alt="Nirodha Chandra Dahal" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=NirodhaVP'">
+          </div>
+          <span class="dept-indicator-tag tag-dir">Academic Wing</span>
+          <div class="faculty-name">Nirodha Chandra Dahal</div>
+          <div class="faculty-designation">Academic Vice Principal</div>
+          <div class="faculty-qualification">M.Sc., M.Ed.</div>
+          <p class="faculty-specialty">Instructional monitoring, board examination planning, and faculty supervision.</p>
+          <a href="mailto:vp.academic@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Pastoral VP -->
+        <div class="faculty-member-card executive-card">
+          <div class="faculty-avatar-frame">
+            <img src="kamal.jpg" alt="Kamal Dahal" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=KamalVP'">
+          </div>
+          <span class="dept-indicator-tag tag-dir">Pastoral Wing</span>
+          <div class="faculty-name">Kamal Dahal</div>
+          <div class="faculty-designation">Pastoral Vice Principal</div>
+          <div class="faculty-qualification">M.A., Pastoral Care Certified</div>
+          <p class="faculty-specialty">Residential hostel life, boarder health and dining care, and pastoral routines.</p>
+          <a href="mailto:vp.pastoral@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 2: ACADEMIC LEVEL COORDINATORS COUNCIL
+         ========================================== -->
+    <section class="hierarchy-tier-section" id="tier-coordinators" data-tier="coordinators">
+      <div class="tier-header-row">
+        <div class="tier-title-group">
+          <h3><i class="fa-solid fa-compass"></i> Academic Level Coordinators Council</h3>
+          <p>Ensuring instructional quality, routine compliance, and student guidance across each developmental tier.</p>
+        </div>
+        <span class="tier-counter-pill">4 Coordinators</span>
+      </div>
+
+      <div class="faculty-cards-grid">
+        <!-- Senior Coordinator -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="binod.jpg" alt="Binod Kumar Yadav" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BinodCoord'">
+          </div>
+          <span class="dept-indicator-tag tag-coord">+2 / Senior Wings</span>
+          <div class="faculty-name">Binod Kumar Yadav</div>
+          <div class="faculty-designation">Senior Coordinator (+2)</div>
+          <div class="faculty-qualification">M.Sc., B.Ed.</div>
+          <p class="faculty-specialty">Supervising Science &amp; Management Grade 11 &amp; 12 programs.</p>
+          <a href="mailto:binod.yadav@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Secondary Coordinator -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="bishwas.jpg" alt="Bishwas Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BishwasCoord'">
+          </div>
+          <span class="dept-indicator-tag tag-coord">Grade 9 &amp; 10</span>
+          <div class="faculty-name">Bishwas Rai</div>
+          <div class="faculty-designation">Secondary Coordinator (SEE)</div>
+          <div class="faculty-qualification">M.A., B.Ed.</div>
+          <p class="faculty-specialty">Overseeing SEE board candidate readiness and mock evaluations.</p>
+          <a href="mailto:bishwas.rai@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Lower Secondary Coordinator -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sabita.jpg" alt="Sabita Karki" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SabitaCoord'">
+          </div>
+          <span class="dept-indicator-tag tag-coord">Grade 6 - 8</span>
+          <div class="faculty-name">Sabita Karki</div>
+          <div class="faculty-designation">Lower Secondary Coordinator</div>
+          <div class="faculty-qualification">M.A. English, B.Ed.</div>
+          <p class="faculty-specialty">Middle-school learning routines and adolescent academic transition.</p>
+          <a href="mailto:sabita.karki@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Primary Coordinator -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="januka.jpg" alt="Januka Katuwal" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=JanukaCoord'">
+          </div>
+          <span class="dept-indicator-tag tag-coord">Grade 1 - 5 &amp; ECD</span>
+          <div class="faculty-name">Januka Katuwal</div>
+          <div class="faculty-designation">Primary Wing Coordinator</div>
+          <div class="faculty-qualification">B.Ed., Early Child Care Certified</div>
+          <p class="faculty-specialty">Foundational literacy, phonetics, and early childhood development.</p>
+          <a href="mailto:januka.katuwal@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 3: HEADS OF DEPARTMENTS (HOD COUNCIL)
+         ========================================== -->
+    <section class="hierarchy-tier-section" id="tier-hods" data-tier="hods">
+      <div class="tier-header-row">
+        <div class="tier-title-group">
+          <h3><i class="fa-solid fa-award"></i> Heads of Academic Departments (HOD Council)</h3>
+          <p>Senior subject leads formulating curricula, continuous assessments, and laboratory frameworks.</p>
+        </div>
+        <span class="tier-counter-pill">6 HODs</span>
+      </div>
+
+      <div class="faculty-cards-grid">
+        <!-- English HOD -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="teacher_english1.jpg" alt="Ramesh Adhikari" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=RameshHOD'">
+          </div>
+          <span class="dept-indicator-tag tag-hod">English Department</span>
+          <div class="faculty-name">Ramesh Adhikari</div>
+          <div class="faculty-designation">Head of Department (HOD)</div>
+          <div class="faculty-qualification">M.A. English, M.Ed.</div>
+          <p class="faculty-specialty">British literature, rhetoric, and elocution leadership.</p>
+          <a href="mailto:ramesh.eng@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Science HOD -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sci_teacher1.jpg" alt="Dr. Binod Adhikari" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BinodHOD'">
+          </div>
+          <span class="dept-indicator-tag tag-hod">Science Department</span>
+          <div class="faculty-name">Dr. Binod Adhikari</div>
+          <div class="faculty-designation">Head of Department (HOD)</div>
+          <div class="faculty-qualification">M.Sc. Physics (TU), Ph.D.</div>
+          <p class="faculty-specialty">Theoretical physics, Olympiad research, and practical labs.</p>
+          <a href="mailto:binod.sci@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Math HOD -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="math_teacher1.jpg" alt="Hari Krishna Shrestha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=HariKrishnaHOD'">
+          </div>
+          <span class="dept-indicator-tag tag-hod">Mathematics Department</span>
+          <div class="faculty-name">Hari Krishna Shrestha</div>
+          <div class="faculty-designation">Head of Department (HOD)</div>
+          <div class="faculty-qualification">M.Sc. Mathematics, M.Ed.</div>
+          <p class="faculty-specialty">Calculus, differential equations, and Olympiad circles.</p>
+          <a href="mailto:harikrishna.math@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Nepali HOD -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="nep_teacher1.jpg" alt="Dilli Ram Acharya" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DilliRamHOD'">
+          </div>
+          <span class="dept-indicator-tag tag-hod">Nepali Department</span>
+          <div class="faculty-name">डिल्लीराम आचार्य</div>
+          <div class="faculty-designation">विभागीय प्रमुख (HOD)</div>
+          <div class="faculty-qualification">एम.ए. नेपाली साहित्य, एम.एड.</div>
+          <p class="faculty-specialty">आधुनिक नेपाली साहित्य, समालोचना र निबन्ध विधा।</p>
+          <a href="mailto:dilliram.nep@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Social Studies HOD -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="soc_teacher1.jpg" alt="Narayan Prasad Kafle" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=NarayanHOD'">
+          </div>
+          <span class="dept-indicator-tag tag-hod">Social Studies Dept</span>
+          <div class="faculty-name">Narayan Prasad Kafle</div>
+          <div class="faculty-designation">Head of Department (HOD)</div>
+          <div class="faculty-qualification">M.A. History, M.Ed.</div>
+          <p class="faculty-specialty">Constitution, Nepalese history, and civic fieldwork.</p>
+          <a href="mailto:narayan.soc@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Computer & Tech HOD -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="comp_teacher1.jpg" alt="Er. Bikash Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BikashTechHOD'">
+          </div>
+          <span class="dept-indicator-tag tag-hod">Computer &amp; Tech Dept</span>
+          <div class="faculty-name">Er. Bikash Rai</div>
+          <div class="faculty-designation">Head of Department (HOD)</div>
+          <div class="faculty-qualification">M.Sc. Computer Engineering (IOE)</div>
+          <p class="faculty-specialty">AI algorithms, coding, and cybersecurity operations.</p>
+          <a href="mailto:bikash.cs@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 4: SENIOR SECONDARY FACULTY (+2 WING)
+         ========================================== -->
+    <section class="hierarchy-tier-section" id="tier-plus2" data-tier="plus2">
+      <div class="tier-header-row">
+        <div class="tier-title-group">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Senior Secondary Faculty (+2 Wing: Science &amp; Management)</h3>
+          <p>Dedicated post-graduate educators delivering rigorous instruction for Grade 11 &amp; 12 board preparations.</p>
+        </div>
+        <span class="tier-counter-pill">+2 Specialized Mentors</span>
+      </div>
+
+      <div class="faculty-cards-grid">
+        <!-- +2 Chemistry -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sci_teacher2.jpg" alt="Sunita Pokhrel" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SunitaChemPlus2'">
+          </div>
+          <span class="dept-indicator-tag tag-plus2">+2 Chemistry</span>
+          <div class="faculty-name">Sunita Pokhrel</div>
+          <div class="faculty-designation">Senior Secondary Faculty</div>
+          <div class="faculty-qualification">M.Sc. Organic Chemistry</div>
+          <p class="faculty-specialty">Organic synthesis, reagent analysis, and practical labs.</p>
+          <a href="mailto:sunita.sci@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- +2 Zoology -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sci_teacher3.jpg" alt="Prabhat K. Jha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=PrabhatBioPlus2'">
+          </div>
+          <span class="dept-indicator-tag tag-plus2">+2 Biology (Zoology)</span>
+          <div class="faculty-name">Prabhat K. Jha</div>
+          <div class="faculty-designation">Senior Secondary Faculty</div>
+          <div class="faculty-qualification">M.Sc. Zoology, B.Ed.</div>
+          <p class="faculty-specialty">Histology, genetics, and pre-medical coaching.</p>
+          <a href="mailto:prabhat.sci@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- +2 Botany -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sci_teacher4.jpg" alt="Ritu Shrestha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=RituBotanyPlus2'">
+          </div>
+          <span class="dept-indicator-tag tag-plus2">+2 Biology (Botany)</span>
+          <div class="faculty-name">Ritu Shrestha</div>
+          <div class="faculty-designation">Senior Secondary Faculty</div>
+          <div class="faculty-qualification">M.Sc. Botany (Plant Physiology)</div>
+          <p class="faculty-specialty">Cellular microscopy, taxonomy, and plant ecology.</p>
+          <a href="mailto:ritu.sci@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- +2 Mathematics -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="math_teacher2.jpg" alt="Prakash Adhikari" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=PrakashMathPlus2'">
+          </div>
+          <span class="dept-indicator-tag tag-plus2">+2 Mathematics</span>
+          <div class="faculty-name">Prakash Adhikari</div>
+          <div class="faculty-designation">Senior Secondary Faculty</div>
+          <div class="faculty-qualification">M.Sc. Pure Mathematics</div>
+          <p class="faculty-specialty">Linear algebra, mechanics, vectors, and coordinate proofs.</p>
+          <a href="mailto:prakash.math@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- +2 English -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="teacher_english2.jpg" alt="Pabitra Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=PabitraEngPlus2'">
+          </div>
+          <span class="dept-indicator-tag tag-plus2">+2 English</span>
+          <div class="faculty-name">Pabitra Rai</div>
+          <div class="faculty-designation">Senior Secondary Faculty</div>
+          <div class="faculty-qualification">M.A. English Literature</div>
+          <p class="faculty-specialty">Academic composition, literary critique, and Model UN.</p>
+          <a href="mailto:pabitra.eng@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- +2 Economics & Accounts -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="soc_teacher3.jpg" alt="Tek Bahadur Thapa" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=TekEconomicsPlus2'">
+          </div>
+          <span class="dept-indicator-tag tag-plus2">+2 Economics</span>
+          <div class="faculty-name">Tek Bahadur Thapa</div>
+          <div class="faculty-designation">Senior Secondary Faculty</div>
+          <div class="faculty-qualification">M.A. Economics, B.Ed.</div>
+          <p class="faculty-specialty">Macroeconomics, fiscal budgeting, and commerce statistics.</p>
+          <a href="mailto:tek.soc@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 5: SECONDARY LEVEL FACULTY (GRADES 9 & 10 - SEE WING)
+         ========================================== -->
+    <section class="hierarchy-tier-section" id="tier-secondary" data-tier="secondary">
+      <div class="tier-header-row">
+        <div class="tier-title-group">
+          <h3><i class="fa-solid fa-book-open"></i> Secondary Level Faculty (Grades 9 &amp; 10 • SEE Wing)</h3>
+          <p>Expert mentors rigorously training candidates for outstanding success in the national SEE examinations.</p>
+        </div>
+        <span class="tier-counter-pill">SEE Mentors</span>
+      </div>
+
+      <div class="faculty-cards-grid">
+        <!-- Secondary Physics -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sci_teacher5.jpg" alt="Kiran Basnet" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=KiranPhysicsSec'">
+          </div>
+          <span class="dept-indicator-tag tag-sec">SEE Physics</span>
+          <div class="faculty-name">Kiran Basnet</div>
+          <div class="faculty-designation">Secondary Science Faculty</div>
+          <div class="faculty-qualification">B.Sc. Physics, B.Ed.</div>
+          <p class="faculty-specialty">Optics, electricity, and numerical problem solving.</p>
+          <a href="mailto:kiran.sci@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Secondary Chemistry -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sci_teacher6.jpg" alt="Suman Giri" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SumanChemSec'">
+          </div>
+          <span class="dept-indicator-tag tag-sec">SEE Chemistry</span>
+          <div class="faculty-name">Suman Giri</div>
+          <div class="faculty-designation">Secondary Science Faculty</div>
+          <div class="faculty-qualification">M.Sc. Inorganic Chemistry</div>
+          <p class="faculty-specialty">Periodic classification, chemical reactions, and lab safety.</p>
+          <a href="mailto:suman.sci@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Secondary Compulsory Math -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="math_teacher5.jpg" alt="Saroj K. Pokhrel" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SarojMathSec'">
+          </div>
+          <span class="dept-indicator-tag tag-sec">Compulsory Math</span>
+          <div class="faculty-name">Saroj K. Pokhrel</div>
+          <div class="faculty-designation">Secondary Math Faculty</div>
+          <div class="faculty-qualification">B.Sc. Mathematics, B.Ed.</div>
+          <p class="faculty-specialty">Algebra, theoretical circle geometry, and trigonometry.</p>
+          <a href="mailto:saroj.math@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Secondary Optional Math -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="math_teacher4.jpg" alt="Deepak Kumar Karn" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DeepakKarnSec'">
+          </div>
+          <span class="dept-indicator-tag tag-sec">Optional Math</span>
+          <div class="faculty-name">Deepak Kumar Karn</div>
+          <div class="faculty-designation">Secondary Math Faculty</div>
+          <div class="faculty-qualification">M.A. Mathematics, B.Ed.</div>
+          <p class="faculty-specialty">Coordinate transformations, matrices, and trigonometry.</p>
+          <a href="mailto:deepak.math@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Secondary English -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="teacher_english3.jpg" alt="Deepak Sharma" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DeepakSharmaEng'">
+          </div>
+          <span class="dept-indicator-tag tag-sec">English (SEE)</span>
+          <div class="faculty-name">Deepak Sharma</div>
+          <div class="faculty-designation">Secondary English Faculty</div>
+          <div class="faculty-qualification">B.A. English, B.Ed.</div>
+          <p class="faculty-specialty">Grammar mechanics, free-writing, and reading comprehension.</p>
+          <a href="mailto:deepak.eng@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Secondary Social Studies -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="soc_teacher4.jpg" alt="Anil Kumar Yadav" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=AnilYadavSec'">
+          </div>
+          <span class="dept-indicator-tag tag-sec">Social Studies</span>
+          <div class="faculty-name">Anil Kumar Yadav</div>
+          <div class="faculty-designation">Secondary Social Faculty</div>
+          <div class="faculty-qualification">M.A. Sociology, B.Ed.</div>
+          <p class="faculty-specialty">Civics, contemporary history, and social dynamics.</p>
+          <a href="mailto:anil.soc@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Secondary Nepali -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="nep_teacher3.jpg" alt="Sarita Gautam" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SaritaGautamSec'">
+          </div>
+          <span class="dept-indicator-tag tag-sec">नेपाली (SEE)</span>
+          <div class="faculty-name">सरिता गौतम</div>
+          <div class="faculty-designation">माध्यमिक नेपाली शिक्षक</div>
+          <div class="faculty-qualification">एम.ए. नेपाली, नाट्य प्रशिक्षण</div>
+          <p class="faculty-specialty">कथा, एकाङ्की नाटक तथा सिर्जनात्मक अभिव्यक्ति।</p>
+          <a href="mailto:sarita.nep@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Secondary Computer -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="comp_teacher4.jpg" alt="Kripa Thapa" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=KripaThapaSec'">
+          </div>
+          <span class="dept-indicator-tag tag-sec">Computer Science</span>
+          <div class="faculty-name">Kripa Thapa</div>
+          <div class="faculty-designation">Secondary Computer Faculty</div>
+          <div class="faculty-qualification">B.Sc. CSIT, B.Ed.</div>
+          <p class="faculty-specialty">C programming, algorithms, and digital database models.</p>
+          <a href="mailto:kripa.cs@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 6: LOWER SECONDARY FACULTY (GRADES 6 TO 8)
+         ========================================== -->
+    <section class="hierarchy-tier-section" id="tier-lower-sec" data-tier="lower-sec">
+      <div class="tier-header-row">
+        <div class="tier-title-group">
+          <h3><i class="fa-solid fa-chalkboard-user"></i> Lower Secondary Faculty (Grades 6 to 8)</h3>
+          <p>Nurturing fundamental concepts, critical inquiry, and study habits in middle school learners.</p>
+        </div>
+        <span class="tier-counter-pill">Middle School Faculty</span>
+      </div>
+
+      <div class="faculty-cards-grid">
+        <!-- Lower Sec Science -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sci_teacher7.jpg" alt="Anita Gurung" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=AnitaGurungLSec'">
+          </div>
+          <span class="dept-indicator-tag tag-lsec">General Science (6-8)</span>
+          <div class="faculty-name">Anita Gurung</div>
+          <div class="faculty-designation">Lower Secondary Teacher</div>
+          <div class="faculty-qualification">B.Sc. Biology, B.Ed.</div>
+          <p class="faculty-specialty">Interactive scientific demonstrations and STEM lab models.</p>
+          <a href="mailto:anita.sci@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Lower Sec Math -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="math_teacher6.jpg" alt="Geeta Katuwal" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=GeetaMathLSec'">
+          </div>
+          <span class="dept-indicator-tag tag-lsec">Mathematics (6-8)</span>
+          <div class="faculty-name">Geeta Katuwal</div>
+          <div class="faculty-designation">Lower Secondary Teacher</div>
+          <div class="faculty-qualification">B.Ed. Mathematics</div>
+          <p class="faculty-specialty">Origami geometry, math lab apparatus, and mental arithmetic.</p>
+          <a href="mailto:geeta.math@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Lower Sec English -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="teacher_english4.jpg" alt="Sushma Shrestha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SushmaEngLSec'">
+          </div>
+          <span class="dept-indicator-tag tag-lsec">English (6-8)</span>
+          <div class="faculty-name">Sushma Shrestha</div>
+          <div class="faculty-designation">Lower Secondary Teacher</div>
+          <div class="faculty-qualification">B.A. English, Major English</div>
+          <p class="faculty-specialty">Reading comprehension, phonetics, and elocution drills.</p>
+          <a href="mailto:sushma.eng@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Lower Sec Nepali -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="nep_teacher5.jpg" alt="Radha Shrestha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=RadhaShresthaLSec'">
+          </div>
+          <span class="dept-indicator-tag tag-lsec">नेपाली (६-८)</span>
+          <div class="faculty-name">राधा श्रेष्ठ</div>
+          <div class="faculty-designation">निम्न माध्यमिक शिक्षक</div>
+          <div class="faculty-qualification">बि.ए. नेपाली, बि.एड.</div>
+          <p class="faculty-specialty">शब्दभण्डार, शुद्ध हिज्जे र पद्य पठनपाठन।</p>
+          <a href="mailto:radha.nep@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Lower Sec Social Studies -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="soc_teacher6.jpg" alt="Dhananjay Chaudhary" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DhananjayLSec'">
+          </div>
+          <span class="dept-indicator-tag tag-lsec">Geography (6-8)</span>
+          <div class="faculty-name">Dhananjay Chaudhary</div>
+          <div class="faculty-designation">Lower Secondary Teacher</div>
+          <div class="faculty-qualification">B.A. Geography, B.Ed.</div>
+          <p class="faculty-specialty">Topographic mapping, global continents, and climate models.</p>
+          <a href="mailto:dhananjay.soc@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Lower Sec Computer / Scratch -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="comp_teacher6.jpg" alt="Nirmala Joshi" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=NirmalaJoshiLSec'">
+          </div>
+          <span class="dept-indicator-tag tag-lsec">Computer (6-8)</span>
+          <div class="faculty-name">Nirmala Joshi</div>
+          <div class="faculty-designation">Lower Secondary Teacher</div>
+          <div class="faculty-qualification">BCA, B.Ed.</div>
+          <p class="faculty-specialty">Block coding (Scratch), Office 365, and internet safety.</p>
+          <a href="mailto:nirmala.cs@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 7: PRIMARY & FOUNDATIONAL WING (GRADES 1 TO 5 & ECD)
+         ========================================== -->
+    <section class="hierarchy-tier-section" id="tier-primary" data-tier="primary">
+      <div class="tier-header-row">
+        <div class="tier-title-group">
+          <h3><i class="fa-solid fa-shapes"></i> Primary &amp; Foundational Wing (Grades 1 to 5 &amp; ECD)</h3>
+          <p>Nurturing foundational literacy, mathematical reasoning, ethical values, and joyful creative learning.</p>
+        </div>
+        <span class="tier-counter-pill">Primary Faculty</span>
+      </div>
+
+      <div class="faculty-cards-grid">
+        <!-- Primary Science -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="sci_teacher8.jpg" alt="Mahesh Chaudhary" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=MaheshPri'">
+          </div>
+          <span class="dept-indicator-tag tag-pri">Primary Science</span>
+          <div class="faculty-name">Mahesh Chaudhary</div>
+          <div class="faculty-designation">Primary Science Teacher</div>
+          <div class="faculty-qualification">B.Sc. Environmental Science</div>
+          <p class="faculty-specialty">Nature trails, plant growth, and weather journaling.</p>
+          <a href="mailto:mahesh.sci@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Primary Math & Abacus -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="math_teacher8.jpg" alt="Sunil Tamang" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SunilMathPri'">
+          </div>
+          <span class="dept-indicator-tag tag-pri">Primary Math</span>
+          <div class="faculty-name">Sunil Tamang</div>
+          <div class="faculty-designation">Primary Math Teacher</div>
+          <div class="faculty-qualification">B.Ed. Math, Vedic Math Trained</div>
+          <p class="faculty-specialty">Abacus visualization, numeracy games, and mental math.</p>
+          <a href="mailto:sunil.math@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Primary English -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="teacher_english8.jpg" alt="Anjali Gurung" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=AnjaliEngPri'">
+          </div>
+          <span class="dept-indicator-tag tag-pri">Primary English</span>
+          <div class="faculty-name">Anjali Gurung</div>
+          <div class="faculty-designation">Primary English Teacher</div>
+          <div class="faculty-qualification">B.A. English, Montessori Trained</div>
+          <p class="faculty-specialty">Early language phonics, storytelling, and spelling mastery.</p>
+          <a href="mailto:anjali.eng@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Primary Nepali / Handwriting -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="nep_teacher8.jpg" alt="Bishnu Prasad Pokhrel" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BishnuNepPri'">
+          </div>
+          <span class="dept-indicator-tag tag-pri">प्राथमिक नेपाली</span>
+          <div class="faculty-name">विष्णुप्रसाद पोखरेल</div>
+          <div class="faculty-designation">प्राथमिक तह शिक्षक</div>
+          <div class="faculty-qualification">बि.एड. नेपाली</div>
+          <p class="faculty-specialty">सुलेख (हस्तलेखन), देवनागरी वर्णमाला र वाक्य निर्माण।</p>
+          <a href="mailto:bishnu.nep@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Primary Social & Moral -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="soc_teacher8.jpg" alt="Sanjiv Tamang" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SanjivSocPri'">
+          </div>
+          <span class="dept-indicator-tag tag-pri">Primary Social</span>
+          <div class="faculty-name">Sanjiv Tamang</div>
+          <div class="faculty-designation">Primary Social Teacher</div>
+          <div class="faculty-qualification">B.A. Social Work</div>
+          <p class="faculty-specialty">Civic habits, environmental care, and cultural harmony.</p>
+          <a href="mailto:sanjiv.soc@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Primary Kids Computing -->
+        <div class="faculty-member-card">
+          <div class="faculty-avatar-frame">
+            <img src="comp_teacher8.jpg" alt="Sangeeta Gurung" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SangeetaCompPri'">
+          </div>
+          <span class="dept-indicator-tag tag-pri">Primary Computing</span>
+          <div class="faculty-name">Sangeeta Gurung</div>
+          <div class="faculty-designation">Primary Tech Teacher</div>
+          <div class="faculty-qualification">BCA, Child Tech Literacy</div>
+          <p class="faculty-specialty">Touch-typing drills, paint tools, and educational puzzles.</p>
+          <a href="mailto:sangeeta.cs@npsdharan.edu.np" class="faculty-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Guaranteed Solid Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Dharan-17, Sunsari, Nepal</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>025-520101 , +977 9852012345 (सोधपुछ)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>025-520102 (शैक्षिक प्रशासन)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>025-520103 , +977 9852098765 (शुल्क सम्बन्धी)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@npsdharan.edu.np">info@npsdharan.edu.np</a>
+          </li>
+        </ul>
+
+        <div class="footer-social-links">
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="footer-col">
+        <h3>Navigate</h3>
+        <ul class="footer-nav-grid">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+          <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
+          <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
+          <li><a href="management.html"><i class="fa-solid fa-angle-right"></i> Committee</a></li>
+          <li><a href="chairperson.html"><i class="fa-solid fa-angle-right"></i> Chairperson</a></li>
+          <li><a href="principal.html"><i class="fa-solid fa-angle-right"></i> Principal</a></li>
+          <li><a href="commandant.html"><i class="fa-solid fa-angle-right"></i> Commandant</a></li>
+          <li><a href="integrated-dept.html"><i class="fa-solid fa-angle-right"></i> Integrated Dept</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Location Column -->
+      <div class="footer-col">
+        <h3>Location</h3>
+        <div class="footer-map-wrapper">
+          <iframe 
+            src="https://maps.google.com/maps?q=Nepal%20Police%20School%20Dharan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="Nepal Police School Dharan Location">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      © Copyright 2026, Nepal Police School | All Rights Reserved | Designed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="btn-scroll-top" id="btnScrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Live Search Functionality across all tiers
+    function searchFaculty() {
+      const query = document.getElementById('facultySearchInput').value.toLowerCase();
+      const allCards = document.querySelectorAll('.faculty-member-card');
+      const allSections = document.querySelectorAll('.hierarchy-tier-section');
+
+      allCards.forEach(card => {
+        const textContent = card.innerText.toLowerCase();
+        if (textContent.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Hide empty tier sections when filtering by search
+      allSections.forEach(section => {
+        const visibleCards = section.querySelectorAll('.faculty-member-card[style*="display: flex"], .faculty-member-card:not([style*="display: none"])');
+        if (query.length > 0 && visibleCards.length === 0) {
+          section.style.display = 'none';
+        } else {
+          section.style.display = 'flex';
+        }
+      });
+    }
+
+    // Tier-Based Navigation and Filter Tabs
+    function filterTier(tier, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const sections = document.querySelectorAll('.hierarchy-tier-section');
+      sections.forEach(sec => {
+        if (tier === 'all' || sec.getAttribute('data-tier') === tier) {
+          sec.style.display = 'flex';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+
+      // Smooth scroll down to section if a specific tier was picked
+      if (tier !== 'all') {
+        const targetElement = document.getElementById('tier-' + tier);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
+    // Back to Top functionality
+    const btnScrollTop = document.getElementById('btnScrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btnScrollTop.classList.add('visible');
+      } else {
+        btnScrollTop.classList.remove('visible');
+      }
+    });
+
+    btnScrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Desktop Mega Menu Hover Stabilizers
+    function setupDesktopMegaMenu(triggerId, menuId) {
+      const trigger = document.getElementById(triggerId);
+      const menu = document.getElementById(menuId);
+      let timeout;
+
+      if (!trigger || !menu) return;
+
+      trigger.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      trigger.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+
+      menu.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      menu.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+    }
+
+    setupDesktopMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
+    setupDesktopMegaMenu('menuNPS', 'dropdownNPS');
+
+    // Mobile Hamburger Menu & Drawer Toggles
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinksMenu = document.getElementById('navLinksMenu');
+    const mobileIcon = mobileToggle.querySelector('i');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = navLinksMenu.classList.toggle('active-mobile');
+      if (isOpen) {
+        mobileIcon.classList.remove('fa-bars');
+        mobileIcon.classList.add('fa-xmark');
+      } else {
+        mobileIcon.classList.remove('fa-xmark');
+        mobileIcon.classList.add('fa-bars');
+      }
+    });
+
+    // Mobile Accordion Logic
+    const navItemsWithSub = document.querySelectorAll('.nav-item');
+    navItemsWithSub.forEach(item => {
+      const triggerLink = item.querySelector('.nav-link');
+      const subDropdown = item.querySelector('.dropdown-menu');
+      const subMega = item.querySelector('.mega-menu');
+      const targetMenu = subDropdown || subMega;
+
+      if (targetMenu) {
+        triggerLink.addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            targetMenu.classList.toggle('mobile-open');
+
+            const caret = triggerLink.querySelector('i');
+            if (caret) {
+              caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
+              caret.style.transition = 'transform 0.2s ease';
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
