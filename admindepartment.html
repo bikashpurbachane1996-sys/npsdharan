@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Administration Department - Nepal Police School Dharan</title>  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f1f5f9;
+      overflow-x: hidden;
+      color: #334155;
+    }
+
+    /* Sticky Navigation Wrapper */
+    .header-wrapper {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 1. Main Navigation Bar */
+    .header-navbar {
+      background-color: #273773;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      height: 75px;
+      position: relative;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    .brand-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logos img.school-logo {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffcb08;
+      background-color: #ffffff;
+    }
+
+    .brand-logos img.police-crest {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-text .school-slogan {
+      font-size: 0.72rem;
+      color: #ffcb08;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      margin-top: 2px;
+    }
+
+    .brand-text p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+
+    /* Hamburger Toggle Button */
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: #ffcb08;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 22px;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffcb08;
+    }
+
+    .nav-link i {
+      font-size: 0.7rem;
+    }
+
+    /* Standard Dropdown Menus (Desktop) */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      list-style: none;
+      padding: 8px;
+      z-index: 1001;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 0;
+      right: 0;
+      height: 15px;
+      background: transparent;
+    }
+
+    .dropdown-menu li a {
+      color: #334155;
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    @media (min-width: 901px) {
+      .nav-item:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    /* Mega Menus */
+    .has-mega-menu {
+      position: static !important;
+    }
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #f1f5f9;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      border-top: 2px solid #ffcb08;
+      padding: 24px 30px;
+      z-index: 9999;
+    }
+
+    .mega-menu::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: transparent;
+    }
+
+    @media (min-width: 901px) {
+      .has-mega-menu:hover .mega-menu,
+      .mega-menu:hover {
+        display: block;
+      }
+    }
+
+    .mega-menu-grid-who {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 320px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-menu-grid-nps {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.3fr 1px 1.2fr 1px 1.2fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-img-frame {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      border: 3px solid #ffffff;
+      height: 250px;
+      background: #ffffff;
+    }
+
+    .mega-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .mega-img-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .mega-divider {
+      background-color: #cbd5e1;
+      width: 1px;
+      height: 90%;
+      margin: auto 0;
+    }
+
+    .mega-links-col,
+    .mega-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    .mega-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ed1c24;
+      margin-bottom: 8px;
+      padding-left: 6px;
+    }
+
+    .mega-links-col a,
+    .mega-column a {
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .mega-links-col a:hover,
+    .mega-column a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(6px);
+      box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
+    }
+
+    /* Police Stripes */
+    .police-stripes {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stripe-red { height: 3px; background-color: #ed1c24; }
+    .stripe-white { height: 2px; background-color: #ffffff; }
+    .stripe-blue { height: 3px; background-color: #273773; }
+    .stripe-yellow { height: 3px; background-color: #ffcb08; }
+
+    /* ========================================================
+       ADMINISTRATION DEPARTMENT HERO
+       ======================================================== */
+    .admin-hero {
+      background: linear-gradient(135deg, #09122c 0%, #172554 50%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 90px 24px 145px;
+      text-align: center;
+      position: relative;
+    }
+
+    .admin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(237, 28, 36, 0.2);
+      border: 1px solid #ed1c24;
+      color: #fca5a5;
+      padding: 6px 22px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .admin-hero h1 {
+      font-size: 3.3rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      animation: heroFadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .admin-hero p {
+      font-size: 1.18rem;
+      color: #cbd5e1;
+      max-width: 820px;
+      margin: 0 auto;
+      line-height: 1.75;
+      animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes heroFadeDown {
+      from { opacity: 0; transform: translateY(-24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Main Container */
+    .admin-container {
+      max-width: 1260px;
+      margin: -80px auto 110px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 65px;
+    }
+
+    /* Police Battalion & Administrative Overview Card */
+    .police-overview-card {
+      background: #ffffff;
+      border-radius: 28px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      align-items: stretch;
+    }
+
+    .police-overview-img {
+      position: relative;
+      min-height: 400px;
+      background: #09122c;
+      overflow: hidden;
+    }
+
+    .police-overview-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .police-overview-card:hover .police-overview-img img {
+      transform: scale(1.04);
+    }
+
+    .police-overview-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(9, 18, 44, 0.9);
+      backdrop-filter: blur(6px);
+      padding: 12px 20px;
+      border-radius: 12px;
+      border-left: 4px solid #ed1c24;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .police-overview-content {
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .police-overview-content span.sub {
+      color: #ed1c24;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .police-overview-content h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .police-overview-content p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 24px;
+    }
+
+    /* Live Duty Personnel Metrics */
+    .police-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .police-metric-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .police-metric-box strong {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #273773;
+    }
+
+    .police-metric-box span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    /* Search & Filter Control Bar */
+    .control-panel {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .search-wrapper input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.3s ease;
+      background: #f8fafc;
+    }
+
+    .search-wrapper input:focus {
+      border-color: #273773;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(39, 55, 115, 0.15);
+    }
+
+    .search-wrapper i {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 1.1rem;
+    }
+
+    .duty-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .duty-tab-btn {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+      padding: 9px 20px;
+      border-radius: 25px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .duty-tab-btn:hover,
+    .duty-tab-btn.active {
+      background: #1e3a8a;
+      color: #ffffff;
+      border-color: #1e3a8a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(30, 58, 138, 0.25);
+    }
+
+    /* Rank & Role Sections */
+    .police-tier-section {
+      background: #ffffff;
+      border-radius: 26px;
+      padding: 42px 36px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .tier-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tier-title h3 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tier-title h3 i {
+      color: #ed1c24;
+      font-size: 1.3rem;
+    }
+
+    .tier-title p {
+      font-size: 0.92rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .tier-badge-count {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid #bfdbfe;
+    }
+
+    /* Personnel Card Grid */
+    .personnel-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+    }
+
+    .command-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 750px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Police Officer / Staff Card */
+    .police-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 30px 18px 24px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .police-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 16px 36px rgba(39, 55, 115, 0.12);
+      border-color: #cbd5e1;
+    }
+
+    /* Medallion / Shield Frame */
+    .police-avatar-wrapper {
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      padding: 4px;
+      background: #ffffff;
+      border: 3px solid #1e3a8a;
+      box-shadow: 0 8px 22px rgba(30, 58, 138, 0.15);
+      margin-bottom: 18px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.35s ease;
+    }
+
+    .command-card .police-avatar-wrapper {
+      width: 160px;
+      height: 160px;
+      border-color: #ffcb08;
+      box-shadow: 0 10px 25px rgba(255, 203, 8, 0.3);
+    }
+
+    .police-card:hover .police-avatar-wrapper {
+      border-color: #ed1c24;
+      box-shadow: 0 12px 28px rgba(237, 28, 36, 0.25);
+    }
+
+    .police-avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .police-card:hover .police-avatar-wrapper img {
+      transform: scale(1.08);
+    }
+
+    /* Duty Indicator Tag */
+    .duty-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 4px 12px;
+      border-radius: 16px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .tag-cmd { background: #fee2e2; color: #991b1b; }
+    .tag-fin { background: #dbeafe; color: #1e40af; }
+    .tag-hostel { background: #fef3c7; color: #b45309; }
+    .tag-sec { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
+    .tag-driver { background: #dcfce7; color: #166534; }
+    .tag-support { background: #fae8ff; color: #86198f; }
+
+    .officer-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .officer-rank {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 4px;
+    }
+
+    .officer-assignment {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .officer-desc {
+      font-size: 0.84rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .officer-contact-pill {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      color: #64748b;
+      background: #f8fafc;
+      padding: 4px 12px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .officer-contact-pill:hover {
+      background: #1e3a8a;
+      color: #ffffff;
+      border-color: #1e3a8a;
+    }
+
+    /* Guaranteed Solid Footer Section */
+    footer.site-footer {
+      display: block !important;
+      background-color: #273773 !important;
+      color: #ffffff !important;
+      padding-top: 60px !important;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
+      display: grid;
+      grid-template-columns: 1.3fr 1.5fr 1.2fr;
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #ffffff !important;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #f1f5f9 !important;
+      line-height: 1.5;
+    }
+
+    .footer-contact-list li i {
+      margin-top: 3px;
+      color: #ffcb08 !important;
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-list a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-list a:hover {
+      color: #ffcb08 !important;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .footer-social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff !important;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social-btn:hover {
+      background-color: #ffffff !important;
+      color: #273773 !important;
+      transform: translateY(-3px);
+    }
+
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      list-style: none;
+    }
+
+    .footer-nav-grid li a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .footer-nav-grid li a:hover {
+      color: #ffcb08 !important;
+      transform: translateX(4px);
+    }
+
+    .footer-map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      height: 190px;
+    }
+
+    .footer-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #cbd5e1 !important;
+    }
+
+    .footer-bottom strong {
+      color: #ffffff !important;
+    } 
+
+    .btn-scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #ed1c24;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(237, 28, 36, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1100px) {
+      .personnel-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .header-navbar { padding: 0 16px; height: 70px; }
+      .brand-section { gap: 10px; }
+      .brand-logos img.school-logo { height: 44px; width: 44px; }
+      .brand-logos img.police-crest { height: 48px; }
+      .brand-text h1 { font-size: 0.95rem; }
+      .brand-text .school-slogan { font-size: 0.65rem; }
+      .brand-text p { font-size: 0.68rem; }
+
+      .mobile-nav-toggle { display: block; }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1c2754;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        padding: 12px 18px 24px;
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-links.active-mobile { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .nav-item { width: 100%; height: auto; display: flex; flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; font-size: 1rem; }
+      .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; box-shadow: none !important; background: #162044 !important; border-radius: 8px !important; border-top: none !important; padding: 8px 12px !important; display: none; }
+      .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
+      .dropdown-menu::before, .mega-menu::before { display: none !important; }
+      .dropdown-menu li a { color: #cbd5e1 !important; padding: 10px 14px !important; }
+      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .mega-links-col a, .mega-column a { color: #cbd5e1 !important; padding: 9px 12px !important; font-size: 0.9rem !important; }
+
+      .admin-hero h1 { font-size: 2.2rem; }
+      .police-overview-card { grid-template-columns: 1fr; }
+      .police-overview-img { min-height: 250px; }
+      .police-overview-content { padding: 30px 20px; }
+      .personnel-grid, .command-grid { grid-template-columns: 1fr; }
+      .police-tier-section { padding: 26px 18px; }
+      .footer-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header Wrapper -->
+  <div class="header-wrapper">
+    <header class="header-navbar">
+      <a href="index.html" class="brand-section">
+        <div class="brand-logos">
+          <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
+          <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
+        </div>
+        <div class="brand-text">
+          <h1>NEPAL POLICE SCHOOL</h1>
+          <div class="school-slogan"><i>Better Schooling for Ideal Citizens</i></div>
+          <p><i>Dharan-13, Sunsari Nepal</i></p>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinksMenu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        
+        <!-- 1. "Who We Are" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuWhoWeAre">
+          <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownWhoWeAre">
+            <div class="mega-menu-grid-who">
+              
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 1: School Heritage Links -->
+              <div class="mega-links-col">
+                <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="milestone.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
+                <a href="facility.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
+                <a href="management.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 2: Leadership Messages -->
+              <div class="mega-links-col">
+                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="commandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+              <div class="mega-img-frame">
+                <img src="building.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <!-- 2. "NPS" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuNPS">
+          <a href="#" class="nav-link active">NPS <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownNPS">
+            <div class="mega-menu-grid-nps">
+              
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 1: Departments -->
+              <div class="mega-column">
+                <div class="mega-col-title">Departments</div>
+                <a href="english-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+                <a href="science-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+                <a href="nepali-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+                <a href="social-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+                <a href="computer-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
+                <a href="math-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="integrated-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+                <a href="admin-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 2: School Premises / Wings -->
+              <div class="mega-column">
+                <div class="mega-col-title">School premises</div>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> ECD/PPC PlayGroup</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
+                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <!-- Column 3: Message from Core Team -->
+              <div class="mega-column">
+                <div class="mega-col-title">Message From Core Team</div>
+                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="commandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
+        
+        <li class="nav-item">
+          <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">ECA / CCA</a></li>
+            <li><a href="#">Events &amp; Sports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Publication <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Magazine</a></li>
+            <li><a href="#">Annual Reports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Vacancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+
+    <!-- Police Color Stripes Ribbon -->
+    <div class="police-stripes">
+      <div class="stripe-white"></div>
+      <div class="stripe-red"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-blue"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-yellow"></div>
+    </div>
+  </div>
+
+  <!-- Administration Hero Header -->
+  <section class="admin-hero">
+    <div class="admin-badge">
+      <i class="fa-solid fa-shield-halved"></i> Security, Administration &amp; Operational Force
+    </div>
+    <h1>Administration Department</h1>
+    <p>Honoring the dedication, regimented discipline, and selfless service of 32 Nepal Police personnel safeguarding our students, hostels, transport, and school operations 24/7.</p>
+  </section>
+
+  <!-- Main Department Container -->
+  <main class="admin-container">
+
+    <!-- Police Force Overview Card -->
+    <section class="police-overview-card">
+      <div class="police-overview-img">
+        <img src="police_group.jpg" alt="Nepal Police Personnel at NPS Dharan" onerror="this.src='https://www.nps.edu.np/images/Signature%20Block.jpg'">
+        <div class="police-overview-badge">
+          <i class="fa-solid fa-building-shield" style="margin-right: 8px; color: #ffcb08;"></i> Administrative &amp; Security Force — Nepal Police School Dharan
+        </div>
+      </div>
+      <div class="police-overview-content">
+        <span class="sub">Vigilance &amp; Institutional Service</span>
+        <h2>Guardians of Safety, Order &amp; Welfare</h2>
+        <p>
+          Working hand-in-hand with the academic faculty, our dedicated contingent of <strong>32 Nepal Police personnel</strong> serves around the clock. From executive commandant supervision, accounts and fee administration, residential hostel wardens, and strict perimeter security to safe bus transportation, sanitation, and kitchen logistics, they embody our proud motto: <strong>सत्य, सेवा, सुरक्षणम्</strong>.
+        </p>
+        <div class="police-metrics-grid">
+          <div class="police-metric-box">
+            <strong>32</strong>
+            <span>Police Staff</span>
+          </div>
+          <div class="police-metric-box">
+            <strong>24/7</strong>
+            <span>Gate &amp; Perimeter Watch</span>
+          </div>
+          <div class="police-metric-box">
+            <strong>100%</strong>
+            <span>Secured Campus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & Duty Filter Controls -->
+    <section class="control-panel">
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="adminSearchInput" placeholder="Search police personnel by name, rank, or assigned duty..." onkeyup="searchPoliceStaff()">
+      </div>
+
+      <div class="duty-filter-tabs">
+        <button class="duty-tab-btn active" onclick="filterDutyTier('all', this)"><i class="fa-solid fa-users"></i> All Personnel (32)</button>
+        <button class="duty-tab-btn" onclick="filterDutyTier('command', this)"><i class="fa-solid fa-star"></i> Command Wing</button>
+        <button class="duty-tab-btn" onclick="filterDutyTier('accounts', this)"><i class="fa-solid fa-file-invoice-dollar"></i> Accounts &amp; Admin</button>
+        <button class="duty-tab-btn" onclick="filterDutyTier('hostel', this)"><i class="fa-solid fa-bed"></i> Hostel Incharges</button>
+        <button class="duty-tab-btn" onclick="filterDutyTier('security', this)"><i class="fa-solid fa-shield-halved"></i> Gate &amp; Security</button>
+        <button class="duty-tab-btn" onclick="filterDutyTier('transport', this)"><i class="fa-solid fa-bus"></i> Drivers &amp; Transport</button>
+        <button class="duty-tab-btn" onclick="filterDutyTier('support', this)"><i class="fa-solid fa-hand-holding-heart"></i> Helpers &amp; Utilities</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 1: COMMAND & EXECUTIVE WING
+         ========================================== -->
+    <section class="police-tier-section" id="tier-command" data-tier="command">
+      <div class="tier-header">
+        <div class="tier-title">
+          <h3><i class="fa-solid fa-star"></i> School Command &amp; Executive Wing</h3>
+          <p>Overseeing overall disciplinary order, police staff deployment, protocol, and institutional safety.</p>
+        </div>
+        <span class="tier-badge-count">2 Officers</span>
+      </div>
+
+      <div class="personnel-grid command-grid">
+        <!-- School Commandant -->
+        <div class="police-card command-card">
+          <div class="police-avatar-wrapper">
+            <img src="commandant.jpg" alt="Insp. Anita Mahat" onerror="this.src='https://www.nps.edu.np/public/uploads/697acd89aac94.png'">
+          </div>
+          <span class="duty-tag tag-cmd">Head of Administration</span>
+          <div class="officer-name">Anita Mahat</div>
+          <div class="officer-rank">Police Inspector (इन्स्पेक्टर)</div>
+          <div class="officer-assignment">School Commandant</div>
+          <p class="officer-desc">Executive commander of police staff, camp security, drill parade, and institutional welfare.</p>
+          <a href="mailto:commandant@npsdharan.edu.np" class="officer-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Assistant Commandant -->
+        <div class="police-card command-card">
+          <div class="police-avatar-wrapper">
+            <img src="admin_si.jpg" alt="SI Chandra Bahadur Thapa" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ChandraSI'">
+          </div>
+          <span class="duty-tag tag-cmd">Deputy Incharge</span>
+          <div class="officer-name">Chandra Bahadur Thapa</div>
+          <div class="officer-rank">Sub-Inspector (स.इ.)</div>
+          <div class="officer-assignment">Assistant Commandant</div>
+          <p class="officer-desc">Direct supervision of daily police guards, duty rosters, parade drills, and inventory management.</p>
+          <a href="mailto:admin@npsdharan.edu.np" class="officer-contact-pill"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 2: ACCOUNTS, LOGISTICS & ADMIN OFFICE
+         ========================================== -->
+    <section class="police-tier-section" id="tier-accounts" data-tier="accounts">
+      <div class="tier-header">
+        <div class="tier-title">
+          <h3><i class="fa-solid fa-file-invoice-dollar"></i> Accounts, Store &amp; Records Office</h3>
+          <p>Managing financial records, student billing, inventory procurement, and general administrative correspondence.</p>
+        </div>
+        <span class="tier-badge-count">4 Personnel</span>
+      </div>
+
+      <div class="personnel-grid">
+        <!-- Senior Accountant -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="police_accountant.jpg" alt="ASI Madhav Prasad Sharma" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=MadhavAcct'">
+          </div>
+          <span class="duty-tag tag-fin">Finance &amp; Accounts</span>
+          <div class="officer-name">Madhav Prasad Sharma</div>
+          <div class="officer-rank">Asst. Sub-Inspector (प्र.स.नि.)</div>
+          <div class="officer-assignment">Head Accountant (लेखापाल)</div>
+          <p class="officer-desc">Institutional billing, online fee verification, banking operations, and financial auditing.</p>
+          <a href="mailto:accounts@npsdharan.edu.np" class="officer-contact-pill"><i class="fa-solid fa-phone"></i> 025-520103</a>
+        </div>
+
+        <!-- Assistant Accountant -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="police_acct_asst.jpg" alt="Senior Constable Birendra Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BirendraAcct'">
+          </div>
+          <span class="duty-tag tag-fin">Fee Counter</span>
+          <div class="officer-name">Birendra Rai</div>
+          <div class="officer-rank">Senior Constable (व.ह.)</div>
+          <div class="officer-assignment">Assistant Accountant</div>
+          <p class="officer-desc">Daily counter billing, fee receipt clearance, and Bright School mobile app payment support.</p>
+          <a href="mailto:accounts@npsdharan.edu.np" class="officer-contact-pill"><i class="fa-solid fa-wallet"></i> Fee Counter</a>
+        </div>
+
+        <!-- Store Incharge -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="police_store.jpg" alt="ASI Ram Kumar Shrestha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=RamStore'">
+          </div>
+          <span class="duty-tag tag-fin">Store &amp; Supplies</span>
+          <div class="officer-name">Ram Kumar Shrestha</div>
+          <div class="officer-rank">Asst. Sub-Inspector (प्र.स.नि.)</div>
+          <div class="officer-assignment">Quarter Master / Store Incharge</div>
+          <p class="officer-desc">Procurement, textbook distribution, uniform issuance, and stationery management.</p>
+          <a href="mailto:store@npsdharan.edu.np" class="officer-contact-pill"><i class="fa-solid fa-boxes-stacked"></i> Logistics</a>
+        </div>
+
+        <!-- Administrative Records Officer -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="police_records.jpg" alt="Head Constable Gita Adhikari" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=GitaRecords'">
+          </div>
+          <span class="duty-tag tag-fin">Administration Desk</span>
+          <div class="officer-name">Gita Adhikari</div>
+          <div class="officer-rank">Head Constable (हवल्दार)</div>
+          <div class="officer-assignment">Records &amp; Dispatch Clerk</div>
+          <p class="officer-desc">Official government notices, trust documents, staff records, and postal dispatches.</p>
+          <a href="mailto:info@npsdharan.edu.np" class="officer-contact-pill"><i class="fa-solid fa-file-lines"></i> Admin Desk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 3: RESIDENTIAL HOSTEL INCHARGES (WARDENS)
+         ========================================== -->
+    <section class="police-tier-section" id="tier-hostel" data-tier="hostel">
+      <div class="tier-header">
+        <div class="tier-title">
+          <h3><i class="fa-solid fa-bed"></i> Residential Hostel Incharges (Wardens / गुरुजी)</h3>
+          <p>Stationed in student dormitories to maintain discipline, evening study prep, hygiene, and boarder welfare.</p>
+        </div>
+        <span class="tier-badge-count">6 Wardens</span>
+      </div>
+
+      <div class="personnel-grid">
+        <!-- Boys Senior Hostel Incharge -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="warden1.jpg" alt="ASI Dipak Basnet" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DipakWarden'">
+          </div>
+          <span class="duty-tag tag-hostel">Boys Senior Wing</span>
+          <div class="officer-name">Dipak Basnet</div>
+          <div class="officer-rank">Asst. Sub-Inspector (प्र.स.नि.)</div>
+          <div class="officer-assignment">Senior Boys Hostel Incharge</div>
+          <p class="officer-desc">Supervises Grade 9–12 dormitories, roll-call inspections, and night prep hours.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-hotel"></i> Senior Hostel</span>
+        </div>
+
+        <!-- Girls Hostel Incharge -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="warden2.jpg" alt="Senior Constable Maya Gurung" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=MayaWarden'">
+          </div>
+          <span class="duty-tag tag-hostel">Girls Wing (गुरुआमा)</span>
+          <div class="officer-name">Maya Gurung</div>
+          <div class="officer-rank">Senior Constable (व.ह.)</div>
+          <div class="officer-assignment">Girls Hostel Incharge</div>
+          <p class="officer-desc">Pastoral health, female boarder welfare, hygiene checkups, and evening mentoring.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-hotel"></i> Girls Hostel</span>
+        </div>
+
+        <!-- Junior Boys Hostel Incharge -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="warden3.jpg" alt="Head Constable Som Bahadur Tamang" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SomWarden'">
+          </div>
+          <span class="duty-tag tag-hostel">Junior Boys Wing</span>
+          <div class="officer-name">Som Bahadur Tamang</div>
+          <div class="officer-rank">Head Constable (हवल्दार)</div>
+          <div class="officer-assignment">Junior Boys Hostel Incharge</div>
+          <p class="officer-desc">Caring for Grades 4–8 junior boarders, early habits, bed-making, and hygiene.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-hotel"></i> Junior Hostel</span>
+        </div>
+
+        <!-- Assistant Warden 1 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="warden4.jpg" alt="Constable Umesh Karki" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=UmeshWarden'">
+          </div>
+          <span class="duty-tag tag-hostel">Hostel Security</span>
+          <div class="officer-name">Umesh Karki</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Assistant Hostel Warden</div>
+          <p class="officer-desc">Night patrols, evening attendance logs, and dining hall meal queue discipline.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-moon"></i> Night Watch</span>
+        </div>
+
+        <!-- Assistant Warden 2 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="warden5.jpg" alt="Constable Sunita Limbu" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SunitaWarden'">
+          </div>
+          <span class="duty-tag tag-hostel">Girls Hostel Support</span>
+          <div class="officer-name">Sunita Limbu</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Assistant Girls Warden</div>
+          <p class="officer-desc">First-aid dormitory assistance, boarding hygiene, and study hall monitoring.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-hotel"></i> Girls Hostel</span>
+        </div>
+
+        <!-- Hostel Infirmary Guard -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="warden6.jpg" alt="Constable Manoj Chaudhary" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ManojInfirmary'">
+          </div>
+          <span class="duty-tag tag-hostel">Health &amp; Welfare</span>
+          <div class="officer-name">Manoj Chaudhary</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Infirmary Escort &amp; Welfare</div>
+          <p class="officer-desc">Coordinating with school nurses, escorting sick boarders to Dharan hospitals when needed.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-truck-medical"></i> Medical Escort</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 4: PERIMETER SECURITY & GATE SENTRIES
+         ========================================== -->
+    <section class="police-tier-section" id="tier-security" data-tier="security">
+      <div class="tier-header">
+        <div class="tier-title">
+          <h3><i class="fa-solid fa-shield-halved"></i> Main Gate Sentries &amp; Perimeter Security Guard Detail</h3>
+          <p>Stationed at campus gates and boundary outposts to enforce visitor logging, CCTV monitoring, and child safety.</p>
+        </div>
+        <span class="tier-badge-count">8 Guards</span>
+      </div>
+
+      <div class="personnel-grid">
+        <!-- Main Gate Commander -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="gate1.jpg" alt="Head Constable Prem Bahadur Magar" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=PremGate'">
+          </div>
+          <span class="duty-tag tag-sec">Main Gate Guard</span>
+          <div class="officer-name">Prem Bahadur Magar</div>
+          <div class="officer-rank">Head Constable (हवल्दार)</div>
+          <div class="officer-assignment">Gate Guard Commander</div>
+          <p class="officer-desc">Controls campus entry/exit gates, parent visitor passes, and morning pupil arrivals.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-door-closed"></i> Main Gate</span>
+        </div>
+
+        <!-- CCTV Operator -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="gate2.jpg" alt="Constable Bikram Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BikramCCTV'">
+          </div>
+          <span class="duty-tag tag-sec">Control Room</span>
+          <div class="officer-name">Bikram Rai</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">CCTV Surveillance Monitor</div>
+          <p class="officer-desc">24/7 central CCTV monitoring covering perimeter walls, hostel passages, and main sports fields.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-video"></i> Surveillance</span>
+        </div>
+
+        <!-- Sentry 1 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="gate3.jpg" alt="Constable Rajesh Yadav" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=RajeshSentry'">
+          </div>
+          <span class="duty-tag tag-sec">Perimeter Watch</span>
+          <div class="officer-name">Rajesh Yadav</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Perimeter Sentry (Post 1)</div>
+          <p class="officer-desc">Guards southern boundary wall, playground fences, and forest-facing boundaries.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-shield"></i> Post 1</span>
+        </div>
+
+        <!-- Sentry 2 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="gate4.jpg" alt="Constable Tara Prasad Sharma" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=TaraSentry'">
+          </div>
+          <span class="duty-tag tag-sec">Perimeter Watch</span>
+          <div class="officer-name">Tara Prasad Sharma</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Perimeter Sentry (Post 2)</div>
+          <p class="officer-desc">Stationed along northern academic building gates and residential staff quarters.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-shield"></i> Post 2</span>
+        </div>
+
+        <!-- Sentry 3 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="gate5.jpg" alt="Constable Durga Bahadur Khadka" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DurgaSentry'">
+          </div>
+          <span class="duty-tag tag-sec">Night Patrol</span>
+          <div class="officer-name">Durga Bahadur Khadka</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Night Patrolling Guard</div>
+          <p class="officer-desc">Continuous night torchlight rounds around dining hall, sports grounds, and outer perimeter.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-person-military-pointing"></i> Night Patrol</span>
+        </div>
+
+        <!-- Sentry 4 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="gate6.jpg" alt="Constable Shanti Tamang" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ShantiSentry'">
+          </div>
+          <span class="duty-tag tag-sec">Visitor Screening</span>
+          <div class="officer-name">Shanti Tamang</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Female Guard &amp; Visitor Check</div>
+          <p class="officer-desc">Screening female visitors, administrative office reception checks, and student departures.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-user-check"></i> Visitor Check</span>
+        </div>
+
+        <!-- Sentry 5 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="gate7.jpg" alt="Constable Kamal Shrestha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=KamalSentry'">
+          </div>
+          <span class="duty-tag tag-sec">Back Gate Post</span>
+          <div class="officer-name">Kamal Shrestha</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Rear Gate Sentry</div>
+          <p class="officer-desc">Securing logistics gate, delivery vehicle entries, fuel tankers, and supply unloading.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-truck-ramp-box"></i> Rear Gate</span>
+        </div>
+
+        <!-- Sentry 6 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="gate8.jpg" alt="Constable Bhim Bahadur Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BhimSentry'">
+          </div>
+          <span class="duty-tag tag-sec">Ground Patrol</span>
+          <div class="officer-name">Bhim Bahadur Rai</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Sports Ground Guard</div>
+          <p class="officer-desc">Crowd safety during football matches, Inter-School IGP running trophy, and drill events.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-futbol"></i> Ground Patrol</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 5: MOTOR TRANSPORT & POLICE DRIVERS
+         ========================================== -->
+    <section class="police-tier-section" id="tier-transport" data-tier="transport">
+      <div class="tier-header">
+        <div class="tier-title">
+          <h3><i class="fa-solid fa-bus"></i> Motor Transport, Drivers &amp; Vehicle Mechanics Wing</h3>
+          <p>Navigating school buses, administrative jeeps, and emergency transport with disciplined safety.</p>
+        </div>
+        <span class="tier-badge-count">6 Drivers &amp; Techs</span>
+      </div>
+
+      <div class="personnel-grid">
+        <!-- Transport Fleet Incharge -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="driver1.jpg" alt="Senior Constable Prakash Thapa" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=PrakashDriver'">
+          </div>
+          <span class="duty-tag tag-driver">Transport Head</span>
+          <div class="officer-name">Prakash Thapa</div>
+          <div class="officer-rank">Senior Constable (व.ह.)</div>
+          <div class="officer-assignment">Transport Fleet Incharge</div>
+          <p class="officer-desc">Fleet fuel logs, route scheduling, mechanical servicing, and daily route monitoring.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-bus-simple"></i> Fleet Incharge</span>
+        </div>
+
+        <!-- Senior Bus Driver 1 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="driver2.jpg" alt="Constable Narayan KC" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=NarayanDriver'">
+          </div>
+          <span class="duty-tag tag-driver">School Bus 1</span>
+          <div class="officer-name">Narayan KC</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Senior Bus Driver (Dharan Route)</div>
+          <p class="officer-desc">Dharan Bazar, Bhanu Chowk, and Ghopa camp route pick-up and drop-offs.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-route"></i> Route A</span>
+        </div>
+
+        <!-- Senior Bus Driver 2 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="driver3.jpg" alt="Constable Deepak Gurung" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DeepakDriver'">
+          </div>
+          <span class="duty-tag tag-driver">School Bus 2</span>
+          <div class="officer-name">Deepak Gurung</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Senior Bus Driver (Itahari Route)</div>
+          <p class="officer-desc">Itahari, Tarahara, and highway arterial student transit with punctual adherence.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-route"></i> Route B</span>
+        </div>
+
+        <!-- Senior Bus Driver 3 -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="driver4.jpg" alt="Constable Sanjeev Tamang" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SanjeevDriver'">
+          </div>
+          <span class="duty-tag tag-driver">School Bus 3</span>
+          <div class="officer-name">Sanjeev Tamang</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Senior Bus Driver (Sub-Urban Route)</div>
+          <p class="officer-desc">Bishnupaduka, Fusre, and hilly terrain transit with high mountain safety protocols.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-route"></i> Route C</span>
+        </div>
+
+        <!-- Emergency / Ambulance Driver -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="driver5.jpg" alt="Constable Krishna Bahadur Karki" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=KrishnaDriver'">
+          </div>
+          <span class="duty-tag tag-driver">Emergency Transport</span>
+          <div class="officer-name">Krishna Bahadur Karki</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Emergency &amp; Duty Driver</div>
+          <p class="officer-desc">24/7 standby emergency transport for sick boarders and school official administrative missions.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-truck-medical"></i> Standby Unit</span>
+        </div>
+
+        <!-- Police Vehicle Mechanic -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="driver6.jpg" alt="Constable Arjun Chaudhary" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ArjunMech'">
+          </div>
+          <span class="duty-tag tag-driver">Maintenance &amp; Tech</span>
+          <div class="officer-name">Arjun Chaudhary</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Fleet Technical Mechanic</div>
+          <p class="officer-desc">Conducting brake, engine, oil, and wheel alignment checkups on all 5 school vehicles.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-wrench"></i> Workshop</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TIER 6: CAMPUS UTILITY, HELPERS & SANITATION
+         ========================================== -->
+    <section class="police-tier-section" id="tier-support" data-tier="support">
+      <div class="tier-header">
+        <div class="tier-title">
+          <h3><i class="fa-solid fa-hand-holding-heart"></i> Logistics, Kitchen, Maintenance &amp; Utility Personnel</h3>
+          <p>Unsung heroes ensuring dining hall cleanliness, electrical/water maintenance, and campus sanitization.</p>
+        </div>
+        <span class="tier-badge-count">6 Personnel</span>
+      </div>
+
+      <div class="personnel-grid">
+        <!-- Campus Electrician -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="support1.jpg" alt="Constable Santosh Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SantoshElec'">
+          </div>
+          <span class="duty-tag tag-support">Utility / Electrician</span>
+          <div class="officer-name">Santosh Rai</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">Campus Electrician &amp; Generator</div>
+          <p class="officer-desc">24/7 power backup management, generator fuel, lab electrical lines, and solar lights.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-plug"></i> Electrical</span>
+        </div>
+
+        <!-- Campus Plumber & Water RO Incharge -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="support2.jpg" alt="Constable Gopal Shrestha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=GopalPlumber'">
+          </div>
+          <span class="duty-tag tag-support">Water &amp; Sanitation</span>
+          <div class="officer-name">Gopal Shrestha</div>
+          <div class="officer-rank">Police Constable (जवान)</div>
+          <div class="officer-assignment">RO Water Plant &amp; Plumber</div>
+          <p class="officer-desc">Ensures 100% pure drinking water across all water dispensers, hostel tanks, and pipelines.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-faucet-drip"></i> Water Plant</span>
+        </div>
+
+        <!-- Mess & Kitchen Store Helper -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="support3.jpg" alt="Constable Dil Bahadur Thapa" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DilMess'">
+          </div>
+          <span class="duty-tag tag-support">Dining Hall Logistic</span>
+          <div class="officer-name">Dil Bahadur Thapa</div>
+          <div class="officer-rank">Office Assistant (का.स.)</div>
+          <div class="officer-assignment">Dining Mess Logistics</div>
+          <p class="officer-desc">Assisting food hygiene inspections, grocery storage management, and dining hall discipline.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-utensils"></i> Mess Helper</span>
+        </div>
+
+        <!-- Campus Landscaper / Gardener -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="support4.jpg" alt="Constable Ram Prasad Chaudhary" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=RamGardener'">
+          </div>
+          <span class="duty-tag tag-support">Campus Environment</span>
+          <div class="officer-name">Ram Prasad Chaudhary</div>
+          <div class="officer-rank">Office Assistant (का.स.)</div>
+          <div class="officer-assignment">Ground &amp; Garden Incharge</div>
+          <p class="officer-desc">Maintaining green gardens, trimming shrubs, grounds cleanliness, and sports turf.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-leaf"></i> Gardening</span>
+        </div>
+
+        <!-- Sanitation Incharge -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="support5.jpg" alt="Constable Sunita Maya Pariyar" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SunitaSanitation'">
+          </div>
+          <span class="duty-tag tag-support">Hygiene &amp; Cleanliness</span>
+          <div class="officer-name">Sunita Maya Pariyar</div>
+          <div class="officer-rank">Office Assistant (का.स.)</div>
+          <div class="officer-assignment">Senior Sanitation Helper</div>
+          <p class="officer-desc">Daily disinfection of academic blocks, clean classroom restrooms, and hostel sanitization.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-broom"></i> Sanitation</span>
+        </div>
+
+        <!-- Dispatch & Bell Helper -->
+        <div class="police-card">
+          <div class="police-avatar-wrapper">
+            <img src="support6.jpg" alt="Constable Bharat Bahadur Bishwakarma" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BharatDispatch'">
+          </div>
+          <span class="duty-tag tag-support">General Helper</span>
+          <div class="officer-name">Bharat B. Bishwakarma</div>
+          <div class="officer-rank">Office Assistant (का.स.)</div>
+          <div class="officer-assignment">Office Peon &amp; Academic Bell</div>
+          <p class="officer-desc">Punctual academic period bells, examination photocopying, and inter-office memo handovers.</p>
+          <span class="officer-contact-pill"><i class="fa-solid fa-bell"></i> General Duty</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Guaranteed Solid Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Dharan-17, Sunsari, Nepal</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>025-520101 , +977 9852012345 (सोधपुछ)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>025-520102 (शैक्षिक प्रशासन)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>025-520103 , +977 9852098765 (शुल्क सम्बन्धी)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@npsdharan.edu.np">info@npsdharan.edu.np</a>
+          </li>
+        </ul>
+
+        <div class="footer-social-links">
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="footer-col">
+        <h3>Navigate</h3>
+        <ul class="footer-nav-grid">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+          <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
+          <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
+          <li><a href="management.html"><i class="fa-solid fa-angle-right"></i> Committee</a></li>
+          <li><a href="chairperson.html"><i class="fa-solid fa-angle-right"></i> Chairperson</a></li>
+          <li><a href="principal.html"><i class="fa-solid fa-angle-right"></i> Principal</a></li>
+          <li><a href="commandant.html"><i class="fa-solid fa-angle-right"></i> Commandant</a></li>
+          <li><a href="admin-dept.html"><i class="fa-solid fa-angle-right"></i> Administration</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Location Column -->
+      <div class="footer-col">
+        <h3>Location</h3>
+        <div class="footer-map-wrapper">
+          <iframe 
+            src="https://maps.google.com/maps?q=Nepal%20Police%20School%20Dharan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="Nepal Police School Dharan Location">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      © Copyright 2026, Nepal Police School | All Rights Reserved | Designed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="btn-scroll-top" id="btnScrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Live Search Functionality across all police staff
+    function searchPoliceStaff() {
+      const query = document.getElementById('adminSearchInput').value.toLowerCase();
+      const allCards = document.querySelectorAll('.police-card');
+      const allSections = document.querySelectorAll('.police-tier-section');
+
+      allCards.forEach(card => {
+        const textContent = card.innerText.toLowerCase();
+        if (textContent.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      allSections.forEach(section => {
+        const visibleCards = section.querySelectorAll('.police-card[style*="display: flex"], .police-card:not([style*="display: none"])');
+        if (query.length > 0 && visibleCards.length === 0) {
+          section.style.display = 'none';
+        } else {
+          section.style.display = 'flex';
+        }
+      });
+    }
+
+    // Filter by Duty Category / Tier Tabs
+    function filterDutyTier(tier, btn) {
+      document.querySelectorAll('.duty-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const sections = document.querySelectorAll('.police-tier-section');
+      sections.forEach(sec => {
+        if (tier === 'all' || sec.getAttribute('data-tier') === tier) {
+          sec.style.display = 'flex';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+
+      // Smooth scroll to the specific tier if selected
+      if (tier !== 'all') {
+        const targetSection = document.getElementById('tier-' + tier);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
+    // Back to Top functionality
+    const btnScrollTop = document.getElementById('btnScrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btnScrollTop.classList.add('visible');
+      } else {
+        btnScrollTop.classList.remove('visible');
+      }
+    });
+
+    btnScrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Desktop Mega Menu Hover Stabilizers
+    function setupDesktopMegaMenu(triggerId, menuId) {
+      const trigger = document.getElementById(triggerId);
+      const menu = document.getElementById(menuId);
+      let timeout;
+
+      if (!trigger || !menu) return;
+
+      trigger.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      trigger.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+
+      menu.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      menu.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+    }
+
+    setupDesktopMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
+    setupDesktopMegaMenu('menuNPS', 'dropdownNPS');
+
+    // Mobile Hamburger Menu & Drawer Toggles
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinksMenu = document.getElementById('navLinksMenu');
+    const mobileIcon = mobileToggle.querySelector('i');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = navLinksMenu.classList.toggle('active-mobile');
+      if (isOpen) {
+        mobileIcon.classList.remove('fa-bars');
+        mobileIcon.classList.add('fa-xmark');
+      } else {
+        mobileIcon.classList.remove('fa-xmark');
+        mobileIcon.classList.add('fa-bars');
+      }
+    });
+
+    // Mobile Accordion Logic
+    const navItemsWithSub = document.querySelectorAll('.nav-item');
+    navItemsWithSub.forEach(item => {
+      const triggerLink = item.querySelector('.nav-link');
+      const subDropdown = item.querySelector('.dropdown-menu');
+      const subMega = item.querySelector('.mega-menu');
+      const targetMenu = subDropdown || subMega;
+
+      if (targetMenu) {
+        triggerLink.addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault(); // Prevent navigating when tapping top label on mobile
+            targetMenu.classList.toggle('mobile-open');
+
+            // Rotate caret icon on mobile
+            const caret = triggerLink.querySelector('i');
+            if (caret) {
+              caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
+              caret.style.transition = 'transform 0.2s ease';
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
