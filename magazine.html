@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Purbiya Jyoti Magazine - Nepal Police School Dharan</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      overflow-x: hidden;
+      color: #334155;
+    }
+
+    /* Sticky Navigation Wrapper */
+    .header-wrapper {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 1. Main Navigation Bar */
+    .header-navbar {
+      background-color: #273773;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      height: 75px;
+      position: relative;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    .brand-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logos img.school-logo {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffcb08;
+      background-color: #ffffff;
+    }
+
+    .brand-logos img.police-crest {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-text .school-slogan {
+      font-size: 0.72rem;
+      color: #ffcb08;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      margin-top: 2px;
+    }
+
+    .brand-text p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 22px;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffcb08;
+    }
+
+    .nav-link i {
+      font-size: 0.7rem;
+    }
+
+    /* Standard Dropdown Menus */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      list-style: none;
+      padding: 8px;
+      z-index: 1001;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 0;
+      right: 0;
+      height: 15px;
+      background: transparent;
+    }
+
+    .dropdown-menu li a {
+      color: #334155;
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    @media (min-width: 901px) {
+      .nav-item:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    /* Mega Menu */
+    .has-mega-menu {
+      position: static !important;
+    }
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #f1f5f9;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      border-top: 2px solid #ffcb08;
+      padding: 24px 30px;
+      z-index: 9999;
+    }
+
+    .mega-menu::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: transparent;
+    }
+
+    @media (min-width: 901px) {
+      .has-mega-menu:hover .mega-menu,
+      .mega-menu:hover {
+        display: block;
+      }
+    }
+
+    .mega-menu-grid-who {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 320px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-menu-grid-nps {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.3fr 1px 1.2fr 1px 1.2fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-img-frame {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      border: 3px solid #ffffff;
+      height: 250px;
+      background: #ffffff;
+    }
+
+    .mega-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .mega-img-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .mega-divider {
+      background-color: #cbd5e1;
+      width: 1px;
+      height: 90%;
+      margin: auto 0;
+    }
+
+    .mega-links-col,
+    .mega-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    .mega-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ed1c24;
+      margin-bottom: 8px;
+      padding-left: 6px;
+    }
+
+    .mega-links-col a,
+    .mega-column a {
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .mega-links-col a:hover,
+    .mega-column a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(6px);
+      box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
+    }
+
+    /* Police Stripes */
+    .police-stripes {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stripe-red { height: 3px; background-color: #ed1c24; }
+    .stripe-white { height: 2px; background-color: #ffffff; }
+    .stripe-blue { height: 3px; background-color: #273773; }
+    .stripe-yellow { height: 3px; background-color: #ffcb08; }
+
+    /* ========================================================
+       PURBIYA JYOTI MAGAZINE PAGE STYLING
+       ======================================================== */
+    .mag-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #273773 60%, #172554 100%);
+      color: #ffffff;
+      padding: 90px 24px 120px;
+      text-align: center;
+      position: relative;
+    }
+
+    .mag-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 203, 8, 0.15);
+      border: 1px solid #ffcb08;
+      color: #ffcb08;
+      padding: 6px 22px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .mag-hero h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+      animation: heroSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .mag-hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      max-width: 780px;
+      margin: 0 auto;
+      line-height: 1.7;
+      animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes heroSlideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Main Container */
+    .mag-container {
+      max-width: 1240px;
+      margin: -60px auto 100px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 65px;
+    }
+
+    /* Featured Magazine Spotlight Banner */
+    .magazine-spotlight {
+      background: #ffffff;
+      border-radius: 26px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 40px;
+      overflow: hidden;
+      align-items: stretch;
+    }
+
+    .magazine-cover-frame {
+      position: relative;
+      min-height: 400px;
+      background: #0f172a;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .magazine-cover-frame img {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      border: 3px solid #ffcb08;
+      transition: transform 0.5s ease;
+    }
+
+    .magazine-spotlight:hover .magazine-cover-frame img {
+      transform: scale(1.04) rotate(1deg);
+    }
+
+    .magazine-spotlight-content {
+      padding: 45px 45px 45px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .magazine-spotlight-content .edition-tag {
+      color: #ed1c24;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+
+    .magazine-spotlight-content h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .magazine-spotlight-content p {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 24px;
+    }
+
+    .magazine-actions-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-mag-primary {
+      background-color: #273773;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(39, 55, 115, 0.2);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-mag-primary:hover {
+      background-color: #1a2550;
+      color: #ffcb08;
+      transform: translateY(-2px);
+    }
+
+    .btn-mag-outline {
+      background-color: #ffffff;
+      color: #273773;
+      text-decoration: none;
+      padding: 12px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid #273773;
+      transition: all 0.3s ease;
+    }
+
+    .btn-mag-outline:hover {
+      background-color: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    /* Section Header */
+    .section-header-title {
+      text-align: center;
+    }
+
+    .section-header-title h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e293b;
+      letter-spacing: -0.3px;
+    }
+
+    .section-header-title p {
+      font-size: 1.05rem;
+      color: #64748b;
+      margin-top: 8px;
+    }
+
+    .section-header-title .header-line {
+      width: 70px;
+      height: 4px;
+      background: #ed1c24;
+      margin: 14px auto 0;
+      border-radius: 2px;
+    }
+
+    /* 4-Column Creative Pillars Grid */
+    .mag-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .mag-pillar-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 35px 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mag-pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #273773;
+    }
+
+    .mag-pillar-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(39, 55, 115, 0.15);
+      border-color: #cbd5e1;
+    }
+
+    .mag-pillar-icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 16px;
+      background: #eff6ff;
+      color: #273773;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 22px;
+      border: 1px solid #bfdbfe;
+    }
+
+    .mag-pillar-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 12px;
+    }
+
+    .mag-pillar-card p {
+      font-size: 0.94rem;
+      color: #475569;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    /* PDF Viewer Modal Overlay */
+    .pdf-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(6px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .pdf-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .pdf-modal-box {
+      background: #ffffff;
+      width: 100%;
+      max-width: 950px;
+      height: 85vh;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pdf-modal-overlay.active .pdf-modal-box {
+      transform: scale(1);
+    }
+
+    .pdf-modal-header {
+      background: #273773;
+      color: #ffffff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pdf-modal-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .pdf-close-btn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .pdf-close-btn:hover {
+      color: #ffcb08;
+    }
+
+    .pdf-modal-body {
+      flex: 1;
+      background: #e2e8f0;
+      position: relative;
+    }
+
+    .pdf-modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Standardized Footer with Solid Background */
+    footer.site-footer {
+      display: block !important;
+      background-color: #273773 !important;
+      color: #ffffff !important;
+      padding-top: 60px !important;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
+      display: grid;
+      grid-template-columns: 1.3fr 1.5fr 1.2fr;
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #ffffff !important;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #f1f5f9 !important;
+      line-height: 1.5;
+    }
+
+    .footer-contact-list li i {
+      margin-top: 3px;
+      color: #ffcb08 !important;
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-list a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-list a:hover {
+      color: #ffcb08 !important;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .footer-social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff !important;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social-btn:hover {
+      background-color: #ffffff !important;
+      color: #273773 !important;
+      transform: translateY(-3px);
+    }
+
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      list-style: none;
+    }
+
+    .footer-nav-grid li a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .footer-nav-grid li a:hover {
+      color: #ffcb08 !important;
+      transform: translateX(4px);
+    }
+
+    .footer-map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      height: 190px;
+    }
+
+    .footer-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #cbd5e1 !important;
+    }
+
+    .footer-bottom strong {
+      color: #ffffff !important;
+    } 
+
+    .btn-scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #ed1c24;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(237, 28, 36, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1100px) {
+      .mag-pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .header-navbar { padding: 0 16px; height: 70px; }
+      .mobile-nav-toggle { display: block; }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1c2754;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        padding: 12px 18px 24px;
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+      }
+      .nav-links.active-mobile { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .nav-item { width: 100%; display: flex; flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; }
+      .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; background: #162044 !important; border-radius: 8px !important; display: none; padding: 8px 12px !important; }
+      .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
+      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; }
+      .mega-img-frame, .mega-divider { display: none !important; }
+
+      .mag-hero h1 { font-size: 2.2rem; }
+      .magazine-spotlight { grid-template-columns: 1fr; }
+      .magazine-spotlight-content { padding: 30px 20px; }
+      .mag-pillars-grid { grid-template-columns: 1fr; }
+      .footer-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header Wrapper -->
+  <div class="header-wrapper">
+    <header class="header-navbar">
+      <a href="index.html" class="brand-section">
+        <div class="brand-logos">
+          <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
+          <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
+        </div>
+        <div class="brand-text">
+          <h1>NEPAL POLICE SCHOOL</h1>
+          <div class="school-slogan"><i>Better Schooling for Ideal Citizens</i></div>
+          <p><i>Dharan-13, Sunsari Nepal</i></p>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinksMenu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        
+        <!-- "Who We Are" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuWhoWeAre">
+          <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownWhoWeAre">
+            <div class="mega-menu-grid-who">
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-links-col">
+                <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="milestone.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
+                <a href="facility.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
+                <a href="schoolmanagement.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-links-col">
+                <a href="messagefromchairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="messagefromprincipal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="messagefromcommandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+              <div class="mega-img-frame">
+                <img src="building.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- "NPS" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuNPS">
+          <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownNPS">
+            <div class="mega-menu-grid-nps">
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-column">
+                <div class="mega-col-title">Departments</div>
+                <a href="english-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+                <a href="science-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+                <a href="nepali-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+                <a href="social-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+                <a href="computer-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Tech Department</a>
+                <a href="math-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="integrated-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+                <a href="admin-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-column">
+                <div class="mega-col-title">School premises</div>
+                <a href="playgroup.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Playgroup / Nursery</a>
+                <a href="basiclevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
+                <a href="lowersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary (Grade 6-8)</a>
+                <a href="management-wing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-column">
+                <div class="mega-col-title">Message From Core Team</div>
+                <a href="messagefromchairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="messagefromprincipal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="messagefromcommandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="admission.html" class="nav-link">Admission</a></li>
+        <li class="nav-item"><a href="notice.html" class="nav-link">Notice</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="eca-cca.html">ECA / CCA</a></li>
+            <li><a href="events-sports.html">Events &amp; Sports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link active">Publication <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="magazine.html">Magazine</a></li>
+            <li><a href="reports.html">Annual Reports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="vacancy.html">Vacancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+
+    <!-- Police Color Stripes Ribbon -->
+    <div class="police-stripes">
+      <div class="stripe-white"></div>
+      <div class="stripe-red"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-blue"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-yellow"></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="mag-hero">
+    <div class="mag-hero-badge">
+      <i class="fa-solid fa-book-journal-whills"></i> Annual Literary &amp; Creative Publication
+    </div>
+    <h1>Purbiya Jyoti Magazine</h1>
+    <p>Exploring student creativity, novels, poems, artwork, class group memories, and inspirational messages from our teachers and police staff.</p>
+  </section>
+
+  <!-- Main Container -->
+  <main class="mag-container">
+
+    <!-- Spotlight Banner (Current Edition) -->
+    <section class="magazine-spotlight">
+      <div class="magazine-cover-frame">
+        <img src="school.jpg" alt="Purbiya Jyoti Magazine Cover" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+      </div>
+      <div class="magazine-spotlight-content">
+        <span class="edition-tag"><i class="fa-solid fa-star" style="color:#ffcb08;"></i> Latest Edition 2083</span>
+        <h2>Purbiya Jyoti Book (पूर्बिय ज्योति)</h2>
+        <p>
+          Our flagship annual publication showcases the incredible literary talent and artistic imagination of Nepal Police School students. Inside, you will find captivating short stories, thought-provoking novels, funny student jokes, brilliant sketches and drawings, teacher reflections, motivational messages, and official group photographs of every class, department, and police personnel squad.
+        </p>
+        <div class="magazine-actions-group">
+          <button class="btn-mag-primary" onclick="openPdfModal('purbiya_jyoti_2083.pdf', 'Purbiya Jyoti Magazine 2083')">
+            <i class="fa-solid fa-book-open-reader"></i> Read Online (PDF)
+          </button>
+          <a href="purbiya_jyoti_2083.pdf" download class="btn-mag-outline">
+            <i class="fa-solid fa-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Header Title -->
+    <section>
+      <div class="section-header-title">
+        <h2>What's Inside the Magazine?</h2>
+        <p>A glimpse into the diverse creative sections curated by our students and faculty.</p>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="mag-pillars-grid" style="margin-top: 40px;">
+        <!-- Pillar 1 -->
+        <div class="mag-pillar-card">
+          <div class="mag-pillar-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3>Stories &amp; Novels</h3>
+          <p>Imaginative short stories, serialized novel chapters, and creative essays written by budding student authors.</p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="mag-pillar-card">
+          <div class="mag-pillar-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3>Drawings &amp; Sketches</h3>
+          <p>Vibrant artwork, pencil sketches, nature paintings, and comic illustrations created by our talented student artists.</p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="mag-pillar-card">
+          <div class="mag-pillar-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <h3>Teacher &amp; Staff Quotes</h3>
+          <p>Inspirational messages, guidance notes, and motivational thoughts shared by teachers and police commanders.</p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="mag-pillar-card">
+          <div class="mag-pillar-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+          <h3>Class &amp; Staff Portfolios</h3>
+          <p>Official group photographs of every class section, academic departments, and the dedicated police personnel squad.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PDF Viewer Modal -->
+  <div class="pdf-modal-overlay" id="pdfModal">
+    <div class="pdf-modal-box">
+      <div class="pdf-modal-header">
+        <h3 id="pdfModalTitle">Purbiya Jyoti Magazine</h3>
+        <button class="pdf-close-btn" onclick="closePdfModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="pdf-modal-body">
+        <iframe id="pdfViewerFrame" src="" title="Magazine PDF Viewer"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standard Semantic Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Dharan-17, Sunsari, Nepal</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>025-520101 , +977 9852012345 (सोधपुछ)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>025-520102 (शैक्षिक प्रशासन)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>025-520103 , +977 9852098765 (शुल्क सम्बन्धी)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@npsdharan.edu.np">info@npsdharan.edu.np</a>
+          </li>
+        </ul>
+
+        <div class="footer-social-links">
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="footer-col">
+        <h3>Navigate</h3>
+        <ul class="footer-nav-grid">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+          <li><a href="admission.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
+          <li><a href="notice.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
+          <li><a href="gallery.html"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+          <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
+          <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Location Column -->
+      <div class="footer-col">
+        <h3>Location</h3>
+        <div class="footer-map-wrapper">
+          <iframe 
+            src="https://maps.google.com/maps?q=Nepal%20Police%20School%20Dharan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="Nepal Police School Dharan Location">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      © Copyright 2026, Nepal Police School | All Rights Reserved | Designed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="btn-scroll-top" id="btnScrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // PDF Modal Viewer Functions
+    function openPdfModal(pdfUrl, title) {
+      document.getElementById('pdfModalTitle').innerText = title;
+      document.getElementById('pdfViewerFrame').src = pdfUrl;
+      document.getElementById('pdfModal').classList.add('active');
+    }
+
+    function closePdfModal() {
+      document.getElementById('pdfModal').classList.remove('active');
+      document.getElementById('pdfViewerFrame').src = '';
+    }
+
+    // Back to Top functionality
+    const btnScrollTop = document.getElementById('btnScrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btnScrollTop.classList.add('visible');
+      } else {
+        btnScrollTop.classList.remove('visible');
+      }
+    });
+
+    btnScrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Desktop Mega Menu Hover Stabilizers
+    function setupDesktopMegaMenu(triggerId, menuId) {
+      const trigger = document.getElementById(triggerId);
+      const menu = document.getElementById(menuId);
+      let timeout;
+
+      if (!trigger || !menu) return;
+
+      trigger.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      trigger.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+
+      menu.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      menu.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+    }
+
+    setupDesktopMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
+    setupDesktopMegaMenu('menuNPS', 'dropdownNPS');
+
+    // Mobile Hamburger Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinksMenu = document.getElementById('navLinksMenu');
+    const mobileIcon = mobileToggle.querySelector('i');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = navLinksMenu.classList.toggle('active-mobile');
+      if (isOpen) {
+        mobileIcon.classList.remove('fa-bars');
+        mobileIcon.classList.add('fa-xmark');
+      } else {
+        mobileIcon.classList.remove('fa-xmark');
+        mobileIcon.classList.add('fa-bars');
+      }
+    });
+
+    // Mobile Accordion Logic
+    const navItemsWithSub = document.querySelectorAll('.nav-item');
+    navItemsWithSub.forEach(item => {
+      const triggerLink = item.querySelector('.nav-link');
+      const subDropdown = item.querySelector('.dropdown-menu');
+      const subMega = item.querySelector('.mega-menu');
+      const targetMenu = subDropdown || subMega;
+
+      if (targetMenu) {
+        triggerLink.addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            targetMenu.classList.toggle('mobile-open');
+            const caret = triggerLink.querySelector('i');
+            if (caret) {
+              caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
+              caret.style.transition = 'transform 0.2s ease';
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
