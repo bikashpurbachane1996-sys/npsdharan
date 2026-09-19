@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Basic Level (Grade 1-5) - Nepal Police School Dharan</title>
-  
+  <title>Basic Level (Grade 1-5) - Nepal Police School Dharan</title>  
+  <link rel="icon" type="image/x-icon" href="schoollogo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -82,11 +82,11 @@
     }
 
     .brand-text .school-slogan {
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       color: #ffcb08;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.4px;
-      margin-top: 2px;
+      margin: 2px 0;
     }
 
     .brand-text p {
@@ -94,6 +94,7 @@
       color: #cbd5e1;
     }
 
+    /* Hamburger Toggle Button */
     .mobile-nav-toggle {
       display: none;
       background: none;
@@ -102,6 +103,12 @@
       font-size: 1.6rem;
       cursor: pointer;
       padding: 8px;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: #ffcb08;
     }
 
     .nav-links {
@@ -141,7 +148,22 @@
       font-size: 0.7rem;
     }
 
-    /* Standard Dropdown Menus */
+    /* Enroll Now Button */
+    .btn-enroll-nav {
+      background-color: #ed1c24 !important;
+      color: #ffffff !important;
+      padding: 8px 16px !important;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background-color 0.2s ease !important;
+    }
+
+    .btn-enroll-nav:hover {
+      background-color: #b71540 !important;
+      color: #ffffff !important;
+    }
+
+    /* Standard Dropdown Menus (Desktop) */
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -189,7 +211,7 @@
       }
     }
 
-    /* Mega Menu */
+    /* Mega Menus */
     .has-mega-menu {
       position: static !important;
     }
@@ -596,7 +618,7 @@
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 24px;
-      color: #ffffff;
+      color: #ffffff !important;
       letter-spacing: 0.3px;
     }
 
@@ -612,24 +634,24 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 0.92rem;
-      color: #f1f5f9;
+      color: #f1f5f9 !important;
       line-height: 1.5;
     }
 
     .footer-contact-list li i {
       margin-top: 3px;
-      color: #ffcb08;
+      color: #ffcb08 !important;
       font-size: 0.95rem;
     }
 
     .footer-contact-list a {
-      color: #f1f5f9;
+      color: #f1f5f9 !important;
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
     .footer-contact-list a:hover {
-      color: #ffcb08;
+      color: #ffcb08 !important;
     }
 
     .footer-social-links {
@@ -646,14 +668,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
+      color: #ffffff !important;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .footer-social-btn:hover {
-      background-color: #ffffff;
-      color: #273773;
+      background-color: #ffffff !important;
+      color: #273773 !important;
       transform: translateY(-3px);
     }
 
@@ -665,7 +687,7 @@
     }
 
     .footer-nav-grid li a {
-      color: #f1f5f9;
+      color: #f1f5f9 !important;
       text-decoration: none;
       font-size: 0.92rem;
       display: inline-flex;
@@ -675,7 +697,7 @@
     }
 
     .footer-nav-grid li a:hover {
-      color: #ffcb08;
+      color: #ffcb08 !important;
       transform: translateX(4px);
     }
 
@@ -699,11 +721,11 @@
       padding: 20px 24px;
       text-align: center;
       font-size: 0.9rem;
-      color: #cbd5e1;
+      color: #cbd5e1 !important;
     }
 
     .footer-bottom strong {
-      color: #ffffff;
+      color: #ffffff !important;
     } 
 
     .btn-scroll-top {
@@ -844,14 +866,15 @@
 
               <div class="mega-column">
                 <div class="mega-col-title">Departments</div>
-                <a href="english-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
-                <a href="science-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
-                <a href="nepali-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
-                <a href="social-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
-                <a href="computer-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Tech Department</a>
-                <a href="math-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
-                <a href="integrated-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
-                <a href="admin-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
+                <a href="englishdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+                <a href="sciencedepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+                <a href="nepalidepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+                <a href="socialdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+                <a href="computerdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
+                <a href="mathdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="accountdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Account Department</a>
+                <a href="integrateddepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+                <a href="admindepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
               </div>
 
               <div class="mega-divider"></div>
@@ -860,8 +883,9 @@
                 <div class="mega-col-title">School premises</div>
                 <a href="playgroup.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Playgroup / Nursery</a>
                 <a href="basiclevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
-                <a href="senior-wing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Senior Wing (Grade 7-10)</a>
-                <a href="science-wing.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Wing (+2)</a>
+                <a href="lowersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="secondarylevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
+                <a href="highersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
               </div>
 
               <div class="mega-divider"></div>
@@ -876,30 +900,27 @@
           </div>
         </li>
 
-        <li class="nav-item"><a href="admission.html" class="nav-link">Admission</a></li>
-        <li class="nav-item"><a href="notice.html" class="nav-link">Notice</a></li>
+        <li class="nav-item"><a href="noticepage.html" class="nav-link">Notice</a></li>
         <li class="nav-item">
           <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="eca-cca.html">ECA / CCA</a></li>
-            <li><a href="events-sports.html">Events &amp; Sports</a></li>
+            <li><a href="ecapage.html">ECA / CCA</a></li>
+            <li><a href="sports.html">Events &amp; Sports</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">Publication <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
+            <li><a href="admissionpage.html">Admission</a></li>
             <li><a href="magazine.html">Magazine</a></li>
-            <li><a href="reports.html">Annual Reports</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
+            <li><a href="annualreport.html">Annual Reports</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="vacancy.html">Vacancy</a></li>
           </ul>
         </li>
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a href="admissionpage.html" class="nav-link btn-enroll-nav">Enroll Now</a></li>
+        <li class="nav-item"><a href="https://portal.npsdharan.edu.np" class="nav-link" target="_blank">Portal Login</a></li>
       </ul>
     </header>
 
@@ -939,7 +960,7 @@
     </div>
   </main>
 
-  <!-- Animated Photo Showcase Section (Dedicated to Student Photos) -->
+  <!-- Animated Photo Showcase Section -->
   <section class="photo-showcase-section">
     <div class="section-header-title">
       <h2>Primary School in Action 📸</h2>
@@ -956,7 +977,7 @@
       <!-- Photo 2 -->
       <div class="gallery-item">
         <img src="https://www.nps.edu.np/public/uploads/6757f9519423b.jpg" alt="Student Assembly" onerror="this.src='school.jpg'">
-        <div class="gallery-caption"><i class="fa-solid fa-star" style="color:#facc15; margin-right:6px;"></i> School Assemblies & Events</div>
+        <div class="gallery-caption"><i class="fa-solid fa-star" style="color:#facc15; margin-right:6px;"></i> School Assemblies &amp; Events</div>
       </div>
 
       <!-- Photo 3 -->
@@ -968,13 +989,13 @@
       <!-- Photo 4 -->
       <div class="gallery-item">
         <img src="https://www.nps.edu.np/public/uploads/694548c562474.jpg" alt="Sports & Games" onerror="this.src='school.jpg'">
-        <div class="gallery-caption"><i class="fa-solid fa-futbol" style="color:#f87171; margin-right:6px;"></i> Sports & Physical Education</div>
+        <div class="gallery-caption"><i class="fa-solid fa-futbol" style="color:#f87171; margin-right:6px;"></i> Sports &amp; Physical Education</div>
       </div>
 
       <!-- Photo 5 -->
       <div class="gallery-item">
         <img src="https://www.nps.edu.np/public/uploads/694548a781477.jpg" alt="Extracurricular Activities" onerror="this.src='school.jpg'">
-        <div class="gallery-caption"><i class="fa-solid fa-palette" style="color:#f472b6; margin-right:6px;"></i> Arts, Crafts & Creativity</div>
+        <div class="gallery-caption"><i class="fa-solid fa-palette" style="color:#f472b6; margin-right:6px;"></i> Arts, Crafts &amp; Creativity</div>
       </div>
 
       <!-- Photo 6 -->
@@ -1080,8 +1101,8 @@
           <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
           <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
           <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
-          <li><a href="admission.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
-          <li><a href="notice.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
+          <li><a href="admissionpage.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
+          <li><a href="noticepage.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
           <li><a href="gallery.html"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
           <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
