@@ -1390,7 +1390,29 @@
       }
     });
 
-    --></script>
+    // Mobile Accordion Logic
+    const navItemsWithSub = document.querySelectorAll('.nav-item');
+    navItemsWithSub.forEach(item => {
+      const triggerLink = item.querySelector('.nav-link');
+      const subDropdown = item.querySelector('.dropdown-menu');
+      const subMega = item.querySelector('.mega-menu');
+      const targetMenu = subDropdown || subMega;
+
+      if (targetMenu) {
+        triggerLink.addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            targetMenu.classList.toggle('mobile-open');
+            const caret = triggerLink.querySelector('i');
+            if (caret) {
+              caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
+              caret.style.transition = 'transform 0.2s ease';
+            }
+          }
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
