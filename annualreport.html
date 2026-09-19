@@ -149,7 +149,8 @@
     }
 
     /* Enroll Now Button */
-    .btn-enroll-nav {
+    .btn-enroll-nav,
+    .nav-item .enroll-btn {
       background-color: #ed1c24 !important;
       color: #ffffff !important;
       padding: 8px 16px !important;
@@ -158,7 +159,8 @@
       transition: background-color 0.2s ease !important;
     }
 
-    .btn-enroll-nav:hover {
+    .btn-enroll-nav:hover,
+    .nav-item .enroll-btn:hover {
       background-color: #b71540 !important;
       color: #ffffff !important;
     }
@@ -818,10 +820,21 @@
       transform: translateY(0);
     }
 
+    .btn-scroll-top:hover {
+      background-color: #b71540;
+      transform: translateY(-4px);
+    }
+
     /* Responsive Styles */
     @media (max-width: 1100px) {
       .kpi-grid { grid-template-columns: repeat(2, 1fr); }
       .download-grid { grid-template-columns: 1fr; }
+      .mega-menu-grid-who,
+      .mega-menu-grid-nps {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .mega-divider, .mega-img-frame { display: none; }
     }
 
     @media (max-width: 900px) {
@@ -989,25 +1002,22 @@
           </div>
         </li>
 
-        <li class="nav-item"><a href="notice.html" class="nav-link">Notice</a></li>
+        <li class="nav-item"><a href="noticepage.html" class="nav-link">Notice</a></li>
         
         <li class="nav-item">
           <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="eca.html">ECA / CCA</a></li>
+            <li><a href="ecapage.html">ECA / CCA</a></li>
             <li><a href="sports.html">Events &amp; Sports</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link active">Publication <i class="fa-solid fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="magazine.html">Magazine</a></li>
-            <li><a href="annualreport.html">Annual Reports</a></li>
-          </ul>
-        </li>
+
         <li class="nav-item">
           <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
+            <li><a href="admissionpage.html">Admission</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+            <li><a href="annualreport.html">Annual Reports</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="vacancy.html">Vacancy</a></li>
           </ul>
@@ -1280,7 +1290,7 @@
           <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
           <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="admissionpage.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
-          <li><a href="notice.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
+          <li><a href="noticepage.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
           <li><a href="gallery.html"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
           <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
