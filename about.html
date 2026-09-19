@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>About Us - Nepal Police School Dharan</title>
-  
+  <link rel="icon" type="image/x-icon" href="schoollogo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -82,11 +82,11 @@
     }
 
     .brand-text .school-slogan {
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       color: #ffcb08;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.4px;
-      margin-top: 2px;
+      margin: 2px 0;
     }
 
     .brand-text p {
@@ -94,6 +94,7 @@
       color: #cbd5e1;
     }
 
+    /* Hamburger Toggle Button */
     .mobile-nav-toggle {
       display: none;
       background: none;
@@ -102,13 +103,19 @@
       font-size: 1.6rem;
       cursor: pointer;
       padding: 8px;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: #ffcb08;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 18px;
+      gap: 22px;
       height: 100%;
     }
 
@@ -127,7 +134,7 @@
       transition: color 0.2s ease;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       height: 100%;
       padding: 0 4px;
     }
@@ -141,22 +148,7 @@
       font-size: 0.7rem;
     }
 
-    /* Enroll Now Button */
-    .btn-enroll-nav {
-      background-color: #ed1c24 !important;
-      color: #ffffff !important;
-      padding: 8px 16px !important;
-      border-radius: 6px;
-      font-weight: 700 !important;
-      transition: background-color 0.2s ease !important;
-    }
-
-    .btn-enroll-nav:hover {
-      background-color: #b71540 !important;
-      color: #ffffff !important;
-    }
-
-    /* Standard Dropdown Menus */
+    /* Standard Dropdown Menus (Desktop) */
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -204,7 +196,9 @@
       }
     }
 
-    /* Mega Menu */
+    /* ========================================================
+       MEGA MENUS ("WHO WE ARE" & "NPS")
+       ======================================================== */
     .has-mega-menu {
       position: static !important;
     }
@@ -328,7 +322,7 @@
       box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
     }
 
-    /* Police Stripes */
+    /* 2. Police Stripe Ribbon */
     .police-stripes {
       width: 100%;
       display: flex;
@@ -340,9 +334,30 @@
     .stripe-blue { height: 3px; background-color: #273773; }
     .stripe-yellow { height: 3px; background-color: #ffcb08; }
 
+    /* Enroll Button Style */
+    .nav-item .enroll-btn {
+      background-color: #ed1c24;
+      color: #ffffff !important;
+      padding: 6px 16px;
+      height: auto;
+      align-self: center;
+      border-radius: 20px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(237, 28, 36, 0.35);
+      margin-left: 5px;
+    }
+
+    .nav-item .enroll-btn:hover {
+      background-color: #b71540;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(237, 28, 36, 0.45);
+      color: #ffffff !important;
+    }
+
     /* ========================================================
-        ABOUT US HERO & ANIMATIONS
-        ======================================================== */
+       ABOUT US PAGE CONTENT STYLING
+       ======================================================== */
     .about-hero {
       background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(39, 55, 115, 0.92) 100%), url('school.jpg');
       background-position: center;
@@ -350,7 +365,6 @@
       color: #ffffff;
       padding: 90px 24px 110px;
       text-align: center;
-      position: relative;
     }
 
     .about-hero h1 {
@@ -358,7 +372,6 @@
       font-weight: 800;
       margin-bottom: 16px;
       letter-spacing: -0.5px;
-      animation: heroSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .about-hero p {
@@ -367,20 +380,8 @@
       max-width: 720px;
       margin: 0 auto;
       line-height: 1.7;
-      animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    @keyframes heroSlideDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes heroFadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Institutional Overview Section */
     .about-overview-container {
       max-width: 1240px;
       margin: -50px auto 90px;
@@ -431,14 +432,8 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.5s ease;
     }
 
-    .overview-image-stack:hover img {
-      transform: scale(1.05);
-    }
-
-    /* Pillars: Mission, Vision, Goals */
     .pillars-section {
       max-width: 1240px;
       margin: 0 auto 100px;
@@ -474,7 +469,6 @@
       padding: 40px 30px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
       border: 1px solid #e2e8f0;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       overflow: hidden;
     }
@@ -487,16 +481,6 @@
       width: 100%;
       height: 5px;
       background: #273773;
-      transition: background 0.3s ease;
-    }
-
-    .pillar-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 35px rgba(39, 55, 115, 0.12);
-    }
-
-    .pillar-card:hover::before {
-      background: #ed1c24;
     }
 
     .pillar-icon {
@@ -527,14 +511,12 @@
       text-align: justify;
     }
 
-    /* Core Motto: DDD Section */
     .ddd-banner {
       background: linear-gradient(135deg, #273773 0%, #172047 100%);
       color: #ffffff;
       padding: 85px 24px;
       text-align: center;
       margin-bottom: 90px;
-      position: relative;
     }
 
     .ddd-banner h2 {
@@ -569,18 +551,10 @@
       font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: 0.5px;
-      transition: all 0.3s ease;
     }
 
-    .ddd-badge-box:hover {
-      background: #ed1c24;
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(237, 28, 36, 0.3);
-    }
-
-    /* Standardized Footer with Solid Background */
+    /* Footer Section */
     footer.site-footer {
-      display: block !important;
       background-color: #273773 !important;
       color: #ffffff !important;
       padding-top: 60px !important;
@@ -602,7 +576,6 @@
       font-weight: 700;
       margin-bottom: 24px;
       color: #ffffff !important;
-      letter-spacing: 0.3px;
     }
 
     .footer-contact-list {
@@ -618,23 +591,16 @@
       gap: 10px;
       font-size: 0.92rem;
       color: #f1f5f9 !important;
-      line-height: 1.5;
     }
 
     .footer-contact-list li i {
       margin-top: 3px;
       color: #ffcb08 !important;
-      font-size: 0.95rem;
     }
 
     .footer-contact-list a {
       color: #f1f5f9 !important;
       text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-contact-list a:hover {
-      color: #ffcb08 !important;
     }
 
     .footer-social-links {
@@ -653,13 +619,6 @@
       justify-content: center;
       color: #ffffff !important;
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .footer-social-btn:hover {
-      background-color: #ffffff !important;
-      color: #273773 !important;
-      transform: translateY(-3px);
     }
 
     .footer-nav-grid {
@@ -676,12 +635,6 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .footer-nav-grid li a:hover {
-      color: #ffcb08 !important;
-      transform: translateX(4px);
     }
 
     .footer-map-wrapper {
@@ -709,7 +662,7 @@
 
     .footer-bottom strong {
       color: #ffffff !important;
-    } 
+    }
 
     .btn-scroll-top {
       position: fixed;
@@ -738,7 +691,6 @@
       transform: translateY(0);
     }
 
-    /* Mobile Responsiveness */
     @media (max-width: 900px) {
       .header-navbar { padding: 0 16px; height: 70px; }
       .mobile-nav-toggle { display: block; }
@@ -767,11 +719,7 @@
       .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; background: #162044 !important; border-radius: 8px !important; display: none; padding: 8px 12px !important; }
       .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
       .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; }
-      .mega-img-frame, .mega-divider { display: none !important; }
-
-      .about-hero h1 { font-size: 2.2rem; }
       .overview-card-grid { grid-template-columns: 1fr; padding: 25px; gap: 30px; }
-      .overview-image-stack { height: 260px; }
       .pillars-grid { grid-template-columns: 1fr; }
       .footer-container { grid-template-columns: 1fr; }
     }
@@ -802,7 +750,7 @@
       <ul class="nav-links" id="navLinksMenu">
         <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
         
-        <!-- "Who We Are" Mega Menu -->
+        <!-- 1. "Who We Are" Mega Menu -->
         <li class="nav-item has-mega-menu" id="menuWhoWeAre">
           <a href="#" class="nav-link active">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
           <div class="mega-menu" id="dropdownWhoWeAre">
@@ -836,7 +784,7 @@
           </div>
         </li>
 
-        <!-- "NPS" Mega Menu -->
+        <!-- 2. "NPS" Mega Menu -->
         <li class="nav-item has-mega-menu" id="menuNPS">
           <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
           <div class="mega-menu" id="dropdownNPS">
@@ -853,8 +801,9 @@
                 <a href="sciencedepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
                 <a href="nepalidepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
                 <a href="socialdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
-                <a href="computerdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Tech Department</a>
+                <a href="computerdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
                 <a href="mathdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="accountdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Account Department</a>
                 <a href="integrateddepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
                 <a href="admindepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
               </div>
@@ -863,9 +812,10 @@
 
               <div class="mega-column">
                 <div class="mega-col-title">School premises</div>
-                <a href="playgroup.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Playgroup / Nursery</a>
+                <a href="playgroup.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> ECD/PPC PlayGroup</a>
                 <a href="basiclevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
-                <a href="lowersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary (Grade 6-8)</a>
+                <a href="lowersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="secondarylevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
                 <a href="highersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
               </div>
 
@@ -882,6 +832,7 @@
         </li>
 
         <li class="nav-item"><a href="noticepage.html" class="nav-link">Notice</a></li>
+
         <li class="nav-item">
           <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
@@ -889,20 +840,25 @@
             <li><a href="sports.html">Events &amp; Sports</a></li>
           </ul>
         </li>
+
         <li class="nav-item">
           <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="vacancy.html">Vacancy</a></li>
+            <li><a href="admissionpage.html">Admission</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+            <li><a href="annualreport.html">Annual Reports</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="vacancy.html">vacancy</a></li>
           </ul>
         </li>
+
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-        <li class="nav-item"><a href="admissionpage.html" class="nav-link btn-enroll-nav">Enroll Now</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Portal Login</a></li>
+        <li class="nav-item"><a href="admissionpage.html" class="nav-link enroll-btn">Enroll Now</a></li>
+        <li class="nav-item"><a href="https://portal.npsdharan.edu.np" class="nav-link" target="_blank">Portal Login</a></li>
       </ul>
     </header>
 
-    <!-- Police Stripe Ribbon -->
+    <!-- Police Color Stripes Ribbon -->
     <div class="police-stripes">
       <div class="stripe-white"></div>
       <div class="stripe-red"></div>
@@ -946,7 +902,6 @@
     </div>
 
     <div class="pillars-grid">
-      <!-- Mission -->
       <div class="pillar-card">
         <div class="pillar-icon">
           <i class="fa-solid fa-bullseye"></i>
@@ -957,7 +912,6 @@
         </p>
       </div>
 
-      <!-- Vision -->
       <div class="pillar-card">
         <div class="pillar-icon">
           <i class="fa-solid fa-eye"></i>
@@ -968,7 +922,6 @@
         </p>
       </div>
 
-      <!-- Goals -->
       <div class="pillar-card">
         <div class="pillar-icon">
           <i class="fa-solid fa-trophy"></i>
@@ -992,7 +945,7 @@
     </div>
   </section>
 
-  <!-- Standard Semantic Footer Section -->
+  <!-- Footer Section -->
   <footer class="site-footer">
     <div class="footer-container">
       
@@ -1035,8 +988,8 @@
           <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
           <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
           <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
-          <li><a href="admission.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
-          <li><a href="notice.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
+          <li><a href="admissionpage.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
+          <li><a href="noticepage.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
           <li><a href="gallery.html"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
           <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
@@ -1149,7 +1102,25 @@
     // Mobile Accordion Logic
     const navItemsWithSub = document.querySelectorAll('.nav-item');
     navItemsWithSub.forEach(item => {
-      ...
+      const triggerLink = item.querySelector('.nav-link');
+      const subDropdown = item.querySelector('.dropdown-menu');
+      const subMega = item.querySelector('.mega-menu');
+      const targetMenu = subDropdown || subMega;
+
+      if (targetMenu) {
+        triggerLink.addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            targetMenu.classList.toggle('mobile-open');
+
+            const caret = triggerLink.querySelector('i');
+            if (caret) {
+              caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
+              caret.style.transition = 'transform 0.2s ease';
+            }
+          }
+        });
+      }
     });
   </script>
 
