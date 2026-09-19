@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>School Management Committee - Nepal Police School Dharan</title>  
-  
+  <link rel="icon" type="image/x-icon" href="schoollogo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -82,11 +82,11 @@
     }
 
     .brand-text .school-slogan {
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       color: #ffcb08;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.4px;
-      margin-top: 2px;
+      margin: 2px 0;
     }
 
     .brand-text p {
@@ -146,6 +146,21 @@
 
     .nav-link i {
       font-size: 0.7rem;
+    }
+
+    /* Enroll Now Button */
+    .btn-enroll-nav {
+      background-color: #ed1c24 !important;
+      color: #ffffff !important;
+      padding: 8px 16px !important;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background-color 0.2s ease !important;
+    }
+
+    .btn-enroll-nav:hover {
+      background-color: #b71540 !important;
+      color: #ffffff !important;
     }
 
     /* Standard Dropdown Menus (Desktop) */
@@ -420,7 +435,6 @@
       border-radius: 2px;
     }
 
-    /* Grids for members */
     .members-grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -435,7 +449,6 @@
       gap: 30px;
     }
 
-    /* Card Item */
     .member-card {
       text-align: center;
       display: flex;
@@ -462,7 +475,6 @@
       border-color: #cbd5e1;
     }
 
-    /* Circular Portrait Frame (Inspired by reference) */
     .member-avatar-wrapper {
       width: 170px;
       height: 170px;
@@ -495,7 +507,6 @@
       transform: scale(1.06);
     }
 
-    /* Typography */
     .member-name {
       font-size: 1.18rem;
       font-weight: 800;
@@ -791,7 +802,7 @@
                 <a href="schoolmanagement.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
               </div>
 
-              <div class="mega-divider"></div>
+              <div class="mega-divider"></div> 
 
               <!-- Column 2: Leadership Messages -->
               <div class="mega-links-col">
@@ -829,6 +840,7 @@
                 <a href="socialdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
                 <a href="computerdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
                 <a href="mathdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="accountdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Account Department</a>
                 <a href="integrateddepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
                 <a href="admindepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
               </div>
@@ -841,6 +853,7 @@
                 <a href="playgroup.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Playgroup / Nursery</a>
                 <a href="basiclevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
                 <a href="lowersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="secondarylevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
                 <a href="highersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
               </div>
 
@@ -870,13 +883,16 @@
         <li class="nav-item">
           <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
+            <li><a href="admissionpage.html">Admission</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+            <li><a href="annualreport.html">Annual Reports</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="vacancy.html">Vacancy</a></li>
           </ul>
         </li>
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         <li class="nav-item"><a href="admissionpage.html" class="nav-link btn-enroll-nav">Enroll Now</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Portal Login</a></li>
+        <li class="nav-item"><a href="https://portal.npsdharan.edu.np" class="nav-link" target="_blank">Portal Login</a></li>
       </ul>
     </header>
 
