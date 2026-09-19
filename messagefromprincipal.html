@@ -869,15 +869,15 @@
                 <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
                 <a href="milestone.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
                 <a href="facility.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
-                <a href="management.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
+                <a href="schoolmanagement.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
               </div>
 
               <div class="mega-divider"></div>
 
               <!-- Column 2: Leadership Messages -->
               <div class="mega-links-col">
-                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
-                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="messagefromchairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="messagefromprincipal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
               </div>
 
@@ -931,8 +931,8 @@
               <!-- Column 3: Message from Core Team -->
               <div class="mega-column">
                 <div class="mega-col-title">Message From Core Team</div>
-                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
-                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="messagefromchairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="messagefromprincipal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
                 <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
               </div>
 
@@ -1137,9 +1137,9 @@
           <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
-          <li><a href="management.html"><i class="fa-solid fa-angle-right"></i> Committee</a></li>
-          <li><a href="chairperson.html"><i class="fa-solid fa-angle-right"></i> Chairperson</a></li>
-          <li><a href="principal.html"><i class="fa-solid fa-angle-right"></i> Principal</a></li>
+          <li><a href="schoolmanagement.html"><i class="fa-solid fa-angle-right"></i> Committee</a></li>
+          <li><a href="messagefromchairperson.html"><i class="fa-solid fa-angle-right"></i> Chairperson</a></li>
+          <li><a href="messagefromprincipal.html"><i class="fa-solid fa-angle-right"></i> Principal</a></li>
           <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
@@ -1233,40 +1233,8 @@
     // Mobile Hamburger Menu & Drawer Toggles
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinksMenu = document.getElementById('navLinksMenu');
-    const mobileIcon = mobileToggle.querySelector('i');
-
     mobileToggle.addEventListener('click', () => {
-      const isOpen = navLinksMenu.classList.toggle('active-mobile');
-      if (isOpen) {
-        mobileIcon.classList.remove('fa-bars');
-        mobileIcon.classList.add('fa-xmark');
-      } else {
-        mobileIcon.classList.remove('fa-xmark');
-        mobileIcon.classList.add('fa-bars');
-      }
-    });
-
-    // Mobile Accordion Logic
-    const navItemsWithSub = document.querySelectorAll('.nav-item');
-    navItemsWithSub.forEach(item => {
-      const triggerLink = item.querySelector('.nav-link');
-      const subDropdown = item.querySelector('.dropdown-menu');
-      const subMega = item.querySelector('.mega-menu');
-      const targetMenu = subDropdown || subMega;
-
-      if (targetMenu) {
-        triggerLink.addEventListener('click', (e) => {
-          if (window.innerWidth <= 900) {
-            e.preventDefault();
-            targetMenu.classList.toggle('mobile-open');
-            const caret = triggerLink.querySelector('i');
-            if (caret) {
-              caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
-              caret.style.transition = 'transform 0.2s ease';
-            }
-          }
-        });
-      }
+      navLinksMenu.classList.toggle('active-mobile');
     });
   </script>
 
