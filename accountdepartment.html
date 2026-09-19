@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Department of Mathematics - Nepal Police School Dharan</title>  
-  
+  <title>Department of Account - Nepal Police School Dharan</title>  
+  <link rel="icon" type="image/x-icon" href="schoollogo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -16,7 +16,7 @@
     }
 
     body {
-      background-color: #f1f5f9;
+      background-color: #f0fdf4;
       overflow-x: hidden;
       color: #334155;
     }
@@ -82,11 +82,11 @@
     }
 
     .brand-text .school-slogan {
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       color: #ffcb08;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.4px;
-      margin-top: 2px;
+      margin: 2px 0;
     }
 
     .brand-text p {
@@ -146,6 +146,21 @@
 
     .nav-link i {
       font-size: 0.7rem;
+    }
+
+    /* Enroll Now Button */
+    .btn-enroll-nav {
+      background-color: #ed1c24 !important;
+      color: #ffffff !important;
+      padding: 8px 16px !important;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background-color 0.2s ease !important;
+    }
+
+    .btn-enroll-nav:hover {
+      background-color: #b71540 !important;
+      color: #ffffff !important;
     }
 
     /* Standard Dropdown Menus (Desktop) */
@@ -333,23 +348,23 @@
     .stripe-yellow { height: 3px; background-color: #ffcb08; }
 
     /* ========================================================
-       MATHEMATICS DEPARTMENT: GEOMETRIC & GOLDEN RATIO THEME
+       ACCOUNT DEPARTMENT: EMERALD & FISCAL GOLD STYLING
        ======================================================== */
-    .math-hero {
-      background: linear-gradient(135deg, #0c1938 0%, #1e3a8a 55%, #1d4ed8 100%);
+    .acc-hero {
+      background: linear-gradient(135deg, #064e3b 0%, #047857 55%, #059669 100%);
       color: #ffffff;
       padding: 85px 24px 140px;
       text-align: center;
       position: relative;
     }
 
-    .math-badge {
+    .acc-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(245, 158, 11, 0.18);
-      border: 1px solid #f59e0b;
-      color: #fcd34d;
+      background: rgba(252, 211, 77, 0.18);
+      border: 1px solid #fcd34d;
+      color: #fef08a;
       padding: 6px 20px;
       border-radius: 30px;
       font-size: 0.88rem;
@@ -359,7 +374,7 @@
       margin-bottom: 18px;
     }
 
-    .math-hero h1 {
+    .acc-hero h1 {
       font-size: 3.2rem;
       font-weight: 800;
       margin-bottom: 14px;
@@ -367,9 +382,9 @@
       animation: heroFadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .math-hero p {
+    .acc-hero p {
       font-size: 1.15rem;
-      color: #e0e7ff;
+      color: #ecfdf5;
       max-width: 780px;
       margin: 0 auto;
       line-height: 1.7;
@@ -387,7 +402,7 @@
     }
 
     /* Main Container */
-    .math-container {
+    .acc-container {
       max-width: 1240px;
       margin: -75px auto 100px;
       padding: 0 24px;
@@ -398,26 +413,26 @@
       gap: 60px;
     }
 
-    /* Mathematical Proof & Formula Spotlight Card */
-    .math-spotlight-card {
+    /* Fiscal Ledger Spotlight Banner */
+    .ledger-spotlight-card {
       background: #ffffff;
       border-radius: 26px;
-      border: 1px solid #bfdbfe;
-      box-shadow: 0 20px 45px rgba(30, 58, 138, 0.08);
+      border: 1px solid #a7f3d0;
+      box-shadow: 0 20px 45px rgba(4, 120, 87, 0.08);
       overflow: hidden;
       display: grid;
       grid-template-columns: 1.25fr 1fr;
       align-items: stretch;
     }
 
-    .math-img-wrapper {
+    .ledger-img-wrapper {
       position: relative;
       min-height: 380px;
       overflow: hidden;
-      background: #0f172a;
+      background: #022c22;
     }
 
-    .math-img-wrapper img {
+    .ledger-img-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -425,16 +440,16 @@
       transition: transform 0.6s ease;
     }
 
-    .math-spotlight-card:hover .math-img-wrapper img {
+    .ledger-spotlight-card:hover .ledger-img-wrapper img {
       transform: scale(1.05);
     }
 
-    .math-caption {
+    .ledger-caption {
       position: absolute;
       bottom: 20px;
       left: 20px;
       right: 20px;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(2, 44, 34, 0.9);
       backdrop-filter: blur(6px);
       padding: 12px 20px;
       border-radius: 12px;
@@ -444,31 +459,31 @@
       font-weight: 600;
     }
 
-    .math-text-content {
+    .ledger-text-content {
       padding: 45px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    .math-text-content .sub {
+    .ledger-text-content .sub {
       font-size: 0.85rem;
       font-weight: 800;
-      color: #2563eb;
+      color: #047857;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       margin-bottom: 8px;
     }
 
-    .math-text-content h2 {
+    .ledger-text-content h2 {
       font-size: 2rem;
       font-weight: 800;
-      color: #0f172a;
+      color: #064e3b;
       line-height: 1.25;
       margin-bottom: 16px;
     }
 
-    .math-text-content p {
+    .ledger-text-content p {
       font-size: 1rem;
       color: #475569;
       line-height: 1.85;
@@ -476,32 +491,32 @@
       margin-bottom: 24px;
     }
 
-    .math-pillars-row {
+    .ledger-pillars-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
 
-    .math-pillar-box {
-      background: #eff6ff;
-      border: 1px solid #dbeafe;
+    .ledger-pillar-box {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
       padding: 12px 10px;
       border-radius: 14px;
       text-align: center;
     }
 
-    .math-pillar-box i {
+    .ledger-pillar-box i {
       font-size: 1.3rem;
-      color: #1d4ed8;
+      color: #047857;
       margin-bottom: 6px;
       display: block;
     }
 
-    .math-pillar-box strong {
+    .ledger-pillar-box strong {
       display: block;
       font-size: 0.86rem;
       font-weight: 800;
-      color: #1e3a8a;
+      color: #064e3b;
     }
 
     /* Filter Tabs */
@@ -530,10 +545,10 @@
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: #1d4ed8;
+      background: #047857;
       color: #ffffff;
-      border-color: #1d4ed8;
-      box-shadow: 0 6px 18px rgba(29, 78, 216, 0.25);
+      border-color: #047857;
+      box-shadow: 0 6px 18px rgba(4, 120, 87, 0.25);
       transform: translateY(-2px);
     }
 
@@ -546,7 +561,7 @@
     .section-header-title h2 {
       font-size: 2.3rem;
       font-weight: 800;
-      color: #0f172a;
+      color: #064e3b;
       letter-spacing: -0.3px;
     }
 
@@ -565,19 +580,19 @@
     }
 
     /* Faculty Grid (8 Members) */
-    .math-faculty-grid {
+    .acc-faculty-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 28px;
     }
 
-    .math-card {
+    .acc-card {
       background: #ffffff;
       border-radius: 22px;
       padding: 32px 20px 26px;
       text-align: center;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 8px 24px rgba(30, 58, 138, 0.04);
+      border: 1px solid #a7f3d0;
+      box-shadow: 0 8px 24px rgba(4, 120, 87, 0.04);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -585,33 +600,33 @@
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .math-card:hover {
+    .acc-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 18px 36px rgba(29, 78, 216, 0.15);
-      border-color: #93c5fd;
+      box-shadow: 0 18px 36px rgba(4, 120, 87, 0.15);
+      border-color: #059669;
     }
 
-    /* Geometric Rhombus/Diamond Curved Avatar Frame */
-    .math-avatar-frame {
+    /* Hexagonal Ledger / Octagon Avatar Frame */
+    .acc-avatar-frame {
       width: 155px;
       height: 155px;
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      border-radius: 20px 50px 20px 50px;
       padding: 5px;
       background: #ffffff;
-      border: 3px solid #1d4ed8;
-      box-shadow: 0 10px 24px rgba(29, 78, 216, 0.18);
+      border: 3px solid #047857;
+      box-shadow: 0 10px 24px rgba(4, 120, 87, 0.18);
       margin-bottom: 20px;
       overflow: hidden;
       transition: all 0.4s ease;
     }
 
-    .math-card:hover .math-avatar-frame {
+    .acc-card:hover .acc-avatar-frame {
       border-radius: 50%;
       border-color: #f59e0b;
       box-shadow: 0 12px 28px rgba(245, 158, 11, 0.35);
     }
 
-    .math-avatar-frame img {
+    .acc-avatar-frame img {
       width: 100%;
       height: 100%;
       border-radius: inherit;
@@ -620,11 +635,11 @@
       transition: all 0.4s ease;
     }
 
-    .math-card:hover .math-avatar-frame img {
+    .acc-card:hover .acc-avatar-frame img {
       transform: scale(1.08);
     }
 
-    .math-domain-tag {
+    .acc-domain-tag {
       font-size: 0.75rem;
       font-weight: 800;
       text-transform: uppercase;
@@ -635,53 +650,52 @@
       display: inline-block;
     }
 
-    /* Domain Colors */
-    .tag-calculus { background: #dbeafe; color: #1e40af; }
-    .tag-algebra { background: #fef3c7; color: #b45309; }
-    .tag-geometry { background: #ccfbf1; color: #0f766e; }
-    .tag-applied { background: #f3e8ff; color: #7e22ce; }
+    .tag-financial { background: #d1fae5; color: #065f46; }
+    .tag-audit { background: #fef3c7; color: #b45309; }
+    .tag-cost { background: #e0e7ff; color: #3730a3; }
+    .tag-tax { background: #fce7f3; color: #9d174d; }
 
-    .math-name {
+    .acc-name {
       font-size: 1.18rem;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 4px;
     }
 
-    .math-role {
+    .acc-role {
       font-size: 0.84rem;
       font-weight: 700;
-      color: #1d4ed8;
+      color: #047857;
       margin-bottom: 6px;
     }
 
-    .math-qual {
+    .acc-qual {
       font-size: 0.78rem;
       font-weight: 600;
       color: #64748b;
       margin-bottom: 12px;
     }
 
-    .math-bio {
+    .acc-bio {
       font-size: 0.86rem;
       color: #475569;
       line-height: 1.55;
       margin-bottom: 16px;
     }
 
-    .math-socials {
+    .acc-socials {
       display: flex;
       gap: 10px;
       margin-top: auto;
     }
 
-    .math-social-btn {
+    .acc-social-btn {
       width: 32px;
       height: 32px;
       border-radius: 8px;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      color: #1d4ed8;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #047857;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -690,10 +704,10 @@
       transition: all 0.25s ease;
     }
 
-    .math-social-btn:hover {
-      background: #1d4ed8;
+    .acc-social-btn:hover {
+      background: #047857;
       color: #ffffff;
-      border-color: #1d4ed8;
+      border-color: #047857;
       transform: translateY(-2px);
     }
 
@@ -859,7 +873,7 @@
 
     /* Responsive Styles */
     @media (max-width: 1100px) {
-      .math-faculty-grid { grid-template-columns: repeat(3, 1fr); }
+      .acc-faculty-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 900px) {
@@ -903,11 +917,11 @@
       .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; gap: 14px !important; }
       .mega-links-col a, .mega-column a { color: #cbd5e1 !important; padding: 9px 12px !important; font-size: 0.9rem !important; }
 
-      .math-hero h1 { font-size: 2.2rem; }
-      .math-spotlight-card { grid-template-columns: 1fr; }
-      .math-img-wrapper { min-height: 240px; }
-      .math-text-content { padding: 30px 20px; }
-      .math-faculty-grid { grid-template-columns: 1fr; }
+      .acc-hero h1 { font-size: 2.2rem; }
+      .ledger-spotlight-card { grid-template-columns: 1fr; }
+      .ledger-img-wrapper { min-height: 240px; }
+      .ledger-text-content { padding: 30px 20px; }
+      .acc-faculty-grid { grid-template-columns: 1fr; }
       .footer-container { grid-template-columns: 1fr; }
     }
   </style>
@@ -955,16 +969,16 @@
                 <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
                 <a href="milestone.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
                 <a href="facility.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
-                <a href="management.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
+                <a href="schoolmanagement.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
               </div>
 
               <div class="mega-divider"></div>
 
               <!-- Column 2: Leadership Messages -->
               <div class="mega-links-col">
-                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
-                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
-                <a href="commandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+                <a href="messagefromchairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="messagefromprincipal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="messagefromcommandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
               </div>
 
               <div class="mega-img-frame">
@@ -990,14 +1004,15 @@
               <!-- Column 1: Departments -->
               <div class="mega-column">
                 <div class="mega-col-title">Departments</div>
-                <a href="english-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
-                <a href="science-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
-                <a href="nepali-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
-                <a href="social-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
-                <a href="computer-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
-                <a href="math-dept.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
+                <a href="englishdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+                <a href="sciencedepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+                <a href="nepalidepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+                <a href="socialdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+                <a href="computerdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Technology Department</a>
+                <a href="mathdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="accountdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Account Department</a>
+                <a href="integrateddepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+                <a href="admindepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
               </div>
 
               <div class="mega-divider"></div>
@@ -1005,11 +1020,11 @@
               <!-- Column 2: School Premises / Wings -->
               <div class="mega-column">
                 <div class="mega-col-title">School premises</div>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> ECD/PPC PlayGroup</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
-                <a href="#"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
+                <a href="playgroup.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Playgroup / Nursery</a>
+                <a href="basiclevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
+                <a href="lowersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="secondarylevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
+                <a href="highersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
               </div>
 
               <div class="mega-divider"></div>
@@ -1017,40 +1032,37 @@
               <!-- Column 3: Message from Core Team -->
               <div class="mega-column">
                 <div class="mega-col-title">Message From Core Team</div>
-                <a href="chairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
-                <a href="principal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
-                <a href="commandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+                <a href="messagefromchairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="messagefromprincipal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="messagefromcommandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
               </div>
 
             </div>
           </div>
         </li>
 
-        <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Notice</a></li>
+        <li class="nav-item"><a href="noticepage.html" class="nav-link">Notice</a></li>
         
         <li class="nav-item">
           <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="#">ECA / CCA</a></li>
-            <li><a href="#">Events &amp; Sports</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Publication <i class="fa-solid fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Magazine</a></li>
-            <li><a href="#">Annual Reports</a></li>
+            <li><a href="ecapage.html">ECA / CCA</a></li>
+            <li><a href="sports.html">Events &amp; Sports</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Vacancy</a></li>
+            <li><a href="admissionpage.html">Admission</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+            <li><a href="annualreport.html">Annual Reports</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="vacancy.html">Vacancy</a></li>
           </ul>
         </li>
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a href="admissionpage.html" class="nav-link btn-enroll-nav">Enroll Now</a></li>
+        <li class="nav-item"><a href="https://portal.npsdharan.edu.np" class="nav-link" target="_blank">Portal Login</a></li>
       </ul>
     </header>
 
@@ -1065,44 +1077,44 @@
     </div>
   </div>
 
-  <!-- Mathematics Department Hero Header -->
-  <section class="math-hero">
-    <div class="math-badge">
-      <i class="fa-solid fa-infinity"></i> Analytical Rigor, Logic &amp; Geometric Precision
+  <!-- Account Department Hero Header -->
+  <section class="acc-hero">
+    <div class="acc-badge">
+      <i class="fa-solid fa-file-invoice-dollar"></i> Fiscal Governance, Auditing &amp; Financial Literacy
     </div>
-    <h1>Department of Mathematics</h1>
-    <p>Illuminating universal patterns, quantitative mastery, calculus, and logical deduction to shape scientific minds and analytical problem solvers.</p>
+    <h1>Department of Accountancy</h1>
+    <p>Mastering double-entry bookkeeping, corporate financial reporting, budgeting, taxation, and fiscal accountability to build financially prudent leaders.</p>
   </section>
 
   <!-- Main Department Content Container -->
-  <main class="math-container">
+  <main class="acc-container">
 
-    <!-- Math Lab & Olympiad Spotlight Banner -->
-    <section class="math-spotlight-card">
-      <div class="math-img-wrapper">
-        <img src="math_group.jpg" alt="Mathematics Faculty and Math Lab" onerror="this.src='https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80'">
-        <div class="math-caption">
-          <i class="fa-solid fa-square-root-variable" style="margin-right: 8px; color: #f59e0b;"></i> गणित संकाय — नेपाल पुलिस स्कुल धरान
+    <!-- Fiscal Ledger Spotlight Banner -->
+    <section class="ledger-spotlight-card">
+      <div class="ledger-img-wrapper">
+        <img src="account_group.jpg" alt="Account Department and Financial Ledger" onerror="this.src='https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80'">
+        <div class="ledger-caption">
+          <i class="fa-solid fa-book-journal-whills" style="margin-right: 8px; color: #f59e0b;"></i> लेखा संकाय — नेपाल पुलिस स्कुल धरान
         </div>
       </div>
-      <div class="math-text-content">
-        <span class="sub">Cultivating Quantitative Brilliance</span>
-        <h2>Hands-on Math Labs &amp; Olympiad Training</h2>
+      <div class="ledger-text-content">
+        <span class="sub">Fiscal Integrity &amp; Transparency</span>
+        <h2>Professional Bookkeeping &amp; Financial Simulation</h2>
         <p>
-          At Nepal Police School Dharan, mathematics moves beyond abstract textbook formulas. Our dedicated Mathematics Laboratory uses 3D geometric polyhedra, trigonometric clinometers, graph-modeling tools, and Olympiad problem-solving circles to build fearless logical intuition in every student.
+          The Accountancy Department at Nepal Police School Dharan bridges theoretical accounting principles with practical corporate accounting. Utilizing computerized accounting software (Tally/ERP), automated ledger simulations, and rigorous auditing projects, our students acquire the analytical acumen required for modern commerce and management.
         </p>
-        <div class="math-pillars-row">
-          <div class="math-pillar-box">
-            <i class="fa-solid fa-chart-area"></i>
-            <strong>Calculus &amp; Vectors</strong>
+        <div class="ledger-pillars-row">
+          <div class="ledger-pillar-box">
+            <i class="fa-solid fa-calculator"></i>
+            <strong>Financial Accounting</strong>
           </div>
-          <div class="math-pillar-box">
-            <i class="fa-solid fa-shapes"></i>
-            <strong>Math Lab Models</strong>
+          <div class="ledger-pillar-box">
+            <i class="fa-solid fa-receipt"></i>
+            <strong>Auditing &amp; Tax</strong>
           </div>
-          <div class="math-pillar-box">
-            <i class="fa-solid fa-brain"></i>
-            <strong>Olympiad Circles</strong>
+          <div class="ledger-pillar-box">
+            <i class="fa-solid fa-chart-pie"></i>
+            <strong>Cost Analysis</strong>
           </div>
         </div>
       </div>
@@ -1110,147 +1122,147 @@
 
     <!-- Interactive Domain Filter Tabs -->
     <div class="filter-tabs-wrapper">
-      <button class="filter-btn active" onclick="filterMathFaculty('all', this)"><i class="fa-solid fa-calculator"></i> All Mathematicians</button>
-      <button class="filter-btn" onclick="filterMathFaculty('calculus', this)"><i class="fa-solid fa-chart-line"></i> Higher Math &amp; Calculus (+2)</button>
-      <button class="filter-btn" onclick="filterMathFaculty('algebra', this)"><i class="fa-solid fa-superscript"></i> Algebra &amp; Geometry (SEE)</button>
-      <button class="filter-btn" onclick="filterMathFaculty('applied', this)"><i class="fa-solid fa-compass-drafting"></i> Foundational Numeracy (6-8)</button>
+      <button class="filter-btn active" onclick="filterAccountFaculty('all', this)"><i class="fa-solid fa-coins"></i> All Accountants</button>
+      <button class="filter-btn" onclick="filterAccountFaculty('financial', this)"><i class="fa-solid fa-book"></i> Financial Accounting (+2)</button>
+      <button class="filter-btn" onclick="filterAccountFaculty('audit', this)"><i class="fa-solid fa-file-shield"></i> Auditing &amp; Taxation</button>
+      <button class="filter-btn" onclick="filterAccountFaculty('cost', this)"><i class="fa-solid fa-coins"></i> Cost &amp; Management</button>
     </div>
 
     <!-- Section Header Title -->
     <div class="section-header-title">
-      <h2>Meet Our Mathematics Mentors</h2>
-      <p>Passionate educators transforming numbers into powerful logical reasoning and academic triumph.</p>
+      <h2>Meet Our Accountancy Faculty</h2>
+      <p>Experienced financial experts and chartered educators shaping commerce scholars and business leaders.</p>
       <div class="header-line"></div>
     </div>
 
-    <!-- Faculty Grid (8 Mathematical Profiles) -->
-    <section class="math-faculty-grid" id="mathFacultyGrid">
+    <!-- Faculty Grid (8 Accountancy Profiles) -->
+    <section class="acc-faculty-grid" id="accountFacultyGrid">
 
-      <!-- 1. HOD: Pure Math & Calculus -->
-      <div class="math-card" data-domain="calculus">
-        <div class="math-avatar-frame">
-          <img src="math_teacher1.jpg" alt="Hari Krishna Shrestha" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=HariKrishnaMath'">
+      <!-- 1. HOD: Corporate Accounting -->
+      <div class="acc-card" data-domain="financial">
+        <div class="acc-avatar-frame">
+          <img src="acc_teacher1.jpg" alt="Madhav Prasad Sharma" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=MadhavAccount'">
         </div>
-        <span class="math-domain-tag tag-calculus">Calculus &amp; Analysis (HOD)</span>
-        <div class="math-name">Hari Krishna Shrestha</div>
-        <div class="math-role">Head of Department (HOD)</div>
-        <div class="math-qual">M.Sc. Mathematics (TU), M.Ed.</div>
-        <p class="math-bio">Specialist in differential equations and real analysis with 17+ years mentoring senior board toppers and Olympiad finalists.</p>
-        <div class="math-socials">
-          <a href="mailto:harikrishna.math@npsdharan.edu.np" class="math-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="math-social-btn" title="Research"><i class="fa-solid fa-infinity"></i></a>
+        <span class="acc-domain-tag tag-financial">Financial Accounting (HOD)</span>
+        <div class="acc-name">Madhav Prasad Sharma</div>
+        <div class="acc-role">Head of Account Department</div>
+        <div class="acc-qual">M.Com., M.Ed. (Accountancy)</div>
+        <p class="acc-bio">Expert in corporate financial statements, share capital accounting, and partnership accounts with 16+ years of teaching excellence.</p>
+        <div class="acc-socials">
+          <a href="mailto:madhav.acc@npsdharan.edu.np" class="acc-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="acc-social-btn" title="Profile"><i class="fa-solid fa-file-invoice"></i></a>
         </div>
       </div>
 
-      <!-- 2. Senior Algebra & Mechanics (+2) -->
-      <div class="math-card" data-domain="calculus">
-        <div class="math-avatar-frame">
-          <img src="math_teacher2.jpg" alt="Prakash Adhikari" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=PrakashMath'">
+      <!-- 2. Senior Auditing & Taxation (+2) -->
+      <div class="acc-card" data-domain="audit">
+        <div class="acc-avatar-frame">
+          <img src="acc_teacher2.jpg" alt="Sita Devi Subedi" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SitaAudit'">
         </div>
-        <span class="math-domain-tag tag-algebra">Mechanics &amp; Linear Algebra</span>
-        <div class="math-name">Prakash Adhikari</div>
-        <div class="math-role">Senior Secondary Faculty (+2)</div>
-        <div class="math-qual">M.Sc. Pure Mathematics</div>
-        <p class="math-bio">Expert in vectors, classical statics, dynamic mechanics, and mathematical physics for high school science scholars.</p>
-        <div class="math-socials">
-          <a href="mailto:prakash.math@npsdharan.edu.np" class="math-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="math-social-btn" title="Research"><i class="fa-solid fa-vector-square"></i></a>
-        </div>
-      </div>
-
-      <!-- 3. Statistics & Business Math (+2) -->
-      <div class="math-card" data-domain="applied">
-        <div class="math-avatar-frame">
-          <img src="math_teacher3.jpg" alt="Bishnu Maya Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BishnuMayaMath'">
-        </div>
-        <span class="math-domain-tag tag-applied">Statistics &amp; Business Math</span>
-        <div class="math-name">Bishnu Maya Rai</div>
-        <div class="math-role">Senior Secondary Faculty (+2)</div>
-        <div class="math-qual">M.Sc. Statistics, B.Ed.</div>
-        <p class="math-bio">Leads probability distributions, financial mathematics, and statistical modeling for science and management streams.</p>
-        <div class="math-socials">
-          <a href="mailto:bishnumaya.math@npsdharan.edu.np" class="math-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="math-social-btn" title="Research"><i class="fa-solid fa-percent"></i></a>
+        <span class="acc-domain-tag tag-audit">Auditing &amp; Taxation</span>
+        <div class="acc-name">Sita Devi Subedi</div>
+        <div class="acc-role">Senior Secondary Faculty (+2)</div>
+        <div class="acc-qual">M.B.S. (Finance &amp; Account), CA Inter</div>
+        <p class="acc-bio">Specialist in Nepal tax acts, VAT, income tax computations, and internal/external auditing procedures for management students.</p>
+        <div class="acc-socials">
+          <a href="mailto:sita.acc@npsdharan.edu.np" class="acc-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="acc-social-btn" title="Profile"><i class="fa-solid fa-file-shield"></i></a>
         </div>
       </div>
 
-      <!-- 4. Secondary Optional Math (Grade 9-10) -->
-      <div class="math-card" data-domain="algebra">
-        <div class="math-avatar-frame">
-          <img src="math_teacher4.jpg" alt="Deepak Kumar Karn" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=DeepakKarnMath'">
+      <!-- 3. Cost & Management Accounting (+2) -->
+      <div class="acc-card" data-domain="cost">
+        <div class="acc-avatar-frame">
+          <img src="acc_teacher3.jpg" alt="Bhim Bahadur Karki" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=BhimCost'">
         </div>
-        <span class="math-domain-tag tag-geometry">Optional Math (SEE)</span>
-        <div class="math-name">Deepak Kumar Karn</div>
-        <div class="math-role">Secondary Level Faculty</div>
-        <div class="math-qual">M.A. Mathematics, B.Ed.</div>
-        <p class="math-bio">Proven mentor for SEE Optional Math toppers, specializing in trigonometry, coordinate geometry, and transformation proofs.</p>
-        <div class="math-socials">
-          <a href="mailto:deepak.math@npsdharan.edu.np" class="math-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="math-social-btn" title="Research"><i class="fa-solid fa-draw-polygon"></i></a>
-        </div>
-      </div>
-
-      <!-- 5. Secondary Compulsory Math (Grade 9-10) -->
-      <div class="math-card" data-domain="algebra">
-        <div class="math-avatar-frame">
-          <img src="math_teacher5.jpg" alt="Saroj K. Pokhrel" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SarojMath'">
-        </div>
-        <span class="math-domain-tag tag-algebra">Compulsory Math (SEE)</span>
-        <div class="math-name">Saroj K. Pokhrel</div>
-        <div class="math-role">Secondary Level Faculty</div>
-        <div class="math-qual">B.Sc. Mathematics, B.Ed.</div>
-        <p class="math-bio">Builds unshakeable problem-solving confidence in algebra, compound interest, sets, and theoretical circle geometry.</p>
-        <div class="math-socials">
-          <a href="mailto:saroj.math@npsdharan.edu.np" class="math-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="math-social-btn" title="Research"><i class="fa-solid fa-square-root-variable"></i></a>
+        <span class="acc-domain-tag tag-cost">Cost &amp; Management</span>
+        <div class="acc-name">Bhim Bahadur Karki</div>
+        <div class="acc-role">Senior Secondary Faculty (+2)</div>
+        <div class="acc-qual">M.B.S. (Accountancy)</div>
+        <p class="acc-bio">Focuses on material costing, overhead analysis, budget control, and managerial decision-making models.</p>
+        <div class="acc-socials">
+          <a href="mailto:bhim.acc@npsdharan.edu.np" class="acc-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="acc-social-btn" title="Profile"><i class="fa-solid fa-chart-pie"></i></a>
         </div>
       </div>
 
-      <!-- 6. Lower Secondary Math & Lab (Grade 6-8) -->
-      <div class="math-card" data-domain="applied">
-        <div class="math-avatar-frame">
-          <img src="math_teacher6.jpg" alt="Geeta Katuwal" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=GeetaMath'">
+      <!-- 4. Secondary Bookkeeping (Grade 9-10) -->
+      <div class="acc-card" data-domain="financial">
+        <div class="acc-avatar-frame">
+          <img src="acc_teacher4.jpg" alt="Yamuna Pokhrel" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=YamunaBook'">
         </div>
-        <span class="math-domain-tag tag-geometry">Geometry &amp; Lab (6-8)</span>
-        <div class="math-name">Geeta Katuwal</div>
-        <div class="math-role">Lower Secondary Faculty</div>
-        <div class="math-qual">B.Ed. Mathematics, M.Sc. (Running)</div>
-        <p class="math-bio">Coordinates the School Math Laboratory, interactive origami geometry sessions, and speed calculation drills.</p>
-        <div class="math-socials">
-          <a href="mailto:geeta.math@npsdharan.edu.np" class="math-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="math-social-btn" title="Research"><i class="fa-solid fa-ruler-combined"></i></a>
-        </div>
-      </div>
-
-      <!-- 7. Lower Secondary Algebra (Grade 6-8) -->
-      <div class="math-card" data-domain="algebra">
-        <div class="math-avatar-frame">
-          <img src="math_teacher7.jpg" alt="Santosh Basnet" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SantoshMath'">
-        </div>
-        <span class="math-domain-tag tag-algebra">Algebra &amp; Arithmetic (6-8)</span>
-        <div class="math-name">Santosh Basnet</div>
-        <div class="math-role">Lower Secondary Faculty</div>
-        <div class="math-qual">B.Sc. Mathematics, B.Ed.</div>
-        <p class="math-bio">Cultivates sharp mental math, linear equation fluency, and unit conversions through competitive weekly quizzes.</p>
-        <div class="math-socials">
-          <a href="mailto:santosh.math@npsdharan.edu.np" class="math-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="math-social-btn" title="Research"><i class="fa-solid fa-divide"></i></a>
+        <span class="acc-domain-tag tag-financial">Bookkeeping (SEE)</span>
+        <div class="acc-name">Yamuna Pokhrel</div>
+        <div class="acc-role">Secondary Level Faculty</div>
+        <div class="acc-qual">B.B.S., B.Ed.</div>
+        <p class="acc-bio">Builds fundamental journals, subsidiary books, trial balances, and final accounts proficiency for SEE optional commerce students.</p>
+        <div class="acc-socials">
+          <a href="mailto:yamuna.acc@npsdharan.edu.np" class="acc-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="acc-social-btn" title="Profile"><i class="fa-solid fa-book-open"></i></a>
         </div>
       </div>
 
-      <!-- 8. Primary Math & Vedic Numeracy -->
-      <div class="math-card" data-domain="applied">
-        <div class="math-avatar-frame">
-          <img src="math_teacher8.jpg" alt="Sunil Tamang" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SunilMath'">
+      <!-- 5. Government Accounting -->
+      <div class="acc-card" data-domain="audit">
+        <div class="acc-avatar-frame">
+          <img src="acc_teacher5.jpg" alt="Kamal Prasad Gautam" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=KamalGov'">
         </div>
-        <span class="math-domain-tag tag-applied">Foundational Numeracy Wing</span>
-        <div class="math-name">Sunil Tamang</div>
-        <div class="math-role">Primary Math Teacher</div>
-        <div class="math-qual">B.Ed. Math, Abacus &amp; Vedic Math Certified</div>
-        <p class="math-bio">Introduces young minds to math joy via abacus visualization, interactive math puzzles, and foundational numeracy games.</p>
-        <div class="math-socials">
-          <a href="mailto:sunil.math@npsdharan.edu.np" class="math-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="math-social-btn" title="Research"><i class="fa-solid fa-puzzle-piece"></i></a>
+        <span class="acc-domain-tag tag-tax">Government Accounting</span>
+        <div class="acc-name">Kamal Prasad Gautam</div>
+        <div class="acc-role">Secondary Level Faculty</div>
+        <div class="acc-qual">M.Com., Public Administration</div>
+        <p class="acc-bio">Specialist in Nepalese government accounting systems (Goswara Voucher, Budget Sheet No. 1 to 4) and public fund audit.</p>
+        <div class="acc-socials">
+          <a href="mailto:kamal.acc@npsdharan.edu.np" class="acc-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="acc-social-btn" title="Profile"><i class="fa-solid fa-building-columns"></i></a>
+        </div>
+      </div>
+
+      <!-- 6. Lower Secondary Commercial Arithmetic (Grade 6-8) -->
+      <div class="acc-card" data-domain="cost">
+        <div class="acc-avatar-frame">
+          <img src="acc_teacher6.jpg" alt="Anita Khadka" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=AnitaComm'">
+        </div>
+        <span class="acc-domain-tag tag-cost">Commercial Math (6-8)</span>
+        <div class="acc-name">Anita Khadka</div>
+        <div class="acc-role">Lower Secondary Faculty</div>
+        <div class="acc-qual">B.B.S., B.Ed.</div>
+        <p class="acc-bio">Introduces middle school students to profit/loss, simple/compound interest, unit pricing, and household budgeting.</p>
+        <div class="acc-socials">
+          <a href="mailto:anita.acc@npsdharan.edu.np" class="acc-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="acc-social-btn" title="Profile"><i class="fa-solid fa-coins"></i></a>
+        </div>
+      </div>
+
+      <!-- 7. Lower Secondary Basic Accounts (Grade 6-8) -->
+      <div class="acc-card" data-domain="financial">
+        <div class="acc-avatar-frame">
+          <img src="acc_teacher7.jpg" alt="Rajesh Kumar Shah" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=RajeshAcc'">
+        </div>
+        <span class="acc-domain-tag tag-financial">Basic Accounts (6-8)</span>
+        <div class="acc-name">Rajesh Kumar Shah</div>
+        <div class="acc-role">Lower Secondary Faculty</div>
+        <div class="acc-qual">B.Com., M.A. (Economics)</div>
+        <p class="acc-bio">Teaches early transaction recording, receipt/payment statements, and basic financial discipline.</p>
+        <div class="acc-socials">
+          <a href="mailto:rajesh.acc@npsdharan.edu.np" class="acc-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="acc-social-btn" title="Profile"><i class="fa-solid fa-receipt"></i></a>
+        </div>
+      </div>
+
+      <!-- 8. Junior Financial Literacy Wing -->
+      <div class="acc-card" data-domain="audit">
+        <div class="acc-avatar-frame">
+          <img src="acc_teacher8.jpg" alt="Sujata Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SujataJunior'">
+        </div>
+        <span class="acc-domain-tag tag-audit">Junior Financial Wing</span>
+        <div class="acc-name">Sujata Rai</div>
+        <div class="acc-role">Primary Commerce Teacher</div>
+        <div class="acc-qual">B.B.S., Early Finance Trained</div>
+        <p class="acc-bio">Instills early savings habits, pocket-money budgeting, and coin-counting awareness through playful commercial games.</p>
+        <div class="acc-socials">
+          <a href="mailto:sujata.acc@npsdharan.edu.np" class="acc-social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="acc-social-btn" title="Profile"><i class="fa-solid fa-piggy-bank"></i></a>
         </div>
       </div>
 
@@ -1302,10 +1314,10 @@
           <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
           <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
           <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
+          <li><a href="admissionpage.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
+          <li><a href="noticepage.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
+          <li><a href="gallery.html"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
           <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
-          <li><a href="management.html"><i class="fa-solid fa-angle-right"></i> Committee</a></li>
-          <li><a href="chairperson.html"><i class="fa-solid fa-angle-right"></i> Chairperson</a></li>
-          <li><a href="principal.html"><i class="fa-solid fa-angle-right"></i> Principal</a></li>
           <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
@@ -1338,11 +1350,11 @@
 
   <script>
     // Live Faculty Filter Logic
-    function filterMathFaculty(domain, btn) {
+    function filterAccountFaculty(domain, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const cards = document.querySelectorAll('.math-card');
+      const cards = document.querySelectorAll('.acc-card');
       cards.forEach(card => {
         if (domain === 'all' || card.getAttribute('data-domain') === domain) {
           card.style.display = 'flex';
@@ -1446,10 +1458,9 @@
       if (targetMenu) {
         triggerLink.addEventListener('click', (e) => {
           if (window.innerWidth <= 900) {
-            e.preventDefault(); // Prevent navigating when tapping top label on mobile
+            e.preventDefault();
             targetMenu.classList.toggle('mobile-open');
 
-            // Rotate caret icon on mobile
             const caret = triggerLink.querySelector('i');
             if (caret) {
               caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
