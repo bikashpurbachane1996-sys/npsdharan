@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Purbiya Jyoti Magazine - Nepal Police School Dharan</title>
-  
   <link rel="icon" type="image/x-icon" href="schoollogo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
- 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
   <style>
     * {
       margin: 0;
@@ -95,6 +96,7 @@
       color: #cbd5e1;
     }
 
+    /* Hamburger Toggle Button */
     .mobile-nav-toggle {
       display: none;
       background: none;
@@ -103,6 +105,12 @@
       font-size: 1.6rem;
       cursor: pointer;
       padding: 8px;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: #ffcb08;
     }
 
     .nav-links {
@@ -143,21 +151,27 @@
     }
 
     /* Enroll Now Button */
-    .btn-enroll-nav {
-      background-color: #ed1c24 !important;
+    .nav-item .enroll-btn {
+      background-color: #ed1c24;
       color: #ffffff !important;
-      padding: 8px 16px !important;
-      border-radius: 6px;
-      font-weight: 700 !important;
-      transition: background-color 0.2s ease !important;
+      padding: 4px 12px;
+      height: auto;
+      align-self: center;
+      border-radius: 20px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(237, 28, 36, 0.35);
+      margin-left: 5px;
     }
 
-    .btn-enroll-nav:hover {
-      background-color: #b71540 !important;
+    .nav-item .enroll-btn:hover {
+      background-color: #b71540;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(237, 28, 36, 0.45);
       color: #ffffff !important;
     }
 
-    /* Standard Dropdown Menus */
+    /* Standard Dropdown Menus (Desktop) */
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -205,7 +219,7 @@
       }
     }
 
-    /* Mega Menu */
+    /* Mega Menus */
     .has-mega-menu {
       position: static !important;
     }
@@ -852,9 +866,20 @@
       transform: translateY(0);
     }
 
+    .btn-scroll-top:hover {
+      background-color: #b71540;
+      transform: translateY(-4px);
+    }
+
     /* Responsive Styles */
     @media (max-width: 1100px) {
       .mag-pillars-grid { grid-template-columns: repeat(2, 1fr); }
+      .mega-menu-grid-who,
+      .mega-menu-grid-nps {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .mega-divider, .mega-img-frame { display: none; }
     }
 
     @media (max-width: 900px) {
@@ -874,18 +899,20 @@
         padding: 12px 18px 24px;
         gap: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
         opacity: 0;
         pointer-events: none;
         transform: translateY(-10px);
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .nav-links.active-mobile { opacity: 1; pointer-events: auto; transform: translateY(0); }
       .nav-item { width: 100%; display: flex; flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; }
+      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; font-size: 1rem; }
       .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; background: #162044 !important; border-radius: 8px !important; display: none; padding: 8px 12px !important; }
       .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
-      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; }
+      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; gap: 14px !important; }
       .mega-img-frame, .mega-divider { display: none !important; }
+      .mega-links-col a, .mega-column a { color: #cbd5e1 !important; padding: 9px 12px !important; font-size: 0.9rem !important; }
 
       .mag-hero h1 { font-size: 2.2rem; }
       .magazine-spotlight { grid-template-columns: 1fr; }
@@ -1001,30 +1028,28 @@
           </div>
         </li>
 
-        <li class="nav-item"><a href="notice.html" class="nav-link">Notice</a></li>
+        <li class="nav-item"><a href="noticepage.html" class="nav-link">Notice</a></li>
+        
         <li class="nav-item">
           <a href="#" class="nav-link">Activities <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="eca.html">ECA / CCA</a></li>
+            <li><a href="ecapage.html">ECA / CCA</a></li>
             <li><a href="sports.html">Events &amp; Sports</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link active">Publication <i class="fa-solid fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="magazine.html">Magazine</a></li>
-            <li><a href="annualreport.html">Annual Reports</a></li>
-          </ul>
-        </li>
+
         <li class="nav-item">
           <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
+            <li><a href="admissionpage.html">Admission</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+            <li><a href="annualreport.html">Annual Reports</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="vacancy.html">Vacancy</a></li>
           </ul>
         </li>
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-        <li class="nav-item"><a href="admissionpage.html" class="nav-link btn-enroll-nav">Enroll Now</a></li>
+        <li class="nav-item"><a href="admissionpage.html" class="nav-link enroll-btn">Enroll Now</a></li>
         <li class="nav-item"><a href="https://portal.npsdharan.edu.np" class="nav-link" target="_blank">Portal Login</a></li>
       </ul>
     </header>
@@ -1171,11 +1196,11 @@
           <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
           <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
           <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+          <li><a href="admissionpage.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
+          <li><a href="noticepage.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
+          <li><a href="gallery.html"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
           <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
           <li><a href="facility.html"><i class="fa-solid fa-angle-right"></i> Facilities</a></li>
-          <li><a href="schoolmanagement.html"><i class="fa-solid fa-angle-right"></i> Committee</a></li>
-          <li><a href="admissionpage.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
-          <li><a href="notice.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
           <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
         </ul>
       </div>
