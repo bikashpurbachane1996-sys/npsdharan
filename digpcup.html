@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>8th DIGP Running Football Tournament 2083 - Nepal Police School Dharan</title>  
+  <link rel="icon" type="image/x-icon" href="schoollogo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      overflow-x: hidden;
+      color: #334155;
+    }
+
+    /* Sticky Navigation Wrapper */
+    .header-wrapper {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Main Navigation Bar */
+    .header-navbar {
+      background-color: #273773;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      height: 75px;
+      position: relative;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    .brand-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logos img.school-logo {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffcb08;
+      background-color: #ffffff;
+    }
+
+    .brand-logos img.police-crest {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-text .school-slogan {
+      font-size: 0.76rem;
+      color: #ffcb08;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin: 2px 0;
+    }
+
+    .brand-text p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: #ffcb08;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 22px;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffcb08;
+    }
+
+    .nav-link i {
+      font-size: 0.7rem;
+    }
+
+    .btn-enroll-nav {
+      background-color: #ed1c24 !important;
+      color: #ffffff !important;
+      padding: 8px 16px !important;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background-color 0.2s ease !important;
+    }
+
+    .btn-enroll-nav:hover {
+      background-color: #b71540 !important;
+      color: #ffffff !important;
+    }
+
+    /* Standard Dropdown Menus */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      list-style: none;
+      padding: 8px;
+      z-index: 1001;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 0;
+      right: 0;
+      height: 15px;
+      background: transparent;
+    }
+
+    .dropdown-menu li a {
+      color: #334155;
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    @media (min-width: 901px) {
+      .nav-item:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    /* Mega Menus */
+    .has-mega-menu {
+      position: static !important;
+    }
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #f1f5f9;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      border-top: 2px solid #ffcb08;
+      padding: 24px 30px;
+      z-index: 9999;
+    }
+
+    .mega-menu::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: transparent;
+    }
+
+    @media (min-width: 901px) {
+      .has-mega-menu:hover .mega-menu,
+      .mega-menu:hover {
+        display: block;
+      }
+    }
+
+    .mega-menu-grid-who {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.2fr 1px 1.1fr 320px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-menu-grid-nps {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1px 1.3fr 1px 1.2fr 1px 1.2fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mega-img-frame {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      border: 3px solid #ffffff;
+      height: 250px;
+      background: #ffffff;
+    }
+
+    .mega-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .mega-img-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .mega-divider {
+      background-color: #cbd5e1;
+      width: 1px;
+      height: 90%;
+      margin: auto 0;
+    }
+
+    .mega-links-col,
+    .mega-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    .mega-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ed1c24;
+      margin-bottom: 8px;
+      padding-left: 6px;
+    }
+
+    .mega-links-col a,
+    .mega-column a {
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .mega-links-col a:hover,
+    .mega-column a:hover {
+      background-color: #273773;
+      color: #ffffff;
+      transform: translateX(6px);
+      box-shadow: 0 4px 10px rgba(39, 55, 115, 0.25);
+    }
+
+    /* Police Stripes */
+    .police-stripes {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stripe-red { height: 3px; background-color: #ed1c24; }
+    .stripe-white { height: 2px; background-color: #ffffff; }
+    .stripe-blue { height: 3px; background-color: #273773; }
+    .stripe-yellow { height: 3px; background-color: #ffcb08; }
+
+    /* ========================================================
+       DIGP TOURNAMENT PAGE STYLING
+       ======================================================== */
+    .digp-hero {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(39, 55, 115, 0.92) 100%), url('https://www.nps.edu.np/public/uploads/694548c562474.jpg');
+      background-position: center;
+      background-size: cover;
+      color: #ffffff;
+      padding: 95px 24px 130px;
+      text-align: center;
+      position: relative;
+    }
+
+    .digp-badge-glow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 203, 8, 0.15);
+      border: 1px solid #ffcb08;
+      color: #ffcb08;
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      box-shadow: 0 0 25px rgba(255, 203, 8, 0.3);
+    }
+
+    .digp-hero h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .digp-hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .digp-container {
+      max-width: 1200px;
+      margin: -65px auto 100px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .digp-card {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+      padding: 45px 50px;
+    }
+
+    .notice-nepali-banner {
+      background: rgba(255, 203, 8, 0.12);
+      border-left: 4px solid #ffcb08;
+      padding: 18px 22px;
+      border-radius: 8px;
+      color: #1e293b;
+      font-size: 1.12rem;
+      font-weight: 700;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    /* Video & Info Split Grid */
+    .digp-split-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      background: #0f172a;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .digp-info-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .digp-info-content p {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    /* Gallery Slider Section */
+    .slider-section-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .slider-section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .slider-section-header p {
+      font-size: 1.02rem;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    .gallery-slider-wrapper {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      background: #0f172a;
+      height: 450px;
+    }
+
+    .slider-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide-item {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-caption-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 100%);
+      color: #ffffff;
+      padding: 30px 30px 20px;
+    }
+
+    .slide-caption-overlay h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffcb08;
+      margin-bottom: 6px;
+    }
+
+    .slide-caption-overlay p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    /* Slider Navigation Controls */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(39, 55, 115, 0.8);
+      color: #ffffff;
+      border: 2px solid #ffcb08;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+
+    .slider-btn:hover {
+      background: #ed1c24;
+      border-color: #ffffff;
+    }
+
+    .slider-btn.prev { left: 20px; }
+    .slider-btn.next { right: 20px; }
+
+    /* Guaranteed Solid Footer Section */
+    footer.site-footer {
+      display: block !important;
+      background-color: #273773 !important;
+      color: #ffffff !important;
+      padding-top: 60px !important;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
+      display: grid;
+      grid-template-columns: 1.3fr 1.5fr 1.2fr;
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #ffffff !important;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #f1f5f9 !important;
+      line-height: 1.5;
+    }
+
+    .footer-contact-list li i {
+      margin-top: 3px;
+      color: #ffcb08 !important;
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-list a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-list a:hover {
+      color: #ffcb08 !important;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .footer-social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff !important;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social-btn:hover {
+      background-color: #ffffff !important;
+      color: #273773 !important;
+      transform: translateY(-3px);
+    }
+
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      list-style: none;
+    }
+
+    .footer-nav-grid li a {
+      color: #f1f5f9 !important;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .footer-nav-grid li a:hover {
+      color: #ffcb08 !important;
+      transform: translateX(4px);
+    }
+
+    .footer-map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      height: 190px;
+    }
+
+    .footer-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #cbd5e1 !important;
+    }
+
+    .footer-bottom strong {
+      color: #ffffff !important;
+    } 
+
+    .btn-scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #ed1c24;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(237, 28, 36, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 900px) {
+      .header-navbar { padding: 0 16px; height: 70px; }
+      .mobile-nav-toggle { display: block; }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1c2754;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        padding: 12px 18px 24px;
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-links.active-mobile { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .nav-item { width: 100%; height: auto; display: flex; flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .nav-link { width: 100%; justify-content: space-between; padding: 14px 10px; font-size: 1rem; }
+      .dropdown-menu, .mega-menu { position: static !important; width: 100% !important; box-shadow: none !important; background: #162044 !important; border-radius: 8px !important; border-top: none !important; padding: 8px 12px !important; display: none; }
+      .dropdown-menu.mobile-open, .mega-menu.mobile-open { display: block !important; }
+      .dropdown-menu::before, .mega-menu::before { display: none !important; }
+      .dropdown-menu li a { color: #cbd5e1 !important; padding: 10px 14px !important; }
+      .mega-menu-grid-who, .mega-menu-grid-nps { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .mega-links-col a, .mega-column a { color: #cbd5e1 !important; padding: 9px 12px !important; font-size: 0.9rem !important; }
+
+      .digp-hero h1 { font-size: 2.1rem; }
+      .digp-card { padding: 30px 20px; }
+      .digp-split-grid { grid-template-columns: 1fr; }
+      .gallery-slider-wrapper { height: 320px; }
+      .footer-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header Wrapper -->
+  <div class="header-wrapper">
+    <header class="header-navbar">
+      <a href="index.html" class="brand-section">
+        <div class="brand-logos">
+          <img class="police-crest" src="https://www.nps.edu.np/images/policelogo.png" alt="Nepal Police Crest">
+          <img class="school-logo" src="schoollogo.jpg" alt="Nepal Police School Dharan Logo">
+        </div>
+        <div class="brand-text">
+          <h1>NEPAL POLICE SCHOOL</h1>
+          <div class="school-slogan"><i>Better Schooling for Ideal Citizens</i></div>
+          <p><i>Dharan-13, Sunsari Nepal</i></p>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinksMenu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        
+        <!-- "Who We Are" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuWhoWeAre">
+          <a href="#" class="nav-link">Who We Are <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownWhoWeAre">
+            <div class="mega-menu-grid-who">
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-links-col">
+                <a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Us</a>
+                <a href="history.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> History</a>
+                <a href="milestone.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Milestones</a>
+                <a href="facility.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Facilities</a>
+                <a href="schoolmanagement.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> School Management Committee</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-links-col">
+                <a href="messagefromchairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="messagefromprincipal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="messagefromcommandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+
+              <div class="mega-img-frame">
+                <img src="building.jpg" alt="School Banner" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- "NPS" Mega Menu -->
+        <li class="nav-item has-mega-menu" id="menuNPS">
+          <a href="#" class="nav-link">NPS <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu" id="dropdownNPS">
+            <div class="mega-menu-grid-nps">
+              <div class="mega-img-frame">
+                <img src="school.jpg" alt="School Premises" onerror="this.src='https://www.nps.edu.np/images/30x20wood-mount.JPG'">
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-column">
+                <div class="mega-col-title">Departments</div>
+                <a href="englishdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> English Department</a>
+                <a href="sciencedepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Science Department</a>
+                <a href="nepalidepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Nepali Department</a>
+                <a href="socialdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Social Studies Department</a>
+                <a href="computerdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Computer and Tech Department</a>
+                <a href="mathdepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Mathematics Department</a>
+                <a href="integrateddepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Integrated Department</a>
+                <a href="admindepartment.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Administration Department</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-column">
+                <div class="mega-col-title">School premises</div>
+                <a href="playgroup.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Playgroup / Nursery</a>
+                <a href="basiclevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Basic Level (Grade 1-5)</a>
+                <a href="lowersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Lower Secondary Level (Grade 6-8)</a>
+                <a href="secondarylevel.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Secondary Level (Grade 9 &amp; 10)</a>
+                <a href="highersecondary.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> +2 Management (Grade 11 &amp; 12)</a>
+              </div>
+
+              <div class="mega-divider"></div>
+
+              <div class="mega-column">
+                <div class="mega-col-title">Message From Core Team</div>
+                <a href="messagefromchairperson.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Chairperson</a>
+                <a href="messagefromprincipal.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Principal</a>
+                <a href="messagefromcommandant.html"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Message From Commandant</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="noticepage.html" class="nav-link">Notice</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link active">Activities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="ecapage.html">ECA / CCA</a></li>
+            <li><a href="sports.html">Events &amp; Sports</a></li>
+            <li><a href="digp-football-tournament.html">DIGP Football Tournament</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">More <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="admissionpage.html">Admission</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+            <li><a href="annualreport.html">Annual Reports</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="vacancy.html">Vacancy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a href="admissionpage.html" class="nav-link btn-enroll-nav">Enroll Now</a></li>
+        <li class="nav-item"><a href="https://portal.npsdharan.edu.np" class="nav-link" target="_blank">Portal Login</a></li>
+      </ul>
+    </header>
+
+    <!-- Police Color Stripes Ribbon -->
+    <div class="police-stripes">
+      <div class="stripe-white"></div>
+      <div class="stripe-red"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-blue"></div>
+      <div class="stripe-white"></div>
+      <div class="stripe-yellow"></div>
+    </div>
+  </div>
+
+  <!-- Hero Header Section -->
+  <section class="digp-hero">
+    <div class="digp-badge-glow">
+      <i class="fa-solid fa-trophy"></i> Upcoming Flagship Championship 2083
+    </div>
+    <h1>8th Koshi Province Interschool DIGP Running Football Tournament</h1>
+    <p>Get ready for high-intensity matches, team camaraderie, and legendary sportsmanship starting from Poush 3rd to Poush 11th, 2083.</p>
+  </section>
+
+  <!-- Main Container -->
+  <main class="digp-container">
+    <div class="digp-card">
+      
+      <!-- Nepali Announcement Banner -->
+      <div class="notice-nepali-banner">
+        <i class="fa-solid fa-bullhorn" style="color: #ed1c24; margin-right: 8px;"></i> 
+        “८औं कोशी प्रदेश अन्तर-विद्यालय डिआइजीपी रनिङ फुटबल प्रतियोगिता-२०८३ आगामी पुष ३ गतेदेखि पुष ११ गतेसम्म सञ्चालन हुनेछ। सम्पूर्ण खेलप्रेमी तथा विद्यार्थीहरूमा हार्दिक स्वागत छ! ⚽🏆”
+      </div>
+
+      <!-- Video & Overview Split Section -->
+      <div class="digp-split-grid">
+        <div class="video-container">
+          <!-- Embedded promotional video or teaser placeholder -->
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1" 
+            title="DIGP Football Tournament Teaser" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="digp-info-content">
+          <h2>About the Championship</h2>
+          <p>
+            The Koshi Province Interschool DIGP Running Football Tournament is our marquee annual athletic event, bringing together top secondary schools across the entire province for an epic week of competitive football.
+          </p>
+          <p>
+            Hosted on our professional school grounds in Dharan, the tournament champions teamwork, discipline, and athletic excellence in honor of police educational leadership.
+          </p>
+          <div style="font-weight: 700; color: #273773; font-size: 1.05rem;">
+            <i class="fa-regular fa-calendar-days" style="color: #ed1c24; margin-right: 6px;"></i> Schedule: Poush 03 - Poush 11, 2083
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Last Year's Image Gallery Slider Section -->
+    <div class="digp-card">
+      <div class="slider-section-header">
+        <h2>Last Year's Memories &amp; Highlights 📸</h2>
+        <p>Relive the excitement, goals, and trophy celebrations from the previous edition.</p>
+      </div>
+
+      <div class="gallery-slider-wrapper" id="sliderWrapper">
+        <div class="slider-track" id="sliderTrack">
+          <!-- Slide 1 -->
+          <div class="slide-item">
+            <img src="https://www.nps.edu.np/public/uploads/694548c562474.jpg" alt="Match Action 1">
+            <div class="slide-caption-overlay">
+              <h4>Thrilling Final Match Action</h4>
+              <p>Intense midfield battle during the championship showdown.</p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide-item">
+            <img src="https://www.nps.edu.np/public/uploads/694548a781477.jpg" alt="Trophy Ceremony">
+            <div class="slide-caption-overlay">
+              <h4>Grand Trophy &amp; Medal Distribution</h4>
+              <p>Honoring winning teams and exceptional players with the DIGP Running Shield.</p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide-item">
+            <img src="https://www.nps.edu.np/public/uploads/6757f9516cb1e.jpg" alt="Opening Ceremony">
+            <div class="slide-caption-overlay">
+              <h4>Opening Ceremony &amp; March Pass</h4>
+              <p>Participating school delegations assembled at Nepal Police School Dharan grounds.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-btn prev" onclick="moveSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next" onclick="moveSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Guaranteed Solid Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Dharan-17, Sunsari, Nepal</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>025-520101 , +977 9852012345 (सोधपुछ)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>025-520102 (शैक्षिक प्रशासन)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>025-520103 , +977 9852098765 (शुल्क सम्बन्धी)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@npsdharan.edu.np">info@npsdharan.edu.np</a>
+          </li>
+        </ul>
+
+        <div class="footer-social-links">
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="footer-col">
+        <h3>Navigate</h3>
+        <ul class="footer-nav-grid">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+          <li><a href="milestone.html"><i class="fa-solid fa-angle-right"></i> Milestone</a></li>
+          <li><a href="admissionpage.html"><i class="fa-solid fa-angle-right"></i> Admission</a></li>
+          <li><a href="noticepage.html"><i class="fa-solid fa-angle-right"></i> Notice</a></li>
+          <li><a href="gallery.html"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+          <li><a href="sports.html"><i class="fa-solid fa-angle-right"></i> Events &amp; Sports</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Location Column -->
+      <div class="footer-col">
+        <h3>Location</h3>
+        <div class="footer-map-wrapper">
+          <iframe 
+            src="https://maps.google.com/maps?q=Nepal%20Police%20School%20Dharan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="Nepal Police School Dharan Location">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      © Copyright 2026, Nepal Police School | All Rights Reserved | Designed by : <strong>Himalayan Logic Pvt.Ltd.</strong>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="btn-scroll-top" id="btnScrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Image Slider Logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-item');
+    const totalSlides = slides.length;
+
+    function moveSlide(direction) {
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      const track = document.getElementById('sliderTrack');
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Auto Slide every 4 seconds
+    setInterval(() => {
+      moveSlide(1);
+    }, 4000);
+
+    // Back to Top functionality
+    const btnScrollTop = document.getElementById('btnScrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btnScrollTop.classList.add('visible');
+      } else {
+        btnScrollTop.classList.remove('visible');
+      }
+    });
+
+    btnScrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Desktop Mega Menu Hover Stabilizers
+    function setupDesktopMegaMenu(triggerId, menuId) {
+      const trigger = document.getElementById(triggerId);
+      const menu = document.getElementById(menuId);
+      let timeout;
+
+      if (!trigger || !menu) return;
+
+      trigger.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      trigger.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+
+      menu.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+          clearTimeout(timeout);
+          menu.style.display = 'block';
+        }
+      });
+
+      menu.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+          timeout = setTimeout(() => {
+            menu.style.display = 'none';
+          }, 220);
+        }
+      });
+    }
+
+    setupDesktopMegaMenu('menuWhoWeAre', 'dropdownWhoWeAre');
+    setupDesktopMegaMenu('menuNPS', 'dropdownNPS');
+
+    // Mobile Hamburger Menu & Drawer Toggles
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinksMenu = document.getElementById('navLinksMenu');
+    const mobileIcon = mobileToggle.querySelector('i');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = navLinksMenu.classList.toggle('active-mobile');
+      if (isOpen) {
+        mobileIcon.classList.remove('fa-bars');
+        mobileIcon.classList.add('fa-xmark');
+      } else {
+        mobileIcon.classList.remove('fa-xmark');
+        mobileIcon.classList.add('fa-bars');
+      }
+    });
+
+    // Mobile Accordion Logic
+    const navItemsWithSub = document.querySelectorAll('.nav-item');
+    navItemsWithSub.forEach(item => {
+      const triggerLink = item.querySelector('.nav-link');
+      const subDropdown = item.querySelector('.dropdown-menu');
+      const subMega = item.querySelector('.mega-menu');
+      const targetMenu = subDropdown || subMega;
+
+      if (targetMenu) {
+        triggerLink.addEventListener('click', (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            targetMenu.classList.toggle('mobile-open');
+            const caret = triggerLink.querySelector('i');
+            if (caret) {
+              caret.style.transform = targetMenu.classList.contains('mobile-open') ? 'rotate(180deg)' : 'rotate(0deg)';
+              caret.style.transition = 'transform 0.2s ease';
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
