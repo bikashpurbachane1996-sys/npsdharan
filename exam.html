@@ -541,6 +541,71 @@
       margin-top: 4px;
     }
 
+    /* Scanned Routine Image Gallery Section */
+    .routine-images-section {
+      margin-top: 50px;
+      border-top: 2px solid #e2e8f0;
+      padding-top: 40px;
+    }
+
+    .routine-images-section h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #273773;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .routine-images-section p {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 25px;
+      font-size: 0.98rem;
+    }
+
+    .routine-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .routine-img-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .routine-img-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(39, 55, 115, 0.12);
+    }
+
+    .routine-img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .routine-img-caption {
+      padding: 14px 18px;
+      font-weight: 700;
+      color: #1e293b;
+      font-size: 0.95rem;
+      text-align: center;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .routine-img-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Guaranteed Solid Footer Section */
     footer.site-footer {
       display: block !important;
@@ -931,69 +996,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>2083-06-13</strong></td>
-                <td>Tuesday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>-</td>
-                <td>English</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-14</strong></td>
-                <td>Wednesday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Opt-Maths / Eco</td>
-                <td>English-I</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-15</strong></td>
-                <td>Thursday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Social Studies</td>
-                <td>Nepali</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-16</strong></td>
-                <td>Friday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Acc / Computer</td>
-                <td>Social Studies</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-19</strong></td>
-                <td>Monday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>C-Maths</td>
-                <td>Science</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-20</strong></td>
-                <td>Tuesday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>English</td>
-                <td>Opt-Maths / Eco</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-21</strong></td>
-                <td>Wednesday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>-</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-22</strong></td>
-                <td>Thursday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Science</td>
-                <td>C-Maths</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-23</strong></td>
-                <td>Friday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Nepali</td>
-                <td>Acc / Computer</td>
-              </tr>
+              <tr><td><strong>2083-06-13</strong></td><td>Tuesday</td><td><span class="badge-time">10:15 A.M.</span></td><td>-</td><td>English</td></tr>
+              <tr><td><strong>2083-06-14</strong></td><td>Wednesday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Opt-Maths / Eco</td><td>English-I</td></tr>
+              <tr><td><strong>2083-06-15</strong></td><td>Thursday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Social Studies</td><td>Nepali</td></tr>
+              <tr><td><strong>2083-06-16</strong></td><td>Friday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Acc / Computer</td><td>Social Studies</td></tr>
+              <tr><td><strong>2083-06-19</strong></td><td>Monday</td><td><span class="badge-time">10:15 A.M.</span></td><td>C-Maths</td><td>Science</td></tr>
+              <tr><td><strong>2083-06-20</strong></td><td>Tuesday</td><td><span class="badge-time">10:15 A.M.</span></td><td>English</td><td>Opt-Maths / Eco</td></tr>
+              <tr><td><strong>2083-06-21</strong></td><td>Wednesday</td><td><span class="badge-time">10:15 A.M.</span></td><td>-</td><td>-</td></tr>
+              <tr><td><strong>2083-06-22</strong></td><td>Thursday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Science</td><td>C-Maths</td></tr>
+              <tr><td><strong>2083-06-23</strong></td><td>Friday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Nepali</td><td>Acc / Computer</td></tr>
             </tbody>
           </table>
         </div>
@@ -1014,48 +1025,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>2083-06-14</strong></td>
-                <td>Wednesday</td>
-                <td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td>
-                <td>English</td>
-                <td>English</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-16</strong></td>
-                <td>Friday</td>
-                <td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td>
-                <td>Nepali</td>
-                <td>Nepali</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-19</strong></td>
-                <td>Monday</td>
-                <td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td>
-                <td>Accountancy</td>
-                <td>Accountancy</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-20</strong></td>
-                <td>Tuesday</td>
-                <td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td>
-                <td>Social Studies</td>
-                <td>Social Studies</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-22</strong></td>
-                <td>Thursday</td>
-                <td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td>
-                <td>Economics</td>
-                <td>Economics</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-23</strong></td>
-                <td>Friday</td>
-                <td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td>
-                <td>Computer / Business Studies</td>
-                <td>Computer / Business Studies</td>
-              </tr>
+              <tr><td><strong>2083-06-14</strong></td><td>Wednesday</td><td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td><td>English</td><td>English</td></tr>
+              <tr><td><strong>2083-06-16</strong></td><td>Friday</td><td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td><td>Nepali</td><td>Nepali</td></tr>
+              <tr><td><strong>2083-06-19</strong></td><td>Monday</td><td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td><td>Accountancy</td><td>Accountancy</td></tr>
+              <tr><td><strong>2083-06-20</strong></td><td>Tuesday</td><td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td><td>Social Studies</td><td>Social Studies</td></tr>
+              <tr><td><strong>2083-06-22</strong></td><td>Thursday</td><td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td><td>Economics</td><td>Economics</td></tr>
+              <tr><td><strong>2083-06-23</strong></td><td>Friday</td><td><span class="badge-time">10:15 A.M. - 1:15 P.M.</span></td><td>Computer / Business Studies</td><td>Computer / Business Studies</td></tr>
             </tbody>
           </table>
         </div>
@@ -1077,78 +1052,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>2083-06-13</strong></td>
-                <td>Tuesday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Hamro Dharan</td>
-                <td>Social Studies</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-14</strong></td>
-                <td>Wednesday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>English-I</td>
-                <td>Social Studies</td>
-                <td>Nepali</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-15</strong></td>
-                <td>Thursday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Computer</td>
-                <td>English-I</td>
-                <td>Health</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-16</strong></td>
-                <td>Friday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Social Studies</td>
-                <td>Science</td>
-                <td>Science</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-19</strong></td>
-                <td>Monday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>C-Maths</td>
-                <td>C-Maths</td>
-                <td>C-Maths</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-20</strong></td>
-                <td>Tuesday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>English-II</td>
-                <td>Nepali</td>
-                <td>English</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-21</strong></td>
-                <td>Wednesday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Science</td>
-                <td>English-II</td>
-                <td>Social Studies</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-22</strong></td>
-                <td>Thursday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Nepali</td>
-                <td>Health</td>
-                <td>Opt-Maths</td>
-              </tr>
-              <tr>
-                <td><strong>2083-06-23</strong></td>
-                <td>Friday</td>
-                <td><span class="badge-time">10:15 A.M.</span></td>
-                <td>Health</td>
-                <td>Computer</td>
-                <td>Computer</td>
-              </tr>
+              <tr><td><strong>2083-06-13</strong></td><td>Tuesday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Hamro Dharan</td><td>Social Studies</td><td>-</td></tr>
+              <tr><td><strong>2083-06-14</strong></td><td>Wednesday</td><td><span class="badge-time">10:15 A.M.</span></td><td>English-I</td><td>Social Studies</td><td>Nepali</td></tr>
+              <tr><td><strong>2083-06-15</strong></td><td>Thursday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Computer</td><td>English-I</td><td>Health</td></tr>
+              <tr><td><strong>2083-06-16</strong></td><td>Friday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Social Studies</td><td>Science</td><td>Science</td></tr>
+              <tr><td><strong>2083-06-19</strong></td><td>Monday</td><td><span class="badge-time">10:15 A.M.</span></td><td>C-Maths</td><td>C-Maths</td><td>C-Maths</td></tr>
+              <tr><td><strong>2083-06-20</strong></td><td>Tuesday</td><td><span class="badge-time">10:15 A.M.</span></td><td>English-II</td><td>Nepali</td><td>English</td></tr>
+              <tr><td><strong>2083-06-21</strong></td><td>Wednesday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Science</td><td>English-II</td><td>Social Studies</td></tr>
+              <tr><td><strong>2083-06-22</strong></td><td>Thursday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Nepali</td><td>Health</td><td>Opt-Maths</td></tr>
+              <tr><td><strong>2083-06-23</strong></td><td>Friday</td><td><span class="badge-time">10:15 A.M.</span></td><td>Health</td><td>Computer</td><td>Computer</td></tr>
             </tbody>
           </table>
         </div>
@@ -1285,6 +1197,23 @@
           <li><i class="fa-solid fa-circle-check"></i> आवश्यक उत्तरपुस्तिका तथा स्टेशनरी सामग्रीहरू (कलम, पेन्सिल, स्केल आदि) विद्यार्थी आफैंले ल्याउनुपर्नेछ।</li>
           <li><i class="fa-solid fa-circle-check"></i> तोकिएको शुल्क तथा बक्यौता बाँकी रहेका विद्यार्थीहरूले परीक्षा पूर्व लेखा शाखामा सम्पर्क गरी क्लियरन्स लिनुहुन अनुरोध गरिन्छ।</li>
         </ul>
+      </div>
+
+      <!-- Scanned Routine Images Section -->
+      <div class="routine-images-section">
+        <h3>Official Examination Routine Notice Scans 📄</h3>
+        <p>Reference documents issued by Nepal Police School, Dharan</p>
+        
+        <div class="routine-img-grid">
+          <div class="routine-img-card">
+            <img src="routine1.jpg" alt="Second Terminal Examination Routine Document Part 1" onerror="this.src='https://via.placeholder.com/600x400?text=routine1.jpg+Not+Found'">
+            <div class="routine-img-caption">Routine Document - Part 1 (Nursery to Class X)</div>
+          </div>
+          <div class="routine-img-card">
+            <img src="routine2.jpg" alt="Second Terminal Examination Routine Document Part 2" onerror="this.src='https://via.placeholder.com/600x400?text=routine2.jpg+Not+Found'">
+            <div class="routine-img-caption">Routine Document - Part 2 (+2 Management Stream)</div>
+          </div>
+        </div>
       </div>
 
     </div>
