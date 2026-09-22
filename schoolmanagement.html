@@ -566,6 +566,7 @@
       position: relative;
       overflow: hidden;
       transition: all 0.35s ease;
+      flex-shrink: 0;
     }
 
     .member-card:hover .member-avatar-wrapper {
@@ -1098,7 +1099,7 @@
   <!-- Committee Structure Section -->
   <main class="mgmt-content-wrapper">
 
-    <!-- NEW SECTION: Entire School Group Photo Banner -->
+    <!-- Entire School Group Photo Banner -->
     <section class="committee-tier">
       <div class="tier-header">
         <h2><i class="fa-solid fa-users-rectangle"></i> School Community Family</h2>
@@ -1144,7 +1145,7 @@
             <img src="gyanendra.jpg" alt="SSP Gyanendra Prasad Fuyal" onerror="this.src='chairman.jpg'">
           </div>
           <div class="member-name">SSP Gyanendra Prasad Fuyal</div>
-          <div class="member-role">Chairperson(School Management Comittee) </div>
+          <div class="member-role">Chairperson (School Management Committee)</div>
           <span class="member-dept-tag">Head of Koshi Province Office Dharan</span>
         </div>
 
@@ -1264,7 +1265,7 @@
       </div>
     </section>
 
-    <!-- NEW SECTION: Heads of Departments (HOD's) -->
+    <!-- Heads of Departments (HOD's) - Exactly 8 Departments -->
     <section class="committee-tier">
       <div class="tier-header">
         <h2><i class="fa-solid fa-chalkboard"></i> Heads of Departments (HOD's)</h2>
@@ -1273,81 +1274,90 @@
       
       <div class="members-grid-3">
 
+        <!-- 1. Mathematics Department -->
         <div class="member-card">
           <div class="member-avatar-wrapper">
-            <img src="binod.jpeg" alt="Science HOD" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ScienceHOD'">
+            <img src="binod.jpeg" alt="Binod Kumar Yadav" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=MathHOD'">
           </div>
           <div class="member-name">Binod Kumar Yadav</div>
-          <div class="member-role">Math & Economics Department Head</div>
+          <div class="member-role">Mathematics Department Head</div>
           <span class="member-dept-tag">Maths &amp; Economics Lead</span>
         </div>
 
+        <!-- 2. Account Department -->
         <div class="member-card">
           <div class="member-avatar-wrapper">
-            <img src="nirodha.jpg" alt="Mathematics HOD" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=MathHOD'">
+            <img src="nirodha.jpg" alt="Nirodha Chandra Dahal" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=AccountHOD'">
           </div>
-          <div class="member-name">Nirodh Chandra Dahal</div>
+          <div class="member-name">Nirodha Chandra Dahal</div>
           <div class="member-role">Account Department Head</div>
           <span class="member-dept-tag">Senior Account Faculty</span>
         </div>
 
+        <!-- 3. Nepali Department -->
         <div class="member-card">
           <div class="member-avatar-wrapper">
-            <img src="kamal.jpg" alt="Computer HOD" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ComputerHOD'">
+            <img src="kamal.jpg" alt="Kamal Prasad Dahal" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=NepaliHOD'">
           </div>
           <div class="member-name">Kamal Prasad Dahal</div>
-          <div class="member-role">Computer &amp; Tech Head</div>
-          <span class="member-dept-tag">Nepali Literature &amp; HOD</span>
+          <div class="member-role">Nepali Department Head</div>
+          <span class="member-dept-tag">Nepali Literature &amp; Language</span>
         </div>
 
-
-
-      
-        
+        <!-- 4. Social Studies Department -->
         <div class="member-card">
           <div class="member-avatar-wrapper">
-            <img src="sajan.jpeg" alt="Science HOD" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ScienceHOD'">
+            <img src="sajan.jpeg" alt="Sajan" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=SocialHOD'">
           </div>
-          <div class="member-name">Binod Kumar Yadav</div>
-          <div class="member-role">Social Department Head</div>
-          <span class="member-dept-tag">Social Studies &amp; Socialogy Expert</span>
+          <div class="member-name">Sajan Shrestha</div>
+          <div class="member-role">Social Studies Dept. Head</div>
+          <span class="member-dept-tag">Social Studies &amp; Sociology</span>
         </div>
 
+        <!-- 5. English Department -->
         <div class="member-card">
           <div class="member-avatar-wrapper">
-            <img src="Hemanta.jpeg" alt="Mathematics HOD" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=MathHOD'">
+            <img src="Hemanta.jpeg" alt="Hemanta Lamsal" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=EnglishHOD'">
           </div>
           <div class="member-name">Hemanta Lamsal</div>
           <div class="member-role">English Department Head</div>
           <span class="member-dept-tag">Senior English Faculty</span>
         </div>
 
+        <!-- 6. Science Department -->
         <div class="member-card">
           <div class="member-avatar-wrapper">
-            <img src="biswas.jpeg" alt="Computer HOD" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ComputerHOD'">
+            <img src="biswas.jpeg" alt="Bishwas Rai" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ScienceHOD'">
           </div>
-          <div class="member-name">Kamal Prasad Dahal</div>
-          <div class="member-role">Science &amp; Tech Head</div>
-          <span class="member-dept-tag">Science &amp; HOD</span>
+          <div class="member-name">Bishwas Rai</div>
+          <div class="member-role">Science Department Head</div>
+          <span class="member-dept-tag">Science &amp; Lab Lead</span>
         </div>
 
-   <div class="member-card">
+        <!-- 7. Computer & Tech Department -->
+        <div class="member-card">
           <div class="member-avatar-wrapper">
-            <img src="bikash.jpeg" alt="Computer HOD" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ComputerHOD'">
+            <img src="bikash.jpeg" alt="Bikash Magar" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ComputerHOD'">
           </div>
           <div class="member-name">Bikash Magar</div>
           <div class="member-role">Computer &amp; Tech Head</div>
-          <span class="member-dept-tag">IT &amp; HOD</span>
+          <span class="member-dept-tag">IT &amp; Cyber Security Lead</span>
         </div>
 
-        
+        <!-- 8. Administration Department -->
+        <div class="member-card">
+          <div class="member-avatar-wrapper">
+            <img src="school.jpg" alt="Administration Head" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=AdminHOD'">
+          </div>
+          <div class="member-name">Administrative Officer</div>
+          <div class="member-role">Administration Department Head</div>
+          <span class="member-dept-tag">Operations &amp; Records</span>
+        </div>
 
-
-                
       </div>
     </section>
 
-    <!-- NEW SECTION: Support Staff & Operational Units Image Gallery -->
+    <!-- Support Staff & Operational Units Image Gallery -->
     <section class="committee-tier">
       <div class="tier-header">
         <h2><i class="fa-solid fa-images"></i> Operational Staff &amp; Unit Gallery</h2>
